@@ -876,6 +876,7 @@
     <Content Include="KPI\ProduccionPBI.aspx" />
     <Content Include="KPI\Recuperacion.aspx" />
     <Content Include="KPI\RecuperacionPBI.aspx" />
+    <Content Include="KPI\Ventas.aspx" />
     <Content Include="Legal.html" />
     <Content Include="Login.aspx" />
     <Content Include="Logistica\AsignacionRuta.aspx" />
@@ -2184,6 +2185,13 @@
     </Compile>
     <Compile Include="KPI\RecuperacionPBI.aspx.designer.cs">
       <DependentUpon>RecuperacionPBI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KPI\Ventas.aspx.cs">
+      <DependentUpon>Ventas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KPI\Ventas.aspx.designer.cs">
+      <DependentUpon>Ventas.aspx</DependentUpon>
     </Compile>
     <Compile Include="LaboresTurno.cs">
       <AutoGen>True</AutoGen>
