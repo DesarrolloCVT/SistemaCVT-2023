@@ -1,0 +1,66 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="SueldosBases.aspx.cs" Inherits="CVT_MermasRecepcion.RRHH.SueldosBases" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>RRHH</a></li>
+        <li><span id="current">Sueldo Base x Empleado</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Sueldo Base x Empleado</span>
+    <span class="tab-end"></span>
+    <div id="options">         
+          <a>
+          <asp:ImageButton ID="cmdExcel"    runat="server" 
+              ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" onclick="cmdExcel_Click" style="width: 20px" 
+              /> Exportar Excel</a>
+              <a><asp:ImageButton ID="cmdNew"  runat="server" ImageUrl="~/Images/add.png"  onclick="cmdNew_Click" style="width: 16px"/>Nuevo</a>
+     
+    </div>
+</div>
+<div>
+
+    <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="LqDsDatosPersonal" KeyFieldName="Empleado_Id">
+        <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+        <Columns>
+            <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" 
+                VisibleIndex="0">
+            </dx:GridViewCommandColumn>
+            <dx:GridViewDataTextColumn FieldName="Sueldo_Base" VisibleIndex="2">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataComboBoxColumn FieldName="Empleado_Id" 
+                VisibleIndex="1" Caption="Empleado">
+                <PropertiesComboBox DataSourceID="LqDsEmpleados" ValueField="USERID">
+                    <Columns>
+                        <dx:ListBoxColumn FieldName="Rut">
+                        </dx:ListBoxColumn>
+                        <dx:ListBoxColumn FieldName="Nombre">
+                        </dx:ListBoxColumn>
+                        <dx:ListBoxColumn FieldName="Apellido">
+                        </dx:ListBoxColumn>
+                    </Columns>
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:LinqDataSource ID="LqDsDatosPersonal" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" 
+        EntityTypeName="" TableName="CVT_EmpleadoSueldoBase" EnableDelete="True" 
+        EnableInsert="True" EnableUpdate="True">
+    </asp:LinqDataSource>
+    <asp:LinqDataSource ID="LqDsEmpleados" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBControlAccesoDataContext" 
+        EntityTypeName="" TableName="CVT_VW_Empleados">
+    </asp:LinqDataSource>
+    <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" 
+        GridViewID="GvDatos">
+    </dx:ASPxGridViewExporter>
+
+</div>
+</asp:Content>

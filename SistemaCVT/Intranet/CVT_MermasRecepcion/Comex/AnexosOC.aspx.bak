@@ -1,0 +1,72 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AnexosOC.aspx.cs" Inherits="CVT_MermasRecepcion.Comex.AnexosOC" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>COMEX</a></li>
+        <li><span id="current">Anexos</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">ANEXOS</span>
+    <span class="tab-end"></span>
+    
+</div>
+<div>
+
+    <table class="dxeBinImgCPnlSys">
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="OC" runat="server" Text="OC">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxTextBox ID="txt_oc" runat="server" Width="170px">
+                </dx:ASPxTextBox>
+            </td>
+            <td>
+                <dx:ASPxButton ID="btn_agregar" runat="server" Text="Buscar">
+                </dx:ASPxButton>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" 
+                    DataSourceID="LqDsAnexos" KeyFieldName="AbsEntry;Line" 
+                    onrowcommand="ASPxGridView1_RowCommand">
+                    <Columns>
+                        <dx:GridViewDataTextColumn FieldName="AbsEntry" Visible="False" 
+                            VisibleIndex="0">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Line" Visible="False" VisibleIndex="1">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="OC" VisibleIndex="2">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Archivo" VisibleIndex="3">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataHyperLinkColumn FieldName="ANEXO" VisibleIndex="4">
+                        <DataItemTemplate>
+                         <asp:ImageButton ID="detalle" CommandName="cmdDetalle" runat="server" ImageUrl="~/Images/documentpdf.png" />
+                        </DataItemTemplate>
+                       
+                        </dx:GridViewDataHyperLinkColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+                <asp:LinqDataSource ID="LqDsAnexos" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTSAPDataContext" EntityTypeName="" 
+                    TableName="CVT_VW_AnexosOC" Where="OC == @OC">
+                    <WhereParameters>
+                        <asp:ControlParameter ControlID="txt_oc" DefaultValue="0" Name="OC" 
+                            PropertyName="Text" Type="Int32" />
+                    </WhereParameters>
+                </asp:LinqDataSource>
+            </td>
+        </tr>
+    </table>
+
+</div>
+</asp:Content>

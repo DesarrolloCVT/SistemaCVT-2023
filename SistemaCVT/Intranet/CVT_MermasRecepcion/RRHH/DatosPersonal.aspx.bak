@@ -1,0 +1,92 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="DatosPersonal.aspx.cs" Inherits="CVT_MermasRecepcion.RRHH.DatosPersonal" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>RRHH</a></li>
+        <li><span id="current">Informe Personal</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Informe Personal</span>
+    <span class="tab-end"></span>
+    <div id="options">         
+          <a><asp:ImageButton ID="cmdExcel"    runat="server" 
+              ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" onclick="cmdExcel_Click" 
+              /> Exportar Excel</a>
+     
+    </div>
+</div>
+<div>
+
+    <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="LqDsDatosPersonal">
+        <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+        <Columns>
+            <dx:GridViewCommandColumn ShowClearFilterButton="True" VisibleIndex="0">
+            </dx:GridViewCommandColumn>
+            <dx:GridViewDataTextColumn FieldName="RUT" VisibleIndex="3">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="NOMBRE" VisibleIndex="4">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="APELLIDO" VisibleIndex="5">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="CARGO" VisibleIndex="7">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataDateColumn Caption="FECHA CREACION" FieldName="FECHA_CREACION" 
+                VisibleIndex="8">
+            </dx:GridViewDataDateColumn>
+            <dx:GridViewDataTextColumn Caption="NIVEL ACCESO" FieldName="NIVEL_ACCESO" 
+                VisibleIndex="9">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="CANT HUELLAS" FieldName="CANT_HUELLAS" 
+                VisibleIndex="10">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataComboBoxColumn FieldName="EMPRESA" VisibleIndex="1">
+                <PropertiesComboBox DataSourceID="LqDsEmpresa" TextField="DEPTNAME" 
+                    ValueField="DEPTNAME">
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn FieldName="DEPARTAMENTO" VisibleIndex="2">
+                <PropertiesComboBox DataSourceID="LqDsDepartamento" TextField="DEPTNAME" 
+                    ValueField="DEPTNAME">
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn FieldName="GENERO" VisibleIndex="6">
+                <PropertiesComboBox>
+                    <Items>
+                        <dx:ListEditItem Text="Femenino" Value="F" />
+                        <dx:ListEditItem Text="Masculino" Value="M" />
+                    </Items>
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:LinqDataSource ID="LqDsDatosPersonal" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBControlAccesoDataContext" 
+        EntityTypeName="" TableName="vw_CVT_DatosPersonal">
+    </asp:LinqDataSource>
+    <asp:LinqDataSource ID="LqDsDepartamento" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBControlAccesoDataContext" 
+        EntityTypeName="" TableName="DEPARTMENTS" Where="SUPDEPTID != @SUPDEPTID">
+        <WhereParameters>
+            <asp:Parameter DefaultValue="0" Name="SUPDEPTID" Type="Int32" />
+        </WhereParameters>
+    </asp:LinqDataSource>
+    <asp:LinqDataSource ID="LqDsEmpresa" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBControlAccesoDataContext" 
+        EntityTypeName="" TableName="DEPARTMENTS" Where="SUPDEPTID == @SUPDEPTID">
+        <WhereParameters>
+            <asp:Parameter DefaultValue="0" Name="SUPDEPTID" Type="Int32" />
+        </WhereParameters>
+    </asp:LinqDataSource>
+    <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" 
+        GridViewID="GvDatos">
+    </dx:ASPxGridViewExporter>
+
+</div>
+</asp:Content>

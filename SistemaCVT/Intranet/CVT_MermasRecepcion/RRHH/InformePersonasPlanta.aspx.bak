@@ -1,0 +1,112 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="InformePersonasPlanta.aspx.cs" Inherits="CVT_MermasRecepcion.RRHH.InformePersonasPlanta" %>
+
+<%@ Register Assembly="DevExpress.Web.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>RRHH</a></li>
+        <li><span id="current">Informe Torniquete</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Informe Torniquete</span>
+    <span class="tab-end"></span>
+    <div id="options">         
+          <a><asp:ImageButton ID="cmdExcel"    runat="server" 
+              ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" onclick="cmdExcel_Click" 
+              /> Exportar Excel</a>
+     
+    </div>
+</div>
+<div>
+    <dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" ShowCollapseButton="true"
+        Width="100%" HeaderText="Filtros">
+        <PanelCollection>
+<dx:PanelContent runat="server">
+    <table class="dxic-fileManager">
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Fecha">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxDateEdit ID="cboinicio" runat="server">
+                </dx:ASPxDateEdit>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Empresa">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cbo_empresa" runat="server" 
+                    DataSourceID="LqDsEmpresa" TextField="DEPTNAME" ValueField="DEPTID"
+                    ValueType="System.Int32">
+                </dx:ASPxComboBox>
+                <asp:LinqDataSource ID="LqDsEmpresa" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBControlAccesoDataContext" 
+                    EntityTypeName="" TableName="DEPARTMENTS" Where="SUPDEPTID == @SUPDEPTID">
+                    <WhereParameters>
+                        <asp:Parameter DefaultValue="0" Name="SUPDEPTID" Type="Int32" />
+                    </WhereParameters>
+                </asp:LinqDataSource>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                <dx:ASPxButton ID="btn_Procesar" runat="server" Text="Procesar" 
+                    OnClick="btn_Procesar_Click">
+                </dx:ASPxButton>
+            </td>
+        </tr>
+    </table>
+
+    <div>
+        <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False" 
+            DataSourceID="LqDsPersonas" KeyFieldName="DeptoSuperior">
+            <SettingsPager PageSize="25">
+            </SettingsPager>
+            <Columns>
+                <dx:GridViewDataTextColumn FieldName="DeptoSuperior" VisibleIndex="0" 
+                    Visible="False">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="NombreDeptoSuperior" VisibleIndex="1" 
+                    Caption="Empresa">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="NombreDepto" VisibleIndex="2" 
+                    Caption="Area">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataDateColumn FieldName="fecha" VisibleIndex="3" Caption="Fecha">
+                </dx:GridViewDataDateColumn>
+                <dx:GridViewDataTextColumn FieldName="Cantidad" VisibleIndex="4">
+                </dx:GridViewDataTextColumn>
+            </Columns>
+        </dx:ASPxGridView>
+        <asp:LinqDataSource ID="LqDsPersonas" runat="server" 
+            ContextTypeName="DBMermasRecepcion.DBControlAccesoDataContext" 
+            EntityTypeName="" TableName="vw_PersonasPorDia" 
+            Where="fecha == @fecha1 &amp;&amp; DeptoSuperior == @DeptoSuperior">
+            <WhereParameters>
+                <asp:ControlParameter ControlID="cboinicio" 
+                    Name="fecha1" PropertyName="Value" Type="DateTime" />
+                <asp:ControlParameter ControlID="cbo_empresa" DefaultValue="9999" 
+                    Name="DeptoSuperior" PropertyName="Value" Type="Int32" />
+            </WhereParameters>
+        </asp:LinqDataSource>
+        <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" 
+            GridViewID="GvDatos">
+        </dx:ASPxGridViewExporter>
+    </div>
+                </dx:PanelContent>
+</PanelCollection>
+    </dx:ASPxRoundPanel>
+</div>
+</asp:Content>

@@ -1,0 +1,67 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="EstadoProductoDetalle.aspx.cs" Inherits="CVT_MermasRecepcion.Inventario.EstadoProductoDetalle" %>
+
+<%@ Register Assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>Inventario</a></li>
+        <li><span id="current">Estado Producto</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Estado Productos Detalle</span>
+    <span class="tab-end"></span>
+    <div id="options">         
+          &nbsp;<a><asp:ImageButton ID="cmdNew"      runat="server" 
+              ImageUrl="~/Images/add.png"  onclick="cmdNew_Click"/>Nuevo</a>
+    </div>
+</div>
+<div>
+    <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="LqDsDetEstado" KeyFieldName="InventarioEstadoDet_Id" 
+        onrowinserting="ASPxGridView1_RowInserting">
+        <Columns>
+            <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" 
+                VisibleIndex="0">
+            </dx:GridViewCommandColumn>
+            <dx:GridViewDataTextColumn Caption="ID" FieldName="InventarioEstadoDet_Id" 
+                ReadOnly="True" VisibleIndex="1">
+                <EditFormSettings Visible="False" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="InventarioEstado_Id" Visible="False" 
+                VisibleIndex="2">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="WMS" VisibleIndex="4">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="SAP" VisibleIndex="5">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Inventariado" VisibleIndex="6">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataComboBoxColumn FieldName="Bodega" VisibleIndex="3">
+                <PropertiesComboBox DataSourceID="LqDsSite" TextField="Site_ShortDescription" 
+                    ValueField="Site_ShortDescription">
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:LinqDataSource ID="LqDsDetEstado" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" 
+        EnableDelete="True" EnableInsert="True" EnableUpdate="True" EntityTypeName="" 
+        TableName="CVT_InventarioEstadoDet" 
+        Where="InventarioEstado_Id == @InventarioEstado_Id">
+        <WhereParameters>
+            <asp:SessionParameter DefaultValue="0" Name="InventarioEstado_Id" 
+                SessionField="EstProd_ID" Type="Int32" />
+        </WhereParameters>
+    </asp:LinqDataSource>
+    <asp:LinqDataSource ID="LqDsSite" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTWMSDataContext" EntityTypeName="" 
+        Select="new (Site_ShortDescription)" TableName="Site">
+    </asp:LinqDataSource>
+</div>
+</asp:Content>

@@ -1,0 +1,107 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Movimientos.aspx.cs" Inherits="CVT_MermasRecepcion.Mantencion.Movimientos" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>Mantencion</a></li>
+        <li><span id="current">Movimientos</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Movimientos</span>
+    <span class="tab-end"></span>
+    <div id="options">         
+          <a><asp:ImageButton ID="cmdExcel"    runat="server" ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" onclick="cmdExcel_Click" /> Exportar Excel</a>
+     <a>             <asp:ImageButton ID="cmdNew"      runat="server" 
+              ImageUrl="~/Images/add.png"  onclick="cmdNew_Click" 
+              style="width: 16px; height: 16px;"/>Nuevo</a>
+    </div>
+</div>
+<div>
+
+    <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="LqDsMovimientos" KeyFieldName="Movimiento_Id" 
+        onrowinserting="GvDatos_RowInserting" onrowcommand="GvDatos_RowCommand">
+        <SettingsPager PageSize="25">
+        </SettingsPager>
+        <SettingsEditing Mode="PopupEditForm">
+        </SettingsEditing>
+        <Settings ShowFilterRow="True" />
+        <Columns>
+            <dx:GridViewDataTextColumn FieldName="Movimiento_Id" ReadOnly="True" 
+                VisibleIndex="0" Caption="Movimiento">
+                <EditFormSettings Visible="False" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Documento" 
+                VisibleIndex="2">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="NumeroDocumento" 
+                VisibleIndex="3">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Responsable" 
+                VisibleIndex="4">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Usuario" 
+                VisibleIndex="5" Visible="False">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataDateColumn FieldName="Fecha" VisibleIndex="6">
+                <EditFormSettings Visible="False" />
+            </dx:GridViewDataDateColumn>
+            <dx:GridViewDataTextColumn FieldName="Observacion" 
+                VisibleIndex="9">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataComboBoxColumn FieldName="TipoMovimiento" VisibleIndex="1">
+                <PropertiesComboBox>
+                    <Items>
+                        <dx:ListEditItem Text="Entrada" Value="1" />
+                        <dx:ListEditItem Text="Entrega" Value="2" />
+                        <dx:ListEditItem Text="Ajuste Entrada" Value="3" />
+                        <dx:ListEditItem Text="Ajuste Salida" Value="4" />
+                    </Items>
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataHyperLinkColumn Caption="Detalle" VisibleIndex="10">
+                 <EditFormSettings Visible="False" />
+                <DataItemTemplate>
+                    <asp:ImageButton ID="detalle" CommandName="cmdDetalle" runat="server" ImageUrl="~/Images/boxadd.png" />
+                </DataItemTemplate>
+            </dx:GridViewDataHyperLinkColumn>
+            <dx:GridViewDataComboBoxColumn Caption="Area" FieldName="Area_Id" 
+                VisibleIndex="7">
+                <PropertiesComboBox DataSourceID="LqDsArea" TextField="Nombre" 
+                    ValueField="Id_Area">
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn Caption="Objeto" FieldName="Objeto_Id" 
+                VisibleIndex="8">
+                <PropertiesComboBox DataSourceID="LqDsObjeto" TextField="Objeto_Nombre" 
+                    ValueField="Objeto_Id">
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:LinqDataSource ID="LqDsMovimientos" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" 
+        EnableDelete="True" EnableInsert="True" EnableUpdate="True" EntityTypeName="" 
+        TableName="CVT_MovimientoMantencion" OrderBy="Movimiento_Id desc">
+    </asp:LinqDataSource>
+    <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server">
+    </dx:ASPxGridViewExporter>
+
+    <asp:LinqDataSource ID="LqDsArea" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+        TableName="CVT_AreaTrabajo">
+    </asp:LinqDataSource>
+    <asp:LinqDataSource ID="LqDsObjeto" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+        TableName="CVT_Objeto">
+    </asp:LinqDataSource>
+
+</div>
+</asp:Content>
+
+

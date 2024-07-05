@@ -1,0 +1,50 @@
+﻿using DBMermasRecepcion;
+using System;
+
+namespace CVT_MermasRecepcion.Mantenedores
+{
+    public partial class BodegasSMM : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GvDatos_RowCommand(object sender, DevExpress.Web.ASPxGridViewRowCommandEventArgs e)
+        {
+            if (e.CommandArgs.CommandName == "cmdLayout")
+            {
+                Session["Site_Id"] = e.KeyValue;
+
+                Response.Redirect("~/Mantenedores/LayoutSMM.aspx");
+            }
+        }
+
+        protected void GvDatos_ToolbarItemClick(object source, DevExpress.Web.Data.ASPxGridViewToolbarItemClickEventArgs e)
+        {
+            if (((DevExpress.Web.MenuItem)e.Item.Owner).Name.Equals("Export"))
+            {
+                GvDatos.SettingsExport.FileName = "Bodegas SMM";
+            }
+        }
+
+        protected void GvDatos_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
+        {
+
+            LogClass vLog = new LogClass();
+            vLog.LOGUsabilidad(Convert.ToInt32(Session["IDCVTUsuario"]), 247, "Elimina Registro");
+        }
+
+        protected void GvDatos_RowInserting(object sender, DevExpress.Web.Data.ASPxDataInsertingEventArgs e)
+        {
+            LogClass vLog = new LogClass();
+            vLog.LOGUsabilidad(Convert.ToInt32(Session["IDCVTUsuario"]), 247, "Crea Registro");
+        }
+
+        protected void GvDatos_RowUpdating(object sender, DevExpress.Web.Data.ASPxDataUpdatingEventArgs e)
+        {
+            LogClass vLog = new LogClass();
+            vLog.LOGUsabilidad(Convert.ToInt32(Session["IDCVTUsuario"]), 247, "Actualiza Registro");
+        }
+    }
+}

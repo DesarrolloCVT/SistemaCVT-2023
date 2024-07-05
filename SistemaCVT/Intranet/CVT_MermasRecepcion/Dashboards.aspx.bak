@@ -1,0 +1,145 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Dashboards.aspx.cs" Inherits="CVT_MermasRecepcion.Dashboards" %>
+<%@ Register assembly="DevExpress.XtraCharts.v17.2.Web, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.XtraCharts.Web" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.XtraCharts.v17.2.Web, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.XtraCharts.Web.Designer" tagprefix="dxchartdesigner" %>
+<%@ Register assembly="DevExpress.XtraCharts.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.XtraCharts" tagprefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+
+    <table class="dxeBinImgCPnlSys">
+        <tr>
+            <td dir="rtl">
+                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Mes">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cb_mes" runat="server">
+                    <Items>
+                        <dx:ListEditItem Text="1" Value="1" />
+                        <dx:ListEditItem Text="2" Value="2" />
+                        <dx:ListEditItem Text="3" Value="3" />
+                        <dx:ListEditItem Text="4" Value="4" />
+                        <dx:ListEditItem Text="5" Value="5" />
+                        <dx:ListEditItem Text="6" Value="6" />
+                        <dx:ListEditItem Text="7" Value="7" />
+                        <dx:ListEditItem Text="8" Value="8" />
+                        <dx:ListEditItem Text="9" Value="9" />
+                        <dx:ListEditItem Text="10" Value="10" />
+                        <dx:ListEditItem Text="11" Value="11" />
+                        <dx:ListEditItem Text="12" Value="12" />
+                    </Items>
+                </dx:ASPxComboBox>
+            </td>
+            <td dir="rtl">
+                <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Año">
+                </dx:ASPxLabel>
+            </td>
+            <td dir="ltr">
+                <dx:ASPxComboBox ID="cb_año" runat="server">
+                    <Items>
+                        <dx:ListEditItem Text="2017" Value="2017" />
+                        <dx:ListEditItem Text="2018" Value="1" />
+                        <dx:ListEditItem Text="2019" Value="2019" />
+                        <dx:ListEditItem Text="2020" Value="2020" />
+                        <dx:ListEditItem Text="2021" Value="2021" />
+                    </Items>
+                </dx:ASPxComboBox>
+            </td>
+            <td>
+                <dx:ASPxButton ID="btn_actualizar" runat="server" 
+                    onclick="btn_actualizar_Click" Text="Actualizar">
+                </dx:ASPxButton>
+            </td>
+        </tr>
+        <tr>
+            <td dir="ltr" colspan="3">
+                <dx:ASPxLabel ID="ASPxLabel4" runat="server" Font-Size="Large" 
+                    Text="Detenciones Por Categoria">
+                </dx:ASPxLabel>
+            </td>
+            <td dir="ltr">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <dx:WebChartControl ID="WebChartControl1" runat="server" 
+                    CrosshairEnabled="True" DataSourceID="LqDsProduccion" Height="300px" 
+                    SeriesDataMember="Categoria_Nombre" Width="1350px">
+                    <DiagramSerializable>
+                        <dx:XYDiagram>
+                            <AxisX VisibleInPanesSerializable="-1" Title-MaxLineCount="12" 
+                                Title-Text="Meses" Title-Visibility="True" Visibility="True">
+                                <VisualRange AutoSideMargins="False" SideMarginsValue="0" />
+                                <WholeRange AutoSideMargins="False" SideMarginsValue="0" />
+                                <NumericScaleOptions AggregateFunction="None" AutoGrid="False" 
+                                    ScaleMode="Automatic" />
+                            </AxisX>
+                            <AxisY VisibleInPanesSerializable="-1">
+                                <VisualRange Auto="False" MaxValueSerializable="9" MinValueSerializable="0" />
+                            </AxisY>
+                        </dx:XYDiagram>
+                    </DiagramSerializable>
+<Legend Name="Default Legend"></Legend>
+                    <SeriesTemplate ArgumentDataMember="Mes" 
+                        ValueDataMembersSerializable="Minutos">
+                    </SeriesTemplate>
+                </dx:WebChartControl>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <dx:ASPxLabel ID="ASPxLabel3" runat="server" Font-Size="Large" 
+                    Text="Toneladas Movidas por Grupo Producto">
+                </dx:ASPxLabel>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <dx:WebChartControl ID="WebChartControl2" runat="server" 
+                    CrosshairEnabled="True" DataSourceID="LqDsTonMovidas" Height="300px" 
+                    SeriesDataMember="TIPO" Width="1350px">
+                    <DiagramSerializable>
+                        <dx:XYDiagram>
+                            <AxisX VisibleInPanesSerializable="-1">
+                            </AxisX>
+                            <AxisY VisibleInPanesSerializable="-1">
+                            </AxisY>
+                        </dx:XYDiagram>
+                    </DiagramSerializable>
+<Legend Name="Default Legend"></Legend>
+                    <SeriesTemplate ArgumentDataMember="ItmsGrpNam" 
+                        ValueDataMembersSerializable="TON">
+                    </SeriesTemplate>
+                </dx:WebChartControl>
+                <asp:LinqDataSource ID="LqDsTonMovidas" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTSAPDataContext" EntityTypeName="" 
+                    TableName="CVT_VW_ResumenTonMovidasFamilia" 
+                    Where="AÑO == @AÑO &amp;&amp; MES == @MES">
+                    <WhereParameters>
+                        <asp:ControlParameter ControlID="cb_año" DefaultValue="0" Name="AÑO" 
+                            PropertyName="Value" Type="Int32" />
+                        <asp:ControlParameter ControlID="cb_mes" DefaultValue="0" Name="MES" 
+                            PropertyName="Value" Type="Int32" />
+                    </WhereParameters>
+                </asp:LinqDataSource>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                &nbsp;</td>
+        </tr>
+    </table>
+    <asp:LinqDataSource ID="LqDsProduccion" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+        TableName="CVT_VW_ResumenDetenciones" 
+        Where="Año == @Año">
+        <WhereParameters>
+            <asp:ControlParameter ControlID="cb_año" DefaultValue="0" Name="Año" 
+                PropertyName="Value" Type="Int32" />
+        </WhereParameters>
+    </asp:LinqDataSource>
+
+</asp:Content>

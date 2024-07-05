@@ -1,0 +1,86 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="InfDevoluciones.aspx.cs" Inherits="CVT_MermasRecepcion.Reporteria.InfDevoluciones" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>Informes</a></li>
+        <li><span id="current">Informe Devoluciones</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Informe Devoluciones</span>
+    <span class="tab-end"></span>
+    <div id="options">         
+          <a><asp:ImageButton ID="cmdExcel" runat="server" 
+              ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" onclick="cmdExcel_Click" 
+              style="width: 20px"/> Exportar Excel</a>
+    </div>
+</div>
+<div>
+
+    <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="LqDsStock">
+        <SettingsPager PageSize="100">
+        </SettingsPager>
+        <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+        <Columns>
+            <dx:GridViewCommandColumn ShowClearFilterButton="True" VisibleIndex="0">
+            </dx:GridViewCommandColumn>
+            <dx:GridViewDataTextColumn FieldName="Cod_Cliente" 
+                VisibleIndex="1">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn 
+                FieldName="Cliente" VisibleIndex="2">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataDateColumn FieldName="Fecha_Devolucion" VisibleIndex="3">
+            </dx:GridViewDataDateColumn>
+            <dx:GridViewDataTextColumn FieldName="Cod_Producto" VisibleIndex="4">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Producto" VisibleIndex="5">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Cantidad" VisibleIndex="6">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Cod_Motivo" VisibleIndex="7">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Motivo" VisibleIndex="8">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Folio_Devolucion_WMS" VisibleIndex="9">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Usuario_Receptor_Devolucion" 
+                VisibleIndex="10">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Folio_Factura" VisibleIndex="11">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Razon_Global_Devolucion" 
+                VisibleIndex="12">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Patente_Camion" VisibleIndex="13">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataDateColumn FieldName="Fecha_Factura" VisibleIndex="14">
+            </dx:GridViewDataDateColumn>
+            <dx:GridViewDataTextColumn FieldName="Mes_Devolucion" VisibleIndex="15">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Año_Devolucion" VisibleIndex="16">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Mes_Factura" VisibleIndex="17">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Año_Factura" VisibleIndex="18">
+            </dx:GridViewDataTextColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:LinqDataSource ID="LqDsStock" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTSAPDataContext" EntityTypeName="" 
+        TableName="CVT_VW_Devoluciones">
+    </asp:LinqDataSource>
+
+    <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" 
+        GridViewID="GvDatos">
+    </dx:ASPxGridViewExporter>
+
+</div>
+</asp:Content>
+

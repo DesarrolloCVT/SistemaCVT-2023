@@ -1,0 +1,217 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ControlDetenciones.aspx.cs" Inherits="CVT_MermasRecepcion.Produccion.ControlDetenciones" %>
+<%@ Register Assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    </asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>Produccion</a></li>
+        <li><span id="current">Control Detenciones</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Detenciones por OF</span>
+    <span class="tab-end"></span>
+</div>
+<div>
+ <a>             <asp:ImageButton ID="cmdExcel"    runat="server" ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" onclick="cmdExcel_Click" /> Exportar Excel</a>
+</div>
+<div>
+    <table class="dxeBinImgCPnlSys">
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="OF">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+
+                <dx:ASPxComboBox runat="server" DataSourceID="LqDsOF" ValueField="OF" 
+                    Width="300px" ID="cbo_of"  AutoPostBack="true"
+                    onselectedindexchanged="cbo_of_SelectedIndexChanged"><Columns>
+<dx:ListBoxColumn FieldName="OF"></dx:ListBoxColumn>
+<dx:ListBoxColumn FieldName="CodProducto"></dx:ListBoxColumn>
+<dx:ListBoxColumn FieldName="Producto"></dx:ListBoxColumn>
+</Columns>
+
+<ValidationSettings ValidationGroup="a">
+<RequiredField IsRequired="True"></RequiredField>
+</ValidationSettings>
+</dx:ASPxComboBox>
+
+                <asp:LinqDataSource runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTSAPDataContext" OrderBy="OF" 
+                    TableName="CVT_ListaOFLiberadas" EntityTypeName="" ID="LqDsOF"></asp:LinqDataSource>
+
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel3" runat="server" Text="Hr Inicio">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxTextBox ID="txt_hrini" runat="server" Height="22px" Width="81px">
+                </dx:ASPxTextBox>
+            </td>
+            <td colspan="4">
+                <dx:ASPxTextBox ID="txt_minini" runat="server" Height="22px" Width="81px">
+                </dx:ASPxTextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+
+                <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Producto">
+                </dx:ASPxLabel>
+
+                </td>
+            <td>
+                <dx:ASPxLabel ID="lbl_producto" runat="server">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel4" runat="server" Text="Hr Termino">
+                </dx:ASPxLabel>
+            </td>
+            <td colspan="2">
+                <dx:ASPxTextBox ID="txt_hrter" runat="server" Height="22px" Width="81px">
+                </dx:ASPxTextBox>
+            </td>
+            <td colspan="2">
+                <dx:ASPxTextBox ID="txt_minter" runat="server" Height="22px" Width="81px">
+                </dx:ASPxTextBox>
+            </td>
+            <td colspan="2">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+
+                <dx:ASPxLabel ID="ASPxLabel7" runat="server" Text="Maquina">
+                </dx:ASPxLabel>
+
+                </td>
+            <td>
+                <dx:ASPxComboBox ID="cbo_maquina" runat="server">
+                    <Items>
+                        <dx:ListEditItem Text="1" Value="1" />
+                        <dx:ListEditItem Text="2" Value="2" />
+                        <dx:ListEditItem Text="3" Value="3" />
+                        <dx:ListEditItem Text="4" Value="4" />
+                        <dx:ListEditItem Text="5" Value="5" />
+                        <dx:ListEditItem Text="6" Value="6" />
+                        <dx:ListEditItem Text="7" Value="7" />
+                        <dx:ListEditItem Text="SORTEX" Value="8" />
+                        <dx:ListEditItem Text="PAGE" Value="9" />
+                        <dx:ListEditItem Text="PELADORA" Value="10" />
+                        <dx:ListEditItem Text="General" Value="0" />
+                    </Items>
+                </dx:ASPxComboBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel6" runat="server" Text="Motivo">
+                </dx:ASPxLabel>
+            </td>
+            <td colspan="3">
+                <asp:LinqDataSource ID="LqDsMotivos" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_MotivoDentecion" Where="Categoria_Id == @Categoria_Id">
+                    <WhereParameters>
+                        <asp:ControlParameter ControlID="cbo_categoria" DefaultValue="0" 
+                            Name="Categoria_Id" PropertyName="Value" Type="Int32" />
+                    </WhereParameters>
+                </asp:LinqDataSource>
+                <dx:ASPxComboBox ID="cbo_motivo" runat="server" DataSourceID="LqDsMotivos" 
+                    TextField="Detencion_Motivo" ValueField="Motivo_Cod">
+                </dx:ASPxComboBox>
+            </td>
+            <td colspan="3">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+
+                <dx:ASPxLabel ID="ASPxLabel5" runat="server" Text="Categoria">
+                </dx:ASPxLabel>
+
+                </td>
+            <td>
+                <dx:ASPxComboBox ID="cbo_categoria" runat="server" AutoPostBack="True" 
+                    DataSourceID="LqDsCategorias" 
+                    onselectedindexchanged="cbo_categoria_SelectedIndexChanged" 
+                    TextField="Categoria_Nombre" ValueField="Categoria_Id">
+                </dx:ASPxComboBox>
+                <asp:LinqDataSource ID="LqDsCategorias" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_CategoriaDetenciones">
+                </asp:LinqDataSource>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel8" runat="server" Text="Observacion">
+                </dx:ASPxLabel>
+            </td>
+            <td colspan="3">
+                <dx:ASPxMemo ID="txt_comentario" runat="server" Height="71px" Width="170px">
+                </dx:ASPxMemo>
+            </td>
+            <td colspan="3">
+                <dx:ASPxButton ID="btn_agregar" runat="server" Text="Agregar" 
+                    onclick="btn_agregar_Click">
+                </dx:ASPxButton>
+            </td>
+        </tr>
+    </table>
+</div>
+<div>
+    <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="LqDsDetenciones" KeyFieldName="Detencion_Id">
+        <Columns>
+            <dx:GridViewDataTextColumn FieldName="Detencion_Id" ReadOnly="True" 
+                Visible="False" VisibleIndex="0">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="OF" FieldName="OF_Id" VisibleIndex="1">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Maquina" VisibleIndex="2">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Comentario" VisibleIndex="8">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Hr_Termino" FieldName="Hr_Termino" 
+                VisibleIndex="6">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Hr_Inicio" FieldName="Hr_Inicio" 
+                VisibleIndex="5">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataComboBoxColumn Caption="Categoria" FieldName="Categoria_Id" 
+                VisibleIndex="3">
+                <PropertiesComboBox DataSourceID="LqDsCategorias" TextField="Categoria_Nombre" 
+                    ValueField="Categoria_Id">
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn Caption="Motivo" FieldName="Motivo_Cod" 
+                VisibleIndex="4">
+                <PropertiesComboBox DataSourceID="LqDsMotivos0" TextField="Detencion_Motivo" 
+                    ValueField="Motivo_Cod">
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataTextColumn Caption="Total Minutos " 
+                FieldName="TotalMinutosDetencion" VisibleIndex="7">
+            </dx:GridViewDataTextColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:LinqDataSource ID="LqDsMotivos0" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+        TableName="CVT_MotivoDentecion">
+    </asp:LinqDataSource>
+    <asp:LinqDataSource ID="LqDsDetenciones" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+        TableName="CVT_Detencion" Where="OF_Id == @OF_Id">
+        <WhereParameters>
+            <asp:ControlParameter ControlID="cbo_of" DefaultValue="0" Name="OF_Id" 
+                PropertyName="Value" Type="Int32" />
+        </WhereParameters>
+    </asp:LinqDataSource>
+</div>
+</asp:Content>

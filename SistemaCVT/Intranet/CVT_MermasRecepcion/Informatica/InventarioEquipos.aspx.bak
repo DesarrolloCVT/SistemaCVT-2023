@@ -1,0 +1,548 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="InventarioEquipos.aspx.cs" Inherits="CVT_MermasRecepcion.Informatica.InventarioEquipos" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>Informatica</a></li>
+        <li><span id="current">Inventario Equipos</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Inventario Equipos</span>
+    <span class="tab-end"></span>
+</div>
+<div>
+    
+    <dx:ASPxPageControl ID="ASPxPageControl1" runat="server" ActiveTabIndex="0" 
+        Width="100%" SaveStateToCookies="True" SaveStateToCookiesID="1" >
+        <TabPages>
+            <dx:TabPage Text="SERVIDORES" Name="Servidores" ToolTip="Servidores">
+                <ContentCollection>
+                    <dx:ContentControl runat="server">
+                    <div><p><strong>SERVIDORES</strong></p></div>
+                    <div id="options">         
+          <a><asp:ImageButton ID="EServidores"    runat="server" 
+                            ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" OnClick="EServidores_Click"/> Exportar Excel</a>
+     <a>             <asp:ImageButton ID="NServidores"      runat="server" 
+              ImageUrl="~/Images/add.png"  style="width: 16px" OnClick="NServidores_Click"/>Nuevo</a>
+    </div>
+                        <dx:ASPxGridView ID="GvServidores" runat="server" AutoGenerateColumns="False" 
+                    DataSourceID="LqDsServidores">
+                            <SettingsEditing Mode="PopupEditForm">
+                            </SettingsEditing>
+                    <Columns>
+                        <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" 
+                            ShowInCustomizationForm="True" VisibleIndex="0">
+                        </dx:GridViewCommandColumn>
+                        <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="1">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Nombre_Equipo" VisibleIndex="2">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Dispositivo" VisibleIndex="3">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Direccion_IP" VisibleIndex="4">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Direccion_MAC" VisibleIndex="5">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Marca" VisibleIndex="6">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Modelo" VisibleIndex="7">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="RAM" VisibleIndex="8">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Procesador" VisibleIndex="9">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Disco" VisibleIndex="10">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Sistema_Operativo" VisibleIndex="11">
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+                <asp:LinqDataSource ID="LqDsServidores" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_INF_Servidor" EnableDelete="True" EnableInsert="True" 
+                            EnableUpdate="True">
+                </asp:LinqDataSource>
+                        <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" 
+                            ExportedRowType="All" GridViewID="GvServidores">
+                        </dx:ASPxGridViewExporter>
+                    </dx:ContentControl>
+                </ContentCollection>
+            </dx:TabPage>
+            <dx:TabPage Text="COMPUTADORES" Name="Computadores">
+                <ContentCollection>
+                    <dx:ContentControl runat="server">
+                    <div><p><strong>COMPUTADORES</strong></p></div>
+                    <div id="Div1">         
+          <a><asp:ImageButton ID="EComputadores"    runat="server" 
+                            ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" OnClick="EComputadores_Click" /> Exportar Excel</a>
+     <a>             <asp:ImageButton ID="NComputadores" OnClick="NComputadores_Click"     runat="server" 
+              ImageUrl="~/Images/add.png"  style="width: 16px"/>Nuevo</a>
+    </div>
+                     <dx:ASPxGridView ID="GvComputadores" runat="server" AutoGenerateColumns="False" 
+                    DataSourceID="LqDsComputadores">
+                    <SettingsEditing Mode="PopupEditForm">
+                            </SettingsEditing>
+                    <Columns>
+                        <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" 
+                            ShowInCustomizationForm="True" VisibleIndex="0">
+                        </dx:GridViewCommandColumn>
+                        <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="1">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Nombre_Equipo" VisibleIndex="2">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Dispositivo" VisibleIndex="3">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Direccion_IP" VisibleIndex="4">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Direccion_MAC" VisibleIndex="5">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Marca" VisibleIndex="6">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Modelo" VisibleIndex="7">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="RAM" VisibleIndex="8">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Procesador" VisibleIndex="9">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Disco" VisibleIndex="10">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Sistema_Operativo" VisibleIndex="11">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Area_u_Oficina" VisibleIndex="12">
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+                <asp:LinqDataSource ID="LqDsComputadores" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_INF_Computador" EnableDelete="True" EnableInsert="True" 
+                            EnableUpdate="True">
+                </asp:LinqDataSource>
+                        <dx:ASPxGridViewExporter ID="ASPxGridViewExporter2" runat="server" 
+                            ExportedRowType="All" GridViewID="GvComputadores">
+                        </dx:ASPxGridViewExporter>
+                    </dx:ContentControl>
+                </ContentCollection>
+            </dx:TabPage>
+             <dx:TabPage Text="IMPRESORAS" Name="Impresoras">
+                <ContentCollection>
+                    <dx:ContentControl ID="ContentControl1" runat="server">
+                    <div><p><strong>IMPRESORAS</strong></p></div>
+                    <div id="Div2">         
+          <a><asp:ImageButton ID="EImpresoras"    runat="server" 
+                            ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" OnClick="EImpresoras_Click" /> Exportar Excel</a>
+     <a>             <asp:ImageButton ID="NImpresoras"      runat="server" 
+              ImageUrl="~/Images/add.png"  style="width: 16px" OnClick="NImpresoras_Click"/>Nuevo</a>
+    </div>
+                     <dx:ASPxGridView ID="GvImpresoras" runat="server" AutoGenerateColumns="False" 
+                    DataSourceID="LqDsImpresoras">
+                    <SettingsEditing Mode="PopupEditForm">
+                            </SettingsEditing>
+                    <Columns>
+                        <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" 
+                            ShowInCustomizationForm="True" VisibleIndex="0">
+                        </dx:GridViewCommandColumn>
+                        <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="1">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Tipo_Dispositivo" VisibleIndex="2">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Tipo_Contrato" VisibleIndex="3">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Marca" VisibleIndex="4">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Modelo" VisibleIndex="5">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Usuario" VisibleIndex="6">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Contraseña" VisibleIndex="7">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="MAC" VisibleIndex="8">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Direccion_IP" VisibleIndex="9">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Conectividad" VisibleIndex="10">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Tóner" VisibleIndex="11">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Ubicación___Usuario" VisibleIndex="12">
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+                <asp:LinqDataSource ID="LqDsImpresoras" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_INF_Impresora" EnableDelete="True" EnableInsert="True" 
+                            EnableUpdate="True">
+                </asp:LinqDataSource>
+                            <dx:ASPxGridViewExporter ID="ASPxGridViewExporter3" runat="server" 
+                            ExportedRowType="All" GridViewID="GvImpresoras">
+                        </dx:ASPxGridViewExporter>
+                            </dx:ContentControl>
+                </ContentCollection>
+            </dx:TabPage>
+             <dx:TabPage Text="RF" Name="RF">
+                <ContentCollection>
+                    <dx:ContentControl ID="ContentControl2" runat="server">
+                    <div><p><strong>RF</strong></p></div>
+                    <div id="Div3">         
+          <a><asp:ImageButton ID="ERF"    runat="server" OnClick="ERF_Click"
+                            ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" /> Exportar Excel</a>
+     <a>             <asp:ImageButton ID="NRF"      runat="server" OnClick="NRF_Click"
+              ImageUrl="~/Images/add.png"  style="width: 16px"/>Nuevo</a>
+    </div>
+                     <dx:ASPxGridView ID="GvRF" runat="server" AutoGenerateColumns="False" 
+                    DataSourceID="LqDsRF">
+                    <SettingsEditing Mode="PopupEditForm">
+                            </SettingsEditing>
+                    <Columns>
+                        <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" 
+                            ShowInCustomizationForm="True" VisibleIndex="0">
+                        </dx:GridViewCommandColumn>
+                        <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="1">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Dispositivo" VisibleIndex="2">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Marca" VisibleIndex="3">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Modelo" VisibleIndex="4">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="IP" VisibleIndex="5">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Part_Number" VisibleIndex="6">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Serial_Number" VisibleIndex="7">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="MAC" VisibleIndex="8">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Sistema_Operativo" VisibleIndex="9">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="RAM" VisibleIndex="10">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="CPU" VisibleIndex="11">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Flash_Size" VisibleIndex="12">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Usuario" VisibleIndex="13">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Perfil" VisibleIndex="14">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="F15" VisibleIndex="15">
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+                <asp:LinqDataSource ID="LqDsRF" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_INF_RadioFrecuencia" EnableDelete="True" EnableInsert="True" 
+                            EnableUpdate="True">
+                </asp:LinqDataSource>
+                            <dx:ASPxGridViewExporter ID="ASPxGridViewExporter4" runat="server" 
+                            ExportedRowType="All" GridViewID="GvRF">
+                        </dx:ASPxGridViewExporter>
+                            </dx:ContentControl>
+                </ContentCollection>
+            </dx:TabPage>
+             <dx:TabPage Text="RED" Name="RED">
+                <ContentCollection>
+                    <dx:ContentControl ID="ContentControl3" runat="server">
+                    <div><p><strong>RED</strong></p></div>
+                    <div id="Div4">         
+          <a><asp:ImageButton ID="ERED"    runat="server" 
+                            ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" OnClick="ERED_Click" /> Exportar Excel</a>
+     <a>             <asp:ImageButton ID="NRED"      runat="server" 
+              ImageUrl="~/Images/add.png"  style="width: 16px" OnClick="NRED_Click"/>Nuevo</a>
+    </div>
+                     <dx:ASPxGridView ID="GvRED" runat="server" AutoGenerateColumns="False" 
+                    DataSourceID="LqDsRED">
+                    <SettingsEditing Mode="PopupEditForm">
+                            </SettingsEditing>
+                    <Columns>
+                        <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" 
+                            ShowInCustomizationForm="True" VisibleIndex="0">
+                        </dx:GridViewCommandColumn>
+                        <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="1">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Dispositivo" VisibleIndex="2">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="IP" VisibleIndex="3">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="MAC" VisibleIndex="4">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Usuario" VisibleIndex="5">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Contraseña" VisibleIndex="6">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Marca" VisibleIndex="7">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Modelo_" VisibleIndex="8">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Velocidad" VisibleIndex="9">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Puertos_" VisibleIndex="10">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="SFP" VisibleIndex="11">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Firmware" VisibleIndex="12">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Ubicación" VisibleIndex="13">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Gateway" VisibleIndex="14">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Mascara_Subred" VisibleIndex="15">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="IP_Publica" VisibleIndex="16">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="DNS" VisibleIndex="17">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataDateColumn FieldName="Fecha_Compra" VisibleIndex="18">
+                        </dx:GridViewDataDateColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+                <asp:LinqDataSource ID="LqDsRED" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_INF_EqRED" EnableDelete="True" EnableInsert="True" 
+                            EnableUpdate="True">
+                </asp:LinqDataSource>
+                            <dx:ASPxGridViewExporter ID="ASPxGridViewExporter5" runat="server" 
+                            ExportedRowType="All" GridViewID="GvRED">
+                        </dx:ASPxGridViewExporter>
+                            </dx:ContentControl>
+                </ContentCollection>
+            </dx:TabPage>
+             <dx:TabPage Text="WIFI" Name="WIFI">
+                <ContentCollection>
+                    <dx:ContentControl ID="ContentControl4" runat="server">
+                    <div><p><strong>WIFI</strong></p></div>
+                    <div id="Div5">         
+          <a><asp:ImageButton ID="EWIFI"    runat="server" OnClick="EWIFI_Click"
+                            ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" /> Exportar Excel</a>
+     <a>             <asp:ImageButton ID="NWIFI"      runat="server" OnClick="NWIFI_Click"
+              ImageUrl="~/Images/add.png"  style="width: 16px"/>Nuevo</a>
+    </div>
+                      <dx:ASPxGridView ID="GvWIFI" runat="server" AutoGenerateColumns="False" 
+                    DataSourceID="LqDsWifi">
+                    <SettingsEditing Mode="PopupEditForm">
+                            </SettingsEditing>
+                    <Columns>
+                        <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" 
+                            ShowInCustomizationForm="True" VisibleIndex="0">
+                        </dx:GridViewCommandColumn>
+                        <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="1">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Dispositivo" VisibleIndex="2">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Usuario_Adm" VisibleIndex="3">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Contraseña_Adm" VisibleIndex="4">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Marca" VisibleIndex="5">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Modelo" VisibleIndex="6">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="IP" VisibleIndex="7">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="MAC" VisibleIndex="8">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Ubicación" VisibleIndex="9">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Security_Type" VisibleIndex="10">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Canal" VisibleIndex="11">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Firmware" VisibleIndex="12">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Conectado_a" VisibleIndex="13">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="SSID" VisibleIndex="14">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Clave" VisibleIndex="15">
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+                <asp:LinqDataSource ID="LqDsWifi" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_INF_EqWireless" EnableDelete="True" EnableInsert="True" 
+                            EnableUpdate="True">
+                </asp:LinqDataSource>
+                            <dx:ASPxGridViewExporter ID="ASPxGridViewExporter6" runat="server" 
+                            ExportedRowType="All" GridViewID="GvWIFI">
+                        </dx:ASPxGridViewExporter>
+                            </dx:ContentControl>
+                </ContentCollection>
+            </dx:TabPage>
+             <dx:TabPage Text="OTROS" Name="OTROS">
+                <ContentCollection>
+                    <dx:ContentControl ID="ContentControl5" runat="server">
+                    <div><p><strong>OTROS</strong></p></div>
+                    <div id="Div6">         
+          <a><asp:ImageButton ID="EOtros"    runat="server" 
+                            ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" OnClick="EOtros_Click" /> Exportar Excel</a>
+     <a>             <asp:ImageButton ID="NOtros"      runat="server" 
+              ImageUrl="~/Images/add.png"  style="width: 16px" OnClick="NOtros_Click"/>Nuevo</a>
+    </div>
+                    <dx:ASPxGridView ID="GvOtros" runat="server" AutoGenerateColumns="False" 
+                    DataSourceID="LqDsOtros">
+                    <SettingsEditing Mode="PopupEditForm">
+                            </SettingsEditing>
+                    <Columns>
+                        <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" 
+                            ShowInCustomizationForm="True" VisibleIndex="0">
+                        </dx:GridViewCommandColumn>
+                        <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="1">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Dispositivo" VisibleIndex="2">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Proveedor" VisibleIndex="3">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Marca" VisibleIndex="4">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Modelo" VisibleIndex="5">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Direccion_IP" VisibleIndex="6">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="MAC" VisibleIndex="7">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Base_Datos" VisibleIndex="8">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Usuario_BD" VisibleIndex="9">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Contraseña_BD" VisibleIndex="10">
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+                <asp:LinqDataSource ID="LqDsOtros" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_INF_OtroEq" EnableDelete="True" EnableInsert="True" 
+                            EnableUpdate="True">
+                </asp:LinqDataSource>
+                            <dx:ASPxGridViewExporter ID="ASPxGridViewExporter7" runat="server" 
+                            ExportedRowType="All" GridViewID="GvOtros">
+                        </dx:ASPxGridViewExporter>
+                            </dx:ContentControl>
+                </ContentCollection>
+            </dx:TabPage>
+             <dx:TabPage Text="VIDEO VIGILANCIA" Name="VIDEO VIGILANCIA">
+                <ContentCollection>
+                    <dx:ContentControl ID="ContentControl6" runat="server">
+                    <div><p><strong>VIDEO VIGILANCIA</strong></p></div>
+                    <div id="Div7">         
+          <a><asp:ImageButton ID="EVideo"    runat="server" OnClick="EVideo_Click"
+                            ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" /> Exportar Excel</a>
+     <a>             <asp:ImageButton ID="NVideo"      runat="server" OnClick="NVideo_Click"
+              ImageUrl="~/Images/add.png" style="width: 16px"/>Nuevo</a>
+    </div>
+                    <dx:ASPxGridView ID="GvVideo" runat="server" AutoGenerateColumns="False" 
+                    DataSourceID="LqDsVideo">
+                    <SettingsEditing Mode="PopupEditForm">
+                            </SettingsEditing>
+                    <Columns>
+                        <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" 
+                            ShowInCustomizationForm="True" VisibleIndex="0">
+                        </dx:GridViewCommandColumn>
+                        <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="1">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Dispositivo" VisibleIndex="2">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Tipo_" VisibleIndex="3">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Modelo" VisibleIndex="4">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Marca" VisibleIndex="5">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Usuario" VisibleIndex="6">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Contraseña" VisibleIndex="7">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Acceso" VisibleIndex="8">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Dirección_MAC" VisibleIndex="9">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Firmware" VisibleIndex="10">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Resolución" VisibleIndex="11">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="NVR" VisibleIndex="12">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Conectada__a" VisibleIndex="13">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Monitoreo" VisibleIndex="14">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Almacenamiento" VisibleIndex="15">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="F16" VisibleIndex="16">
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+                <asp:LinqDataSource ID="LqDsVideo" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_INF_VideoVigilancia" EnableDelete="True" EnableInsert="True" 
+                            EnableUpdate="True">
+                </asp:LinqDataSource>
+                            <dx:ASPxGridViewExporter ID="ASPxGridViewExporter8" runat="server" 
+                            ExportedRowType="All" GridViewID="GvVideo">
+                        </dx:ASPxGridViewExporter>
+                            </dx:ContentControl>
+                </ContentCollection>
+            </dx:TabPage>
+             <dx:TabPage Text="UPS" Name="UPS">
+                <ContentCollection>
+                    <dx:ContentControl ID="ContentControl7" runat="server">
+                    <div><p><strong>UPS</strong></p></div>
+                    <div id="Div8">         
+          <a><asp:ImageButton ID="EUPS"    runat="server" 
+                            ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" OnClick="EUPS_Click" /> Exportar Excel</a>
+     <a>             <asp:ImageButton ID="NUPS"      runat="server" 
+              ImageUrl="~/Images/add.png" style="width: 16px" OnClick="NUPS_Click"/>Nuevo</a>
+    </div>
+                     <dx:ASPxGridView ID="GvUPS" runat="server" AutoGenerateColumns="False" 
+                    DataSourceID="LqDsUPS">
+                    <SettingsEditing Mode="PopupEditForm">
+                            </SettingsEditing>
+                    <Columns>
+                        <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" 
+                            ShowInCustomizationForm="True" VisibleIndex="0">
+                        </dx:GridViewCommandColumn>
+                        <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="1">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Dispositivo" VisibleIndex="2">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Marca" VisibleIndex="3">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Modelo" VisibleIndex="4">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Capacidad" VisibleIndex="5">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Entrada" VisibleIndex="6">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Salida" VisibleIndex="7">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Potencia" VisibleIndex="8">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Numero_de_Tomas" VisibleIndex="9">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Tiempo_de_Respaldo__" VisibleIndex="10">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Rack_de_comunicaciones" VisibleIndex="11">
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+                <asp:LinqDataSource ID="LqDsUPS" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_INF_EqRespaldoEnergia" EnableDelete="True" EnableInsert="True" 
+                            EnableUpdate="True">
+                </asp:LinqDataSource>
+                            <dx:ASPxGridViewExporter ID="ASPxGridViewExporter9" runat="server" 
+                            ExportedRowType="All" GridViewID="GvUPS">
+                        </dx:ASPxGridViewExporter>
+                            </dx:ContentControl>
+                </ContentCollection>
+            </dx:TabPage>
+        </TabPages>
+        <TabStyle Font-Bold="True" Font-Italic="False" Font-Size="Medium" 
+            ForeColor="Black">
+        </TabStyle>
+    </dx:ASPxPageControl>
+</div>
+</asp:Content>

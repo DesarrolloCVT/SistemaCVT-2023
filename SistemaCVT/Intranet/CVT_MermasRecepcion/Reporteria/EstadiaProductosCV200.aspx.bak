@@ -1,0 +1,59 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="EstadiaProductosCV200.aspx.cs" Inherits="CVT_MermasRecepcion.Reporteria.EstadiaProductosCV200" %>
+
+<%@ Register Assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>Informes</a></li>
+        <li><span id="current">Estadia Productos CV200</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Estadia Productos CV200</span>
+    <span class="tab-end"></span>
+    <div id="options">         
+          <a><asp:ImageButton ID="cmdExcel" runat="server" 
+              ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" onclick="cmdExcel_Click" 
+              style="width: 20px"/> Exportar Excel</a>
+    </div>
+</div>
+<div>
+    <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="LqDsEstadia">
+        <SettingsPager PageSize="100">
+        </SettingsPager>
+        <Columns>
+            <dx:GridViewDataTextColumn Caption="Codigo" 
+                FieldName="ArticleProvider_CodClient" VisibleIndex="0">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Producto" 
+                FieldName="ArticleProvider_Description" VisibleIndex="1">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Site_Id" Visible="False" VisibleIndex="2">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Dias" FieldName="dias" VisibleIndex="5">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Cantidad" FieldName="Cant" VisibleIndex="4">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="NPallet" FieldName="Package_SSCC" 
+                VisibleIndex="3">
+            </dx:GridViewDataTextColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:LinqDataSource ID="LqDsEstadia" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTWMSDataContext" EntityTypeName="" 
+        OrderBy="ArticleProvider_CodClient, dias desc" 
+        TableName="CVT_VW_EstadiaProductosCV200">
+    </asp:LinqDataSource>
+
+    <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" 
+        GridViewID="GvDatos">
+    </dx:ASPxGridViewExporter>
+
+</div>
+</asp:Content>

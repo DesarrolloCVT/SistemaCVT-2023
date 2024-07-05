@@ -1,0 +1,72 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Maquinas.aspx.cs" Inherits="CVT_MermasRecepcion.Mantencion.Maquinas" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>Mantencion</a></li>
+        <li><span id="current">Maquinas</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Maquinas</span>
+    <span class="tab-end"></span>
+    <div id="options">         
+          <a><asp:ImageButton ID="cmdExcel"    runat="server" ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" onclick="cmdExcel_Click" /> Exportar Excel</a>
+     <a>             
+          <asp:ImageButton ID="cmdNew"      runat="server" 
+              ImageUrl="~/Images/add.png"  onclick="cmdNew_Click" 
+              style="height: 16px;"/>Nuevo</a>
+    </div>
+</div>
+<div>
+
+    <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="LqDsArticulos" KeyFieldName="ID" 
+        EnableViewState="False" onrowinserting="GvDatos_RowInserting" 
+        onrowcommand="GvDatos_RowCommand">
+        <SettingsPager PageSize="25">
+        </SettingsPager>
+        <SettingsEditing Mode="PopupEditForm">
+        </SettingsEditing>
+        <Settings ShowFilterRow="True" />
+        <SettingsDataSecurity AllowDelete="False" />
+        <Columns>
+            <dx:GridViewDataTextColumn FieldName="ID" ReadOnly="True" 
+                Visible="False" VisibleIndex="0">
+                <EditFormSettings Visible="False" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Codigo" VisibleIndex="1">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Descricion" 
+                VisibleIndex="2">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Padre_ID" Visible="False" 
+                VisibleIndex="3">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataHyperLinkColumn Caption="Detalle" VisibleIndex="4">
+                 <EditFormSettings Visible="False" />
+                <DataItemTemplate>
+                    <asp:ImageButton ID="detalle" CommandName="cmdDetalle" runat="server" ImageUrl="~/Images/boxadd.png" />
+                </DataItemTemplate>
+            </dx:GridViewDataHyperLinkColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:LinqDataSource ID="LqDsArticulos" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" 
+        EnableInsert="True" EnableUpdate="True" EntityTypeName="" 
+        TableName="CVT_MaquinaComponente" 
+        EnableDelete="True" Where="Padre_ID == @Padre_ID">
+        <WhereParameters>
+            <asp:Parameter DefaultValue="0" Name="Padre_ID" Type="Int32" />
+        </WhereParameters>
+    </asp:LinqDataSource>
+    <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server">
+    </dx:ASPxGridViewExporter>
+
+</div>
+</asp:Content>
+

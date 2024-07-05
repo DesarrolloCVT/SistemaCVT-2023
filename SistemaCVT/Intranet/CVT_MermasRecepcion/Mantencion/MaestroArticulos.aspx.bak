@@ -1,0 +1,81 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="MaestroArticulos.aspx.cs" Inherits="CVT_MermasRecepcion.Mantencion.MaestroArticulos" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>Mantencion</a></li>
+        <li><span id="current">Articulos</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Articulos</span>
+    <span class="tab-end"></span>
+    <div id="options">         
+          <a><asp:ImageButton ID="cmdExcel"    runat="server" ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" onclick="cmdExcel_Click" /> Exportar Excel</a>
+     <a>             <asp:ImageButton ID="cmdNew"      runat="server" 
+              ImageUrl="~/Images/add.png"  onclick="cmdNew_Click" 
+              style="width: 16px; height: 16px;"/>Nuevo</a>
+    </div>
+</div>
+<div>
+
+    <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="LqDsArticulos" KeyFieldName="Articulo_Id" 
+        EnableViewState="False" onrowinserting="GvDatos_RowInserting">
+        <SettingsPager PageSize="25">
+        </SettingsPager>
+        <SettingsEditing Mode="PopupEditForm">
+        </SettingsEditing>
+        <Settings ShowFilterRow="True" />
+        <SettingsDataSecurity AllowDelete="False" />
+        <Columns>
+            <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" 
+                VisibleIndex="0">
+            </dx:GridViewCommandColumn>
+            <dx:GridViewDataTextColumn FieldName="Articulo_Id" ReadOnly="True" 
+                Visible="False" VisibleIndex="1">
+                <EditFormSettings Visible="False" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Articulo_Codigo" VisibleIndex="2" 
+                Caption="Codigo">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Nombre" FieldName="Articulo_Nombre" 
+                VisibleIndex="3">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Ubicacion" FieldName="Ariticulo_Ubicacion" 
+                VisibleIndex="5">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Stock" FieldName="Articulo_Stock" 
+                VisibleIndex="6">
+                <EditFormSettings Visible="False" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Stock Minimo" FieldName="Articulo_StockMin" 
+                VisibleIndex="7">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Proveedor" FieldName="Articulo_Proveedor" 
+                VisibleIndex="4">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Tipo_Articulo" Visible="False" 
+                VisibleIndex="8">
+            </dx:GridViewDataTextColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:LinqDataSource ID="LqDsArticulos" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" 
+        EnableInsert="True" EnableUpdate="True" EntityTypeName="" 
+        TableName="CVT_Articulo" 
+        OrderBy="Articulo_Codigo" Where="Tipo_Articulo == @Tipo_Articulo">
+        <WhereParameters>
+            <asp:Parameter DefaultValue="M" Name="Tipo_Articulo" Type="String" />
+        </WhereParameters>
+    </asp:LinqDataSource>
+    <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server">
+    </dx:ASPxGridViewExporter>
+
+</div>
+</asp:Content>
+

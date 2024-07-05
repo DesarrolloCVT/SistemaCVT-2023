@@ -1,0 +1,71 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ControlCierreRecepciones.aspx.cs" Inherits="CVT_MermasRecepcion.WMS.ControlCierreRecepciones" %>
+
+<%@ Register Assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Data.Linq" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>WMS</a></li>
+        <li><span id="current">Control Cierre Recepciones</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Control Cierre Recepciones</span>
+    <span class="tab-end"></span>
+    <div id="options">         
+          <a><asp:ImageButton ID="cmdExcel" runat="server" ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" onclick="cmdExcel_Click"/> Exportar Excel</a>
+     
+    </div>
+</div>
+<div>
+    <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="ObjDsControlCierre">
+        <SettingsPager AlwaysShowPager="True" PageSize="1000" Visible="False">
+        </SettingsPager>
+        <Settings ShowFilterRow="True" />
+        <Columns>
+            <dx:GridViewCommandColumn ShowClearFilterButton="True" VisibleIndex="0">
+            </dx:GridViewCommandColumn>
+            <dx:GridViewDataTextColumn Caption="N OC" FieldName="NumOcSap" VisibleIndex="1">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="N Recepcion" FieldName="Reception_Id" 
+                VisibleIndex="2">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Bodega" VisibleIndex="3">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Proveedor" FieldName="Business_Partner" 
+                VisibleIndex="4">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Bultos" FieldName="Cantidad1" 
+                VisibleIndex="5">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Mensaje" FieldName="MensajeValida" 
+                VisibleIndex="6">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Est Recepcion" FieldName="EstadoRec" 
+                VisibleIndex="7">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Est OC" FieldName="EstadoOC" 
+                VisibleIndex="8">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Est Sincronizacion" FieldName="EstadoSync" 
+                VisibleIndex="9">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="N Entrada SAP" FieldName="NumEntrada" 
+                VisibleIndex="10">
+            </dx:GridViewDataTextColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:ObjectDataSource ID="ObjDsControlCierre" runat="server" 
+        SelectMethod="ObtieneControlCierreRecepciones" 
+        TypeName="DBMermasRecepcion.WMSClass"></asp:ObjectDataSource>
+    <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" 
+        GridViewID="GvDatos">
+    </dx:ASPxGridViewExporter>
+</div>
+</asp:Content>

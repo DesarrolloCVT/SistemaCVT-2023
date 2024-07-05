@@ -1,0 +1,84 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="DetalleMovimientos.aspx.cs" Inherits="CVT_MermasRecepcion.Mantencion.DetalleMovimientos" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>Mantencion</a></li>
+        <li><span id="current">Movimientos</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Detalle Movimientos</span>
+    <span class="tab-end"></span>
+    <div id="options">         
+          <a><asp:ImageButton ID="cmdExcel"    runat="server" ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" onclick="cmdExcel_Click" /> Exportar Excel</a>
+     <a>             <asp:ImageButton ID="cmdNew"      runat="server" 
+              ImageUrl="~/Images/add.png"  onclick="cmdNew_Click" 
+              style="width: 16px; height: 16px;"/>Nuevo</a>
+    </div>
+</div>
+<div>
+
+    <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="LqDsMovimientosDetalles" KeyFieldName="MovimientoDetalle_Id" 
+        onrowinserting="GvDatos_RowInserting" onrowdeleting="GvDatos_RowDeleting">
+        <SettingsPager PageSize="25">
+        </SettingsPager>
+        <SettingsEditing Mode="PopupEditForm">
+        </SettingsEditing>
+        <Settings ShowFilterRow="True" />
+        <Columns>
+            <dx:GridViewCommandColumn ShowDeleteButton="True" VisibleIndex="0">
+            </dx:GridViewCommandColumn>
+            <dx:GridViewDataTextColumn FieldName="Movimiento_Id" 
+                VisibleIndex="1" Visible="False">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="MovimientoDetalle_Id" 
+                VisibleIndex="2" ReadOnly="True" Visible="False">
+                <EditFormSettings Visible="False" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Cantidad" 
+                VisibleIndex="4">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Observacion" 
+                VisibleIndex="5">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataComboBoxColumn Caption="Articulo" FieldName="Articulo_Id" 
+                VisibleIndex="3">
+                <PropertiesComboBox DataSourceID="LqDsArticulos" ValueField="Articulo_Id">
+                    <Columns>
+                        <dx:ListBoxColumn Caption="Codigo" FieldName="Articulo_Codigo">
+                        </dx:ListBoxColumn>
+                        <dx:ListBoxColumn Caption="Nombre" FieldName="Articulo_Nombre">
+                        </dx:ListBoxColumn>
+                    </Columns>
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:LinqDataSource ID="LqDsMovimientosDetalles" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" 
+        EnableDelete="True" EnableInsert="True" EnableUpdate="True" EntityTypeName="" 
+        TableName="CVT_DetalleMovimientoMantencion" OrderBy="Movimiento_Id desc" 
+        Where="Movimiento_Id == @Movimiento_Id">
+        <WhereParameters>
+            <asp:SessionParameter DefaultValue="0" Name="Movimiento_Id" 
+                SessionField="MovimientoId" Type="Int32" />
+        </WhereParameters>
+    </asp:LinqDataSource>
+    <asp:LinqDataSource ID="LqDsArticulos" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" 
+        EnableDelete="True" EnableInsert="True" EnableUpdate="True" EntityTypeName="" 
+        TableName="CVT_ArticuloMantencion" 
+        OrderBy="Articulo_Codigo">
+    </asp:LinqDataSource>
+    <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server">
+    </dx:ASPxGridViewExporter>
+
+</div>
+</asp:Content>
+

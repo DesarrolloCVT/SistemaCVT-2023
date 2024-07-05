@@ -1,0 +1,121 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="CambioFechas.aspx.cs" Inherits="CVT_MermasRecepcion.WMS.CambioFechas" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .style1
+        {
+            height: 23px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>WMS</a></li>
+        <li><span id="current">Edita Fechas</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Edita Fechas</span>
+    <span class="tab-end"></span>   
+</div>
+<div>
+    <table class="dxflInternalEditorTable">
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="N Pallet">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxTextBox ID="txt_pallet" runat="server" Width="170px">
+                    <ValidationSettings>
+                        <RequiredField IsRequired="True" />
+                    </ValidationSettings>
+                </dx:ASPxTextBox>
+            </td>
+            <td>
+                <dx:ASPxButton ID="btn_buscar" runat="server" onclick="btn_buscar_Click" 
+                    Text="Buscar" style="height: 23px">
+                </dx:ASPxButton>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel7" runat="server" Text="Producto">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="lbl_producto" runat="server">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel5" runat="server" Text="Cantidad">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="lbl_cantidad" runat="server">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style1">
+                <dx:ASPxLabel ID="ASPxLabel6" runat="server" Text="Lote">
+                </dx:ASPxLabel>
+            </td>
+            <td class="style1">
+                <dx:ASPxLabel ID="lbl_lote" runat="server">
+                </dx:ASPxLabel>
+            </td>
+            <td class="style1">
+                </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="F Produccion">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxDateEdit ID="cb_fp" runat="server">
+                </dx:ASPxDateEdit>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel3" runat="server" Text="F Vencimiento">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxDateEdit ID="cb_fv" runat="server">
+                </dx:ASPxDateEdit>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel4" runat="server" Text="L Proveedor">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxTextBox ID="txt_lp" runat="server" Width="170px">
+                </dx:ASPxTextBox>
+            </td>
+            <td>
+                <dx:ASPxButton ID="btn_cambiar" runat="server" onclick="btn_cambiar_Click" 
+                    Text="Cambiar">
+                </dx:ASPxButton>
+            </td>
+        </tr>
+    </table>
+</div>
+</asp:Content>

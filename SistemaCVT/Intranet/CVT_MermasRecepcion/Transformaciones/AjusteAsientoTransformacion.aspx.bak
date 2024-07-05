@@ -1,0 +1,171 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AjusteAsientoTransformacion.aspx.cs" Inherits="CVT_MermasRecepcion.Transformaciones.AjusteAsientoTransformacion" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>Transformacion</a></li>
+        <li><span id="current">Transformacion Ajuste Asiento Contable</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Asiento Contable con Diferencia</span>
+    <span class="tab-end"></span>
+    <div id="options">         
+          <a><asp:ImageButton ID="cmdExcel"    runat="server" 
+              ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" onclick="cmdExcel_Click" 
+              style="height: 20px" /> Exportar Excel</a>
+     
+    </div>
+</div>
+<div>
+
+    <table class="style1">
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="MES">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="AÑO">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxComboBox ID="cbo_mes" runat="server">
+                    <Items>
+                        <dx:ListEditItem Text="Enero" Value="1" />
+                        <dx:ListEditItem Text="Febrero" Value="2" />
+                        <dx:ListEditItem Text="Marzo" Value="3" />
+                        <dx:ListEditItem Text="Abril" Value="4" />
+                        <dx:ListEditItem Text="Mayo" Value="5" />
+                        <dx:ListEditItem Text="Junio" Value="6" />
+                        <dx:ListEditItem Text="Julio" Value="7" />
+                        <dx:ListEditItem Text="Agosto" Value="8" />
+                        <dx:ListEditItem Text="Septiembre" Value="9" />
+                        <dx:ListEditItem Text="Octubre" Value="10" />
+                        <dx:ListEditItem Text="Noviembre" Value="11" />
+                        <dx:ListEditItem Text="Diciembre" Value="12" />
+                    </Items>
+                </dx:ASPxComboBox>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cbo_año" runat="server">
+                    <Items>
+                        <dx:ListEditItem Text="2019" Value="2019" />
+                        <dx:ListEditItem Text="2020" Value="2020" />
+                        <dx:ListEditItem Text="2021" Value="2021" />
+                        <dx:ListEditItem Text="2022" Value="2022" />
+                        <dx:ListEditItem Text="2023" Value="2023" />
+                        <dx:ListEditItem Text="2024" Value="2024" />
+                        <dx:ListEditItem Text="2025" Value="2025" />
+                    </Items>
+                </dx:ASPxComboBox>
+            </td>
+            <td>
+                <dx:ASPxButton ID="btn_filtrar" runat="server" Text="Filtrar" 
+                    onclick="btn_filtrar_Click">
+                </dx:ASPxButton>
+            </td>
+        </tr>
+    </table>
+
+</div>
+<div>
+<a>Resumen</a>
+    <dx:ASPxGridView ID="GvResumen" runat="server" DataSourceID="LqDsResumen" 
+        AutoGenerateColumns="False">
+        <Columns>
+            <dx:GridViewDataTextColumn FieldName="CtaPEP" VisibleIndex="0">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Debit" VisibleIndex="1">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Credit" VisibleIndex="2">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Diff" VisibleIndex="3">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="CtaExistencia" VisibleIndex="4">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Mes" VisibleIndex="5">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Año" VisibleIndex="6">
+            </dx:GridViewDataTextColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:LinqDataSource ID="LqDsResumen" runat="server" EntityTypeName="" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTSAPDataContext" 
+        TableName="CVT_VW_TransformacionesAsientoConDiferenciaResumen" 
+        Where="Mes == @Mes &amp;&amp; Año == @Año">
+        <WhereParameters>
+            <asp:ControlParameter ControlID="cbo_mes" DefaultValue="0" Name="Mes" 
+                PropertyName="Value" Type="Int32" />
+            <asp:ControlParameter ControlID="cbo_año" DefaultValue="0" Name="Año" 
+                PropertyName="Value" Type="Int32" />
+        </WhereParameters>
+    </asp:LinqDataSource>
+</div>
+<div>
+<a>Detalle</a>
+    <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="LqDsTransformaciones" 
+        onrowcommand="GvDatos_RowCommand" 
+        onhtmlrowcreated="GvDatos_HtmlRowCreated">
+        <SettingsPager PageSize="25">
+        </SettingsPager>
+        <SettingsEditing Mode="PopupEditForm">
+        </SettingsEditing>
+        <Settings ShowFilterRow="True" />
+        <Columns>
+            <dx:GridViewDataTextColumn FieldName="CtaPEP" 
+                VisibleIndex="0">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Debit" VisibleIndex="1">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Credit" VisibleIndex="2">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Diff" VisibleIndex="3">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="U_IdWms" VisibleIndex="4">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="CtaExistencia" VisibleIndex="5">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Mes" VisibleIndex="6">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Año" VisibleIndex="7">
+            </dx:GridViewDataTextColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:LinqDataSource ID="LqDsTransformaciones" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTSAPDataContext" 
+        EnableDelete="True" EnableInsert="True" EnableUpdate="True" EntityTypeName="" 
+        TableName="CVT_VW_TransformacionesAsientoConDiferencia" 
+        Where="Año == @Año &amp;&amp; Mes == @Mes">
+        <WhereParameters>
+            <asp:ControlParameter ControlID="cbo_año" DefaultValue="0" Name="Año" 
+                PropertyName="Value" Type="Int32" />
+            <asp:ControlParameter ControlID="cbo_mes" DefaultValue="0" Name="Mes" 
+                PropertyName="Value" Type="Int32" />
+        </WhereParameters>
+    </asp:LinqDataSource>
+    <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server">
+    </dx:ASPxGridViewExporter>
+
+</div>
+<dx:ASPxLoadingPanel ID="LoadingPanel" runat="server" ClientInstanceName="LoadingPanel"
+        Modal="True">
+    </dx:ASPxLoadingPanel>
+</asp:Content>
+
+

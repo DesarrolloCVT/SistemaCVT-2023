@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CVT_CONTROL_BIO" Class="DBMLCVTControlBIODataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=alerce;Initial Catalog=CVT_CONTROL_BIO;Persist Security Info=True;User ID=sa;Encrypt=False" SettingsObjectName="DBMermasRecepcion.Properties.Settings" SettingsPropertyName="CVT_CONTROL_BIOConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.pers_person" Member="pers_person">
+    <Type Name="pers_person">
+      <Column Name="id" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="app_id" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bio_tbl_id" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="company_id" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="create_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="creater_code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="creater_id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="creater_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="op_version" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="update_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updater_code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="updater_id" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="updater_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="birthday" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="car_plate" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="auth_dept_id" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="exception_flag" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="hire_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="id_card" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="id_card_physical_no" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="is_from" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="is_sendmail" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="last_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="mobile_phone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="name_spell" Type="System.String" DbType="NVarChar(420)" CanBeNull="true" />
+      <Column Name="person_pwd" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="person_type" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="photo_path" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="pin" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="pin_letter" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="self_pwd" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="ssn" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="status" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="position_id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="pers_login_limit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="send_sms" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.auth_department" Member="auth_department">
+    <Type Name="auth_department">
+      <Column Name="id" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="app_id" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bio_tbl_id" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="company_id" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="create_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="creater_code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="creater_id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="creater_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="op_version" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="update_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updater_code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="updater_id" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="updater_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="init_code" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="sort" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="parent_id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="auth_department_auth_department" Member="auth_department2" ThisKey="id" OtherKey="parent_id" Type="auth_department" />
+      <Association Name="auth_department_auth_department" Member="auth_department1" ThisKey="parent_id" OtherKey="id" Type="auth_department" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_DatosPersonal" Member="CVT_VW_DatosPersonal">
+    <Type Name="CVT_VW_DatosPersonal">
+      <Column Name="RUN" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Apellido" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Genero" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="Departamento" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Domicilio" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Cargo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NivelAcceso" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.acc_level" Member="acc_level">
+    <Type Name="acc_level">
+      <Column Name="id" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="app_id" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bio_tbl_id" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="company_id" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="create_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="creater_code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="creater_id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="creater_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="op_version" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="update_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updater_code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="updater_id" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="updater_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="auth_area_id" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="init_flag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="timeseg_id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_EMPLEADOS_CVT" Member="VW_EMPLEADOS_CVT">
+    <Type Name="VW_EMPLEADOS_CVT">
+      <Column Name="Apellido" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Run" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Depto" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

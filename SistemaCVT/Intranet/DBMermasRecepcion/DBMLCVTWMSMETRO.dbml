@@ -1,0 +1,1471 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CVT_WMS_SMM" Class="DBMLCVTWMSMETRODataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=alerce;Initial Catalog=CVT_WMS_SMM;Persist Security Info=True;User ID=sa;Encrypt=False" SettingsObjectName="DBMermasRecepcion.Properties.Settings" SettingsPropertyName="CVT_WMS_SMMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Site" Member="SMM_Site">
+    <Type Name="SMM_Site">
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Site_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reception" Member="SMM_Reception">
+    <Type Name="SMM_Reception">
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CardCode" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_DocNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_DateIn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_DateOut" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Reception_Note" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+      <Column Name="Reception_Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Correlative" Member="SMM_Correlative">
+    <Type Name="SMM_Correlative">
+      <Column Name="Correlative_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Correlative_In" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Correlative_Out" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Correlative_Now" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Correlative_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Location" Member="SMM_Location">
+    <Type Name="SMM_Location">
+      <Column Name="Location_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Location_InDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Location_OutDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rack" Member="SMM_Rack">
+    <Type Name="SMM_Rack">
+      <Column Name="Rack_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Rack_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reserve" Member="SMM_Reserve">
+    <Type Name="SMM_Reserve">
+      <Column Name="Reserve_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_Serie" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="WavePicking_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reserve_Quantity" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Reserve_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductionDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="InDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Reserve_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transfer_Detail_Unit_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ExpeditionDetail" Member="SMM_ExpeditionDetail">
+    <Type Name="SMM_ExpeditionDetail">
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Expedition_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ExpeditionDetail_Quantity" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="ExpeditionDetail_ConfirmedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_InventarioCabecera" Member="SMM_InventarioCabecera">
+    <Type Name="SMM_InventarioCabecera">
+      <Column Name="Inventario_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Id_Usuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Id_UsuarioEncargado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoInventario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Comentarios" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_VW_DiferenciasDuplicados" Member="SMM_VW_VW_DiferenciasDuplicados">
+    <Type Name="SMM_VW_VW_DiferenciasDuplicados">
+      <Column Name="InventarioDet_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Inventario_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Dun14" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_InventarioCantidadDiferente" Member="SMM_VW_InventarioCantidadDiferente">
+    <Type Name="SMM_VW_InventarioCantidadDiferente">
+      <Column Name="Inventario_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dun14" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LoteSistema" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Cantidad Sistema]" Member="Cantidad_Sistema" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Expedition" Member="SMM_Expedition">
+    <Type Name="SMM_Expedition">
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expedition_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expedition_DateOut" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Expedition_Note" Type="System.String" DbType="VarChar(2550)" CanBeNull="true" />
+      <Column Name="Expedition_Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expedition_DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Expedition_TipoDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Expedition_NumDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Expedition_Motivo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_ExpedicionDetalle" Member="SMM_VW_ExpedicionDetalle">
+    <Type Name="SMM_VW_ExpedicionDetalle">
+      <Column Name="Expedition_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Expedition_Motivo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SaleCostAc" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="AvgPrice" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_FOLIOS_INVENTARIOS_XAMARIN" Member="SMM_FOLIOS_INVENTARIOS_XAMARIN">
+    <Type Name="SMM_FOLIOS_INVENTARIOS_XAMARIN">
+      <Column Name="Inventario_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_INF_INVENTARIO_SMM" Member="SMM_VW_INF_INVENTARIO_SMM">
+    <Type Name="SMM_VW_INF_INVENTARIO_SMM">
+      <Column Name="Folio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Bodega" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_INF_INVENTARIOxUSER_SMM" Member="SMM_VW_INF_INVENTARIOxUSER_SMM">
+    <Type Name="SMM_VW_INF_INVENTARIOxUSER_SMM">
+      <Column Name="Folio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Bodega" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_RecepcionDetalle" Member="SMM_VW_RecepcionDetalle">
+    <Type Name="SMM_VW_RecepcionDetalle">
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="CardCode" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_DocNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_Note" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+      <Column Name="Site_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NumDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_DATOS_PACKAGE_XAMRIN" Member="VW_DATOS_PACKAGE_XAMRIN">
+    <Type Name="VW_DATOS_PACKAGE_XAMRIN">
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaProduccion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaVencimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Site_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_LIST_TRANSFER" Member="VW_LIST_TRANSFER">
+    <Type Name="VW_LIST_TRANSFER">
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Site_Id_Destiny" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CantidadPallet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PickingList" Member="SMM_PickingList">
+    <Type Name="SMM_PickingList">
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PickingList_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PickingList_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="itemCode" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="itemName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="PickingList_Quantity" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Id_Origin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_SSCC_Origin" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Package_Id_Destiny" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_SSCC_Destiny" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_ExhibicionSala" Member="SMM_ExhibicionSala">
+    <Type Name="SMM_ExhibicionSala">
+      <Column Name="id_exhibicion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Pasillo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Columna" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nivel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodBarra" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CantCaras" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_Productos_Cotizacion_Cajas" Member="SMM_VW_Productos_Cotizacion_Cajas">
+    <Type Name="SMM_VW_Productos_Cotizacion_Cajas">
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_Cotizacion_Cajas_Direccion" Member="SMM_Cotizacion_Cajas_Direccion">
+    <Type Name="SMM_Cotizacion_Cajas_Direccion">
+      <Column Name="Id_Direccion_Coti" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Cotizacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CantCajas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoDireccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_Cotizacion_Cajas" Member="SMM_Cotizacion_Cajas">
+    <Type Name="SMM_Cotizacion_Cajas">
+      <Column Name="Cotizacion_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre_Cliente" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CantidadProducir" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PrecioVenta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CosTotalCotizacion" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MargenTotal" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FechaCotizacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Id_Usuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Correo_Cliente" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FormaDePago" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_DeptoVentas" Member="SMM_VW_DeptoVentas">
+    <Type Name="SMM_VW_DeptoVentas">
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_PICKING_CONSOLIDADO" Member="SMM_VW_PICKING_CONSOLIDADO">
+    <Type Name="SMM_VW_PICKING_CONSOLIDADO">
+      <Column Name="DeptoVentas" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaEntrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CantidadSolicitada" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantidadPikear" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_PickingConsolidado" Member="SMM_PickingConsolidado">
+    <Type Name="SMM_PickingConsolidado">
+      <Column Name="Id_PickingSMM" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fecha_Consolidado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CantidadPikeada" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha_Pickeada" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Id_Usuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DeptoVentas" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_DEPARTAMENTOS_VENTAS" Member="VW_DEPARTAMENTOS_VENTAS">
+    <Type Name="VW_DEPARTAMENTOS_VENTAS">
+      <Column Name="GroupCode" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_Orden_de_Ventas" Member="SMM_Orden_de_Ventas">
+    <Type Name="SMM_Orden_de_Ventas">
+      <Column Name="IdOrdenVentas" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaEntrega" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Dir_Despacho" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Dir_Facturacion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_CLIENTES_ORDEN_VENTAS" Member="SMM_VW_CLIENTES_ORDEN_VENTAS">
+    <Type Name="SMM_VW_CLIENTES_ORDEN_VENTAS">
+      <Column Name="RutCliente" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCliente" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_DIR_DESPACHO_ORDEN_VENTA" Member="SMM_VW_DIR_DESPACHO_ORDEN_VENTA">
+    <Type Name="SMM_VW_DIR_DESPACHO_ORDEN_VENTA">
+      <Column Name="RutCliente" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DirecDesp" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_DIR_FACTURACION_ORDEN_VENTA" Member="SMM_VW_DIR_FACTURACION_ORDEN_VENTA">
+    <Type Name="SMM_VW_DIR_FACTURACION_ORDEN_VENTA">
+      <Column Name="RutCliente" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DirecFact" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Layout" Member="SMM_Layout">
+    <Type Name="SMM_Layout">
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Layout_Y_Pasillo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Layout_X_Fila" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UbicacionxDefecto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CantidadUbicaciones" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Layout_Z_Columna" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_Clientes_Orden_Venta" Member="SMM_Clientes_Orden_Venta">
+    <Type Name="SMM_Clientes_Orden_Venta">
+      <Column Name="RutCliente" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NombreCliente" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RazonSocial" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Giro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DirecFact" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DirecDesp" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ubi_Latitud" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ubi_Longitud" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ubi_Altitud" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_ClientesOV_Xamarin" Member="VW_ClientesOV_Xamarin">
+    <Type Name="VW_ClientesOV_Xamarin">
+      <Column Name="Cliente" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_TRAZABILIDAD_BULTOS_CON_RESERVA" Member="SMM_VW_TRAZABILIDAD_BULTOS_CON_RESERVA">
+    <Type Name="SMM_VW_TRAZABILIDAD_BULTOS_CON_RESERVA">
+      <Column Name="Npallet" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Operacion" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreUsuario" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ReserveQuantity" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_TRAZABILIDAD_BUSQUEDA" Member="SMM_VW_TRAZABILIDAD_BUSQUEDA">
+    <Type Name="SMM_VW_TRAZABILIDAD_BUSQUEDA">
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Site_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodProducto" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NRecepcion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FRecepcion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Proveedor" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NPallet" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodBarr" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CantReserva" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Ubicacion" Type="System.String" DbType="VarChar(92)" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_ExpiresDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Info1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Info2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CantInicial" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_InDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_OutDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_TRAZABILIDAD_PALLET" Member="SMM_VW_TRAZABILIDAD_PALLET">
+    <Type Name="SMM_VW_TRAZABILIDAD_PALLET">
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NPallet" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Entidad" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="Operacion" Type="System.String" DbType="NVarChar(178)" CanBeNull="true" />
+      <Column Name="IDentidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ndocumento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantidadInicial" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="NombreUsuario" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_ExpiresDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Reception_Note" Type="System.String" DbType="NVarChar(2550)" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Article_Description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Bodega" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_STOCK_SMM" Member="VW_STOCK_SMM">
+    <Type Name="VW_STOCK_SMM">
+      <Column Name="Bodega" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cantidad" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="CantidadInicial" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FProduccion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FVencimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FRecepcion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NRecepcion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Npallet" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="TipoDocumento" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_Orden_de_Ventas_Detalle" Member="SMM_Orden_de_Ventas_Detalle">
+    <Type Name="SMM_Orden_de_Ventas_Detalle">
+      <Column Name="IdOrdenVentas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdDetalleOrden" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Upc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Familia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrecioVenta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Margen" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Stock" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Contribucion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Porc_Descuento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalLinea" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TotalContrib" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PrecioPromedio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImptoTipo" Type="System.String" DbType="VarChar(20)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ImptoProcentaje" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TotalImpto" Type="System.Decimal" DbType="Decimal(33,6)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_Solicitud_Transferencia" Member="SMM_Solicitud_Transferencia">
+    <Type Name="SMM_Solicitud_Transferencia">
+      <Column Name="Id_Solicitud" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BodegaOrigen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BodegaDestino" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaSolicitud" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comentarios" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMMSolicitudTransferencia_Detalles" Member="SMMSolicitudTransferencia_Detalles">
+    <Type Name="SMMSolicitudTransferencia_Detalles">
+      <Column Name="Id_Det_Solicitud" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_Solicitud" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_LISTADO_PRODUCTOS_SOLICITUD" Member="VW_LISTADO_PRODUCTOS_SOLICITUD">
+    <Type Name="VW_LISTADO_PRODUCTOS_SOLICITUD">
+      <Column Name="Id_Solicitud" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transfer" Member="SMM_Transfer">
+    <Type Name="SMM_Transfer">
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Site_Id_Destiny" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Transfer_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transfer_Folio_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transfer_Comentario" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Transfer_FechaCierre" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FolioSolicitud" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_STOCK_FECHA_RECEPCION" Member="VW_STOCK_FECHA_RECEPCION">
+    <Type Name="VW_STOCK_FECHA_RECEPCION">
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_StockFecha" Member="SMM_StockFecha">
+    <Type Name="SMM_StockFecha">
+      <Column Name="Bodega" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FechaProduccion" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_STOCK_FECHA_TRANSFERENCIA" Member="VW_STOCK_FECHA_TRANSFERENCIA">
+    <Type Name="VW_STOCK_FECHA_TRANSFERENCIA">
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id_Destiny" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transfer_Detail" Member="SMM_Transfer_Detail">
+    <Type Name="SMM_Transfer_Detail">
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Layout_Id_Actual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_Confirm" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SMM_FOLIOS_SOLICITUD_TRANSFERENCIAS" Member="VW_SMM_FOLIOS_SOLICITUD_TRANSFERENCIAS">
+    <Type Name="VW_SMM_FOLIOS_SOLICITUD_TRANSFERENCIAS">
+      <Column Name="Id_Solicitud" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_INFO_CLIENTE_PREVENTA" Member="SMM_VW_INFO_CLIENTE_PREVENTA">
+    <Type Name="SMM_VW_INFO_CLIENTE_PREVENTA">
+      <Column Name="CodCliente" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCliente" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RutCliente" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="E_Mail" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CodGrupCliente" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_PRODUCTO_PREVENTA_TODOS_LS11" Member="SMM_VW_PRODUCTO_PREVENTA_TODOS_LS11">
+    <Type Name="SMM_VW_PRODUCTO_PREVENTA_TODOS_LS11">
+      <Column Name="CodProducto" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_ObtieneDatosDirecciones" Member="SMM_ObtieneDatosDirecciones">
+    <Type Name="SMM_ObtieneDatosDirecciones">
+      <Column Name="CodCliente" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CodDireccion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Region" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ciudad" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comuna" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TipoDir" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_ObtieneDatosCliente" Member="SMM_ObtieneDatosCliente">
+    <Type Name="SMM_ObtieneDatosCliente">
+      <Column Name="Rut" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RazonSocial" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="GrupoCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Giro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_Clientes_Direccion" Member="SMM_Clientes_Direccion">
+    <Type Name="SMM_Clientes_Direccion">
+      <Column Name="CodCliente" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodDireccion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Region" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ciudad" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comuna" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TipoDir" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_MONTO_VENTA_SMM" Member="VW_MONTO_VENTA_SMM">
+    <Type Name="VW_MONTO_VENTA_SMM">
+      <Column Name="Preventa_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MontoVenta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_Calculo_monto_venta" Member="VW_Calculo_monto_venta">
+    <Type Name="VW_Calculo_monto_venta">
+      <Column Name="Preventa_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Monto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_Preventa_DatoPago" Member="SMM_Preventa_DatoPago">
+    <Type Name="SMM_Preventa_DatoPago">
+      <Column Name="Preventa_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_TipoPago" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TipoPago" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Monto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nBoucher" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cuotas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NTarjeta" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TipoDocumento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NCheque" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaDocumento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_DIRECCIONES_CLIENTES_SAP" Member="VW_DIRECCIONES_CLIENTES_SAP">
+    <Type Name="VW_DIRECCIONES_CLIENTES_SAP">
+      <Column Name="CodDireccion" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Street" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="County" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CardCode" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="AdresType" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Direccioncompleta" Type="System.String" DbType="NVarChar(304)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_DETALLE_PAGO" Member="SMM_VW_DETALLE_PAGO">
+    <Type Name="SMM_VW_DETALLE_PAGO">
+      <Column Name="Preventa_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoPago" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Monto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nBoucher" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cuotas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoDocumento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NCheque" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaDocumento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NTarjeta" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CodigoCliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoVenta" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_TipoPago" Member="SMM_VW_TipoPago">
+    <Type Name="SMM_VW_TipoPago">
+      <Column Name="preventa_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_MontoEfectivo" Member="SMM_VW_MontoEfectivo">
+    <Type Name="SMM_VW_MontoEfectivo">
+      <Column Name="preventa_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Monto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_MONTO_VENTA_SIN_REDONDEO_SMM" Member="VW_MONTO_VENTA_SIN_REDONDEO_SMM">
+    <Type Name="VW_MONTO_VENTA_SIN_REDONDEO_SMM">
+      <Column Name="Preventa_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MontoVenta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_Calculo_monto_venta_sin_Redondeo" Member="VW_Calculo_monto_venta_sin_Redondeo">
+    <Type Name="VW_Calculo_monto_venta_sin_Redondeo">
+      <Column Name="Preventa_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Monto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_DETALLE_CLIENTE" Member="SMM_VW_DETALLE_CLIENTE">
+    <Type Name="SMM_VW_DETALLE_CLIENTE">
+      <Column Name="IdPreventa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoCliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RunCliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="TipoVenta" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="GroupName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DireccionEnvio" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DireccionFact" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="GroupCode" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SMM_DATO_CLIENTES_NOTACREDITO" Member="VW_SMM_DATO_CLIENTES_NOTACREDITO">
+    <Type Name="VW_SMM_DATO_CLIENTES_NOTACREDITO">
+      <Column Name="FolioNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocSubType" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="CardCode" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CardName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Direccion_Facturacion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Direccion_Despacho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DocDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DocEntry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_NotaCredito_DetallePago" Member="SMM_NotaCredito_DetallePago">
+    <Type Name="SMM_NotaCredito_DetallePago">
+      <Column Name="ID_NotaCredito" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_Detalle_PagoNota" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Monto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_MONTO_NOTACREDITO" Member="VW_MONTO_NOTACREDITO">
+    <Type Name="VW_MONTO_NOTACREDITO">
+      <Column Name="ID_NotaCredito" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MontoCompra" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_NOTACREDITO_DETALLE_PAGO" Member="SMM_VW_NOTACREDITO_DETALLE_PAGO">
+    <Type Name="SMM_VW_NOTACREDITO_DETALLE_PAGO">
+      <Column Name="ID_NotaCredito" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodCliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ID_Detalle_PagoNota" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Monto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_MontoEfectivoNC" Member="SMM_VW_MontoEfectivoNC">
+    <Type Name="SMM_VW_MontoEfectivoNC">
+      <Column Name="ID_NotaCredito" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Monto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_TOTALDOCUMENTOORIGEN" Member="SMM_VW_TOTALDOCUMENTOORIGEN">
+    <Type Name="SMM_VW_TOTALDOCUMENTOORIGEN">
+      <Column Name="DocEntry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FolioNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocTotal" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="DocSubType" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="TOTALINEAS" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_MontoNotaCredito" Member="SMM_VW_MontoNotaCredito">
+    <Type Name="SMM_VW_MontoNotaCredito">
+      <Column Name="DocEntry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocTotal" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_MontoNotaCreditoPrueba" Member="SMM_VW_MontoNotaCreditoPrueba">
+    <Type Name="SMM_VW_MontoNotaCreditoPrueba">
+      <Column Name="DocEntry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DocTotal" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_NotaCredito_DatoCompra" Member="SMM_NotaCredito_DatoCompra">
+    <Type Name="SMM_NotaCredito_DatoCompra">
+      <Column Name="ID_NotaCredito" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(37,0)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Descuento" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SMM_DATO_PRODUCTOS_NOTACREDITO" Member="VW_SMM_DATO_PRODUCTOS_NOTACREDITO">
+    <Type Name="VW_SMM_DATO_PRODUCTOS_NOTACREDITO">
+      <Column Name="DocEntry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Dscription" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="Descuento" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_NOTACREDITO_DETALLE_COMPRA" Member="SMM_VW_NOTACREDITO_DETALLE_COMPRA">
+    <Type Name="SMM_VW_NOTACREDITO_DETALLE_COMPRA">
+      <Column Name="ID_NotaCredito" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(37,0)" CanBeNull="true" />
+      <Column Name="Descuento" Type="System.Decimal" DbType="Decimal(18,6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_NotaCredito_DatoCliente" Member="SMM_NotaCredito_DatoCliente">
+    <Type Name="SMM_NotaCredito_DatoCliente">
+      <Column Name="ID_NotaCredito" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FolioDocumento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoDocumento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodCliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreCliente" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Direccion_Despacho" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Direccion_Facturacion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FechaDocumento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaCreacionRegistoNota" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TipoNC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_NOTACREDITO_DETALLE_CLIENTE" Member="SMM_VW_NOTACREDITO_DETALLE_CLIENTE">
+    <Type Name="SMM_VW_NOTACREDITO_DETALLE_CLIENTE">
+      <Column Name="FolioDocumento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoDocumento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodCliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreCliente" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Direccion_Despacho" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Direccion_Facturacion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FechaDocumento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaCreacionRegistoNota" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ID_NotaCredito" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TipoNC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_AperturaCaja" Member="SMM_AperturaCaja">
+    <Type Name="SMM_AperturaCaja">
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Monto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdCajero" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_Preventa" Member="SMM_Preventa">
+    <Type Name="SMM_Preventa">
+      <Column Name="Preventa_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CodigoCliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DireccionFact" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DireccionEnvio" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RunCliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="TipoVenta" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="GrupoCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalPreventa" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_Historial_Arqueo" Member="SMM_Historial_Arqueo">
+    <Type Name="SMM_Historial_Arqueo">
+      <Column Name="IdArqueo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FechaArqueo" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Apertura" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Moneda" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Efectivo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tarjeta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cheque" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transferencia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaRegistroArqueo" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_LogCaja" Member="SMM_LogCaja">
+    <Type Name="SMM_LogCaja">
+      <Column Name="ID_log" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Preventa_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FecharError" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Error" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_DETALLE_PREVENTA" Member="SMM_VW_DETALLE_PREVENTA">
+    <Type Name="SMM_VW_DETALLE_PREVENTA">
+      <Column Name="Preventa_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Descuento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UniMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodUniMedida" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_DetalleRecepcion" Member="SMM_VW_DetalleRecepcion">
+    <Type Name="SMM_VW_DetalleRecepcion">
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="CardCode" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_DocNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_Note" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+      <Column Name="Site_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NumDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UomEntry" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_FiltroTransferenciasSMM" Member="CVT_VW_FiltroTransferenciasSMM">
+    <Type Name="CVT_VW_FiltroTransferenciasSMM">
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Site_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Medida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BaseUnMed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_TransferenciasDetalleSMM" Member="CVT_VW_TransferenciasDetalleSMM">
+    <Type Name="CVT_VW_TransferenciasDetalleSMM">
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Site_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Layout_Id_Actual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_Confirm" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Medida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BaseUnMed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_TransferDetail" Member="SMM_VW_TransferDetail">
+    <Type Name="SMM_VW_TransferDetail">
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_InventarioDetalle" Member="SMM_InventarioDetalle">
+    <Type Name="SMM_InventarioDetalle">
+      <Column Name="InventarioDet_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Inventario_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Dun14" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UbiPasillo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaVencimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_SSCC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantEmp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CantBase" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoEmpaque" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VentaPersonal" Member="SMM_VentaPersonal">
+    <Type Name="SMM_VentaPersonal">
+      <Column Name="Id_Venta" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CodCliente" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="NombreCliente" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="RunCliente" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaCompra" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MesCompra" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiaCompra" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalCompra" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_DetalleRecepcion_Transferencia" Member="SMM_VW_DetalleRecepcion_Transferencia">
+    <Type Name="SMM_VW_DetalleRecepcion_Transferencia">
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="CardCode" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_DocNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_Note" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+      <Column Name="Site_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NumDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UomEntry" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_Preventa_Detalle" Member="SMM_Preventa_Detalle">
+    <Type Name="SMM_Preventa_Detalle">
+      <Column Name="Preventa_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Descuento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(38,6)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CodBarra" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="UniMedida" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodUniMedida" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ByOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VentaPersonal_Detalle" Member="SMM_VentaPersonal_Detalle">
+    <Type Name="SMM_VentaPersonal_Detalle">
+      <Column Name="Id_Venta" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Cod_Producto" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UniMedida" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CodBarra" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CodUniMed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Descuento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ByOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Package" Member="SMM_Package">
+    <Type Name="SMM_Package">
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Package_QuantityInitial" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Package_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_ExpiresDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_InDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_OutDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_SN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_ReserveQuantity" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_Data1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Package_Data2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Linea" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BaseUnMed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UgpEntry" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UomEntry" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UomCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CantUniTot" Type="System.Decimal" DbType="Decimal(29,0)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_RecepcionResumenSMM" Member="VW_RecepcionResumenSMM">
+    <Type Name="VW_RecepcionResumenSMM">
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="BaseUnMed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UniTotal" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SMM_ConsolidadoCompras" Member="VW_SMM_ConsolidadoCompras">
+    <Type Name="VW_SMM_ConsolidadoCompras">
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CodProveedor" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Proveedor" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CantProdRequerido" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StockSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantTotalRequerido" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SaldoSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SMM_ClientesDescPromo" Member="VW_SMM_ClientesDescPromo">
+    <Type Name="VW_SMM_ClientesDescPromo">
+      <Column Name="Preventa_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoCliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_Cotizacion_Cajas_Detalle" Member="SMM_Cotizacion_Cajas_Detalle">
+    <Type Name="SMM_Cotizacion_Cajas_Detalle">
+      <Column Name="Id_Det_Cotizacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cotizacion_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CostoUnitario" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CostoTotal" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MargenProducto" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PrecioTotal" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CodigoKitPred" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_AjusteDocumento" Member="SMM_AjusteDocumento">
+    <Type Name="SMM_AjusteDocumento">
+      <Column Name="PreventaID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Codproducto" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StockSala" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UniMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Upc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantUni" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Faltante" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaAjuste" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IdUserAjuste" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_TotalArqueoReal" Member="SMM_TotalArqueoReal">
+    <Type Name="SMM_TotalArqueoReal">
+      <Column Name="IdArq_Caja" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FechArq_Caja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotEfec_CAja" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotEfec_Sist" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotTarj_Caja" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotTarj_Sist" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotCheq_Caja" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotCheq_Sist" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotTransf_Caja" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotTransf_Sist" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotGen_Caja" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotGen_Sist" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha_hist_Arqueo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_Clientes_Contacto" Member="SMM_Clientes_Contacto">
+    <Type Name="SMM_Clientes_Contacto">
+      <Column Name="IDContacto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CodCliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cargo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Telefono1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Telefono2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EMail" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_Clientes" Member="SMM_Clientes">
+    <Type Name="SMM_Clientes">
+      <Column Name="Rut" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RazonSocial" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="GrupoCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Giro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="NombreFantasia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IDVendAsignado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDTipoNegocio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDCondicionPago" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Descuento" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="LineaCredito" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nominacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_EXPEDITIONDETAILEXPORT" Member="SMM_VW_EXPEDITIONDETAILEXPORT">
+    <Type Name="SMM_VW_EXPEDITIONDETAILEXPORT">
+      <Column Name="Expedition_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ExpeditionDetail_Quantity" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="UomCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BaseUnMed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantUniTot" Type="System.Decimal" DbType="Decimal(29,0)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_DocAjustadas" Member="SMM_VW_DocAjustadas">
+    <Type Name="SMM_VW_DocAjustadas">
+      <Column Name="PreventaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codproducto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NomProd" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="StockSala" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantUni" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Faltante" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaAjuste" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IdUserAjuste" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UsuarioSistema" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_VW_INF_ARQUEOCAJA" Member="SMM_VW_INF_ARQUEOCAJA">
+    <Type Name="SMM_VW_INF_ARQUEOCAJA">
+      <Column Name="FechArq_Caja" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalFectSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalEfecCaja" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DifEfectivo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalTarjSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalTarjCaja" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DifTarjeta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalTransfSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalTransfCaja" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DifTransferencias" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalGeneralSistema" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalGeneralCaja" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Diferencia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_ComisionVendedor" Member="SMM_ComisionVendedor">
+    <Type Name="SMM_ComisionVendedor">
+      <Column Name="IdVendedor" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdGrupoProd" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdSubFamilia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Comision" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_ComisionProductos" Member="SMM_ComisionProductos">
+    <Type Name="SMM_ComisionProductos">
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NombreProducto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cod_Sub_Categoria" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PrcComision" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TipoComision" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cod_Categoria" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="U_MarcaProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SMM_DiferenciasDuplicados_inventario" Member="VW_SMM_DiferenciasDuplicados_inventario">
+    <Type Name="VW_SMM_DiferenciasDuplicados_inventario">
+      <Column Name="Inventario_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NPallet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InventarioDet_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TipoEmpaque" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreUsuario" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SMM_InventarioCantidadDiferenteInf" Member="VW_SMM_InventarioCantidadDiferenteInf">
+    <Type Name="VW_SMM_InventarioCantidadDiferenteInf">
+      <Column Name="Inventario_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_SSCC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantInvent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantSistema" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CodUbicacionInv" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BodegaInv" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codUbicacionSist" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BodegaSist" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoEmpaqueInv" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoEmpSist" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodProdInv" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodProdSist" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CodBarInv" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CodBarSist" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SMM_VencimientoProyectadoBmas" Member="VW_SMM_VencimientoProyectadoBmas">
+    <Type Name="VW_SMM_VencimientoProyectadoBmas">
+      <Column Name="Bodega" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="U_Categoria" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CodProducto" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="cantidad" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="FVencimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DiasVencimiento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Costo" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="Enumerador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_Reponedores" Member="SMM_Reponedores">
+    <Type Name="SMM_Reponedores">
+      <Column Name="IdReponedor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="run" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_Cump_Reposicion_Sala" Member="SMM_Cump_Reposicion_Sala">
+    <Type Name="SMM_Cump_Reposicion_Sala">
+      <Column Name="Id_Cumplimiento" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IdNomVerificado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdVerificador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CodBarra" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DispoProducto" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Limpieza" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="FeFo" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Fleje" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="FechaVencProd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PrcCumpl" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_RegImpEtiqueta" Member="SMM_RegImpEtiqueta">
+    <Type Name="SMM_RegImpEtiqueta">
+      <Column Name="IdRegImpEtiq" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CodProd" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechRegistro" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_RegPalletSala" Member="SMM_RegPalletSala">
+    <Type Name="SMM_RegPalletSala">
+      <Column Name="IdRegPallet" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DetProducto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaVenc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_Rpt_PalletEnSala" Member="VW_Rpt_PalletEnSala">
+    <Type Name="VW_Rpt_PalletEnSala">
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DetProducto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IdRegPallet" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaVenc" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SMM_MedicionArmadoPedido" Member="SMM_MedicionArmadoPedido">
+    <Type Name="SMM_MedicionArmadoPedido">
+      <Column Name="Id_MedicionArmado" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NOrden" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CodBarras" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="UniMedida" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaIngreso" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IdVerificador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantCorrecta" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="VencCorrecto" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Etiqueta" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Enfilado" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Estibado" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="CondPallet" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="PrcCumpl" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Function Name="dbo.CVT_CierraTransferenciaSMM" Method="CVT_CierraTransferenciaSMM">
+    <Parameter Name="Transferid" Parameter="transferid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Layoutid" Parameter="layoutid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StaffID" Parameter="staffID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SMM_Informeinventario" Method="SMM_Informeinventario">
+    <Parameter Name="Inventario" Parameter="inventario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SMM_InformeinventarioResult">
+      <Column Name="SiteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoProducto" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CodPadre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CantidadEmpaque" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="CantidadContada" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="CantidadTransformada" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="Inventario_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaVencimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SMM_IMP_Layout" Method="SMM_IMP_Layout">
+    <Parameter Name="Pasillo1" Parameter="pasillo1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Pasillo2" Parameter="pasillo2" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Bodega" Parameter="bodega" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="SMM_IMP_LayoutResult">
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Bodega" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Pasillo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fila" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Columna" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SMM_DETALLE_OV" Method="SMM_DETALLE_OV">
+    <Parameter Name="idDetalle" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SMM_DETALLE_OVResult">
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Upc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Familia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrecioVenta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Stock" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Porc_Descuento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Margen" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Contribucion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImptoTipo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ImptoProcentaje" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalImpto" Type="System.Decimal" DbType="Decimal(33,6)" CanBeNull="true" />
+      <Column Name="TotalLinea" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalContrib" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdOrdenVentas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdDetalleOrden" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrecioPromedio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ResumenOV" Method="SP_ResumenOV">
+    <Parameter Name="IDOV" Parameter="iDOV" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_ResumenOVResult">
+      <Column Name="Subtotal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Impto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_TRANSFERENCIA_DETALLE_SMM" Method="SP_TRANSFERENCIA_DETALLE_SMM">
+    <Parameter Name="Transfer" Parameter="transfer" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_TRANSFERENCIA_DETALLE_SMMResult">
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Site_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Layout_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_MONTO_COMPRA_SMM" Method="SP_MONTO_COMPRA_SMM">
+    <Parameter Name="IdPreventa" Parameter="idPreventa" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_MONTO_COMPRA_SMMResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_LeyRedondeo" Method="SP_LeyRedondeo">
+    <Parameter Name="Monto" Parameter="monto" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_LeyRedondeoResult">
+      <Column Name="Redondeo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_HISTORIAL_PREVENTAS" Method="SP_HISTORIAL_PREVENTAS">
+    <Parameter Name="Fini" Parameter="fini" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Fterm" Parameter="fterm" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="SP_HISTORIAL_PREVENTASResult">
+      <Column Name="Preventa_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoCliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RunCliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoVenta" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalPreventa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NombreUsuario" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_Detalle_tick_Preventa" Method="SP_Detalle_tick_Preventa">
+    <Parameter Name="idPreventa" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_Detalle_tick_PreventaResult">
+      <Column Name="Preventa_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoCliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NombreCliente" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Vendedor" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UniMedida" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.STOCK_SMM" Method="STOCK_SMM">
+    <Parameter Name="Sitio" Parameter="sitio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="codproducto" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="lote" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="STOCK_SMMResult">
+      <Column Name="Bodega" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cantidad" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="CantidadInicial" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Documento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FProduccion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FVencimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FRecepcion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NRecepcion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Npallet" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="UMed" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BaseUnMed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoDocumento" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_GrabaAjusteDocumento" Method="SP_GrabaAjusteDocumento">
+    <Parameter Name="PreventaID" Parameter="preventaID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserID" Parameter="userID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

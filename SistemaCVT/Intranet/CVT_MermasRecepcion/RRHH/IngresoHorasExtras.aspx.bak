@@ -1,0 +1,156 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="IngresoHorasExtras.aspx.cs" Inherits="CVT_MermasRecepcion.RRHH.IngresoHorasExtras" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>RRHH</a></li>
+        <li><span id="current">Sueldo Base x Empleado</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Sueldo Base x Empleado</span>
+    <span class="tab-end"></span>
+    <div id="options">         
+          <a>
+          <asp:ImageButton ID="cmdExcel"    runat="server" 
+              ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" onclick="cmdExcel_Click" style="width: 20px" 
+              /> Exportar Excel</a>
+              
+     
+    </div>
+</div>
+<div>
+
+    <table class="style1">
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Empleado">
+                </dx:ASPxLabel>
+            </td>
+            <td colspan="3">
+                <dx:ASPxComboBox ID="cbo_empleado" runat="server" DataSourceID="LqDsEmpleados" 
+                    ValueField="USERID">
+                    <Columns>
+                        <dx:ListBoxColumn FieldName="Rut">
+                        </dx:ListBoxColumn>
+                        <dx:ListBoxColumn FieldName="Nombre">
+                        </dx:ListBoxColumn>
+                        <dx:ListBoxColumn FieldName="Apellido">
+                        </dx:ListBoxColumn>
+                    </Columns>
+                </dx:ASPxComboBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Fecha">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxDateEdit ID="cb_fecha" runat="server">
+                </dx:ASPxDateEdit>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel3" runat="server" Text="Hora">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxTextBox ID="txt_hora" runat="server" Width="59px">
+                </dx:ASPxTextBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel4" runat="server" Text="Min">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxTextBox ID="txt_min" runat="server" Width="59px">
+                </dx:ASPxTextBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel5" runat="server" Text="100%">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxCheckBox ID="chk_100" runat="server">
+                </dx:ASPxCheckBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td colspan="3">
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                <dx:ASPxButton ID="btn_agregar" runat="server" Text="Agregar" 
+                    onclick="btn_agregar_Click">
+                </dx:ASPxButton>
+            </td>
+        </tr>
+    </table>
+
+</div>
+<div>
+
+    <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="LqDsDatosPersonal" KeyFieldName="ExcesoHE_Id" 
+        onrowinserting="GvDatos_RowInserting">
+        <Settings ShowFilterRow="True" ShowGroupPanel="True" />
+        <Columns>
+            <dx:GridViewCommandColumn ShowDeleteButton="True" VisibleIndex="0">
+            </dx:GridViewCommandColumn>
+            <dx:GridViewDataTextColumn FieldName="ExcesoHE_Id" ReadOnly="True" 
+                Visible="False" VisibleIndex="1">
+                <EditFormSettings Visible="False" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataDateColumn FieldName="Fecha" VisibleIndex="3">
+            </dx:GridViewDataDateColumn>
+            <dx:GridViewDataComboBoxColumn Caption="Empleado" FieldName="Empleado_Id" 
+                VisibleIndex="2">
+                <PropertiesComboBox DataSourceID="LqDsEmpleados" ValueField="USERID">
+                    <Columns>
+                        <dx:ListBoxColumn FieldName="Rut">
+                        </dx:ListBoxColumn>
+                        <dx:ListBoxColumn FieldName="Nombre">
+                        </dx:ListBoxColumn>
+                        <dx:ListBoxColumn FieldName="Apellido">
+                        </dx:ListBoxColumn>
+                    </Columns>
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataTimeEditColumn FieldName="Horas" VisibleIndex="4">
+                <PropertiesTimeEdit DisplayFormatString="">
+                </PropertiesTimeEdit>
+            </dx:GridViewDataTimeEditColumn>
+            <dx:GridViewDataCheckColumn FieldName="HE_100" VisibleIndex="5">
+            </dx:GridViewDataCheckColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:LinqDataSource ID="LqDsDatosPersonal" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" 
+        EntityTypeName="" TableName="CVT_HorasExtras" EnableDelete="True" 
+        EnableInsert="True" EnableUpdate="True" 
+        OrderBy="Fecha desc, ExcesoHE_Id desc">
+    </asp:LinqDataSource>
+    <asp:LinqDataSource ID="LqDsEmpleados" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBControlAccesoDataContext" 
+        EntityTypeName="" TableName="CVT_VW_Empleados">
+    </asp:LinqDataSource>
+    <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" 
+        GridViewID="GvDatos">
+    </dx:ASPxGridViewExporter>
+
+</div>
+</asp:Content>
+

@@ -1,0 +1,198 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Pedidos.aspx.cs" Inherits="CVT_MermasRecepcion.WMS.Pedidos" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+    <div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>WMS</a></li>
+        <li><span id="current">Pedidos</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Pedidos</span>
+    <span class="tab-end"></span>
+    <div id="options">         
+          <a><asp:ImageButton ID="cmdExcel" runat="server" 
+              ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" onclick="cmdExcel_Click" 
+              style="height: 20px"/> Exportar Excel</a>
+              <a><asp:ImageButton ID="cmdNew"  runat="server" ImageUrl="~/Images/add.png"  onclick="cmdNew_Click" style="width: 16px"/>Nuevo</a>
+     
+    </div>
+</div>
+<div>
+    <dx:ASPxPanel ID="ASPxPanel2" runat="server" Width="200px">
+        <PanelCollection>
+<dx:PanelContent ID="PanelContent1" runat="server">
+    <div>
+    <p> Filtros</p>
+    <table>
+    <tr>
+    <td>
+        <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Fecha Desde">
+        </dx:ASPxLabel>
+        </td>
+    <td>
+        <dx:ASPxDateEdit ID="cb_fdesde" runat="server">
+        </dx:ASPxDateEdit>
+        </td>
+        <td>
+            <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Fecha Hasta">
+            </dx:ASPxLabel>
+        </td>
+        <td>
+            <dx:ASPxDateEdit ID="cb_fhasta" runat="server">
+            </dx:ASPxDateEdit>
+        </td>
+    </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                <dx:ASPxButton ID="btn_filtrar" runat="server" Text="Filtrar" 
+                    OnClick="btn_filtrar_Click">
+                </dx:ASPxButton>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+    </table>
+    </div>
+    <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="LqDsPedidos" Width="100%" 
+        OnRowCommand="GvDatos_RowCommand" 
+        OnHtmlRowCreated="GvDatos_HtmlRowCreated" KeyFieldName="Pedido">
+        <SettingsPager PageSize="25">
+        </SettingsPager>
+        <SettingsEditing Mode="PopupEditForm">
+        </SettingsEditing>
+        <Settings ShowFilterRow="True" />
+        <SettingsCookies CookiesID="Pedidos" Enabled="True" Version="3" />
+        <Columns>
+            <dx:GridViewDataTextColumn FieldName="Pedido" 
+                ShowInCustomizationForm="True" VisibleIndex="0" Caption="Pedido WMS">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="P_SAP" 
+                ShowInCustomizationForm="True" VisibleIndex="1" Caption="Pedido SAP">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataDateColumn FieldName="FEntrega" ShowInCustomizationForm="True" 
+                VisibleIndex="4" Visible="False">
+                <PropertiesDateEdit DisplayFormatString="dd/MM/yyyy HH:mm">
+                </PropertiesDateEdit>
+            </dx:GridViewDataDateColumn>
+            <dx:GridViewDataTextColumn FieldName="Cliente" 
+                ShowInCustomizationForm="True" VisibleIndex="3">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn 
+                FieldName="Expedicion" ShowInCustomizationForm="True" 
+                VisibleIndex="6">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Vuelta" 
+                ShowInCustomizationForm="True" VisibleIndex="8" Caption="N° Vuelta">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="GrueroAsignado" 
+                ShowInCustomizationForm="True" VisibleIndex="10">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataHyperLinkColumn Caption="Detalle" VisibleIndex="11">
+                 <EditFormSettings Visible="False" />
+                <DataItemTemplate>
+                    <asp:ImageButton ID="detalle" CommandName="cmdDetalle" runat="server" ImageUrl="~/Images/boxadd.png" />
+                </DataItemTemplate>
+            </dx:GridViewDataHyperLinkColumn>
+             <dx:GridViewDataHyperLinkColumn Caption="Anula" VisibleIndex="12">
+                 <EditFormSettings Visible="False" />
+                <DataItemTemplate>
+                    <asp:ImageButton ID="Anula" CommandName="cmdAnula" runat="server" ImageUrl="~/Images/node_delete.png" />
+                </DataItemTemplate>
+            </dx:GridViewDataHyperLinkColumn>
+             <dx:GridViewDataHyperLinkColumn Caption="Confirma" VisibleIndex="13">
+                 <EditFormSettings Visible="False" />
+                <DataItemTemplate>
+                    <asp:ImageButton ID="Confirma" CommandName="cmdConfirma" runat="server" 
+                    ImageUrl="~/Images/confirm.png" onclientclick="LoadingPanel.Show();"/>
+                </DataItemTemplate>
+            </dx:GridViewDataHyperLinkColumn>
+            <dx:GridViewDataComboBoxColumn FieldName="Estado" 
+                ShowInCustomizationForm="True" VisibleIndex="2">
+                <PropertiesComboBox>
+                    <Items>
+                        <dx:ListEditItem Text="Abierto" Value="1" />
+                        <dx:ListEditItem Text="Despachado" Value="3" />
+                        <dx:ListEditItem Text="Anulado" Value="6" />
+                        <dx:ListEditItem Text="Terminado" Value="2" />
+                        <dx:ListEditItem Text="Terminado Incompleto" Value="4" />
+                        <dx:ListEditItem Text="Consolidado" Value="5" />
+                        <dx:ListEditItem Text="En Picking" Value="8" />
+                        <dx:ListEditItem Text="Picking OLA" Value="7" />
+                    </Items>
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn FieldName="SyncStat" 
+                ShowInCustomizationForm="True" VisibleIndex="7">
+                <PropertiesComboBox>
+                    <Items>
+                        <dx:ListEditItem Text="Sincronizado" Value="S" />
+                        <dx:ListEditItem Text="Pendiente" Value="U" />
+                    </Items>
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn FieldName="Tipo" ShowInCustomizationForm="True" 
+                VisibleIndex="9">
+                <PropertiesComboBox>
+                    <Items>
+                        <dx:ListEditItem Text="Servicio" Value="1" />
+                        <dx:ListEditItem Text="Repaletizado" Value="2" />
+                        <dx:ListEditItem Text="Despacho" Value="3" />
+                        <dx:ListEditItem Text="Reserva Recepcion" Value="4" />
+                        <dx:ListEditItem Text="Planta Productiva" Value="5" />
+                        <dx:ListEditItem Text="Consolidado" Value="6" />
+                        <dx:ListEditItem Text="Despacho Cajas" Value="7" />
+                        <dx:ListEditItem Text="CrossDocking" Value="8" />
+                        <dx:ListEditItem Text="Ajuste Salida" Value="9" />
+                    </Items>
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataDateColumn FieldName="FTermino" ShowInCustomizationForm="True" 
+                VisibleIndex="5">
+                <PropertiesDateEdit DisplayFormatString="dd/MM/yyyy HH:mm">
+                </PropertiesDateEdit>
+            </dx:GridViewDataDateColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:LinqDataSource ID="LqDsPedidos" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTWMSDataContext" EntityTypeName="" 
+        TableName="CVT_EncabezadoPedido"
+        
+        Where="FEntrega &lt;= @FEntrega &amp;&amp; FEntrega &gt;= @FEntrega1" 
+        EnableInsert="True">
+        <WhereParameters>
+            <asp:ControlParameter ControlID="cb_fhasta" Name="FEntrega" 
+                PropertyName="Value" Type="DateTime" />
+            <asp:ControlParameter ControlID="cb_fdesde" Name="FEntrega1" 
+                PropertyName="Value" Type="DateTime" />
+        </WhereParameters>
+    </asp:LinqDataSource>
+            <asp:LinqDataSource ID="LqDsSite" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTWMSDataContext" EntityTypeName="" 
+        TableName="Site">
+    </asp:LinqDataSource>
+    <asp:LinqDataSource ID="LqDsStaff" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTWMSDataContext" EntityTypeName="" 
+        TableName="Staff">
+    </asp:LinqDataSource>
+    <asp:LinqDataSource ID="LqDsEntidad" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+        TableName="CVT_Entidad">
+    </asp:LinqDataSource>
+            </dx:PanelContent>
+</PanelCollection>
+    </dx:ASPxPanel>
+</div>
+<dx:ASPxLoadingPanel ID="LoadingPanel" runat="server" ClientInstanceName="LoadingPanel"
+        Modal="True">
+    </dx:ASPxLoadingPanel>
+</asp:Content>

@@ -1,0 +1,69 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Trazabilidad.aspx.cs" Inherits="CVT_MermasRecepcion.Calidad.Trazabilidad" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+    <table class="dxeBinImgCPnlSys">
+        <tr>
+            <td>
+                <dx:ASPxRadioButtonList ID="ASPxRadioButtonList1" runat="server" 
+                    SelectedIndex="2">
+                    <Items>
+                        <dx:ListEditItem Text="Materia Prima" Value="MP" />
+                        <dx:ListEditItem Text="Semielaborado" Value="SE" />
+                        <dx:ListEditItem Selected="True" Text="Producto Terminado" Value="PT" />
+                    </Items>
+                </dx:ASPxRadioButtonList>
+            </td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Producto">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cb_producto" runat="server">
+                    <ValidationSettings>
+                        <RequiredField IsRequired="True" />
+                    </ValidationSettings>
+                </dx:ASPxComboBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Lote">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxTextBox ID="txt_lote" runat="server" Width="170px">
+                    <ValidationSettings>
+                        <RequiredField IsRequired="True" />
+                    </ValidationSettings>
+                </dx:ASPxTextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                <dx:ASPxButton ID="btn_generar" runat="server" onclick="btn_generar_Click" 
+                    Text="Generar">
+                </dx:ASPxButton>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+    </table>
+</asp:Content>

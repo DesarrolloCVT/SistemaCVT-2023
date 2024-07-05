@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ZBO_MMETRO" Class="DBMLSapSMMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.0.20.3;Initial Catalog=ZBO_MMETRO;User ID=sa" SettingsObjectName="DBTest.Properties.Settings" SettingsPropertyName="ZBO_MMETROConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.VW_SMM_STOCK" Member="VW_SMM_STOCK">
+    <Type Name="VW_SMM_STOCK">
+      <Column Name="itemcode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Stock" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UomEntry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UomCode" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="BcdCode" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SMM_ListadoPrecios_Distribucion_API" Member="VW_SMM_ListadoPrecios_Distribucion_API">
+    <Type Name="VW_SMM_ListadoPrecios_Distribucion_API">
+      <Column Name="[Und Medida]" Member="Und_Medida" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="[Cantidad x UPC]" Member="Cantidad_x_UPC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UomEntry" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Impuesto" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Neto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BcdCode" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SMM_ListadoPrecios_API" Member="VW_SMM_ListadoPrecios_API">
+    <Type Name="VW_SMM_ListadoPrecios_API">
+      <Column Name="[Und Medida]" Member="Und_Medida" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="[Cantidad x UPC]" Member="Cantidad_x_UPC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UomEntry" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Impuesto" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Neto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BcdCode" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CRD1" Member="MMETRO_CRD1">
+    <Type Name="MMETRO_CRD1">
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CardCode" Type="System.String" DbType="NVarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Street" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Block" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ZipCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="County" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="UserSign" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="LogInstanc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ObjType" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="LicTradNum" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="LineNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaxCode" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="Building" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="AdresType" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Address2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AddrType" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="StreetNo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AltCrdName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AltTaxId" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="TaxOffice" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GlblLocNum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ntnlty" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DIOTNat" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="TaaSEnbl" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="GSTRegnNo" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="GSTType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreateTS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EncryptIV" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MYFType" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="VatResDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="VatResCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VatResName" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="VatResAddr" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SMM_ListaClientes_GetClientes" Member="VW_SMM_ListaClientes_GetClientes">
+    <Type Name="VW_SMM_ListaClientes_GetClientes">
+      <Column Name="FechaActualizacion" Type="System.String" DbType="VarChar(59)" CanBeNull="true" />
+      <Column Name="Rut" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="Cod_Interno" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Razon_Social" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="E_Mail" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Condicion_Pago" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Linea_Credito" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="SlpCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Vendedor" Type="System.String" DbType="NVarChar(155)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SMM_ListaProductos_GetProductos" Member="VW_SMM_ListaProductos_GetProductos">
+    <Type Name="VW_SMM_ListaProductos_GetProductos">
+      <Column Name="FechaActualizacion" Type="System.String" DbType="VarChar(59)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="BcdCode" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="UomCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="UomEntry" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantidadxUM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Marca" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Categoria" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SubCategoria" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CodProveedor" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Proveedor" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="U_Multiplo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="U_VentaMinima" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SMM_ListaSucursales_GetSucursales" Member="VW_SMM_ListaSucursales_GetSucursales">
+    <Type Name="VW_SMM_ListaSucursales_GetSucursales">
+      <Column Name="FechaActualizacion" Type="System.String" DbType="VarChar(59)" CanBeNull="true" />
+      <Column Name="Cod_Cliente" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Cod_Interno" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EAN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nombre" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Direccion" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Ciudad" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Comuna" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SMM_ListadoPrecios_Unidades_API" Member="VW_SMM_ListadoPrecios_Unidades_API">
+    <Type Name="VW_SMM_ListadoPrecios_Unidades_API">
+      <Column Name="[Und Medida]" Member="Und_Medida" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="[Cantidad x UPC]" Member="Cantidad_x_UPC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UomEntry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodProducto" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Impuesto" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="Rate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Neto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BcdCode" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SMM_ListaProductos_Unidades_GetProductos" Member="VW_SMM_ListaProductos_Unidades_GetProductos">
+    <Type Name="VW_SMM_ListaProductos_Unidades_GetProductos">
+      <Column Name="FechaActualizacion" Type="System.String" DbType="VarChar(59)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="BcdCode" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="UomCode" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="UomEntry" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantidadxUM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Marca" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Categoria" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SubCategoria" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CodProveedor" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Proveedor" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="U_Multiplo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="U_VentaMinima" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

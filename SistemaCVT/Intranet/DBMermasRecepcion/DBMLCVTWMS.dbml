@@ -1,0 +1,2009 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CvWmsProd2" Class="DBMLCVTWMSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=alerce;Initial Catalog=CvWmsProd2;Persist Security Info=True;User ID=sa;Connect Timeout=3600;Encrypt=False" SettingsObjectName="DBMermasRecepcion.Properties.Settings" SettingsPropertyName="CvWmsProd2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Movement" Member="Movement">
+    <Type Name="Movement">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Movement_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MoveType_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Entity_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Movement_Value" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Movement_InDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Movement_OutDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Movement_NewQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Movement_NewNetWeight" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Movement_NewGrossWeight" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Business_Partner" Member="Business_Partner">
+    <Type Name="Business_Partner">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Business_Partner_Id" Type="System.String" DbType="VarChar(14) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Business_Partner_CId" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Language_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Business_Partner_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Business_Partner_LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Business_Partner_MiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Business_Partner_Notes" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+      <Column Name="Business_Partner_Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Business_Partner_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Business_Partner_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Category_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BusinessType_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Business_Partner_Phone" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="INV_0010_SyncStat" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="INV_0010_UpdFrom" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="EDocument_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Staff" Member="Staff">
+    <Type Name="Staff">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Staff_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Staff_UserName" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Staff_Password" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Staff_Enabled" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Profiles_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Staff_LastName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Staff_Cid" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Staff_Position" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Staff_RePalletizing" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Staff_Token" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Layout" Member="Layout">
+    <Type Name="Layout">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Warehouse_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sector_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Layout_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Layout_Width" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Height" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Depth" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Weight" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Rack_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Y_Pasillo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_X_Fila" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Z_Columna" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_AllowRepShmnt" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PickingList" Member="PickingList">
+    <Type Name="PickingList">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PickingList_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PickingList_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Order_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PickingList_ProductCode" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MeasurementUnit_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PickingList_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PickingList_NetWeight" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_Id_Origin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_SSCC_Origin" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Package_Id_Destiny" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_SSCC_Destiny" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="PickingList_Level" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PickingList_Parent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Correlative" Member="Correlative">
+    <Type Name="Correlative">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Correlative_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Correlative_In" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Correlative_Out" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Correlative_Now" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Correlative_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Correlative_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transfer_Detail" Member="Transfer_Detail">
+    <Type Name="Transfer_Detail">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Layout_Id_Actual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Task_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Task" Member="Task">
+    <Type Name="Task">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Task_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Task_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Task_Wave_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Task_Order_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Task_Sku" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Task_Layout_Id_Origin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Task_Layout_Id_Destiny" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Task_Layout_Id_End" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Task_Package_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Task_QuantityToPick" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Task_Quantity_Picked" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Task_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Task_DateMod" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Task_DateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Task_CreateBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Task_ModBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Task_Assigned" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reserve_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Task_GeneratedBy" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Task_Reception_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Task_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reserve" Member="Reserve">
+    <Type Name="Reserve">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reserve_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_Serie" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="WavePicking_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reserve_Quantity" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Reserve_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductionDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="InDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Reserve_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transfer_Detail_Unit_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Location" Member="Location">
+    <Type Name="Location">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Location_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Warehouse_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Location_InDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Location_OutDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderDetail" Member="OrderDetail">
+    <Type Name="OrderDetail">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Order_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrderDetail_Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrderDetail_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ExpeditionDetail" Member="ExpeditionDetail">
+    <Type Name="ExpeditionDetail">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Expedition_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Package_SSCCParent" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ExpeditionDetail_TimeOut" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ExpeditionDetail_Confirmed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpeditionDetail_Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExpeditionDetail_NetWeight" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="ExpeditionDetail_GrossWeight" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="ExpeditionDetail_ConfirmedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_ResumenConsultaUbicacion" Member="CVT_ResumenConsultaUbicacion">
+    <Type Name="CVT_ResumenConsultaUbicacion">
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Bultos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cantidad_Pedidos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_ResumenPosicionesCamion" Member="CVT_ResumenPosicionesCamion">
+    <Type Name="CVT_ResumenPosicionesCamion">
+      <Column Name="Posicion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cant_Bultos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderProForm" Member="OrderProForm">
+    <Type Name="OrderProForm">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Order_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrderProForm_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Package_Barcode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrderProForm_Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrderProForm_CompleteQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrderProform_NetWeigth" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="OrderProForm_CompleteNetWeigth" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VIEW_ORDERDETAIL" Member="VIEW_ORDERDETAIL">
+    <Type Name="VIEW_ORDERDETAIL">
+      <Column Name="Order_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ExpiresDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="OrderDetail_Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sector" Member="Sector">
+    <Type Name="Sector">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Sector_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Sector_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Sector_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Sector_Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sector_AllowStack" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sector_Notes" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Trucker" Member="Trucker">
+    <Type Name="Trucker">
+      <Column Name="Trucker_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Trucker_CId" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Trucker_Name" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Trucker_License_Expires" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Trucker_Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trucker_Birth" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Trucker_Photo" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Trucks" Member="Trucks">
+    <Type Name="Trucks">
+      <Column Name="Trucks_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Trucks_Plate" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Trucks_Brand" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Trucks_Year" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trucks_Axis_Number" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trucks_Capacity_Ton" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trucks_Tare" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trucks_Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trucks_Note" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AccessControl" Member="AccessControl">
+    <Type Name="AccessControl">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccessControl_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InputType_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trucks_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Trucker_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccessControl_DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AccessControl_Documents" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AccessControl_DateOut" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AccessControl_Location" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AccessControl_Notes" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+      <Column Name="Lodge_IdIn" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lodge_IdOut" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Scheduler_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Trucks_Axis_Number" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccessControl_Weigh" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="AccessContro_TrailerAxis" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ramp_Patent" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_Transfer" Member="CVT_Transfer">
+    <Type Name="CVT_Transfer">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Site_Id_Destiny" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="INV_0010_SyncStat" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="INV_0010_UpdFrom" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Transfer_U_NXTipoMovTrans" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Transfer_U_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transfer_U_Folio_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cant_Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_PalletOFLinea" Member="CVT_PalletOFLinea">
+    <Type Name="CVT_PalletOFLinea">
+      <Column Name="CantidadPallet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_Barcode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_PalletsOF" Member="CVT_PalletsOF">
+    <Type Name="CVT_PalletsOF">
+      <Column Name="CantidadPallet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VIEW_ORDERPROFORM" Member="VIEW_ORDERPROFORM">
+    <Type Name="VIEW_ORDERPROFORM">
+      <Column Name="Order_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="OrderProForm_Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cant_Bultos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cant_Completada" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_TranferidoOFMerma" Member="CVT_TranferidoOFMerma">
+    <Type Name="CVT_TranferidoOFMerma">
+      <Column Name="Transfer_U_Folio_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BOrigen" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BDestino" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(36,20)" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_ResumenConsumoOF" Member="CVT_ResumenConsumoOF">
+    <Type Name="CVT_ResumenConsumoOF">
+      <Column Name="Transfer_U_Folio_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="[Cantidad Transferida]" Member="Cantidad_Transferida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Cantidad Merma]" Member="Cantidad_Merma" Type="System.Decimal" DbType="Decimal(38,20) NOT NULL" CanBeNull="false" />
+      <Column Name="[Cantidad Consumida]" Member="Cantidad_Consumida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VIEW_DIAS_EN_PLANTA_MP" Member="CVT_VIEW_DIAS_EN_PLANTA_MP">
+    <Type Name="CVT_VIEW_DIAS_EN_PLANTA_MP">
+      <Column Name="[COD. PRODUCTO]" Member="COD__PRODUCTO" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="PRODUCTO" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PROVEEDOR" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[FECHA INGRESO]" Member="FECHA_INGRESO" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[DIAS EN PLANTA]" Member="DIAS_EN_PLANTA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[N DOCUMENTO]" Member="N_DOCUMENTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LOTE" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[CANT PALLETS]" Member="CANT_PALLETS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Layout_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_Transformacion_ExpDesecho" Member="CVT_Transformacion_ExpDesecho">
+    <Type Name="CVT_Transformacion_ExpDesecho">
+      <Column Name="Expedition_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="IDEsperado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodEsperado" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="CantidadEsperada" Type="System.Decimal" DbType="Decimal(30,6)" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_Transformacion_TransUnidades" Member="CVT_Transformacion_TransUnidades">
+    <Type Name="CVT_Transformacion_TransUnidades">
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id_Destiny" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="IDEsperado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodEsperado" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="CantidadEsperada" Type="System.Decimal" DbType="Decimal(30,6)" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_Transformacion_ExpReproceso" Member="CVT_Transformacion_ExpReproceso">
+    <Type Name="CVT_Transformacion_ExpReproceso">
+      <Column Name="Expedition_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="IDEsperado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodEsperado" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="CantidadEsperada" Type="System.Decimal" DbType="Decimal(30,6)" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_Transformacion_ExpUnidades" Member="CVT_Transformacion_ExpUnidades">
+    <Type Name="CVT_Transformacion_ExpUnidades">
+      <Column Name="Expedition_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="IDEsperado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodEsperado" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="CantidadEsperada" Type="System.Decimal" DbType="Decimal(30,6)" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_Transformacion_TransDesecho" Member="CVT_Transformacion_TransDesecho">
+    <Type Name="CVT_Transformacion_TransDesecho">
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id_Destiny" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="IDEsperado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodEsperado" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="CantidadEsperada" Type="System.Decimal" DbType="Decimal(30,6)" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_Transformacion_TransReproceso" Member="CVT_Transformacion_TransReproceso">
+    <Type Name="CVT_Transformacion_TransReproceso">
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id_Destiny" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="IDEsperado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodEsperado" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="CantidadEsperada" Type="System.Decimal" DbType="Decimal(30,6)" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ReceptionReported" Member="ReceptionReported">
+    <Type Name="ReceptionReported">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ReceptionReported_Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReceptionReported_Weigth" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_TransferidoOF" Member="CVT_TransferidoOF">
+    <Type Name="CVT_TransferidoOF">
+      <Column Name="Transfer_U_Folio_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BOrigen" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BDestino" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_ResumenExpedicion" Member="CVT_VW_ResumenExpedicion">
+    <Type Name="CVT_VW_ResumenExpedicion">
+      <Column Name="Expedition_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PurPackUn" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="CantidadTransformar" Type="System.Decimal" DbType="Decimal(30,6)" CanBeNull="true" />
+      <Column Name="Transforma" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="CODUnitario" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.String" DbType="VarChar(2550)" CanBeNull="true" />
+      <Column Name="[OF]" Member="OF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_ResumenExpedicionEncEntrada" Member="CVT_VW_ResumenExpedicionEncEntrada">
+    <Type Name="CVT_VW_ResumenExpedicionEncEntrada">
+      <Column Name="Expedition_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CODUnitario" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_ResumenExpedicionEncSalida" Member="CVT_VW_ResumenExpedicionEncSalida">
+    <Type Name="CVT_VW_ResumenExpedicionEncSalida">
+      <Column Name="Expedition_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Scheduler" Member="Scheduler">
+    <Type Name="Scheduler">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Scheduler_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Scheduler_StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Scheduler_EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Scheduler_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Scheduler_Subject" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Scheduler_Description" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Scheduler_AllDay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Scheduler_RecurrenceInfo" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Scheduler_ReminderInfo" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Scheduler_ContactInfo" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Scheduler_Recurrence" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Business_Partner_Id" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="Scheduler_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InputType_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Worktype_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PackageState_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Scheduler_Note" Type="System.String" DbType="VarChar(2550)" CanBeNull="true" />
+      <Column Name="Scheduler_SendStat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Scheduler_Order_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Scheduler_CrossDocking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Scheduler_USE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Scheduler_ETA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_ResumenPedidoLote" Member="CVT_VW_ResumenPedidoLote">
+    <Type Name="CVT_VW_ResumenPedidoLote">
+      <Column Name="Order_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Order_U_TipoDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_NumDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_MovProductosStockActual" Member="CVT_VW_MovProductosStockActual">
+    <Type Name="CVT_VW_MovProductosStockActual">
+      <Column Name="ObjSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Guia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LoteProveedor" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FProduccion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FVencimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="BodRecepcion" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CantidadInicial" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BodActual" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CantidadAcutal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="U_No_SUI" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Business_Partner_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkType" Member="WorkType">
+    <Type Name="WorkType">
+      <Column Name="Worktype_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WorkType_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WorkType_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DocType" Member="DocType">
+    <Type Name="DocType">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DocType_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocType_Code" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DocType_Description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Country" Member="Country">
+    <Type Name="Country">
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Country_Name" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="Language_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Country_Code" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_RecepcionResumen" Member="CVT_VW_RecepcionResumen">
+    <Type Name="CVT_VW_RecepcionResumen">
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_ResumenPedidoEnc" Member="CVT_VW_ResumenPedidoEnc">
+    <Type Name="CVT_VW_ResumenPedidoEnc">
+      <Column Name="Order_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Order_U_TipoDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_NumDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LineNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocEntry" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_BusinessPartnerDestiny" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_PalletTransferidosCV300" Member="CVT_VW_PalletTransferidosCV300">
+    <Type Name="CVT_VW_PalletTransferidosCV300">
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Transfer_U_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transfer_U_Folio_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_OutDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_RecepcionDetalle" Member="CVT_VW_RecepcionDetalle">
+    <Type Name="CVT_VW_RecepcionDetalle">
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Reception_Note" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+      <Column Name="Business_Partner_Provider" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_U_NumDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_DocNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sello" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="SelloAduana" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="SelloSAG" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="NoContenedor" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NoDIDespacho" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="TipoDescarga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoContenedor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HoraInicio" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="HoraTermino" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="Reception_U_FchRef" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Reception_U_RazonRef" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DevolucionMotivo_Id" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_RecepcionDetalleLote" Member="CVT_VW_RecepcionDetalleLote">
+    <Type Name="CVT_VW_RecepcionDetalleLote">
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Reception_Note" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DevolucionMotivo_Id" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transfer_ProForm" Member="Transfer_ProForm">
+    <Type Name="Transfer_ProForm">
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TransferProForm_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrderProForm_Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrderProForm_CompleteQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_BultoConReserva" Member="CVT_VW_BultoConReserva">
+    <Type Name="CVT_VW_BultoConReserva">
+      <Column Name="SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Operacion" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ReserveQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_FechasDespachadas" Member="CVT_VW_FechasDespachadas">
+    <Type Name="CVT_VW_FechasDespachadas">
+      <Column Name="Order_U_NumDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ExpiresDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_PackageLote" Member="CVT_VW_PackageLote">
+    <Type Name="CVT_VW_PackageLote">
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ArticleProvider" Member="ArticleProvider">
+    <Type Name="ArticleProvider">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Business_Partner_Id" Type="System.String" DbType="VarChar(14) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Family_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MeasurementUnit_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleType_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Accounts_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Container_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ArticleProvider_QualityStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_ControlSN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_ControlPN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_ControlLT" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_AllowControlQuality" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_ExpiryTime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_Dato1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ArticleProvider_GrossWeight" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Bulk" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_CriticalStock" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_CriticalStockInPicking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_GTIN14" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_CreationDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ArticleProvider_UserCreationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="INV_0010_SyncStat" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="INV_0010_UpdFrom" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ArticleProvider_UpdateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ArticleProvider_UserUpdateId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_GTIN13" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="ArticleProvider_EnvQty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_Width" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Height" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Length" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Volume" Type="System.Decimal" DbType="Decimal(38,6)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ArticleProvider_MaxStock" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_U_CantidadPaletizado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_U_NombreAlternativo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_ReceptionReported" Member="CVT_VW_ReceptionReported">
+    <Type Name="CVT_VW_ReceptionReported">
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_U_NombreAlternativo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_LoteSugeridoRecepcion" Member="CVT_VW_LoteSugeridoRecepcion">
+    <Type Name="CVT_VW_LoteSugeridoRecepcion">
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="U_SiglaLote" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Reception_U_NumDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LoteSugerido" Type="System.String" DbType="NVarChar(38)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Family" Member="Family">
+    <Type Name="Family">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Family_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Family_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Family_Shortdescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Family_Parent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_ProductoNoEncontrado" Member="CVT_VW_ProductoNoEncontrado">
+    <Type Name="CVT_VW_ProductoNoEncontrado">
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Layout_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="Location_InDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_ReserveQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiasEstadiaActual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiasEstadiaTotal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rack" Member="Rack">
+    <Type Name="Rack">
+      <Column Name="Rack_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Rack_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_UbicacionesDisponibles" Member="CVT_VW_UbicacionesDisponibles">
+    <Type Name="CVT_VW_UbicacionesDisponibles">
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Layout_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Rack_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Rack_Type" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_OcupacionPosicionesRack" Member="CVT_VW_OcupacionPosicionesRack">
+    <Type Name="CVT_VW_OcupacionPosicionesRack">
+      <Column Name="Layout_Y_Pasillo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Layout_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CantUbicacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CapUbicacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Disponible" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PorcOcupacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CapPasillo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantPalletPasillo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PorcOcupacionPasillo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_OcupacionRackCompletos" Member="CVT_VW_OcupacionRackCompletos">
+    <Type Name="CVT_VW_OcupacionRackCompletos">
+      <Column Name="Layout_Y_Pasillo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Warehouse_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Libre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ocupado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PorcOcupacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BusinessType" Member="BusinessType">
+    <Type Name="BusinessType">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BusinessType_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BusinessType_Description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BusinessType_ShortDescription" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_ConsultaPosicion" Member="CVT_ConsultaPosicion">
+    <Type Name="CVT_ConsultaPosicion">
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Layout_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="Location_InDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_ReserveQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ExpiresDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_TransferenciasEfectuadas" Member="CVT_VW_TransferenciasEfectuadas">
+    <Type Name="CVT_VW_TransferenciasEfectuadas">
+      <Column Name="Folio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Entidad" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FolioEntidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NPallet" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BodOrigen" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BodDestino" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RPTtrazabilidadProductoLote" Member="RPTtrazabilidadProductoLote">
+    <Type Name="RPTtrazabilidadProductoLote">
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Entidad" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="Operacion" Type="System.String" DbType="NVarChar(402)" CanBeNull="true" />
+      <Column Name="IDentidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ndocumento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Staff_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fecha" Type="System.String" DbType="NVarChar(23)" CanBeNull="true" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ExpiresDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Package_SN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Package_PN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_Barcode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Business_Partner_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Business_Partner_CId" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Supportive_Description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewStock" Member="ViewStock">
+    <Type Name="ViewStock">
+      <Column Name="Almacen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Business_Partner_Id" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Cantidad Inicial]" Member="Cantidad_Inicial" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Cod.Cliente]" Member="Cod_Cliente" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cuenta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Documento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Folio" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FProduccion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FRecepcion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FVencimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="GTIN14" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="Info1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Info2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_InDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Package_OutDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_QualityStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PackageState_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PesoMedio" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PesoNeto" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Propietario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reservada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SAG" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Sello" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Sector_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sector" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Serie" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Site" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Soportante" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="[SSCC Padre]" Member="SSCC_Padre" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Supportive_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoDocumento" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Ubicacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Warehouse_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountParent" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Origin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Destination" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SectorId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_DependencesTotal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="U_PaisOrigenMP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_sitios_fefo2" Member="VW_sitios_fefo2">
+    <Type Name="VW_sitios_fefo2">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Site_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Site_Notes" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+      <Column Name="Site_GLN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewExpeditionDetailExport" Member="ViewExpeditionDetailExport">
+    <Type Name="ViewExpeditionDetailExport">
+      <Column Name="[Exp. N°]" Member="Exp__N_" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Socio Negocios]" Member="Socio_Negocios" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Id Bulto]" Member="Id_Bulto" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="[Id Padre]" Member="Id_Padre" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Destino" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Origen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Cod. Producto]" Member="Cod__Producto" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Descripción" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TotalEnvases" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_PRODUCTOS_INFINVENTARIO" Member="VW_PRODUCTOS_INFINVENTARIO">
+    <Type Name="VW_PRODUCTOS_INFINVENTARIO">
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Warehouse" Member="Warehouse">
+    <Type Name="Warehouse">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Warehouse_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Warehouse_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Warehouse_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Warehouse_Notes" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+      <Column Name="Warehouse_CapComercial" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Warehouse_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_BodegasTransferenciasEfectuadas" Member="VW_BodegasTransferenciasEfectuadas">
+    <Type Name="VW_BodegasTransferenciasEfectuadas">
+      <Column Name="Bodega" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Expedition" Member="Expedition">
+    <Type Name="Expedition">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Expedition_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Business_Partner_Id" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="DocType_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccessControl_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sector_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WorkType_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClientDestiny_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Expedition_DocNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Expedition_DateOut" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Expedition_Note" Type="System.String" DbType="VarChar(2550)" CanBeNull="true" />
+      <Column Name="Expedition_GrossWeight" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Expedition_NetWeight" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Expedition_Tare" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Expedition_Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Expedition_Stamp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Expedition_seals1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Expedition_seals2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Expedition_seals3" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Expedition_NumContainer" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Expedition_DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Expedition_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Expedition_SendState" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Expedition_Sync" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Expedition_Confirmed" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Expedition_Included" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="INV_0010_SyncStat" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="INV_0010_UpdFrom" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Expedition_U_TipoDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Expedition_U_NumDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Expedition_U_Motivo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_ExpeditionDetailLotSync" Member="CVT_VW_ExpeditionDetailLotSync">
+    <Type Name="CVT_VW_ExpeditionDetailLotSync">
+      <Column Name="Expedition_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="package_lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_ListadoPartidasAbierta" Member="CVT_VW_ListadoPartidasAbierta">
+    <Type Name="CVT_VW_ListadoPartidasAbierta">
+      <Column Name="Partida" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="NOperacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NPallet" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_EstadiaProductosCV200" Member="CVT_VW_EstadiaProductosCV200">
+    <Type Name="CVT_VW_EstadiaProductosCV200">
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dias" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cant" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="FechaIngreso" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ExpiresDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="origen" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ItmsGrpNam" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="U_Familia" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Madurez" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Meta" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="DiasExpiracion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiasxExpirar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MadurezExpiracion" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ExpiracionRecepcion" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="UM" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Peso" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="CantidadKilos" Type="System.Decimal" DbType="Decimal(30,6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_DatosLayout" Member="CVT_DatosLayout">
+    <Type Name="CVT_DatosLayout">
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Warehouse_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sector_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Layout_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Layout_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_TRAZABILIDAD_PALLET_MOVIL" Member="VW_TRAZABILIDAD_PALLET_MOVIL">
+    <Type Name="VW_TRAZABILIDAD_PALLET_MOVIL">
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ReserveQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Codproducto" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Articulo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Site" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ubicacion" Type="System.String" DbType="VarChar(92)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SOPORTANTE_MOVIL" Member="VW_SOPORTANTE_MOVIL">
+    <Type Name="VW_SOPORTANTE_MOVIL">
+      <Column Name="FECHA" Type="System.String" DbType="NVarChar(54)" CanBeNull="true" />
+      <Column Name="Entidad" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="Operacion" Type="System.String" DbType="NVarChar(402)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Staff_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_PRODUCTOS_XAMARIN" Member="VW_PRODUCTOS_XAMARIN">
+    <Type Name="VW_PRODUCTOS_XAMARIN">
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_BODEGAS_XAMARIN" Member="VW_BODEGAS_XAMARIN">
+    <Type Name="VW_BODEGAS_XAMARIN">
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Site_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_ExpeditionDetailSync1" Member="CVT_VW_ExpeditionDetailSync1">
+    <Type Name="CVT_VW_ExpeditionDetailSync1">
+      <Column Name="Expedition_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Item" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SaleCostAc" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="AvgPrice" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Division" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="UAdm" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="CCosto" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_Bodegas_informe_stockFilm" Member="VW_Bodegas_informe_stockFilm">
+    <Type Name="VW_Bodegas_informe_stockFilm">
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_Bodegas_Transfer_Film" Member="VW_Bodegas_Transfer_Film">
+    <Type Name="VW_Bodegas_Transfer_Film">
+      <Column Name="Bodega" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_ResumenRecepcionBultos" Member="VW_ResumenRecepcionBultos">
+    <Type Name="VW_ResumenRecepcionBultos">
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantidadBultos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Supportive" Member="Supportive">
+    <Type Name="Supportive">
+      <Column Name="Supportive_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Supportive_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Supportive_Description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Supportive_LoadCapacity" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Supportive_Height" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Supportive_Width" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Supportive_Length" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Supportive_Factor" Type="System.Decimal" DbType="Decimal(18,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Supportive_NetWeight" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_PAIS_OF" Member="CVT_PAIS_OF">
+    <Type Name="CVT_PAIS_OF">
+      <Column Name="DocNum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="U_PaisOrigenMP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Country_Name" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_PRODUCTOS_TOMAINVENTARIO_XAMARIN" Member="VW_PRODUCTOS_TOMAINVENTARIO_XAMARIN">
+    <Type Name="VW_PRODUCTOS_TOMAINVENTARIO_XAMARIN">
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_BODEGAS_EXPEDICION_FILM" Member="CVT_VW_BODEGAS_EXPEDICION_FILM">
+    <Type Name="CVT_VW_BODEGAS_EXPEDICION_FILM">
+      <Column Name="Site_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_SITIOS_TODOS" Member="VW_SITIOS_TODOS">
+    <Type Name="VW_SITIOS_TODOS">
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_TransferidoOF_ConsumoProduccion" Member="CVT_TransferidoOF_ConsumoProduccion">
+    <Type Name="CVT_TransferidoOF_ConsumoProduccion">
+      <Column Name="Transfer_U_Folio_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BOrigen" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BDestino" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_ResumenConsumoOF_Produccion" Member="CVT_ResumenConsumoOF_Produccion">
+    <Type Name="CVT_ResumenConsumoOF_Produccion">
+      <Column Name="Transfer_U_Folio_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="[Cantidad Transferida]" Member="Cantidad_Transferida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="[Cantidad Merma]" Member="Cantidad_Merma" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+      <Column Name="[Cantidad Consumida]" Member="Cantidad_Consumida" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(38,20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_EncabezadoPedido" Member="CVT_EncabezadoPedido">
+    <Type Name="CVT_EncabezadoPedido">
+      <Column Name="Pedido" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="P_SAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FEntrega" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Expedicion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SyncStat" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Vuelta" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GrueroAsignado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FTermino" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Bodega" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CantPalletBlanco" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantPalletChep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantBlancoTipoChep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Site" Member="Site">
+    <Type Name="Site">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Site_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Site_Notes" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+      <Column Name="Site_GLN" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Package" Member="Package">
+    <Type Name="Package">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Supportive_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_GrossWeight" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Barcode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Package_QuantityInitial" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_NetWeightInitial" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_NetWeight" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_GrossWeightInitial" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_GrossWeight" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_Height" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_QualityStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Owner" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Package_SSCCParent" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Package_SSCCParent_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ExpiresDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Mixed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_InDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Package_OutDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_SN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_PN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_ReserveQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Reserve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Data1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Package_Data2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PackageState_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Accounts_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_FoilPP" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="EntryType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Origin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Destination" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_DependencesTotal" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Package_CrossDocking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PackageState_Id_Initial" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DevolucionMotivo_Id" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ID_TipoBloqueo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodBloqueoCliente" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_AlertaVidaUtil" Member="CVT_VW_AlertaVidaUtil">
+    <Type Name="CVT_VW_AlertaVidaUtil">
+      <Column Name="NPallet" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Almacen" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Ubicacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FRecepcion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FProduccion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FVencimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="VidaUtil" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VidaUtil_Restante" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Porc_Restante" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewTrazabilidadBusqueda" Member="ViewTrazabilidadBusqueda">
+    <Type Name="ViewTrazabilidadBusqueda">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Warehouse_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sector_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Owner" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Supportive_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FRecepcion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Cod.Cliente]" Member="Cod_Cliente" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Articulo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_QualityStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_SN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_ReserveQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Site" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ubicacion" Type="System.String" DbType="VarChar(92)" CanBeNull="true" />
+      <Column Name="Soportante" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Propietario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Sector" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="GTIN13" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="TipoDocumento" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reception_DocNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Almacen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_ExpiresDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Info1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Info2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Cuenta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_PN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_Barcode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Package_QuantityInitial" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_NetWeightInitial" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_NetWeight" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_GrossWeightInitial" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_GrossWeight" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_SSCCParent" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Package_Height" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Package_Mixed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_InDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Package_OutDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_Reserve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hijos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Disponibilidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KDisponible" Type="System.Decimal" DbType="Decimal(38,13)" CanBeNull="true" />
+      <Column Name="KUnitario" Type="System.Decimal" DbType="Decimal(29,15)" CanBeNull="true" />
+      <Column Name="ArticleProvider_GTIN14" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="InputType_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Trucks_Plate" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="Trucker_Name" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="AccessControl_DateIn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AccessControl_Documents" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Origen" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="EstadoPallet" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RPTtrazabilidadSoportante" Member="RPTtrazabilidadSoportante">
+    <Type Name="RPTtrazabilidadSoportante">
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Entidad" Type="System.String" DbType="VarChar(19) NOT NULL" CanBeNull="false" />
+      <Column Name="Operacion" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IDentidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(61)" CanBeNull="true" />
+      <Column Name="Ndocumento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Staff_Name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="fecha" Type="System.String" DbType="NVarChar(54)" CanBeNull="true" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_ExpiresDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Package_SN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Package_PN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_Barcode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Business_Partner_Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Business_Partner_CId" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Supportive_Description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Article_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_DATO_EDIT_PROD" Member="VW_DATO_EDIT_PROD">
+    <Type Name="VW_DATO_EDIT_PROD">
+      <Column Name="NPallet" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reserva" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Origin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Country_Name" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="Order">
+    <Type Name="Order">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Order_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Business_Partner_Id" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="Contact_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClientDestiny_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Order_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Order_SoliciteDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Order_Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Order_Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Order_Note" Type="System.String" DbType="VarChar(2550)" CanBeNull="true" />
+      <Column Name="Order_BusinessPartnerDestiny" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="Scheduler_StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Scheduler_EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Worktype_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PackageState_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_SendStat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_Consolidate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_OtherOwner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrderProForm_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sector_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_TipoDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_NumDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_iniTunel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Order_U_terTunel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Order_U_GrueroAsig" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_GrueroExterno" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Order_U_HoraInicio_Armado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_MinInicio_Armado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_HoraTermino_Armado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_MinTermino_Armado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_HoraInicio_Carga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_MinInicio_Carga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_HoraTermino_Carga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_MinTermini_Carga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_CantPalletBlanco" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_CantPalletChep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_CantBlancoTipChep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_OrigenArmadoPedido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_BodegaUbicacion" Member="CVT_VW_BodegaUbicacion">
+    <Type Name="CVT_VW_BodegaUbicacion">
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_ReferenciaDocumentoCompra" Member="CVT_VW_ReferenciaDocumentoCompra">
+    <Type Name="CVT_VW_ReferenciaDocumentoCompra">
+      <Column Name="Documento" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="DocNum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumAtCard" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CardCode" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CardName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="U_SiglaLote" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Dscription" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="OpenQty" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="Project" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_VencimientosProyectadosCVT" Member="VW_VencimientosProyectadosCVT">
+    <Type Name="VW_VencimientosProyectadosCVT">
+      <Column Name="Bodega" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Grupo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FVencimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="DiasVencimiento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrecioUnit" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Costo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Enumerador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_TansferenciaParaTransformar" Member="CVT_VW_TansferenciaParaTransformar">
+    <Type Name="CVT_VW_TansferenciaParaTransformar">
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id_Destiny" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Origen" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Destino" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Cant_Pallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="INV_0010_UpdFrom" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_TansferenciaParaTransformarDetalle" Member="CVT_VW_TansferenciaParaTransformarDetalle">
+    <Type Name="CVT_VW_TansferenciaParaTransformarDetalle">
+      <Column Name="Folio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NPallet" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="UPC" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodProductoUnit" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="ProductoUnit" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Transformacion" Type="System.Decimal" DbType="Decimal(30,6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transfer" Member="Transfer">
+    <Type Name="Transfer">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Site_Id_Destiny" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="INV_0010_SyncStat" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="INV_0010_UpdFrom" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Transfer_U_NXTipoMovTrans" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Transfer_U_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transfer_U_Folio_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transfer_U_Comentario" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Transfer_U_UsuarioCierre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transfer_U_FechaCierre" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Transfer_U_TransferOrigin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transfer_U_ProcesoOrigen" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reception" Member="Reception">
+    <Type Name="Reception">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Business_Partner_Provider" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="Business_Partner_Owner" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="AccessControl_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sector_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Worktype_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Service_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DocType_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_DocNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_DateIn" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_DateOut" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Reception_Note" Type="System.String" DbType="VarChar(2500)" CanBeNull="true" />
+      <Column Name="Reception_Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_GrossWeight" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Reception_NetWeight" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Reception_Tare" Type="System.Decimal" DbType="Decimal(18,4)" CanBeNull="true" />
+      <Column Name="Reception_Stamp" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Reception_SendStat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Accounts_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_seals1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Reception_seals2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Reception_seals3" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Reception_NumContainer" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Reception_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_Origin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_Destination" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_RefrigerationUnit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_Sealed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_CrossDocking" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="INV_0010_SyncStat" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="INV_0010_UpdFrom" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Reception_U_TipoDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_U_NumDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_ExpBased" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_U_TpoDocRef" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Reception_U_FolioRef" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_U_FchRef" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Reception_U_RazonRef" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Reception_U_GrueroAsig" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_U_GrueroExterno" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Reception_U_Num_DI_Despacho" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Reception_U_Hora_Inicio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_U_Minuto_Inicio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_U_Hora_Termino" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_U_Minuto_Termino" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_U_Tipo_Descarga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_U_Tamano_Contenedor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_U_TipoPallet" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Reception_U_CantidadPallet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Reception_U_AreaResponsableDev" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_BuscaPorLoteProveedor" Member="CVT_VW_BuscaPorLoteProveedor">
+    <Type Name="CVT_VW_BuscaPorLoteProveedor">
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Package_Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_Data1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Package_Data2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Layout_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ExpiresDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_TransferenciaTiempoCierre" Member="CVT_TransferenciaTiempoCierre">
+    <Type Name="CVT_TransferenciaTiempoCierre">
+      <Column Name="dia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Año" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Transfer_U_FechaCierre" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Horas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_TIEMPOBAJADAPEDIDO" Member="CVT_TIEMPOBAJADAPEDIDO">
+    <Type Name="CVT_TIEMPOBAJADAPEDIDO">
+      <Column Name="Order_U_NumDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UltimoPosicionado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Año" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrimeroPosicionado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CantidadPallets" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TiempoMinutos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TiempoPorPallet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.CVT_ACTUALIZA_CLAVE_ENCRIPTADASTAFF" Method="CVT_ACTUALIZA_CLAVE_ENCRIPTADASTAFF">
+    <Parameter Name="ClaveEncrypt" Parameter="claveEncrypt" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_TRAZABILIDADPRODUCTOLOTE" Method="SP_TRAZABILIDADPRODUCTOLOTE">
+    <Parameter Name="idArticulo" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="lote" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="SP_TRAZABILIDADPRODUCTOLOTEResult">
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Entidad" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="Operacion" Type="System.String" DbType="NVarChar(402)" CanBeNull="true" />
+      <Column Name="IDentidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ndocumento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Staff_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fecha" Type="System.String" DbType="NVarChar(23)" CanBeNull="true" />
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ExpiresDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Package_SN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Package_PN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_Barcode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Business_Partner_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Business_Partner_CId" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Supportive_Description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CVT_SP_DETALLE_RECEPCIONES_DIARIAS" Method="CVT_SP_DETALLE_RECEPCIONES_DIARIAS">
+    <Parameter Name="DESDE" Parameter="dESDE" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="HASTA" Parameter="hASTA" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="CVT_SP_DETALLE_RECEPCIONES_DIARIASResult">
+      <Column Name="FolioRecepcion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="OC" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodProveedor" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Proveedor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Año" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.P_EliminaRecepcion" Method="P_EliminaRecepcion">
+    <Parameter Name="ReceptionId" Parameter="receptionId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="P_EliminaRecepcionResult">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Location_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Warehouse_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Location_InDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Location_OutDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.P_EliminaPallet" Method="P_EliminaPallet">
+    <Parameter Name="SSCC" Parameter="sSCC" Type="System.Int32" DbType="Int" />
+    <ElementType Name="P_EliminaPalletResult">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Location_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Warehouse_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Location_InDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Location_OutDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CVT_CierraTransferencia" Method="CVT_CierraTransferencia">
+    <Parameter Name="Transferid" Parameter="transferid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Layoutid" Parameter="layoutid" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StaffID" Parameter="staffID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CVT_SP_ListadoExpediciones" Method="CVT_SP_ListadoExpediciones">
+    <Parameter Name="Desde" Parameter="desde" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Hasta" Parameter="hasta" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="CVT_SP_ListadoExpedicionesResult">
+      <Column Name="NExpedicion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NDocumento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="FechaTermno" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Column Name="ano" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nota" Type="System.String" DbType="VarChar(2550)" CanBeNull="true" />
+      <Column Name="bodega" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Motivo" Type="System.String" DbType="VarChar(18)" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CVT_SP_ListadoTransferencia" Method="CVT_SP_ListadoTransferencia">
+    <Parameter Name="Desde" Parameter="desde" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Hasta" Parameter="hasta" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="CVT_SP_ListadoTransferenciaResult">
+      <Column Name="Ntransferencia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BOrigen" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BDestino" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioCreacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Entidad" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Folio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UsuarioCierre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaCierre" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NPallet" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(9)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CVT_SP_TRAZABILIDADFumigacion" Method="CVT_SP_TRAZABILIDADFumigacion">
+    <Parameter Name="lote" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Tipo" Parameter="tipo" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CVT_SP_TRAZABILIDADFumigacionResult">
+      <Column Name="tabla" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="producto" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CVT_SP_EstadiaProductosCV200" Method="CVT_SP_EstadiaProductosCV200">
+    <ElementType Name="CVT_SP_EstadiaProductosCV200Result">
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cant" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Dias" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaIngreso" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Origen" Type="System.String" DbType="VarChar(13)" CanBeNull="true" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ExpiresDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CVT_TRANSFERENCIAS_EFECTUADAS" Method="CVT_TRANSFERENCIAS_EFECTUADAS">
+    <Parameter Name="Fdesde" Parameter="fdesde" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Fhasta" Parameter="fhasta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="BOrigen" Parameter="bOrigen" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="BDestino" Parameter="bDestino" Type="System.String" DbType="VarChar(500)" />
+    <ElementType Name="CVT_TRANSFERENCIAS_EFECTUADASResult">
+      <Column Name="Folio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="BodOrigen" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="BodDestino" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Entidad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FolioEntidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NPallet" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="GrupoProducto" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Familia" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CONSULTAPOSICION_XAMARIN" Method="SP_CONSULTAPOSICION_XAMARIN">
+    <Parameter Name="idPosicion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_CONSULTAPOSICION_XAMARINResult">
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_RESUMEN_CONSULTAPOSICION_XAMARIN" Method="SP_RESUMEN_CONSULTAPOSICION_XAMARIN">
+    <Parameter Name="idPosicion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_RESUMEN_CONSULTAPOSICION_XAMARINResult">
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Bultos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cantidad_Pedidos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_FEFOSTOCK_XAMARIN" Method="SP_FEFOSTOCK_XAMARIN">
+    <Parameter Name="Bodega" Parameter="bodega" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CodProducto" Parameter="codProducto" Type="System.String" DbType="VarChar(MAX)" />
+    <ElementType Name="SP_FEFOSTOCK_XAMARINResult">
+      <Column Name="SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ubicacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FProduccion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FVencimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CONSULTAPOSICION" Method="SP_CONSULTAPOSICION">
+    <Parameter Name="idPosicion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_CONSULTAPOSICIONResult">
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Layout_Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Layout_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Location_InDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_ReserveQuantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Package_ExpiresDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Reception_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CVT_SP_TRAZABILIDAD" Method="CVT_SP_TRAZABILIDAD">
+    <Parameter Name="lote" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Tipo" Parameter="tipo" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CVT_SP_TRAZABILIDADResult">
+      <Column Name="Tabla" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="TipoDocumento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NumeroDocumento" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="NRecepcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="FECHA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TotalRecepcionado" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TotalActual" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="OrdenFabricacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Planificado" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CodConsumido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ProductoConsumido" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CantidadConsumida" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ConsumidoOtroLote" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ReprocesoAdicional" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ProducidoReal" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TotalConsumidoGlobal" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Facturado" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CodCliente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cliente" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Patente" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Devolucion" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CVT_STOCK" Method="SP_CVT_STOCK">
+    <Parameter Name="Sitio" Parameter="sitio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="codproducto" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="lote" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="SP_CVT_STOCKResult">
+      <Column Name="SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Cod_Cliente" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PaisOrigen" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Bodega" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ubicacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NRecepcion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoDocumento" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FolioDocumento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FRecepcion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FProduccion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FVencimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Info1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Reserva" Type="System.String" DbType="VarChar(44) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoPallet" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CVT_CierrePedido" Method="CVT_CierrePedido">
+    <Parameter Name="PedidoId" Parameter="pedidoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StaffId" Parameter="staffId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CVT_ACTUALIZA_HORA_ARMADO_CARGAPEDIDO" Method="CVT_ACTUALIZA_HORA_ARMADO_CARGAPEDIDO">
+    <Parameter Name="HrInicioArmado" Parameter="hrInicioArmado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HrInicioCarga" Parameter="hrInicioCarga" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HrTerminoArmado" Parameter="hrTerminoArmado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="HrTerminoCarga" Parameter="hrTerminoCarga" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MinInicioArmado" Parameter="minInicioArmado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MinInicioCarga" Parameter="minInicioCarga" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MinTerArmado" Parameter="minTerArmado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="MinTerCarga" Parameter="minTerCarga" Type="System.Int32" DbType="Int" />
+    <Parameter Name="GruaAsignado" Parameter="gruaAsignado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Id_Orden" Parameter="id_Orden" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ArmadoPedido" Parameter="armadoPedido" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_TransferenciasXConfirmar" Method="SP_TransferenciasXConfirmar">
+    <Parameter Name="BodegaDestino" Parameter="bodegaDestino" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_TransferenciasXConfirmarResult">
+      <Column Name="Folio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Origen" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Destino" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NPallet" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_UserName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CalculoDescargas" Method="SP_CalculoDescargas">
+    <Parameter Name="FechaDesde" Parameter="fechaDesde" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="FechaHasta" Parameter="fechaHasta" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="SP_CalculoDescargasResult">
+      <Column Name="Dia" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="folio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HoraInicio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Familia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TipoUM" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="TipoDescarga" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Reception_U_Tamano_Contenedor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Valor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VALORSOBRECARGO" Type="System.Decimal" DbType="Decimal(13,1)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_DuplicaTransferencia" Method="SP_DuplicaTransferencia">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ActualizaTransferIdRechazo" Method="SP_ActualizaTransferIdRechazo">
+    <Parameter Name="idtransferactual" Type="System.Int32" DbType="Int" />
+    <Parameter Name="idpallet" Type="System.Int32" DbType="Int" />
+    <Parameter Name="transferrechazoint" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

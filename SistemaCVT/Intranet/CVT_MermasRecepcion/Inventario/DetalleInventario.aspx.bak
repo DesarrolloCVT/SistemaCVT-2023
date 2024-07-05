@@ -1,0 +1,73 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="DetalleInventario.aspx.cs" Inherits="CVT_MermasRecepcion.Inventario.DetalleInventario" %>
+
+<%@ Register Assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>INVENTARIO</a></li>
+        <li><span id="current">Detalle Inventario</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Detalle Inventario</span>
+    <span class="tab-end"></span>
+    <div id="options">         
+          <a><asp:ImageButton ID="cmdExcel"    runat="server" 
+              ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" onclick="cmdExcel_Click" 
+              style="width: 20px" /> Exportar Excel</a>
+    <%-- <a>             <asp:ImageButton ID="cmdNew"      runat="server" 
+              ImageUrl="~/Images/add.png"  onclick="cmdNew_Click" style="width: 16px"/>Nuevo</a>--%>
+    </div>
+</div>
+<div>
+    <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="LqDsInventario" KeyFieldName="InventarioDet_Id">
+        <SettingsEditing Mode="PopupEditForm">
+        </SettingsEditing>
+        <Settings ShowFilterRow="True" />
+        <Columns>
+            <dx:GridViewCommandColumn ShowClearFilterButton="True" ShowEditButton="True" 
+                VisibleIndex="0" ShowDeleteButton="True">
+            </dx:GridViewCommandColumn>
+            <dx:GridViewDataTextColumn FieldName="InventarioDet_Id" ReadOnly="True" 
+                VisibleIndex="1">
+                <EditFormSettings Visible="False" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Inventario_Id" VisibleIndex="2">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="NPallet" VisibleIndex="3">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="CodProducto" VisibleIndex="4">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Cantidad" VisibleIndex="5">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Ubicacion" VisibleIndex="6">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataDateColumn FieldName="FProduccion" VisibleIndex="7">
+            </dx:GridViewDataDateColumn>
+            <dx:GridViewDataDateColumn FieldName="FVencimiento" VisibleIndex="8">
+            </dx:GridViewDataDateColumn>
+            <dx:GridViewDataTextColumn FieldName="Lote" VisibleIndex="9">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Usuario" VisibleIndex="10">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataDateColumn FieldName="FechaRegistro" VisibleIndex="11">
+            </dx:GridViewDataDateColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:LinqDataSource ID="LqDsInventario" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" 
+        EnableUpdate="True" EntityTypeName="" TableName="CVT_DetalleInventario" 
+        EnableDelete="True">
+    </asp:LinqDataSource>
+    <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server" 
+        GridViewID="GvDatos">
+    </dx:ASPxGridViewExporter>
+
+</div>
+</asp:Content>

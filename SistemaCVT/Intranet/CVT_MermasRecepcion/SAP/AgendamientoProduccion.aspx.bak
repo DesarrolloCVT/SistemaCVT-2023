@@ -1,0 +1,539 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AgendamientoProduccion.aspx.cs" Inherits="CVT_MermasRecepcion.SAP.AgendamientoProduccion" %>
+
+<%@ Register Assembly="DevExpress.Web.ASPxScheduler.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxScheduler" TagPrefix="dxwschs" %>
+<%@ Register assembly="DevExpress.XtraScheduler.v15.1.Core, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.XtraScheduler" tagprefix="cc1" %>
+<%@ Register assembly="DevExpress.Web.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<script language="javascript" type="text/javascript">
+    function GeneraCallback(s, e) {
+        var id = e.appointmentId;
+        //scheduler.RaiseCallback("MNUAPT" + ";" + id);
+        e.handled = true;
+        popEdita.PerformCallback(id);
+        popEdita.Show();
+    }
+</script>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>SAP</a></li>
+        <li><span id="current">Agendamiento Produccion</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Agendamientos</span>
+    <span class="tab-end"></span>
+
+ <div id="options"> 
+    <a>             <asp:ImageButton ID="cmdNuevo"    runat="server" 
+         ImageUrl="~/App_Themes/IDA/ui/ico-agregar3.png" 
+         onclick="cmdNuevo_Click"  /> </a>
+ </div>
+ </div>
+<div>
+    <dxwschs:ASPxScheduler ID="AspxAgenda" runat="server" 
+        ActiveViewType="Timeline" Theme="Aqua" ClientIDMode="AutoID"  
+        ResourceDataSourceID="LqDsRecursos" 
+        onpopupmenushowing="AspxAgenda_PopupMenuShowing" 
+        onappointmentformshowing="AspxAgenda_AppointmentFormShowing">
+        <Storage>
+            <Appointments AutoRetrieveId="True">
+                <Mappings 
+                AppointmentId="AgendamientoId" 
+                Description="Descripcion" 
+                End="Termino" 
+                ResourceId="RecursoId" 
+                Start="Inicio" 
+                Status="Estado" 
+                Subject="Asunto" />
+                
+            </Appointments>
+            <Resources>
+                <Mappings Caption="Nombre_Recurso" ResourceId="RecursoId" />
+            </Resources>
+        </Storage>
+        <Views>
+        <DayView >
+<TimeRulers>
+<cc1:TimeRuler></cc1:TimeRuler>
+</TimeRulers>
+            </DayView>
+
+<WorkWeekView><TimeRulers>
+<cc1:TimeRuler></cc1:TimeRuler>
+</TimeRulers>
+</WorkWeekView>
+
+            <WeekView Enabled="false">
+            </WeekView>
+            <FullWeekView Enabled="true" ShortDisplayName="Semana">
+                <TimeRulers>
+<cc1:TimeRuler></cc1:TimeRuler>
+</TimeRulers>
+            </FullWeekView>
+        </Views>
+        <ClientSideEvents AppointmentDoubleClick="function(s, e) {	GeneraCallback(s,e);}" />
+        <OptionsCustomization AllowAppointmentCopy="None" AllowAppointmentDrag="None" 
+            AllowAppointmentDragBetweenResources="None" AllowAppointmentEdit="None"
+            AllowAppointmentMultiSelect="False" AllowAppointmentDelete="None" />
+    </dxwschs:ASPxScheduler>
+    <asp:LinqDataSource ID="LqDsRecursos" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+        TableName="CVT_Recurso">
+    </asp:LinqDataSource>
+    <asp:LinqDataSource ID="LqDsAgendamiento" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" 
+        TableName="CVT_Agendamiento" EnableDelete="True" EnableInsert="True" 
+        EnableUpdate="True" EnableViewState="False"
+            StoreOriginalValuesInViewState="False">
+    </asp:LinqDataSource>
+
+                <asp:LinqDataSource runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" 
+        TableName="CVT_LineasProduccion" EntityTypeName="" ID="LqDsLineas"></asp:LinqDataSource>
+
+                <asp:LinqDataSource runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTSAPDataContext" 
+        TableName="vp_Productos_Elaboracion_Propia" EntityTypeName="" ID="LqDsProducto"></asp:LinqDataSource>
+
+    <dx:ASPxPopupControl ID="PopUp_Editar" runat="server" 
+        ClientInstanceName="popEdita" HeaderText="Editar" 
+        onwindowcallback="PopUp_Editar_WindowCallback" Width="523px" 
+        AllowDragging="True" PopupAction="None" PopupHorizontalAlign="WindowCenter" 
+        PopupVerticalAlign="WindowCenter">
+        <ContentCollection>
+<dx:PopupControlContentControl runat="server">
+    <table class="dxeBinImgCPnlSys">
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel17" runat="server" Text="Semana">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxTextBox ID="txtsemana" runat="server" Width="170px">
+                </dx:ASPxTextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Inicio">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxDateEdit ID="cboinicio" runat="server" EditFormat="DateTime" >
+                </dx:ASPxDateEdit>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel9" runat="server" Text="Termino">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxDateEdit ID="cbotermino" runat="server" EditFormat="DateTime">
+                </dx:ASPxDateEdit>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Producto">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cboproducto" runat="server" DataSourceID="LqDsProducto" 
+                    ValueField="ItemCode">
+                    <Columns>
+                        <dx:ListBoxColumn FieldName="ItemCode" Name="Codigo" />
+                        <dx:ListBoxColumn FieldName="ItemName" Name="Producto" />
+                    </Columns>
+                </dx:ASPxComboBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel11" runat="server" Text="Fecha Limite">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxDateEdit ID="cboflimite" runat="server">
+                </dx:ASPxDateEdit>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel5" runat="server" Text="Cant. Planificada">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxTextBox ID="txtcantplanificada" runat="server" Width="170px">
+                </dx:ASPxTextBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel10" runat="server" Text="Estado">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cboestado" runat="server" SelectedIndex="0">
+                    <Items>
+                        <dx:ListEditItem Selected="True" Text="Creada" Value="0" />
+                        <dx:ListEditItem Text="Sincronizada" Value="1" />
+                        <dx:ListEditItem Text="En Proceso" Value="2" />
+                        <dx:ListEditItem Text="Terminada" Value="3" />
+                    </Items>
+                </dx:ASPxComboBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel3" runat="server" Text="Recurso">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cborecurso" runat="server" DataSourceID="LqDsRecursos" 
+                    TextField="Nombre_Recurso" ValueField="RecursoId">
+                </dx:ASPxComboBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel12" runat="server" Text="Tipo Produccion">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cbotipoproduccion" runat="server">
+                    <Items>
+                        <dx:ListEditItem Text="Producto Terminado" Value="1" />
+                        <dx:ListEditItem Text="Semi Elaborado" Value="2" />
+                    </Items>
+                </dx:ASPxComboBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel16" runat="server" Text="Turno">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cboturno" runat="server" SelectedIndex="0">
+                    <Items>
+                        <dx:ListEditItem Selected="True" Text="Dia" Value="1" />
+                        <dx:ListEditItem Text="Noche" Value="2" />
+                        <dx:ListEditItem Text="Ambos" Value="3" />
+                    </Items>
+                </dx:ASPxComboBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel14" runat="server" Text="Lineas">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxCheckBoxList ID="chklineas" runat="server" DataSourceID="LqDsLineas" 
+                    TextField="Numero_Linea" ValueField="LineaId" ValueType="System.Int32" 
+                    RepeatColumns="2">
+                </dx:ASPxCheckBoxList>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel4" runat="server" Text="OF">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxTextBox ID="txtof" runat="server" Width="170px">
+                </dx:ASPxTextBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel13" runat="server" Text="Cant. Producida">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxTextBox ID="txtcantproducida" runat="server" Width="170px">
+                </dx:ASPxTextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel6" runat="server" Text="Estado OF">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cboestadoof" runat="server">
+                    <Items>
+                        <dx:ListEditItem Text="Planificada" Value="P" />
+                        <dx:ListEditItem Text="Liberada" Value="L" />
+                        <dx:ListEditItem Text="Terminada" Value="C" />
+                    </Items>
+                </dx:ASPxComboBox>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel8" runat="server" Text="Comentarios">
+                </dx:ASPxLabel>
+            </td>
+            <td colspan="3">
+                <dx:ASPxTextBox ID="txtcomentario" runat="server" AutoResizeWithContainer="True" 
+                    Height="48px" Width="280px">
+                </dx:ASPxTextBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                <dx:ASPxButton ID="btn_actualizar" runat="server" Text="Actualizar" 
+                    OnClick="btn_actualizar_Click">
+                </dx:ASPxButton>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                <dx:ASPxButton ID="btn_cancelarE" runat="server" Text="Cancelar" 
+                    OnClick="btn_cancelarE_Click">
+                </dx:ASPxButton>
+            </td>
+        </tr>
+    </table>
+            </dx:PopupControlContentControl>
+</ContentCollection>
+    </dx:ASPxPopupControl>
+    <dx:ASPxPopupControl ID="PopUp_Nuevo" runat="server" 
+         HeaderText="Nuevo"  Width="728px" 
+        AllowDragging="True" PopupAction="None" PopupHorizontalAlign="WindowCenter" 
+        PopupVerticalAlign="WindowCenter">
+        <ContentCollection>
+<dx:PopupControlContentControl runat="server">
+    <table class="dxeBinImgCPnlSys">
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel18" runat="server" Text="Semana">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxTextBox ID="txtsemana1" runat="server" Width="170px">
+                </dx:ASPxTextBox>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel19" runat="server" Text="Inicio">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxDateEdit ID="cboinicio1" runat="server" EditFormat="DateTime" >
+                </dx:ASPxDateEdit>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel20" runat="server" Text="Termino">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxDateEdit ID="cbotermino1" runat="server" EditFormat="DateTime">
+                </dx:ASPxDateEdit>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel21" runat="server" Text="Producto">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cboproducto1" runat="server" DataSourceID="LqDsProducto" 
+                    ValueField="ItemCode" TextField="ItemName" AutoPostBack="True" 
+                    OnSelectedIndexChanged="cboproducto1_SelectedIndexChanged">
+                    <Columns>
+                        <dx:ListBoxColumn FieldName="ItemCode" Name="Codigo" />
+                        <dx:ListBoxColumn FieldName="ItemName" Name="Producto" />
+                    </Columns>
+                </dx:ASPxComboBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel22" runat="server" Text="Fecha Limite">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxDateEdit ID="cboflimite1" runat="server">
+                </dx:ASPxDateEdit>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel25" runat="server" Text="Cant. Planificada">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxTextBox ID="txtcantplanificada1" runat="server" AutoPostBack="True" 
+                    OnTextChanged="txtcantplanificada1_TextChanged" Text="1" Width="170px">
+                </dx:ASPxTextBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel24" runat="server" Text="Estado">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cboestado1" runat="server" Enabled="False" 
+                    SelectedIndex="0">
+                    <Items>
+                        <dx:ListEditItem Selected="True" Text="Creada" Value="0" />
+                        <dx:ListEditItem Text="Sincronizada" Value="1" />
+                        <dx:ListEditItem Text="En Proceso" Value="2" />
+                        <dx:ListEditItem Text="Terminada" Value="3" />
+                    </Items>
+                </dx:ASPxComboBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel23" runat="server" Text="Recurso">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cborecurso1" runat="server" DataSourceID="LqDsRecursos" 
+                    TextField="Nombre_Recurso" ValueField="RecursoId">
+                </dx:ASPxComboBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel26" runat="server" Text="Tipo Produccion">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cbotipoproduccion1" runat="server">
+                    <Items>
+                        <dx:ListEditItem Text="Producto Terminado" Value="1" />
+                        <dx:ListEditItem Text="Semi Elaborado" Value="2" />
+                    </Items>
+                </dx:ASPxComboBox>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel27" runat="server" Text="Turno">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cboturno1" runat="server" SelectedIndex="0">
+                    <Items>
+                        <dx:ListEditItem Selected="True" Text="Dia" Value="1" />
+                        <dx:ListEditItem Text="Noche" Value="2" />
+                        <dx:ListEditItem Text="Ambos" Value="3" />
+                    </Items>
+                </dx:ASPxComboBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel28" runat="server" Text="Lineas">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxCheckBoxList ID="chklineas1" runat="server" 
+                    DataSourceID="LqDsLineas" TextField="Numero_Linea" ValueField="LineaId" 
+                    ValueType="System.Int32" RepeatColumns="2">
+                </dx:ASPxCheckBoxList>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel runat="server" Text="Comentarios" ID="ASPxLabel32"></dx:ASPxLabel>
+
+            </td>
+            <td colspan="3">
+                <dx:ASPxTextBox runat="server" Width="280px" AutoResizeWithContainer="True" 
+                    Height="48px" ID="txtcomentario1"></dx:ASPxTextBox>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                <dx:ASPxButton ID="btn_Agregar" runat="server" Text="Agregar" 
+                    OnClick="btn_Agregar_Click">
+                </dx:ASPxButton>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                <dx:ASPxButton ID="btn_cancelarA" runat="server" Text="Cancelar" 
+                    OnClick="btn_cancelarA_Click">
+                </dx:ASPxButton>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <dx:ASPxLabel ID="ASPxLabel33" runat="server" 
+                    Text="Previsión de Materiales (Receta Estandar)">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <dx:ASPxGridView ID="GvPrevision" runat="server" AutoGenerateColumns="False" 
+                    Font-Size="Smaller" Width="510px">
+                    <SettingsPager Mode="ShowAllRecords">
+                    </SettingsPager>
+                    <Columns>
+                        <dx:GridViewDataTextColumn Caption="Codigo" FieldName="ItemCode" 
+                            ShowInCustomizationForm="True" VisibleIndex="0">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Producto" FieldName="ItemName" 
+                            ShowInCustomizationForm="True" VisibleIndex="1">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Stock Actual" FieldName="StockActual" 
+                            ShowInCustomizationForm="True" VisibleIndex="2">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Cant x Unidad" FieldName="CantBase" 
+                            ShowInCustomizationForm="True" VisibleIndex="3">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Requerido " FieldName="CantReqPlan" 
+                            ShowInCustomizationForm="True" VisibleIndex="4">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Requerido otras OF" FieldName="CantOtrasOF" 
+                            ShowInCustomizationForm="True" VisibleIndex="5">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn Caption="Requerido Total" FieldName="ReqTotal" 
+                            ShowInCustomizationForm="True" VisibleIndex="6">
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+            </td>
+        </tr>
+    </table>
+            </dx:PopupControlContentControl>
+</ContentCollection>
+    </dx:ASPxPopupControl>
+</div>
+</asp:Content>

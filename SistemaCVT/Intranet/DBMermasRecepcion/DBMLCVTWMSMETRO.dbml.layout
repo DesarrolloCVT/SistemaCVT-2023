@@ -1,0 +1,684 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.875, 17.5" name="DBMLCVTWMSMETRO">
+  <DataContextMoniker Name="/DBMLCVTWMSMETRODataContext" />
+  <nestedChildShapes>
+    <classShape Id="53061ffb-6914-4a3b-be7f-2a516d11ddec" isExpanded="false" absoluteBounds="0.75, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Site" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ed991f52-afec-4310-a100-0106622a231a" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e1d9d1a-3097-47a3-9a21-15273a64ef19" isExpanded="false" absoluteBounds="0.75, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Reception" />
+      <nestedChildShapes>
+        <elementListCompartment Id="35186df6-1e75-4965-9783-ea134cae87e2" absoluteBounds="0.765, 3.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a2f56b41-5c87-4799-a8c5-6d92a2bfedc8" isExpanded="false" absoluteBounds="2.75, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Correlative" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0f8217ab-78c9-4fbb-952c-297db39ac520" absoluteBounds="2.7649999999999997, 1.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dfcc566b-d59b-4f8f-a187-ab973f2ed010" isExpanded="false" absoluteBounds="0.75, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Location" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e59cd883-f8fc-44fd-b4aa-0746b73c65eb" absoluteBounds="0.76500000000000057, 1.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="24ee7de5-d6c2-4652-a71c-ac1dd05af29b" isExpanded="false" absoluteBounds="2.75, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Rack" />
+      <nestedChildShapes>
+        <elementListCompartment Id="009a4f13-5564-4225-b8d7-659e14106759" absoluteBounds="2.7649999999999997, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fd56d097-b967-4e51-924c-97283e50fe19" isExpanded="false" absoluteBounds="0.75, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Reserve" />
+      <nestedChildShapes>
+        <elementListCompartment Id="83634d5f-36ab-4232-af7e-88ab4dac6d60" absoluteBounds="0.76499999999999968, 4.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8221f3be-b60f-4b33-81cc-198960268bc8" isExpanded="false" absoluteBounds="2.75, 4.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_ExpeditionDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e92ca526-40b3-46f4-b8cc-49688dc40bac" absoluteBounds="2.7649999999999997, 4.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ee94462-7b88-48ad-aa30-08af7ec413c1" isExpanded="false" absoluteBounds="0.75, 5.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_InventarioCabecera" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fbc288dd-d30c-4d79-896d-3d333955c116" absoluteBounds="0.76499999999999968, 5.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3fe8d520-2358-4d59-81c5-50941aeb2d20" isExpanded="false" absoluteBounds="0.75, 5.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_VW_DiferenciasDuplicados" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e5c2e64-6d7a-4cb1-b33e-b7bd4bbed5e3" absoluteBounds="0.76499999999999968, 6.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="01906e40-d69e-4091-9595-c07ac2175bff" isExpanded="false" absoluteBounds="2.75, 5.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_InventarioCantidadDiferente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf5e18cf-a07a-4b8c-bae9-f51ff3335d06" absoluteBounds="2.7649999999999997, 6.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c7aa1bb8-1c28-4c25-bf72-12ff26bb3a09" isExpanded="false" absoluteBounds="0.75, 4.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Expedition" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6bc6563a-45b7-47cf-a8f0-08ee6bd5e894" absoluteBounds="0.76499999999999968, 5.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a140b543-a81a-4c7f-a3e6-e5fb22eaba9b" isExpanded="false" absoluteBounds="4.75, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_ExpedicionDetalle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7719d3de-a70f-407b-ab8d-0b98e2536ebb" absoluteBounds="4.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="02e8dded-9fef-4ab4-8f32-db9e23a961f1" isExpanded="false" absoluteBounds="4.75, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_FOLIOS_INVENTARIOS_XAMARIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e0262fa-bba2-43bd-9298-d57283fc5a4e" absoluteBounds="4.765, 1.71, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="02faf40e-8fd3-4e00-8b24-b395543c27cd" isExpanded="false" absoluteBounds="4.75, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_INF_INVENTARIO_SMM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ef3a3bf-7c18-411f-aa49-0f50bf3d10fe" absoluteBounds="4.765, 2.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e52f66c7-cce2-4bed-a5a7-6733071fc49d" isExpanded="false" absoluteBounds="4.75, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_INF_INVENTARIOxUSER_SMM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0b39c380-5065-41c6-86bf-cf78b80ca535" absoluteBounds="4.765, 2.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d0bdd3af-9d8d-4764-9584-93641bd20080" isExpanded="false" absoluteBounds="0.75, 3.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_RecepcionDetalle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51804758-c8a9-4ef6-abec-56ae1a8a17f8" absoluteBounds="0.76499999999999968, 3.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="86c5b65b-cd01-426b-b68f-89c13005e038" isExpanded="false" absoluteBounds="0.75, 6.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_DATOS_PACKAGE_XAMRIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fae1e4ed-2231-4a1b-aa00-226870f5d140" absoluteBounds="0.76499999999999968, 6.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9a79bdbd-aa44-49d5-97cc-975d533a0276" isExpanded="false" absoluteBounds="4.75, 3.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_LIST_TRANSFER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e1df6be1-6248-4000-b750-a8c68f344b7e" absoluteBounds="4.765, 3.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="602ba5f9-b1cc-4afb-bc25-d4e5a9d6d635" isExpanded="false" absoluteBounds="4.75, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_PickingList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c8d81d49-024e-4109-a702-ea58c0afd20b" absoluteBounds="4.765, 4.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d76f5544-572a-4b52-a4b0-bf5d3e42c7d2" isExpanded="false" absoluteBounds="2.75, 6.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_ExhibicionSala" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d3f414ad-c5d5-4a37-9fa8-c1191e5461c7" absoluteBounds="2.7649999999999997, 6.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ddaccb40-974d-426f-bddf-ceaca3ee90af" isExpanded="false" absoluteBounds="4.75, 5.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_Productos_Cotizacion_Cajas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b3179449-f520-4de5-bcb9-b886e68b58aa" absoluteBounds="4.765, 6.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7d105865-1a04-4332-bf98-0d7842472fb3" isExpanded="false" absoluteBounds="4.75, 6.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Cotizacion_Cajas_Direccion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ceb4e0a-ba35-484a-be70-89a52516944e" absoluteBounds="4.765, 6.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1d9c02a7-cf41-4822-9bb7-2fdd5751de51" isExpanded="false" absoluteBounds="4.75, 5.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Cotizacion_Cajas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="21752ac4-719a-4c61-8ff3-2f98206c2c68" absoluteBounds="4.765, 5.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a246b72-3dd5-4fa4-8ddb-b7a48ba6675d" isExpanded="false" absoluteBounds="6.75, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_DeptoVentas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8b11e85-63ab-47cf-b4c6-d75a87709424" absoluteBounds="6.765, 2.21, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="84c2c663-00a6-4915-9426-e3877e639775" isExpanded="false" absoluteBounds="6.75, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_PICKING_CONSOLIDADO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20f1d136-d0da-4127-b04a-f4da6e371bc8" absoluteBounds="6.765, 1.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="55fc9bb1-c909-4939-a17e-9a77123c86df" isExpanded="false" absoluteBounds="6.75, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_PickingConsolidado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d7de8b42-0475-4ca6-b48f-263157c2dbc3" absoluteBounds="6.7650000000000006, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5b72170c-7f75-412e-b444-3648bebe31c9" isExpanded="false" absoluteBounds="6.75, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_DEPARTAMENTOS_VENTAS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="72605260-d8b6-4f2f-bb04-dc8c4e9cdb1d" absoluteBounds="6.7650000000000006, 2.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f56de067-8620-4cd8-82be-6c50294eb506" isExpanded="false" absoluteBounds="6.75, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Orden_de_Ventas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0cef6abb-7ecb-47d1-b214-4e8a075dec71" absoluteBounds="6.765, 3.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="822e57a6-a461-49a5-9165-6bd479fc949d" isExpanded="false" absoluteBounds="6.75, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_CLIENTES_ORDEN_VENTAS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97e77a53-cae4-4ccc-879e-07bb64ec358f" absoluteBounds="6.7650000000000006, 4.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="574592b1-afa2-4aad-ba8b-dfe9d976b881" isExpanded="false" absoluteBounds="6.75, 4.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_DIR_DESPACHO_ORDEN_VENTA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0da258e6-6c7f-4d00-b03a-fb1214432604" absoluteBounds="6.765, 4.7100000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dae2b70e-f03f-4076-9bd9-bef203d92d99" isExpanded="false" absoluteBounds="6.75, 4.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_DIR_FACTURACION_ORDEN_VENTA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="782c7580-9e19-490f-ac6f-771e48850af4" absoluteBounds="6.7650000000000006, 5.2100000000000009, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="44732efe-bb8e-453d-b7b8-ab788a080d25" isExpanded="false" absoluteBounds="0.75, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Layout" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0817b2f2-8c26-4eab-9b3d-940cc10851ca" absoluteBounds="0.76499999999999968, 2.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b46a48ed-15af-44aa-bde5-1fa50461a8e2" isExpanded="false" absoluteBounds="6.75, 3.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Clientes_Orden_Venta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bd8e603d-d9ee-486a-9a08-7a169befbcf7" absoluteBounds="6.765, 3.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fe7bdda8-0802-404e-a8ef-524b9458f5fa" isExpanded="false" absoluteBounds="6.75, 5.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_ClientesOV_Xamarin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4b2f0c65-383d-47b4-9eaf-d8a9edcfd936" absoluteBounds="6.765, 5.71, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="39651005-9898-437b-99ec-1d8abefd3dfb" isExpanded="false" absoluteBounds="0.75, 6.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_TRAZABILIDAD_BULTOS_CON_RESERVA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="edba20df-9395-4a34-bdaf-5be3c986bec0" absoluteBounds="0.765, 7.2100000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="199fb0ec-9e25-41f7-abde-25df454c4177" isExpanded="false" absoluteBounds="0.75, 7.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_TRAZABILIDAD_BUSQUEDA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1cc925a1-5f93-4e11-8263-7d5c3f421403" absoluteBounds="0.76499999999999968, 7.71, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="44503835-8c61-4032-bf3b-c2473e11ffb0" isExpanded="false" absoluteBounds="0.75, 7.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_TRAZABILIDAD_PALLET" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff22c937-b35d-4989-b5e6-dfa9f8549d69" absoluteBounds="0.76499999999999968, 8.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c534667b-a11d-4002-9e94-eeabd77d2569" isExpanded="false" absoluteBounds="4.75, 4.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_STOCK_SMM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="abe21962-edf2-4e96-9db5-c2c6b3a47cb8" absoluteBounds="4.765, 4.71, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="857b406c-fab1-43ba-9b1d-e2cb45bac5e9" isExpanded="false" absoluteBounds="4.75, 4.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Orden_de_Ventas_Detalle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8d7e6b18-d80c-4b6e-8f34-70522b9750c7" absoluteBounds="4.765, 5.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b06af8cb-4c8d-49ea-9839-d75527e4b6c8" isExpanded="false" absoluteBounds="2.75, 7.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Solicitud_Transferencia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c5717d8-7c96-4c85-87a3-0d7de407c991" absoluteBounds="2.7649999999999997, 7.7100000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7b4120f5-3682-4247-b2af-1e40ff8cced2" isExpanded="false" absoluteBounds="2.75, 6.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMMSolicitudTransferencia_Detalles" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ea9bd06-157f-44bd-977c-ee3cc3c8dd4f" absoluteBounds="2.765, 7.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ca90d6ae-2f4e-40cb-b470-f598284059d5" isExpanded="false" absoluteBounds="6.75, 5.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_LISTADO_PRODUCTOS_SOLICITUD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="68a7c6e7-e67c-42a3-81f6-990728bea714" absoluteBounds="6.765, 6.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="61b2727c-6275-49bf-8fc7-2e1505d72c3c" isExpanded="false" absoluteBounds="2.75, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Transfer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="813bec0b-ce4a-4be8-9ace-d0a4eb1f92a5" absoluteBounds="2.7649999999999997, 2.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ceae7c10-906d-44ac-ba74-68cb03a81d4c" isExpanded="false" absoluteBounds="2.75, 7.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_STOCK_FECHA_RECEPCION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f2f7be05-2789-44ae-b74c-e60377c6b657" absoluteBounds="2.7649999999999997, 8.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="199bb292-d86f-4a7b-88a0-543be25510a4" isExpanded="false" absoluteBounds="2.75, 8.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_StockFecha" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ab90997-e5a3-4b47-9f22-807119148791" absoluteBounds="2.7649999999999997, 8.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4f1db65f-4ad5-4047-915c-8f09e2849924" isExpanded="false" absoluteBounds="2.75, 8.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_STOCK_FECHA_TRANSFERENCIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="421d088e-dc94-43eb-abb8-cb8763d074a2" absoluteBounds="2.7649999999999997, 9.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8038d37b-4d25-4074-9d7b-5e4a0994525b" isExpanded="false" absoluteBounds="2.75, 3.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Transfer_Detail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="88cb09b7-9d1b-4ad3-ac1e-47b29bf99e3b" absoluteBounds="2.7649999999999997, 3.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c2c917c1-b49e-4c57-ac9c-c0939af7642d" isExpanded="false" absoluteBounds="0.75, 8.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_SMM_FOLIOS_SOLICITUD_TRANSFERENCIAS" />
+      <nestedChildShapes>
+        <elementListCompartment Id="80ed7bcd-c1dd-4ad2-be4c-f1cf575fa3d0" absoluteBounds="0.76500000000000057, 9.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a79edc1e-2a56-480b-b875-ef20e2bc0f37" isExpanded="false" absoluteBounds="4.75, 7.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_INFO_CLIENTE_PREVENTA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="993a55b7-33d9-46be-9b8d-44b57325007d" absoluteBounds="4.765, 8.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f58ed38a-9bbf-4c8c-863a-f7b5bd7059b1" isExpanded="false" absoluteBounds="4.75, 8.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_PRODUCTO_PREVENTA_TODOS_LS11" />
+      <nestedChildShapes>
+        <elementListCompartment Id="916ff975-9938-4d46-8810-98389024df53" absoluteBounds="4.765, 9.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="caa6bbf1-2c26-4e15-a8e3-0f61aceec54e" isExpanded="false" absoluteBounds="6.75, 7.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_ObtieneDatosDirecciones" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5dd6a6b-daa9-4474-8319-2518d0fa7a62" absoluteBounds="6.7650000000000006, 7.7100000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="61a3da57-0497-47f3-9280-5bb79011dc5e" isExpanded="false" absoluteBounds="6.75, 6.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_ObtieneDatosCliente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a9960ceb-17d9-4515-b762-13a530cbeeb4" absoluteBounds="6.7650000000000006, 7.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="51746fa5-6e91-448e-9ac7-bbabd9745939" isExpanded="false" absoluteBounds="6.75, 6.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Clientes_Direccion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6d70aca6-9500-407c-95fd-04bd151cd696" absoluteBounds="6.765, 6.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e2f270a1-bf39-4dd0-8834-658ee3abaa71" isExpanded="false" absoluteBounds="0.75, 9.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_MONTO_VENTA_SMM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="14aa1fd0-5c0c-44c8-ad02-ce1bd1e388b4" absoluteBounds="0.76500000000000057, 9.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="47bf9e62-9bbc-4c34-b804-9588e3dfda7d" isExpanded="false" absoluteBounds="6.75, 8.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_Calculo_monto_venta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c2694814-3141-475b-bc14-48828f26f613" absoluteBounds="6.765, 9.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="89d49ba1-2492-479c-9cca-1a1714418522" isExpanded="false" absoluteBounds="6.75, 8.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Preventa_DatoPago" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50556598-7541-4e68-88af-61dd222f061f" absoluteBounds="6.765, 8.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8cb763ae-3ef8-44cb-8b4b-15b86f0c9aed" isExpanded="false" absoluteBounds="6.75, 7.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_DIRECCIONES_CLIENTES_SAP" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4c0c64a0-34a5-4ec5-a203-a2f47488ccc0" absoluteBounds="6.765, 8.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3b491ee0-705f-40e8-9795-9973a725a5b4" isExpanded="false" absoluteBounds="8.875, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_DETALLE_PAGO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c8d8af7-24ce-44a7-b1cd-0125efd8b02d" absoluteBounds="8.89, 1.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2cdf9357-f1e3-4f02-bed5-1312157a73b8" isExpanded="false" absoluteBounds="8.875, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_TipoPago" />
+      <nestedChildShapes>
+        <elementListCompartment Id="81abc9d7-31b7-4530-91f9-b3592886ae11" absoluteBounds="8.89, 2.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d982f7bb-a88f-40c6-9d4a-1dcc80359da8" isExpanded="false" absoluteBounds="8.875, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_MontoEfectivo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9970c030-79f3-4a8f-9750-443b715ba224" absoluteBounds="8.89, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b90f1002-86f5-492e-93d2-c379067a719c" isExpanded="false" absoluteBounds="8.875, 3.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_MONTO_VENTA_SIN_REDONDEO_SMM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="35c75aaa-02a2-4dc3-8789-644bdda66a7b" absoluteBounds="8.89, 3.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b8a9a224-73a1-4d29-912e-253ffe6a4dbb" isExpanded="false" absoluteBounds="8.875, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_Calculo_monto_venta_sin_Redondeo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="efc92368-19ff-4ff6-9940-bb19df054b2b" absoluteBounds="8.89, 4.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e64d19ba-f245-42f4-8089-e55bf5340d1d" isExpanded="false" absoluteBounds="8.875, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_DETALLE_CLIENTE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="52dec132-00b6-4c17-8e0e-99c3a88fde8f" absoluteBounds="8.89, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bf0a2962-0044-4f4d-ab2c-c0c9cda5cf8b" isExpanded="false" absoluteBounds="8.875, 4.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_SMM_DATO_CLIENTES_NOTACREDITO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e6ff934a-6672-4b16-9db2-2aceacecc45f" absoluteBounds="8.89, 5.21, 3.2199999999999998, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a0eeefd2-7214-4602-8ffc-e76d84f94a51" isExpanded="false" absoluteBounds="8.875, 5.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_NotaCredito_DetallePago" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7ec8ac3c-d169-4a42-8199-0e1aad230298" absoluteBounds="8.89, 5.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="34459196-4145-40a0-85de-ffadcec5ef5d" isExpanded="false" absoluteBounds="8.875, 6.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_MONTO_NOTACREDITO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="47445b22-eb76-472b-a7d3-be4f0b953448" absoluteBounds="8.89, 7.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ae3cd3cb-2f30-4348-9605-27b60772392e" isExpanded="false" absoluteBounds="8.875, 7.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_NOTACREDITO_DETALLE_PAGO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e5011aa7-75ae-4e9d-af48-f64c02573b0a" absoluteBounds="8.89, 7.7100000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cc78a737-d976-42bb-a56a-0205cf7d397b" isExpanded="false" absoluteBounds="8.875, 8.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_MontoEfectivoNC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="96f7305d-fcdd-4b07-95cb-2349cf5670cd" absoluteBounds="8.89, 8.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d2c3d3da-f834-4e77-9104-1cfbb406674f" isExpanded="false" absoluteBounds="10.875, 0.75, 2.75, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_TOTALDOCUMENTOORIGEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="07c3db4b-92a0-4b1e-acf7-874955cf8d35" absoluteBounds="10.89, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="47affc66-e9c3-4386-817b-f0b61f52b339" isExpanded="false" absoluteBounds="8.875, 9.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_MontoNotaCredito" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd8e5cd4-23c1-41c0-80d3-cddaab86e739" absoluteBounds="8.89, 9.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1d6db6ec-2faa-451d-97c3-d62f62d145c3" isExpanded="false" absoluteBounds="8.875, 8.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_MontoNotaCreditoPrueba" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e3f6bd0-e26b-41d2-b92c-5f7a65f4aadb" absoluteBounds="8.89, 9.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e7bd2178-56f1-4bd5-86a9-2ea82df5fcbe" isExpanded="false" absoluteBounds="8.875, 6.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_NotaCredito_DatoCompra" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f819d2b6-b8b8-48c9-a196-24991bebef38" absoluteBounds="8.89, 6.71, 2.3449999999999998, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ef9f619-8ed9-4a32-858e-80a6701e8f5d" isExpanded="false" absoluteBounds="8.875, 4.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_SMM_DATO_PRODUCTOS_NOTACREDITO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="961d2e73-eb52-483d-bfd9-e695ccd78f9f" absoluteBounds="8.89, 4.71, 3.3449999999999998, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8b14b9cf-72f2-4f1a-8e4f-ecc5e0a55c55" isExpanded="false" absoluteBounds="10.875, 1.25, 2.75, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_NOTACREDITO_DETALLE_COMPRA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a6e7a399-95d0-4bfa-8337-f42b25130733" absoluteBounds="10.89, 1.71, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8df2035d-edb3-4987-ab25-85785dbb8f00" isExpanded="false" absoluteBounds="8.875, 5.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_NotaCredito_DatoCliente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5beeb428-fb28-4199-8c34-3b3255a44b12" absoluteBounds="8.89, 6.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c4f47258-1155-433d-a8a6-96f7ce806974" isExpanded="false" absoluteBounds="8.875, 7.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_NOTACREDITO_DETALLE_CLIENTE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="83a7c1cc-9803-42f5-b81f-89239116a77c" absoluteBounds="8.89, 8.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5cd6b707-3f40-4dc9-9317-79654da4a1f6" isExpanded="false" absoluteBounds="8.875, 10.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_AperturaCaja" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5e5fd18e-3d94-4248-91a3-c3874aa8d524" absoluteBounds="8.89, 10.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="15861a1a-ea8d-478a-b467-ac0877557c33" isExpanded="false" absoluteBounds="4.75, 8.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Preventa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="21e42065-da02-4a8c-9e0b-fe6fc63f2003" absoluteBounds="4.765, 8.71, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dd3cb7ac-9b56-4ede-96b1-286280f72c82" isExpanded="false" absoluteBounds="8.875, 9.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Historial_Arqueo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b9341eff-0386-4b9d-978f-368abd116e15" absoluteBounds="8.89, 10.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8fe27357-65a6-4dcc-b8b9-61879272f10a" isExpanded="false" absoluteBounds="0.75, 9.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_LogCaja" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aade382c-3ad6-4081-a1a6-a06e37c0fa7f" absoluteBounds="0.76499999999999968, 10.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6b9802cf-ecae-4dbc-8807-59a41cd1cb49" isExpanded="false" absoluteBounds="8.875, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_DETALLE_PREVENTA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94f3c1a3-28f4-422e-b472-33bfe96251c7" absoluteBounds="8.89, 2.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="222dafe7-6f1b-4342-b381-edbdc2880f5d" isExpanded="false" absoluteBounds="4.75, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_DetalleRecepcion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d62a6389-7ea3-46e4-8ce2-d77647248acd" absoluteBounds="4.765, 3.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b6e711d9-82c3-49ec-acc9-548ab0caa044" isExpanded="false" absoluteBounds="2.75, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/CVT_VW_FiltroTransferenciasSMM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0caa59d-d372-46d7-9b3c-c3a8a246910d" absoluteBounds="2.7649999999999997, 4.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9818fc62-4e04-4839-8b8e-bb35e5d31620" isExpanded="false" absoluteBounds="4.75, 6.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/CVT_VW_TransferenciasDetalleSMM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="79192d7b-cc83-40e7-9d66-f4a1355ce173" absoluteBounds="4.765, 7.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="db0b6b07-ac32-454f-a8f8-731d6c1068b4" isExpanded="false" absoluteBounds="2.75, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_TransferDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d1f8e71b-af70-4405-a260-586146336ed7" absoluteBounds="2.7649999999999997, 3.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f94cd10e-c7a0-4346-93f3-183f26fbf6d9" isExpanded="false" absoluteBounds="2.75, 5.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_InventarioDetalle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8e56d76-22ed-41c7-9833-85aff8ed4d3f" absoluteBounds="2.7649999999999997, 5.71, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56481cd2-4c2d-4ed5-af50-40e2ac0e1c34" isExpanded="false" absoluteBounds="0.75, 10.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VentaPersonal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5807b33b-355a-4dee-90c8-ca3c39f1409f" absoluteBounds="0.76499999999999968, 10.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e35f4d9-de02-41d6-b4f4-62b12d36fea9" isExpanded="false" absoluteBounds="0.75, 11.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_DetalleRecepcion_Transferencia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="698572bb-d4d0-417e-a0e4-3315e2546be3" absoluteBounds="0.76499999999999968, 11.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dcd45a2f-0a67-4f97-8d0f-c510ac8963dc" isExpanded="false" absoluteBounds="4.75, 7.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Preventa_Detalle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4b6b449d-92ba-4ed4-93c8-aefbbad52ae4" absoluteBounds="4.765, 7.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a12491b6-39f1-4d8c-9f75-62bdae9a3c9b" isExpanded="false" absoluteBounds="0.75, 10.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VentaPersonal_Detalle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="873efbb4-8b04-40fe-850d-6c192543ae9e" absoluteBounds="0.76499999999999968, 11.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="554a9414-bec2-4dbe-af84-7db80c913a8b" isExpanded="false" absoluteBounds="2.75, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Package" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f4d29fa5-debb-4097-8c41-d30ddb90f7a8" absoluteBounds="2.7649999999999997, 1.21, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2a3cb051-2cd3-453c-9ad2-2114ddfd5f84" isExpanded="false" absoluteBounds="0.75, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_RecepcionResumenSMM" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d4725e0-90d8-4e6a-95ef-a5b8199fbb3d" absoluteBounds="0.76499999999999968, 2.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="006d5689-f46a-4367-8a3a-7f421feda597" isExpanded="false" absoluteBounds="0.75, 11.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_SMM_ConsolidadoCompras" />
+      <nestedChildShapes>
+        <elementListCompartment Id="425912e1-5686-429c-8302-934e4b0e9cb0" absoluteBounds="0.76499999999999968, 12.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d8cc572e-4d4c-4392-b399-d390a77739c3" isExpanded="false" absoluteBounds="2.75, 9.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_SMM_ClientesDescPromo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fefb763d-fcbf-4823-9094-a16ab89dd1a1" absoluteBounds="2.7649999999999997, 9.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6e8cd6e5-5e79-4142-b9b8-487c3a2b837e" isExpanded="false" absoluteBounds="0.75, 8.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Cotizacion_Cajas_Detalle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c29b83f9-aa4d-44a8-807c-26b829652a7e" absoluteBounds="0.76499999999999968, 8.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f1c8e613-e514-4f99-b4ee-c90a88a9e4c7" isExpanded="false" absoluteBounds="2.75, 9.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_AjusteDocumento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8a4e666-b131-4e25-ad55-e822aafd794c" absoluteBounds="2.7649999999999997, 10.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3e006792-cfe2-4fc0-a524-bedfebf3277e" isExpanded="false" absoluteBounds="2.75, 10.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_TotalArqueoReal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="93ace211-4fa7-49c4-9825-7c668a2798d1" absoluteBounds="2.7649999999999997, 11.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f955b9d8-511a-47e1-a677-f607ec97ff3c" isExpanded="false" absoluteBounds="0.75, 12.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Clientes_Contacto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4640efaa-2252-4f29-84a8-817bbadb8199" absoluteBounds="0.76499999999999968, 12.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ce9f2615-c896-4af1-9050-e8edb85e81f9" isExpanded="false" absoluteBounds="0.75, 4.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Clientes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="211ce0ff-77fa-4935-8e13-b32c985dea8d" absoluteBounds="0.76500000000000012, 4.71, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c1980304-c7cb-41e6-aa74-5593ce8520c3" isExpanded="false" absoluteBounds="2.75, 4.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_EXPEDITIONDETAILEXPORT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="14784af6-173f-4b64-a3ee-cbf24e6d03c9" absoluteBounds="2.765, 5.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="22e9df24-c0e3-4c1f-8f85-f8435521abfb" isExpanded="false" absoluteBounds="2.75, 10.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_DocAjustadas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf60a9e7-e64e-4ca9-a5d0-3734ea6ac6d1" absoluteBounds="2.7649999999999997, 10.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="45ac4669-e86c-4461-beb4-bb8e6c7d9b0e" isExpanded="false" absoluteBounds="2.75, 11.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_VW_INF_ARQUEOCAJA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="09ae9844-328a-41f5-bb27-b3276e1634c4" absoluteBounds="2.7649999999999997, 11.71, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2238c133-a1a0-474b-b25c-7d03c6e9f5db" isExpanded="false" absoluteBounds="2.75, 11.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_ComisionVendedor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3dbf369b-5918-4309-9074-2710dc9f1d65" absoluteBounds="2.7649999999999997, 12.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="862e89ca-dfc3-4583-8c6b-3b44b4215307" isExpanded="false" absoluteBounds="0.75, 12.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_ComisionProductos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1cf05dc9-625c-4c18-a767-48219d21e02f" absoluteBounds="0.76499999999999968, 13.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="93c39684-dd0f-4d45-b242-f14e19011151" isExpanded="false" absoluteBounds="0.75, 13.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_SMM_DiferenciasDuplicados_inventario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="06a21de8-24b6-45a7-97fe-b9ff45b92cc8" absoluteBounds="0.76499999999999968, 14.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="46c1c4c9-7ea4-42c9-9d48-881f23ede141" isExpanded="false" absoluteBounds="0.75, 13.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_SMM_InventarioCantidadDiferenteInf" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f43072b2-a56b-4549-b3b5-62f5dc7e59e8" absoluteBounds="0.76500000000000057, 13.71, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ea9f83c-81d1-49ef-89b8-0b5db2b82e02" isExpanded="false" absoluteBounds="0.75, 14.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_SMM_VencimientoProyectadoBmas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6f16b2ce-9f20-4d8f-ad7a-178daf688879" absoluteBounds="0.76499999999999968, 14.71, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29d9e02c-bf50-47b5-a503-71cfe1b00b2e" isExpanded="false" absoluteBounds="0.75, 15.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Reponedores" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8eedaa1c-f84f-4e3a-84cf-d3bc32f117bd" absoluteBounds="0.76500000000000057, 15.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a0f4b5e5-d653-4c67-956f-fac4300178e5" isExpanded="false" absoluteBounds="0.75, 14.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_Cump_Reposicion_Sala" />
+      <nestedChildShapes>
+        <elementListCompartment Id="271f4eb5-a8e5-4e4c-963a-4a1da60adf64" absoluteBounds="0.76500000000000012, 15.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="af24ff1c-f8e0-451a-9b6e-714ac7b6640a" isExpanded="false" absoluteBounds="0.75, 15.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_RegImpEtiqueta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d2a7ecba-d1ae-44cf-b3dc-68a01333f167" absoluteBounds="0.76499999999999968, 16.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="082c0b11-1914-4542-9543-859e33b08ed7" isExpanded="false" absoluteBounds="0.75, 16.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_RegPalletSala" />
+      <nestedChildShapes>
+        <elementListCompartment Id="30afec26-070f-42c9-b4de-796de4601955" absoluteBounds="0.76499999999999968, 16.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="35a67d2e-9dfc-4e4b-81d7-8ed7bef18f5b" isExpanded="false" absoluteBounds="0.75, 16.75, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/VW_Rpt_PalletEnSala" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2b747c85-3d9e-4f89-83f0-000fec220c7a" absoluteBounds="0.76499999999999968, 17.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f531a139-740c-4132-8b8f-92c770bf5ca3" isExpanded="false" absoluteBounds="2.75, 12.25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSMETRODataContext/SMM_MedicionArmadoPedido" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18e92cbe-da6d-4497-abb2-3cd23532ea23" absoluteBounds="2.7649999999999997, 12.71, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

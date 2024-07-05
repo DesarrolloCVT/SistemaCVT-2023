@@ -1,0 +1,374 @@
+  
+/*INNVITA*/
+.Innvita_Boton_Refresh
+{
+   /* background-image:url(/Images/refresh.gif);*/
+    background-image:url(/Images/change.png);
+    background-color:transparent;
+    border-top-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:transparent;
+    border-left-color:transparent;
+    background-repeat:no-repeat;
+    background-position:center;
+    width:30px;
+    height:30px;
+    
+}
+
+.Innvita_Boton_PackageWarning
+{
+   /* background-image:url(/Images/refresh.gif);*/
+    background-image:url(/Images/packagewarning.png);
+    background-color:transparent;
+    border-top-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:transparent;
+    border-left-color:transparent;
+    background-repeat:no-repeat;
+    background-position:center;
+    width:30px;
+    height:30px;
+    
+}
+.Innvita_Boton_Back
+{
+    background-image:url(/Images/back.png);
+    background-color:transparent;
+    border-top-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:transparent;
+    border-left-color:transparent;
+    background-repeat:no-repeat;
+    background-position:center;
+    width:30px;
+    height:30px;
+    
+}
+.Innvita_Boton_Outlook
+{
+    background-image:url(/Images/outlook.png);
+    background-color:transparent;
+    border-top-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:transparent;
+    border-left-color:transparent;
+    background-repeat:no-repeat;
+    background-position:center;
+    width:30px;
+    height:30px;
+    
+}
+.Innvita_Boton_PDF
+{
+    background-image:url(/Images/pdf.png);
+    background-color:transparent;
+    border-top-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:transparent;
+    border-left-color:transparent;
+    background-repeat:no-repeat;
+    background-position:center;
+    width:30px;
+    height:30px;
+    
+}
+.Innvita_Boton_Excel
+{
+    background-image:url(/Images/excel.png);
+    background-color:transparent;
+    border-top-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:transparent;
+    border-left-color:transparent;
+    background-repeat:no-repeat;
+    background-position:center;
+    width:30px;
+    height:30px;
+    
+}
+.Innvita_Boton_Nuevo
+{
+    background-image:url(/Images/database_add.png);
+    background-color:transparent;
+    border-top-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:transparent;
+    border-left-color:transparent;
+    background-repeat:no-repeat;
+    background-position:center;
+    width:30px;
+    height:30px;
+    
+}
+
+.Innvita_Boton_Editar
+{
+    background-image:url(/Images/edita.gif);
+    background-color:transparent;
+    border-top-color:transparent;
+    border-right-color:transparent;
+    border-bottom-color:transparent;
+    border-left-color:transparent;
+    background-repeat:no-repeat;
+    background-position:center;
+    width:30px;
+    height:30px;
+    
+}
+
+.Innvita_button
+{
+
+	background-color: #FEF09E;	
+	border: 1px outset #B6B9BA;
+    font-size: 7.8pt;
+    font-style: normal;
+	font-family: Tahoma;
+    font-variant: normal;
+    font-weight: bold;   
+    height: 20px;
+    line-height: normal;
+    margin-top: 3pt;
+	margin-right: 3pt;
+	margin-left: 0pt;
+	margin-bottom: 3pt;
+    padding: 0pt;
+    text-decoration: none;
+    text-indent: 0pt;
+    vertical-align:top;
+    width:80px;
+   
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+   /* text-shadow: 4px 1px 1px #000000;*/
+   /* text-shadow: drecha 2px 2px #000000;*/
+}
+
+.Innvita_button:hover
+{
+    background-color: #ffd965;
+	border: 1px inset #B6B9BA;
+	border-style:  inset;	
+	font-style: normal;
+	font-weight: bold;  
+    font-size: 7.8pt;
+	font-family: Tahoma;
+    font-variant: normal;
+    height: 20px;
+    line-height: normal;
+    margin-top: 3pt;
+	margin-right: 3pt;
+	margin-left: 0pt;
+	margin-bottom: 3pt;
+	padding: 0pt;
+    text-decoration: none;
+    text-indent: 0pt;
+    vertical-align:top;
+    width:80px;
+}
+
+    .Innvita_checkbox
+{
+      font-family: Tahoma;
+      color: #000000;
+      font-size: 10px;
+      text-align:left;
+      border: 1px solid #B6B9BA;
+	
+} 
+
+
+.Innvita_label_normal
+{
+      font-family: Tahoma;
+      color: #000000;
+      font-size: 10px;
+      text-align:left;
+}
+.Innvita_label_Titulo
+{
+    font-family: Tahoma;
+    color: #ffffff;
+    font-size: 13px;
+    text-align : center;
+}
+
+
+.Innvita_hiperlink
+{
+    font-family: Tahoma;
+    color: #00A850;
+    font-size: 10px;
+    text-align : center;
+    font-weight:bold ;
+}
+
+
+
+
+.Innvita_textbox
+{
+    border: 1px solid #B6B9BA;
+	background-color: #ffffff;
+	color:Black;
+    font-family: Tahoma;
+    font-weight: normal;
+    font-size: 10px;
+}
+
+.Innvita_textbox:hover
+{
+    border: 1px solid #B6B9BA;
+    background-color: #FEF09E;
+    color:Black;
+    font-family: Tahoma;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Innvita_Combo
+{
+      font-family: Tahoma;
+       color: #000000;
+      font-size: 10px;
+      text-align:left;
+     
+	}
+      
+      
+.Innvita_Combo:hover
+{
+      font-family: Tahoma;
+      background-color: #FEF09E;
+      color: #000000;
+      font-size: 10px;
+      text-align:left;
+     height: 18px;
+}
+      
+    
+
+ 
+.RequieredFieldValidator
+{
+    color:Red;    
+    font-family: Tahoma;
+    font-size:10px;
+}
+
+.Innvita_Texto_Error
+{
+    font-family: Tahoma;
+    color: Red;
+    font-size:10px;
+    text-align: center;
+}
+
+.Innvita_Texto_Correcto
+{
+    font-family: Tahoma;
+    color: #7DB579;
+    font-size:10px;
+    text-align: center;
+}
+
+
+
+
+.Innvita_Grilla_Cabecera
+{	font-weight: normal;
+	font-family:Tahoma;  
+	color : black;
+	background-color: #e7eaed;
+	font-size:10px;
+	border: 1px solid #BAD2E8;
+}
+
+.Innvita_Grilla_Item
+{
+	font-family:Tahoma;  
+	font-weight:normal;
+	font-size:10px;
+	background-color:#ffffff;
+	color :black;
+	border: 1px solid #c6c6bd;
+}
+
+.Innvita_Grilla_ItemAlt
+{
+	font-family:tahoma;  
+	font-weight:normal;
+	font-size:10px;
+	background-color:#ffffff;
+	color :black;
+	border: 1px solid #c6c6bd;
+}
+   
+.Innvita_Grilla_Pie
+{
+	font-family:Tahoma;  
+	color : black;
+	background-color: #e7eaed;
+	font-size:10px;
+	border: 1px solid #BAD2E8;
+}
+
+.Innvita_Grilla_Paginacion
+{
+	font-size:10px;
+	font-family:Tahoma;  
+	color : black;
+	background-color: #e7eaed;
+	border: 1px solid #BAD2E8;
+}
+
+.Innvita_Grilla_Item:hover
+	{
+	font-family:tahoma;  
+	font-weight: normal;
+	font-size:10px;
+	background-color: #D9E5F2;
+	border: 1px solid #c6c6bd;
+}
+
+.Innvita_Grilla_ItemAlt:hover
+{
+	font-family:tahoma;  
+	font-weight: normal;
+	font-size:10px;
+	background-color: #D9E5F2;
+	border: 1px solid #c6c6bd;
+}
+
+
+
+
+.Innvita_table_contorno
+{
+   /* border: 1px solid #678eb7;*/
+    border: 1px solid #465B9D;
+   
+   /* background-color:#fffeee;*/
+    text-align:center;
+}
+
+.Innvita_Tabla_Titulo
+{
+   /* background-color:#30519c;*/
+    background-color:#465B9D;
+    
+}

@@ -1,0 +1,79 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="InfBuscaPorLoteProveedor.aspx.cs" Inherits="CVT_MermasRecepcion.Reporteria.InfBuscaPorLoteProveedor" %>
+<%@ Register assembly="DevExpress.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>Informes</a></li>
+        <li><span id="current">Busca Por Lote Proveedor</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Busca Por Lote Proveedor</span>
+    <span class="tab-end"></span>   
+</div>
+<div>
+
+    <table class="dxeBinImgCPnlSys">
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Lote Proveedor">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxTextBox ID="txt_pallet" runat="server" Width="170px">
+                </dx:ASPxTextBox>
+            </td>
+            <td>
+                <dx:ASPxButton ID="btn_buscar" runat="server" onclick="btn_buscar_Click" 
+                    Text="Buscar">
+                </dx:ASPxButton>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" 
+                    DataSourceID="LqDsBuscaLP">
+                    <SettingsPager Mode="ShowAllRecords" PageSize="100">
+                    </SettingsPager>
+                    <Columns>
+                        <dx:GridViewDataTextColumn FieldName="Package_SSCC" VisibleIndex="0">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="ArticleProvider_CodClient" 
+                            VisibleIndex="1">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="ArticleProvider_Description" 
+                            VisibleIndex="2">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Package_Status" VisibleIndex="3">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Package_Lot" VisibleIndex="4">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Package_Data1" VisibleIndex="5">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Package_Data2" VisibleIndex="6">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Layout_ShortDescription" VisibleIndex="7">
+                        </dx:GridViewDataTextColumn>
+                        <dx:GridViewDataTextColumn FieldName="Site_ShortDescription" VisibleIndex="8">
+                        </dx:GridViewDataTextColumn>
+                    </Columns>
+                </dx:ASPxGridView>
+                <asp:LinqDataSource ID="LqDsBuscaLP" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTWMSDataContext" EntityTypeName="" 
+                    TableName="CVT_VW_BuscaPorLoteProveedor" 
+                    Where="Package_Data1 == @Package_Data1">
+                    <WhereParameters>
+                        <asp:ControlParameter ControlID="txt_pallet" DefaultValue="CVTCVT" 
+                            Name="Package_Data1" PropertyName="Text" Type="String" />
+                    </WhereParameters>
+                </asp:LinqDataSource>
+            </td>
+        </tr>
+    </table>
+
+</div>
+</asp:Content>

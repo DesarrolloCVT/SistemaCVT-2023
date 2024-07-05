@@ -1,0 +1,155 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ControlHigenePersonal.aspx.cs" Inherits="CVT_MermasRecepcion.Calidad.Inspecciones.ControlHigenePersonal" %>
+<%@ Register assembly="DevExpress.Web.v15.1, Version=15.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>Calidad</a></li>
+        <li><span id="current">Inspeccion Higene</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Control Higene</span>
+    <span class="tab-end"></span>
+    <div id="options">         
+          <a><asp:ImageButton ID="cmdExcel"    runat="server" ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" onclick="cmdExcel_Click" /> Exportar Excel</a>
+     <a>             <asp:ImageButton ID="cmdNew"      runat="server" ImageUrl="~/Images/add.png"  onclick="cmdNew_Click" style="width: 16px"/>Nuevo</a>
+    </div>
+</div>
+<div>
+
+    <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False" 
+        DataSourceID="LqDsControlHigene" KeyFieldName="Id_ControlHigene">
+        <SettingsPager PageSize="25">
+        </SettingsPager>
+        <SettingsEditing Mode="PopupEditForm">
+        </SettingsEditing>
+        <Settings ShowFilterRow="True" />
+        <Columns>
+            <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" 
+                VisibleIndex="0">
+            </dx:GridViewCommandColumn>
+            <dx:GridViewDataTextColumn FieldName="Id_ControlHigene" ReadOnly="True" 
+                Visible="False" VisibleIndex="1">
+                <EditFormSettings Visible="False" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataDateColumn FieldName="Fecha" VisibleIndex="2">
+            </dx:GridViewDataDateColumn>
+            <dx:GridViewDataTextColumn FieldName="Promedio" VisibleIndex="15">
+                <EditFormSettings Visible="False" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Porcentaje_Cumplimiento" 
+                VisibleIndex="16">
+                <EditFormSettings Visible="False" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Mes" VisibleIndex="3">
+                <EditFormSettings Visible="False" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn FieldName="Año" VisibleIndex="4">
+                <EditFormSettings Visible="False" />
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataComboBoxColumn Caption="Monitor" FieldName="Id_Monitor" 
+                VisibleIndex="5">
+                <PropertiesComboBox DataSourceID="LqDsMonitor" ValueField="Id_Personal">
+                    <Columns>
+                        <dx:ListBoxColumn Caption="Nombre" FieldName="Nombre" />
+                        <dx:ListBoxColumn Caption="Apellido" FieldName="apellido" />
+                    </Columns>
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn Caption="Area" FieldName="Id_Area" 
+                VisibleIndex="6">
+                <PropertiesComboBox DataSourceID="LqDsArea" TextField="Nombre" 
+                    ValueField="Id_Area">
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn Caption="Tipo Contrato" 
+                FieldName="Tipo_Contrato" VisibleIndex="7">
+                <PropertiesComboBox>
+                    <Items>
+                        <dx:ListEditItem Text="Planta" Value="P" />
+                        <dx:ListEditItem Text="Contratista" Value="E" />
+                    </Items>
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn Caption="Persona" FieldName="Id_Persona" 
+                VisibleIndex="8">
+                <PropertiesComboBox DataSourceID="LqDsPersonal" ValueField="Id_Personal">
+                    <Columns>
+                        <dx:ListBoxColumn Caption="Nombre" FieldName="Nombre" />
+                        <dx:ListBoxColumn Caption="Apellido" FieldName="apellido" />
+                    </Columns>
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn FieldName="Limpieza_Uniforme" VisibleIndex="9">
+                <PropertiesComboBox>
+                    <Items>
+                        <dx:ListEditItem Text="1" Value="1" />
+                        <dx:ListEditItem Text="7" Value="7" />
+                    </Items>
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn FieldName="Afeitado_PeloCorto" VisibleIndex="10">
+                <PropertiesComboBox>
+                    <Items>
+                        <dx:ListEditItem Text="1" Value="1" />
+                        <dx:ListEditItem Text="7" Value="7" />
+                    </Items>
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn FieldName="Uñas" VisibleIndex="11">
+                <PropertiesComboBox>
+                    <Items>
+                        <dx:ListEditItem Text="1" Value="1" />
+                        <dx:ListEditItem Text="7" Value="7" />
+                    </Items>
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn FieldName="Joyas" VisibleIndex="12">
+                <PropertiesComboBox>
+                    <Items>
+                        <dx:ListEditItem Text="1" Value="1" />
+                        <dx:ListEditItem Text="7" Value="7" />
+                    </Items>
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn FieldName="Higene" VisibleIndex="13">
+                <PropertiesComboBox>
+                    <Items>
+                        <dx:ListEditItem Text="1" Value="1" />
+                        <dx:ListEditItem Text="7" Value="7" />
+                    </Items>
+                </PropertiesComboBox>
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataTextColumn FieldName="Accion_Correctiva" VisibleIndex="14">
+            </dx:GridViewDataTextColumn>
+        </Columns>
+    </dx:ASPxGridView>
+    <asp:LinqDataSource ID="LqDsControlHigene" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" 
+        EnableDelete="True" EnableInsert="True" EnableUpdate="True" EntityTypeName="" 
+        TableName="CVT_ControlHigene">
+    </asp:LinqDataSource>
+    <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server">
+    </dx:ASPxGridViewExporter>
+    <asp:LinqDataSource ID="LqDsMonitor" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+        TableName="CVT_Personal" Where="monitor == @monitor">
+        <WhereParameters>
+            <asp:Parameter DefaultValue="true" Name="monitor" Type="Boolean" />
+        </WhereParameters>
+    </asp:LinqDataSource>
+    <asp:LinqDataSource ID="LqDsPersonal" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+        TableName="CVT_Personal">
+    </asp:LinqDataSource>
+    <asp:LinqDataSource ID="LqDsArea" runat="server" 
+        ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+        TableName="CVT_AreaTrabajo">
+    </asp:LinqDataSource>
+
+</div>
+</asp:Content>
