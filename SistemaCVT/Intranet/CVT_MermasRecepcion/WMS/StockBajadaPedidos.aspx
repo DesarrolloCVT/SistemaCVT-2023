@@ -92,7 +92,7 @@
             </SettingsPager>
             <SettingsBehavior />
             <Toolbars>
-                <dx:GridViewToolbar EnableAdaptivity="True">
+                <dx:GridViewToolbar>
                     <Items>
                         <dx:GridViewToolbarItem Text="Exportar" Name="Export" Image-IconID="actions_download_16x16office2013" Alignment="Left" DropDownMode="False" BeginGroup="True" GroupName="a1" Target="_parent">
                             <Items>

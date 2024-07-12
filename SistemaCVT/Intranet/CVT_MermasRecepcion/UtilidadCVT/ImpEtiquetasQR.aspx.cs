@@ -1,4 +1,7 @@
-﻿using DevExpress.XtraPrinting;
+﻿using CVT_MermasRecepcion.Sistema;
+using DBMermasRecepcion;
+using DevExpress.CodeParser.Diagnostics;
+using DevExpress.XtraPrinting;
 using System;
 using System.Collections.Generic;
 using System.Drawing.Printing;
@@ -30,12 +33,16 @@ namespace CVT_MermasRecepcion.UtilidadCVT
         }
         protected void btn_imprimir_Click(object sender, EventArgs e)
         {
+            WMSClass vWMS = new WMSClass();
+            LogClass vLog = new LogClass();
+            int usuario = vWMS.ObtieneIdStaff(Session["CIDUsuario"].ToString());
             EtiquetaQr1 r = new EtiquetaQr1();
             string Imp = cboList.Value.ToString();
             try
             {
                 if (Convert.ToInt32(rb_tipo.Value) == 1)
                 {
+                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 1);
                     using (MemoryStream ms = new MemoryStream())
                     {
                         r.Parameters["Num_Pallet"].Value = Convert.ToInt32(txt_npallet.Text);
@@ -58,6 +65,7 @@ namespace CVT_MermasRecepcion.UtilidadCVT
                 }
                 if (Convert.ToInt32(rb_tipo.Value) == 2)
                 {
+                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 2);
                     using (MemoryStream ms = new MemoryStream())
                     {
                         r.Parameters["Num_Pallet"].Value = 0.ToString();
@@ -76,6 +84,7 @@ namespace CVT_MermasRecepcion.UtilidadCVT
                 }
                 if (Convert.ToInt32(rb_tipo.Value) == 3)
                 {
+                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 3);
                     using (MemoryStream ms = new MemoryStream())
                     {
                         r.Parameters["Num_Pallet"].Value = 0.ToString();
@@ -92,6 +101,7 @@ namespace CVT_MermasRecepcion.UtilidadCVT
                 }
                 if (Convert.ToInt32(rb_tipo.Value) == 4)
                 {
+                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 4);
                     using (MemoryStream ms = new MemoryStream())
                     {
                         r.Parameters["Num_Pallet"].Value = 0.ToString();
@@ -127,11 +137,15 @@ namespace CVT_MermasRecepcion.UtilidadCVT
 
         protected void btnLocal_Click(object sender, EventArgs e)
         {
+            WMSClass vWMS = new WMSClass();
+            LogClass vLog = new LogClass();
+            int usuario = vWMS.ObtieneIdStaff(Session["CIDUsuario"].ToString());
             EtiquetaQr1 r = new EtiquetaQr1();
             //report.ShowPrintStatusDialog = false;           
 
             if (Convert.ToInt32(rb_tipo.Value) == 1)
             {
+                vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 1);
                 using (MemoryStream ms = new MemoryStream())
                 {
 
@@ -153,6 +167,7 @@ namespace CVT_MermasRecepcion.UtilidadCVT
             }
             if (Convert.ToInt32(rb_tipo.Value) == 2)
             {
+                vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 2);
                 using (MemoryStream ms = new MemoryStream())
                 {
 
@@ -174,6 +189,7 @@ namespace CVT_MermasRecepcion.UtilidadCVT
             }
             if (Convert.ToInt32(rb_tipo.Value) == 3)
             {
+                vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 3);
                 using (MemoryStream ms = new MemoryStream())
                 {
 
@@ -196,6 +212,7 @@ namespace CVT_MermasRecepcion.UtilidadCVT
             }
             if (Convert.ToInt32(rb_tipo.Value) == 4)
             {
+                vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 4);
                 using (MemoryStream ms = new MemoryStream())
                 {
 

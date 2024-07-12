@@ -1,0 +1,210 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ReporteControlBodega.aspx.cs" Inherits="CVT_MermasRecepcion.WMS.ReporteControlBodega" %>
+
+<%@ Register Assembly="DevExpress.Web.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.Web.ASPxRichEdit.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web.ASPxRichEdit" TagPrefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .style1 {
+            width: 106px;
+        }
+
+        .style2 {
+            width: 240px;
+        }
+
+        .style3 {
+            height: 23px;
+        }
+
+        .style4 {
+            width: 240px;
+            height: 23px;
+        }
+
+        .style5 {
+            width: 106px;
+            height: 23px;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+    <div id="breadcrumbs">
+        <ul>
+            <li><a href="../Blank.aspx">Inicio</a></li>
+            <li><a>WMS</a></li>
+            <li><span id="current">Reporte Control Bodega</span></li>
+        </ul>
+    </div>
+
+    <div id="tableHeader">
+        <span class="tableTitle">Control Bodega</span>
+        <span class="tab-end"></span>
+    </div>
+    <%--    <div>
+        <a>
+            <asp:ImageButton ID="cmdExcel" runat="server"
+                ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" OnClick="cmdExcel_Click"
+                Style="height: 20px" />
+            Exportar Excel</a>
+    </div>--%>
+    <br />
+    <div>
+        <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False"
+            DataSourceID="LqDsControlBodega" KeyFieldName="Control_Id"
+            OnRowCommand="GvDatos_RowCommand" OnToolbarItemClick="GvDatos_ToolbarItemClick">
+            <SettingsPager PageSize="25">
+            </SettingsPager>
+            <SettingsBehavior AllowFocusedRow="True" />
+            <Toolbars>
+                <dx:GridViewToolbar>
+                    <Items>
+                        <dx:GridViewToolbarItem Text="Exportar" Name="Export" Image-IconID="actions_download_16x16office2013" Alignment="Left" DropDownMode="False" BeginGroup="True" GroupName="a1" Target="_parent">
+                            <Items>
+                                <dx:GridViewToolbarItem Command="ExportToXls" />
+                                <dx:GridViewToolbarItem Command="ExportToXlsx" />
+                                <dx:GridViewToolbarItem Command="ExportToDocx" />
+                                <dx:GridViewToolbarItem Command="ExportToRtf" />
+                                <dx:GridViewToolbarItem Command="ExportToCsv" />
+                                <dx:GridViewToolbarItem Command="ExportToPdf" />
+                            </Items>
+                        </dx:GridViewToolbarItem>
+                        <dx:GridViewToolbarItem Alignment="Left">
+                            <Template>
+                                <dx:ASPxButtonEdit ID="tbToolbarSearch" runat="server" NullText="Search..." Height="100%">
+                                    <Buttons>
+                                        <dx:SpinButtonExtended Image-IconID="find_find_16x16gray" />
+                                    </Buttons>
+                                </dx:ASPxButtonEdit>
+                            </Template>
+                        </dx:GridViewToolbarItem>
+                    </Items>
+                </dx:GridViewToolbar>
+            </Toolbars>
+            <Columns>
+                <dx:GridViewDataTextColumn FieldName="Control_Id"
+                    Visible="False" VisibleIndex="0">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="TIPO" VisibleIndex="1">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Tipo_Control" Visible="False"
+                    VisibleIndex="2">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataDateColumn FieldName="Fecha" VisibleIndex="3">
+                </dx:GridViewDataDateColumn>
+                <dx:GridViewDataTextColumn FieldName="Usuario"
+                    VisibleIndex="4">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="SSCC"
+                    VisibleIndex="5">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="SSCC_Destino" VisibleIndex="7">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Lote_Origen" VisibleIndex="8">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Lote_Destino" VisibleIndex="9">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="Posicion"
+                    FieldName="Layout_ShortDescription" VisibleIndex="6">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Layout_Id" Visible="False"
+                    VisibleIndex="10">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataHyperLinkColumn Caption="Justificar" VisibleIndex="15">
+                    <DataItemTemplate>
+                        <asp:ImageButton ID="Justificacion" CommandName="cmdJustificacion" runat="server" ImageUrl="~/Images/edita.png" />
+                    </DataItemTemplate>
+                </dx:GridViewDataHyperLinkColumn>
+                <dx:GridViewDataTextColumn FieldName="Usuario_Justificacion" VisibleIndex="12">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Justificacion" Visible="False"
+                    VisibleIndex="14">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Fecha_Justificacion" VisibleIndex="13">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataCheckColumn Caption="Justificado" FieldName="Justificado"
+                    VisibleIndex="11">
+                </dx:GridViewDataCheckColumn>
+            </Columns>
+            <Styles>
+                <FocusedRow BackColor="#FF9933">
+                </FocusedRow>
+            </Styles>
+            <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="Default" />
+            <SettingsSearchPanel CustomEditorID="tbToolbarSearch" />
+        </dx:ASPxGridView>
+        <asp:LinqDataSource ID="LqDsControlBodega" runat="server"
+            ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName=""
+            TableName="CVT_VW_ControlBodega">
+        </asp:LinqDataSource>
+        <dx:ASPxGridViewExporter ID="ASPxGridViewExporter1" runat="server"
+            GridViewID="GvDatos">
+        </dx:ASPxGridViewExporter>
+        <dx:ASPxPopupControl ID="PopUp_Justificacion" runat="server"
+            HeaderText="Justificacion" Width="592px" PopupAction="None"
+            PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter">
+            <ContentCollection>
+                <dx:PopupControlContentControl runat="server">
+                    <table class="dxeBinImgCPnlSys">
+                        <tr>
+                            <td>
+                                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Usuario">
+                                </dx:ASPxLabel>
+                            </td>
+                            <td class="style2">
+                                <dx:ASPxTextBox ID="txt_usuario" runat="server" Width="170px">
+                                    <ValidationSettings ValidationGroup="j">
+                                        <RequiredField IsRequired="True" />
+                                    </ValidationSettings>
+                                </dx:ASPxTextBox>
+                            </td>
+                            <td class="style1">
+                                <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Firma (Contraseña)">
+                                </dx:ASPxLabel>
+                            </td>
+                            <td>
+                                <dx:ASPxTextBox ID="txt_clave" runat="server" AutoPostBack="True"
+                                    OnTextChanged="txt_clave_TextChanged" Password="True" Width="170px">
+                                    <ValidationSettings ValidationGroup="j">
+                                        <RequiredField IsRequired="True" />
+                                    </ValidationSettings>
+                                </dx:ASPxTextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style3">
+                                <dx:ASPxLabel ID="lbl_j" runat="server" Enabled="False" Text="Justificacion">
+                                </dx:ASPxLabel>
+                            </td>
+                            <td class="style4"></td>
+                            <td class="style5"></td>
+                            <td class="style3">
+                                <dx:ASPxLabel ID="lbl_error" runat="server" ForeColor="Red"
+                                    Text="Contraseña no Corresponde!" Visible="False">
+                                </dx:ASPxLabel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" rowspan="2">
+                                <asp:TextBox ID="txt_justificacion" runat="server" Enabled="False"
+                                    Height="93px" TextMode="MultiLine" ValidationGroup="j" Width="370px"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                    ControlToValidate="txt_justificacion" ErrorMessage="*" ForeColor="White"
+                                    ValidationGroup="j" BackColor="Red"></asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <dx:ASPxButton ID="btn_Grabar" runat="server" Enabled="False"
+                                    OnClick="btn_Grabar_Click" Text="Grabar" ValidationGroup="j">
+                                </dx:ASPxButton>
+                            </td>
+                        </tr>
+                    </table>
+                </dx:PopupControlContentControl>
+            </ContentCollection>
+        </dx:ASPxPopupControl>
+    </div>
+</asp:Content>

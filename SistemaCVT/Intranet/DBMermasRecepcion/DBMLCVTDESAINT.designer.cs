@@ -840,12 +840,12 @@ namespace DBMermasRecepcion
     partial void InsertAreaDevolucion(AreaDevolucion instance);
     partial void UpdateAreaDevolucion(AreaDevolucion instance);
     partial void DeleteAreaDevolucion(AreaDevolucion instance);
-    partial void InsertCVT_MotivoDentecion(CVT_MotivoDentecion instance);
-    partial void UpdateCVT_MotivoDentecion(CVT_MotivoDentecion instance);
-    partial void DeleteCVT_MotivoDentecion(CVT_MotivoDentecion instance);
     partial void InsertCVT_Detencion(CVT_Detencion instance);
     partial void UpdateCVT_Detencion(CVT_Detencion instance);
     partial void DeleteCVT_Detencion(CVT_Detencion instance);
+    partial void InsertCVT_MotivoDentecion(CVT_MotivoDentecion instance);
+    partial void UpdateCVT_MotivoDentecion(CVT_MotivoDentecion instance);
+    partial void DeleteCVT_MotivoDentecion(CVT_MotivoDentecion instance);
     #endregion
 		
 		public DBMLCVTDESAINTDataContext() : 
@@ -4158,19 +4158,19 @@ namespace DBMermasRecepcion
 			}
 		}
 		
-		public System.Data.Linq.Table<CVT_MotivoDentecion> CVT_MotivoDentecion
-		{
-			get
-			{
-				return this.GetTable<CVT_MotivoDentecion>();
-			}
-		}
-		
 		public System.Data.Linq.Table<CVT_Detencion> CVT_Detencion
 		{
 			get
 			{
 				return this.GetTable<CVT_Detencion>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CVT_MotivoDentecion> CVT_MotivoDentecion
+		{
+			get
+			{
+				return this.GetTable<CVT_MotivoDentecion>();
 			}
 		}
 		
@@ -4499,13 +4499,6 @@ namespace DBMermasRecepcion
 			return ((ISingleResult<SP_Detalle_ticket_PromedioTiempoRespuestaResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_STOCK_DISPONIBLE_BAJADA_PEDIDO")]
-		public ISingleResult<SP_STOCK_DISPONIBLE_BAJADA_PEDIDOResult> SP_STOCK_DISPONIBLE_BAJADA_PEDIDO([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Site", DbType="Int")] System.Nullable<int> site, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Codigo", DbType="VarChar(50)")] string codigo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string lote)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), site, codigo, lote);
-			return ((ISingleResult<SP_STOCK_DISPONIBLE_BAJADA_PEDIDOResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_RPT_FEFO")]
 		public ISingleResult<SP_RPT_FEFOResult> SP_RPT_FEFO([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Bodega", DbType="VarChar(50)")] string bodega, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CodProd", DbType="VarChar(50)")] string codProd)
 		{
@@ -4553,6 +4546,13 @@ namespace DBMermasRecepcion
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), packageID, transferId, motivo);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_STOCK_DISPONIBLE_BAJADA_PEDIDO")]
+		public ISingleResult<SP_STOCK_DISPONIBLE_BAJADA_PEDIDOResult> SP_STOCK_DISPONIBLE_BAJADA_PEDIDO([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Site", DbType="Int")] System.Nullable<int> site, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Codigo", DbType="VarChar(50)")] string codigo, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string lote)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), site, codigo, lote);
+			return ((ISingleResult<SP_STOCK_DISPONIBLE_BAJADA_PEDIDOResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -92048,164 +92048,6 @@ namespace DBMermasRecepcion
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CVT_MotivoDentecion")]
-	public partial class CVT_MotivoDentecion : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Motivo_Cod;
-		
-		private string _Detencion_Motivo;
-		
-		private int _Categoria_Id;
-		
-		private System.Nullable<int> _Estado;
-		
-		private System.Nullable<int> _Tipo;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMotivo_CodChanging(string value);
-    partial void OnMotivo_CodChanged();
-    partial void OnDetencion_MotivoChanging(string value);
-    partial void OnDetencion_MotivoChanged();
-    partial void OnCategoria_IdChanging(int value);
-    partial void OnCategoria_IdChanged();
-    partial void OnEstadoChanging(System.Nullable<int> value);
-    partial void OnEstadoChanged();
-    partial void OnTipoChanging(System.Nullable<int> value);
-    partial void OnTipoChanged();
-    #endregion
-		
-		public CVT_MotivoDentecion()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Motivo_Cod", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Motivo_Cod
-		{
-			get
-			{
-				return this._Motivo_Cod;
-			}
-			set
-			{
-				if ((this._Motivo_Cod != value))
-				{
-					this.OnMotivo_CodChanging(value);
-					this.SendPropertyChanging();
-					this._Motivo_Cod = value;
-					this.SendPropertyChanged("Motivo_Cod");
-					this.OnMotivo_CodChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Detencion_Motivo", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string Detencion_Motivo
-		{
-			get
-			{
-				return this._Detencion_Motivo;
-			}
-			set
-			{
-				if ((this._Detencion_Motivo != value))
-				{
-					this.OnDetencion_MotivoChanging(value);
-					this.SendPropertyChanging();
-					this._Detencion_Motivo = value;
-					this.SendPropertyChanged("Detencion_Motivo");
-					this.OnDetencion_MotivoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Categoria_Id", DbType="Int NOT NULL")]
-		public int Categoria_Id
-		{
-			get
-			{
-				return this._Categoria_Id;
-			}
-			set
-			{
-				if ((this._Categoria_Id != value))
-				{
-					this.OnCategoria_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Categoria_Id = value;
-					this.SendPropertyChanged("Categoria_Id");
-					this.OnCategoria_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Int")]
-		public System.Nullable<int> Estado
-		{
-			get
-			{
-				return this._Estado;
-			}
-			set
-			{
-				if ((this._Estado != value))
-				{
-					this.OnEstadoChanging(value);
-					this.SendPropertyChanging();
-					this._Estado = value;
-					this.SendPropertyChanged("Estado");
-					this.OnEstadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tipo", DbType="Int")]
-		public System.Nullable<int> Tipo
-		{
-			get
-			{
-				return this._Tipo;
-			}
-			set
-			{
-				if ((this._Tipo != value))
-				{
-					this.OnTipoChanging(value);
-					this.SendPropertyChanging();
-					this._Tipo = value;
-					this.SendPropertyChanged("Tipo");
-					this.OnTipoChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CVT_Detencion")]
 	public partial class CVT_Detencion : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -92579,6 +92421,188 @@ namespace DBMermasRecepcion
 					this._Componente = value;
 					this.SendPropertyChanged("Componente");
 					this.OnComponenteChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CVT_MotivoDentecion")]
+	public partial class CVT_MotivoDentecion : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Motivo_Cod;
+		
+		private string _Detencion_Motivo;
+		
+		private int _Categoria_Id;
+		
+		private System.Nullable<int> _Estado;
+		
+		private System.Nullable<int> _Tipo;
+		
+		private System.Nullable<int> _TiempoEstimado;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMotivo_CodChanging(string value);
+    partial void OnMotivo_CodChanged();
+    partial void OnDetencion_MotivoChanging(string value);
+    partial void OnDetencion_MotivoChanged();
+    partial void OnCategoria_IdChanging(int value);
+    partial void OnCategoria_IdChanged();
+    partial void OnEstadoChanging(System.Nullable<int> value);
+    partial void OnEstadoChanged();
+    partial void OnTipoChanging(System.Nullable<int> value);
+    partial void OnTipoChanged();
+    partial void OnTiempoEstimadoChanging(System.Nullable<int> value);
+    partial void OnTiempoEstimadoChanged();
+    #endregion
+		
+		public CVT_MotivoDentecion()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Motivo_Cod", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Motivo_Cod
+		{
+			get
+			{
+				return this._Motivo_Cod;
+			}
+			set
+			{
+				if ((this._Motivo_Cod != value))
+				{
+					this.OnMotivo_CodChanging(value);
+					this.SendPropertyChanging();
+					this._Motivo_Cod = value;
+					this.SendPropertyChanged("Motivo_Cod");
+					this.OnMotivo_CodChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Detencion_Motivo", DbType="VarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string Detencion_Motivo
+		{
+			get
+			{
+				return this._Detencion_Motivo;
+			}
+			set
+			{
+				if ((this._Detencion_Motivo != value))
+				{
+					this.OnDetencion_MotivoChanging(value);
+					this.SendPropertyChanging();
+					this._Detencion_Motivo = value;
+					this.SendPropertyChanged("Detencion_Motivo");
+					this.OnDetencion_MotivoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Categoria_Id", DbType="Int NOT NULL")]
+		public int Categoria_Id
+		{
+			get
+			{
+				return this._Categoria_Id;
+			}
+			set
+			{
+				if ((this._Categoria_Id != value))
+				{
+					this.OnCategoria_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Categoria_Id = value;
+					this.SendPropertyChanged("Categoria_Id");
+					this.OnCategoria_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="Int")]
+		public System.Nullable<int> Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this.OnEstadoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado = value;
+					this.SendPropertyChanged("Estado");
+					this.OnEstadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tipo", DbType="Int")]
+		public System.Nullable<int> Tipo
+		{
+			get
+			{
+				return this._Tipo;
+			}
+			set
+			{
+				if ((this._Tipo != value))
+				{
+					this.OnTipoChanging(value);
+					this.SendPropertyChanging();
+					this._Tipo = value;
+					this.SendPropertyChanged("Tipo");
+					this.OnTipoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TiempoEstimado", DbType="Int")]
+		public System.Nullable<int> TiempoEstimado
+		{
+			get
+			{
+				return this._TiempoEstimado;
+			}
+			set
+			{
+				if ((this._TiempoEstimado != value))
+				{
+					this.OnTiempoEstimadoChanging(value);
+					this.SendPropertyChanging();
+					this._TiempoEstimado = value;
+					this.SendPropertyChanged("TiempoEstimado");
+					this.OnTiempoEstimadoChanged();
 				}
 			}
 		}
@@ -99306,284 +99330,6 @@ namespace DBMermasRecepcion
 		}
 	}
 	
-	public partial class SP_STOCK_DISPONIBLE_BAJADA_PEDIDOResult
-	{
-		
-		private string _Almacen;
-		
-		private string _ArticleProvider_CodClient;
-		
-		private string _ArticleProvider_Description;
-		
-		private System.Nullable<System.DateTime> _FProduccion;
-		
-		private System.Nullable<System.DateTime> _FVencimiento;
-		
-		private string _Lote;
-		
-		private System.Nullable<int> _Cantidad;
-		
-		private string _Site_ShortDescription;
-		
-		private string _Estado_Lote;
-		
-		private string _Ubicacion;
-		
-		private string _SSCC;
-		
-		private System.Nullable<int> _Site_Id;
-		
-		private string _PaisOrigen;
-		
-		private string _LotProveedor;
-		
-		private string _EstadoPallet;
-		
-		public SP_STOCK_DISPONIBLE_BAJADA_PEDIDOResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Almacen", DbType="VarChar(50)")]
-		public string Almacen
-		{
-			get
-			{
-				return this._Almacen;
-			}
-			set
-			{
-				if ((this._Almacen != value))
-				{
-					this._Almacen = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArticleProvider_CodClient", DbType="VarChar(128)")]
-		public string ArticleProvider_CodClient
-		{
-			get
-			{
-				return this._ArticleProvider_CodClient;
-			}
-			set
-			{
-				if ((this._ArticleProvider_CodClient != value))
-				{
-					this._ArticleProvider_CodClient = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArticleProvider_Description", DbType="VarChar(30)")]
-		public string ArticleProvider_Description
-		{
-			get
-			{
-				return this._ArticleProvider_Description;
-			}
-			set
-			{
-				if ((this._ArticleProvider_Description != value))
-				{
-					this._ArticleProvider_Description = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FProduccion", DbType="Date")]
-		public System.Nullable<System.DateTime> FProduccion
-		{
-			get
-			{
-				return this._FProduccion;
-			}
-			set
-			{
-				if ((this._FProduccion != value))
-				{
-					this._FProduccion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FVencimiento", DbType="Date")]
-		public System.Nullable<System.DateTime> FVencimiento
-		{
-			get
-			{
-				return this._FVencimiento;
-			}
-			set
-			{
-				if ((this._FVencimiento != value))
-				{
-					this._FVencimiento = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lote", DbType="VarChar(50)")]
-		public string Lote
-		{
-			get
-			{
-				return this._Lote;
-			}
-			set
-			{
-				if ((this._Lote != value))
-				{
-					this._Lote = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int")]
-		public System.Nullable<int> Cantidad
-		{
-			get
-			{
-				return this._Cantidad;
-			}
-			set
-			{
-				if ((this._Cantidad != value))
-				{
-					this._Cantidad = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Site_ShortDescription", DbType="VarChar(10)")]
-		public string Site_ShortDescription
-		{
-			get
-			{
-				return this._Site_ShortDescription;
-			}
-			set
-			{
-				if ((this._Site_ShortDescription != value))
-				{
-					this._Site_ShortDescription = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado_Lote", DbType="VarChar(15)")]
-		public string Estado_Lote
-		{
-			get
-			{
-				return this._Estado_Lote;
-			}
-			set
-			{
-				if ((this._Estado_Lote != value))
-				{
-					this._Estado_Lote = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ubicacion", DbType="VarChar(50)")]
-		public string Ubicacion
-		{
-			get
-			{
-				return this._Ubicacion;
-			}
-			set
-			{
-				if ((this._Ubicacion != value))
-				{
-					this._Ubicacion = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SSCC", DbType="VarChar(128)")]
-		public string SSCC
-		{
-			get
-			{
-				return this._SSCC;
-			}
-			set
-			{
-				if ((this._SSCC != value))
-				{
-					this._SSCC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Site_Id", DbType="Int")]
-		public System.Nullable<int> Site_Id
-		{
-			get
-			{
-				return this._Site_Id;
-			}
-			set
-			{
-				if ((this._Site_Id != value))
-				{
-					this._Site_Id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaisOrigen", DbType="NVarChar(70)")]
-		public string PaisOrigen
-		{
-			get
-			{
-				return this._PaisOrigen;
-			}
-			set
-			{
-				if ((this._PaisOrigen != value))
-				{
-					this._PaisOrigen = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LotProveedor", DbType="VarChar(100)")]
-		public string LotProveedor
-		{
-			get
-			{
-				return this._LotProveedor;
-			}
-			set
-			{
-				if ((this._LotProveedor != value))
-				{
-					this._LotProveedor = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoPallet", DbType="VarChar(MAX)")]
-		public string EstadoPallet
-		{
-			get
-			{
-				return this._EstadoPallet;
-			}
-			set
-			{
-				if ((this._EstadoPallet != value))
-				{
-					this._EstadoPallet = value;
-				}
-			}
-		}
-	}
-	
 	public partial class SP_RPT_FEFOResult
 	{
 		
@@ -100717,6 +100463,338 @@ namespace DBMermasRecepcion
 				if ((this._TotalPagoxHoras != value))
 				{
 					this._TotalPagoxHoras = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_STOCK_DISPONIBLE_BAJADA_PEDIDOResult
+	{
+		
+		private string _Almacen;
+		
+		private string _ArticleProvider_CodClient;
+		
+		private string _ArticleProvider_Description;
+		
+		private System.Nullable<System.DateTime> _FProduccion;
+		
+		private System.Nullable<System.DateTime> _FVencimiento;
+		
+		private string _Lote;
+		
+		private System.Nullable<int> _Cantidad;
+		
+		private string _Site_ShortDescription;
+		
+		private string _Estado_Lote;
+		
+		private string _Ubicacion;
+		
+		private string _SSCC;
+		
+		private System.Nullable<int> _Site_Id;
+		
+		private string _PaisOrigen;
+		
+		private string _LotProveedor;
+		
+		private string _EstadoPallet;
+		
+		private System.Nullable<int> _DiasTotales;
+		
+		private System.Nullable<int> _DiasTranscurrido;
+		
+		private System.Nullable<int> _VidaUtilRestante;
+		
+		public SP_STOCK_DISPONIBLE_BAJADA_PEDIDOResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Almacen", DbType="VarChar(50)")]
+		public string Almacen
+		{
+			get
+			{
+				return this._Almacen;
+			}
+			set
+			{
+				if ((this._Almacen != value))
+				{
+					this._Almacen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArticleProvider_CodClient", DbType="VarChar(128)")]
+		public string ArticleProvider_CodClient
+		{
+			get
+			{
+				return this._ArticleProvider_CodClient;
+			}
+			set
+			{
+				if ((this._ArticleProvider_CodClient != value))
+				{
+					this._ArticleProvider_CodClient = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArticleProvider_Description", DbType="VarChar(30)")]
+		public string ArticleProvider_Description
+		{
+			get
+			{
+				return this._ArticleProvider_Description;
+			}
+			set
+			{
+				if ((this._ArticleProvider_Description != value))
+				{
+					this._ArticleProvider_Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FProduccion", DbType="Date")]
+		public System.Nullable<System.DateTime> FProduccion
+		{
+			get
+			{
+				return this._FProduccion;
+			}
+			set
+			{
+				if ((this._FProduccion != value))
+				{
+					this._FProduccion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FVencimiento", DbType="Date")]
+		public System.Nullable<System.DateTime> FVencimiento
+		{
+			get
+			{
+				return this._FVencimiento;
+			}
+			set
+			{
+				if ((this._FVencimiento != value))
+				{
+					this._FVencimiento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lote", DbType="VarChar(50)")]
+		public string Lote
+		{
+			get
+			{
+				return this._Lote;
+			}
+			set
+			{
+				if ((this._Lote != value))
+				{
+					this._Lote = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int")]
+		public System.Nullable<int> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Site_ShortDescription", DbType="VarChar(10)")]
+		public string Site_ShortDescription
+		{
+			get
+			{
+				return this._Site_ShortDescription;
+			}
+			set
+			{
+				if ((this._Site_ShortDescription != value))
+				{
+					this._Site_ShortDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado_Lote", DbType="VarChar(15)")]
+		public string Estado_Lote
+		{
+			get
+			{
+				return this._Estado_Lote;
+			}
+			set
+			{
+				if ((this._Estado_Lote != value))
+				{
+					this._Estado_Lote = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ubicacion", DbType="VarChar(50)")]
+		public string Ubicacion
+		{
+			get
+			{
+				return this._Ubicacion;
+			}
+			set
+			{
+				if ((this._Ubicacion != value))
+				{
+					this._Ubicacion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SSCC", DbType="VarChar(128)")]
+		public string SSCC
+		{
+			get
+			{
+				return this._SSCC;
+			}
+			set
+			{
+				if ((this._SSCC != value))
+				{
+					this._SSCC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Site_Id", DbType="Int")]
+		public System.Nullable<int> Site_Id
+		{
+			get
+			{
+				return this._Site_Id;
+			}
+			set
+			{
+				if ((this._Site_Id != value))
+				{
+					this._Site_Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PaisOrigen", DbType="NVarChar(100)")]
+		public string PaisOrigen
+		{
+			get
+			{
+				return this._PaisOrigen;
+			}
+			set
+			{
+				if ((this._PaisOrigen != value))
+				{
+					this._PaisOrigen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LotProveedor", DbType="VarChar(100)")]
+		public string LotProveedor
+		{
+			get
+			{
+				return this._LotProveedor;
+			}
+			set
+			{
+				if ((this._LotProveedor != value))
+				{
+					this._LotProveedor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoPallet", DbType="VarChar(MAX)")]
+		public string EstadoPallet
+		{
+			get
+			{
+				return this._EstadoPallet;
+			}
+			set
+			{
+				if ((this._EstadoPallet != value))
+				{
+					this._EstadoPallet = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiasTotales", DbType="Int")]
+		public System.Nullable<int> DiasTotales
+		{
+			get
+			{
+				return this._DiasTotales;
+			}
+			set
+			{
+				if ((this._DiasTotales != value))
+				{
+					this._DiasTotales = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiasTranscurrido", DbType="Int")]
+		public System.Nullable<int> DiasTranscurrido
+		{
+			get
+			{
+				return this._DiasTranscurrido;
+			}
+			set
+			{
+				if ((this._DiasTranscurrido != value))
+				{
+					this._DiasTranscurrido = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VidaUtilRestante", DbType="Int")]
+		public System.Nullable<int> VidaUtilRestante
+		{
+			get
+			{
+				return this._VidaUtilRestante;
+			}
+			set
+			{
+				if ((this._VidaUtilRestante != value))
+				{
+					this._VidaUtilRestante = value;
 				}
 			}
 		}

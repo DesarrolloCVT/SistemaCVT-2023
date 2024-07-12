@@ -2462,16 +2462,16 @@
         <elementListCompartment Id="5d521a0b-77b0-4ca7-b69b-9120bfaeb350" absoluteBounds="4.765, 23.46, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a4d631a7-d3c1-4918-96cc-00b04d338348" isExpanded="false" absoluteBounds="4.75, 9, 2, 0.45">
-      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_MotivoDentecion" />
-      <nestedChildShapes>
-        <elementListCompartment Id="420dc29d-9c86-4c1b-b247-dd46a7266024" absoluteBounds="4.765, 9.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="8b0cb13f-11ef-4df7-a392-e6f99d566389" isExpanded="false" absoluteBounds="4.75, 8.5, 2, 0.45">
       <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_Detencion" />
       <nestedChildShapes>
         <elementListCompartment Id="a9fe6208-7f3a-4296-af7e-ff021a54c9a5" absoluteBounds="4.765, 8.96, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="90ea13c5-8a68-4977-a490-5f3b9b5e3304" isExpanded="false" absoluteBounds="4.75, 9, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_MotivoDentecion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15cdf21a-31fa-44c3-b540-db75a207a479" absoluteBounds="4.765, 9.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

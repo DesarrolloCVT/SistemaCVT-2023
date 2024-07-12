@@ -5111,15 +5111,6 @@
       <Column Name="DosificadoPromedioContenedora" Type="System.Decimal" DbType="Decimal(30,14)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.CVT_MotivoDentecion" Member="CVT_MotivoDentecion">
-    <Type Name="CVT_MotivoDentecion">
-      <Column Name="Motivo_Cod" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Detencion_Motivo" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="Categoria_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Tipo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.CVT_Detencion" Member="CVT_Detencion">
     <Type Name="CVT_Detencion">
       <Column Name="Detencion_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -5137,6 +5128,16 @@
       <Column Name="Maq" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Parte" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Componente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_MotivoDentecion" Member="CVT_MotivoDentecion">
+    <Type Name="CVT_MotivoDentecion">
+      <Column Name="Motivo_Cod" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Detencion_Motivo" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TiempoEstimado" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.CVT_AGENDAPROD_LeeStockReceta" Method="CVT_AGENDAPROD_LeeStockReceta">
@@ -5791,28 +5792,6 @@
       <Column Name="CantTickets" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SP_STOCK_DISPONIBLE_BAJADA_PEDIDO" Method="SP_STOCK_DISPONIBLE_BAJADA_PEDIDO">
-    <Parameter Name="Site" Parameter="site" Type="System.Int32" DbType="Int" />
-    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="lote" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="SP_STOCK_DISPONIBLE_BAJADA_PEDIDOResult">
-      <Column Name="Almacen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
-      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="FProduccion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="FVencimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="Estado_Lote" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="Ubicacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
-      <Column Name="Site_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PaisOrigen" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
-      <Column Name="LotProveedor" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="EstadoPallet" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.SP_RPT_FEFO" Method="SP_RPT_FEFO">
     <Parameter Name="Bodega" Parameter="bodega" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="CodProd" Parameter="codProd" Type="System.String" DbType="VarChar(50)" />
@@ -5917,5 +5896,30 @@
     <Parameter Name="TransferId" Parameter="transferId" Type="System.Int32" DbType="Int" />
     <Parameter Name="Motivo" Parameter="motivo" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_STOCK_DISPONIBLE_BAJADA_PEDIDO" Method="SP_STOCK_DISPONIBLE_BAJADA_PEDIDO">
+    <Parameter Name="Site" Parameter="site" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="lote" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="SP_STOCK_DISPONIBLE_BAJADA_PEDIDOResult">
+      <Column Name="Almacen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FProduccion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FVencimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Estado_Lote" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Ubicacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PaisOrigen" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LotProveedor" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EstadoPallet" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DiasTotales" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiasTranscurrido" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VidaUtilRestante" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

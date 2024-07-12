@@ -1,0 +1,392 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="PlanificacionMantencion.aspx.cs" Inherits="CVT_MermasRecepcion.Mantencion.PlanificacionMantencion" %>
+<%@ Register Assembly="DevExpress.Web.ASPxScheduler.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web.ASPxScheduler" TagPrefix="dxwschs" %>
+<%@ Register assembly="DevExpress.XtraScheduler.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.XtraScheduler" tagprefix="cc1" %>
+<%@ Register assembly="DevExpress.XtraScheduler.v22.1.Core.Desktop, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.XtraScheduler" tagprefix="cc1" %>
+<%@ Register assembly="DevExpress.Web.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<script language="javascript" type="text/javascript">
+    function GeneraCallback(s, e) {
+        var id = e.appointmentId;
+        //scheduler.RaiseCallback("MNUAPT" + ";" + id);
+        e.handled = true;
+        popEdita.PerformCallback(id);
+        popEdita.Show();
+    }
+</script>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
+<div id="breadcrumbs">
+    <ul>
+        <li><a href="../Blank.aspx">Inicio</a></li>
+        <li><a>Mantencion</a></li>
+        <li><span id="current">Planificacion Mantencion</span></li>
+    </ul>
+</div>
+
+<div id="tableHeader">
+    <span class="tableTitle">Planificacion Mantencion</span>
+    <span class="tab-end"></span>
+
+ <div id="options"> 
+    <a>             <asp:ImageButton ID="cmdNuevo"    runat="server" 
+         ImageUrl="~/App_Themes/IDA/ui/ico-agregar3.png" 
+         onclick="cmdNuevo_Click"  /> </a>
+ </div>
+ </div>
+    <%--ddd--%>
+<div>
+    <dx:ASPxPopupControl ID="PopUp_Editar" runat="server" 
+        ClientInstanceName="popEdita" HeaderText="Editar" 
+        onwindowcallback="PopUp_Editar_WindowCallback" Width="554px" 
+        AllowDragging="True" PopupAction="None" PopupHorizontalAlign="WindowCenter" 
+        PopupVerticalAlign="WindowCenter">
+        <ContentCollection>
+<dx:PopupControlContentControl ID="PopupControlContentControl1" runat="server">
+    <table class="dxeBinImgCPnlSys">
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel17" runat="server" Text="Maquina">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cb_maquina" runat="server" DataSourceID="LqDsMaquina" 
+                    TextField="Descricion" ValueField="ID">
+                </dx:ASPxComboBox>
+                <asp:LinqDataSource ID="LqDsMaquina" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_MaquinaComponente" Where="Padre_ID == @Padre_ID">
+                    <WhereParameters>
+                        <asp:Parameter DefaultValue="0" Name="Padre_ID" Type="Int32" />
+                    </WhereParameters>
+                </asp:LinqDataSource>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel33" runat="server" Text="Parte">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cb_parte" runat="server" DataSourceID="LqDsParte" 
+                    TextField="Descricion" ValueField="ID">
+                </dx:ASPxComboBox>
+                <asp:LinqDataSource ID="LqDsParte" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_MaquinaComponente">
+                </asp:LinqDataSource>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="Componente">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cb_componente" runat="server" 
+                    DataSourceID="LqDsComponente" TextField="Descricion" ValueField="ID">
+                </dx:ASPxComboBox>
+                <asp:LinqDataSource ID="LqDsComponente" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_MaquinaComponente">
+                </asp:LinqDataSource>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text="Recurrente">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxCheckBox ID="chk_recurrente" runat="server" CheckState="Unchecked">
+                </dx:ASPxCheckBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel34" runat="server" Text="Tipo Mantencion">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cb_tipo" runat="server" DataSourceID="LqDsTipo" 
+                    TextField="Tipo_Mantencion" ValueField="TipoMantencion_Id">
+                </dx:ASPxComboBox>
+                <asp:LinqDataSource ID="LqDsTipo" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_TipoMantencion">
+                </asp:LinqDataSource>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel5" runat="server" Text="Periodicidad">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cb_periodicidad" runat="server">
+                    <Items>
+                        <dx:ListEditItem Text="Diario" Value="0" />
+                        <dx:ListEditItem Text="Semanal" Value="1" />
+                        <dx:ListEditItem Text="Mensual" Value="2" />
+                        <dx:ListEditItem Text="Trimestral" Value="3" />
+                        <dx:ListEditItem Text="Semestral" Value="4" />
+                        <dx:ListEditItem Text="Anual" Value="5" />
+                    </Items>
+                </dx:ASPxComboBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel10" runat="server" Text="Fecha 1era Mantencion">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxDateEdit ID="cb_primeramantencion" runat="server">
+                </dx:ASPxDateEdit>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel3" runat="server" Text="Fecha Inicio">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxDateEdit ID="cb_finicio" runat="server">
+                </dx:ASPxDateEdit>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel12" runat="server" Text="Fecha Termino">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxDateEdit ID="cb_ftermino" runat="server">
+                </dx:ASPxDateEdit>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel16" runat="server" Text="Recurso">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cb_recurso" runat="server" DataSourceID="LqDsRecurso" 
+                    TextField="Recurso_Nombre" ValueField="Recurso_Id">
+                </dx:ASPxComboBox>
+                <asp:LinqDataSource ID="LqDsRecurso" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_RecursoMantencion">
+                </asp:LinqDataSource>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel runat="server" Text="Comentarios" ID="ASPxLabel8"></dx:ASPxLabel>
+
+            </td>
+            <td colspan="3">
+                <dx:ASPxTextBox runat="server" Width="280px" AutoResizeWithContainer="True" 
+                    Height="48px" ID="txtcomentario"></dx:ASPxTextBox>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                <dx:ASPxButton runat="server" Text="Actualizar" ID="btn_actualizar" 
+                    OnClick="btn_actualizar_Click"></dx:ASPxButton>
+
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                <dx:ASPxButton runat="server" Text="Cancelar" ID="btn_cancelarE" 
+                    OnClick="btn_cancelarE_Click"></dx:ASPxButton>
+
+            </td>
+        </tr>
+    </table>
+            </dx:PopupControlContentControl>
+</ContentCollection>
+    </dx:ASPxPopupControl>
+    </div>
+
+    <dx:ASPxPopupControl ID="PopUp_Nuevo" runat="server" HeaderText="Nuevo" 
+        onwindowcallback="PopUp_Editar_WindowCallback" Width="554px" 
+        AllowDragging="True" PopupAction="None" PopupHorizontalAlign="WindowCenter" 
+        PopupVerticalAlign="WindowCenter">
+        <ContentCollection>
+<dx:PopupControlContentControl ID="PopupControlContentControl2" runat="server">
+    <table class="dxeBinImgCPnlSys">
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel35" runat="server" Text="Maquina">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cb_maquina0" runat="server" DataSourceID="LqDsMaquina0" 
+                    TextField="Descricion" ValueField="ID">
+                </dx:ASPxComboBox>
+                <asp:LinqDataSource ID="LqDsMaquina0" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_MaquinaComponente" Where="Padre_ID == @Padre_ID">
+                    <WhereParameters>
+                        <asp:Parameter DefaultValue="0" Name="Padre_ID" Type="Int32" />
+                    </WhereParameters>
+                </asp:LinqDataSource>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel36" runat="server" Text="Parte">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cb_parte0" runat="server" DataSourceID="LqDsParte0" 
+                    TextField="Descricion" ValueField="ID">
+                </dx:ASPxComboBox>
+                <asp:LinqDataSource ID="LqDsParte0" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_MaquinaComponente">
+                </asp:LinqDataSource>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel37" runat="server" Text="Componente">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cb_componente0" runat="server" 
+                    DataSourceID="LqDsComponente0" TextField="Descricion" ValueField="ID">
+                </dx:ASPxComboBox>
+                <asp:LinqDataSource ID="LqDsComponente0" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_MaquinaComponente">
+                </asp:LinqDataSource>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel38" runat="server" Text="Recurrente">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxCheckBox ID="chk_recurrente0" runat="server" CheckState="Unchecked">
+                </dx:ASPxCheckBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel39" runat="server" Text="Tipo Mantencion">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cb_tipo0" runat="server" DataSourceID="LqDsTipo0" 
+                    TextField="Tipo_Mantencion" ValueField="TipoMantencion_Id">
+                </dx:ASPxComboBox>
+                <asp:LinqDataSource ID="LqDsTipo0" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_TipoMantencion">
+                </asp:LinqDataSource>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel40" runat="server" Text="Periodicidad">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cb_periodicidad0" runat="server">
+                    <Items>
+                        <dx:ListEditItem Text="Diario" Value="0" />
+                        <dx:ListEditItem Text="Semanal" Value="1" />
+                        <dx:ListEditItem Text="Mensual" Value="2" />
+                        <dx:ListEditItem Text="Trimestral" Value="3" />
+                        <dx:ListEditItem Text="Semestral" Value="4" />
+                        <dx:ListEditItem Text="Anual" Value="5" />
+                    </Items>
+                </dx:ASPxComboBox>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel41" runat="server" Text="Fecha 1era Mantencion">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxDateEdit ID="cb_primeramantencion0" runat="server">
+                </dx:ASPxDateEdit>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel42" runat="server" Text="Fecha Inicio">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxDateEdit ID="cb_finicio0" runat="server">
+                </dx:ASPxDateEdit>
+            </td>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel43" runat="server" Text="Fecha Termino">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxDateEdit ID="cb_ftermino0" runat="server">
+                </dx:ASPxDateEdit>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel ID="ASPxLabel44" runat="server" Text="Recurso">
+                </dx:ASPxLabel>
+            </td>
+            <td>
+                <dx:ASPxComboBox ID="cb_recurso0" runat="server" DataSourceID="LqDsRecurso0" 
+                    TextField="Recurso_Nombre" ValueField="Recurso_Id">
+                </dx:ASPxComboBox>
+                <asp:LinqDataSource ID="LqDsRecurso0" runat="server" 
+                    ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" 
+                    TableName="CVT_RecursoMantencion">
+                </asp:LinqDataSource>
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <dx:ASPxLabel runat="server" Text="Comentarios" ID="ASPxLabel45"></dx:ASPxLabel>
+
+            </td>
+            <td colspan="3">
+                <dx:ASPxTextBox runat="server" Width="280px" AutoResizeWithContainer="True" 
+                    Height="48px" ID="txtcomentario0"></dx:ASPxTextBox>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                <dx:ASPxButton runat="server" Text="Actualizar" ID="btn_actualizar0" 
+                    OnClick="btn_actualizar_Click"></dx:ASPxButton>
+
+            </td>
+            <td>
+                &nbsp;</td>
+            <td>
+                <dx:ASPxButton runat="server" Text="Cancelar" ID="btn_cancelarE0" 
+                    OnClick="btn_cancelarE_Click"></dx:ASPxButton>
+
+            </td>
+        </tr>
+    </table>
+            </dx:PopupControlContentControl>
+</ContentCollection>
+    </dx:ASPxPopupControl>
+    
+</asp:Content>

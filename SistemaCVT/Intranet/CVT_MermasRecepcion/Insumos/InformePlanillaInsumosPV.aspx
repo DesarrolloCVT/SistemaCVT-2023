@@ -32,6 +32,7 @@
                 <td>
                     <dx:aspxcombobox ID="cbo_Mes" runat="server" Width="200px">
                         <Items>
+                            <dx:ListEditItem Text="Todos" Value="0" />
                             <dx:ListEditItem Text="Enero" Value="1" />
                             <dx:ListEditItem Text="Febrero" Value="2" />
                             <dx:ListEditItem Text="Marzo" Value="3" />

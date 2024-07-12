@@ -121,35 +121,41 @@
 
         <SettingsSearchPanel CustomEditorID="tbToolbarSearch" />
         <Columns>
-            <dx:GridViewDataTextColumn FieldName="Almacen" Visible="False" VisibleIndex="1">
+            <dx:GridViewDataTextColumn FieldName="Almacen" Visible="False" VisibleIndex="0">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn Caption="Cod.Producto" FieldName="ArticleProvider_CodClient" VisibleIndex="3">
+            <dx:GridViewDataTextColumn Caption="Cod.Producto" FieldName="ArticleProvider_CodClient" VisibleIndex="2">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn Caption="Producto" FieldName="ArticleProvider_Description" VisibleIndex="2">
+            <dx:GridViewDataTextColumn Caption="Producto" FieldName="ArticleProvider_Description" VisibleIndex="1">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataDateColumn FieldName="FProduccion" VisibleIndex="10">
+            <dx:GridViewDataDateColumn FieldName="FProduccion" VisibleIndex="9">
             </dx:GridViewDataDateColumn>
-            <dx:GridViewDataDateColumn FieldName="FVencimiento" VisibleIndex="11">
+            <dx:GridViewDataDateColumn FieldName="FVencimiento" VisibleIndex="10">
             </dx:GridViewDataDateColumn>
-            <dx:GridViewDataTextColumn FieldName="Lote" VisibleIndex="4">
+            <dx:GridViewDataTextColumn FieldName="Lote" VisibleIndex="3">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="Cantidad" VisibleIndex="8">
+            <dx:GridViewDataTextColumn FieldName="Cantidad" VisibleIndex="7">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="Site_ShortDescription" Visible="False" VisibleIndex="13">
+            <dx:GridViewDataTextColumn FieldName="Site_ShortDescription" Visible="False" VisibleIndex="12">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="Estado_Lote" VisibleIndex="12">
+            <dx:GridViewDataTextColumn FieldName="Estado_Lote" VisibleIndex="11">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="Ubicacion" VisibleIndex="9">
+            <dx:GridViewDataTextColumn FieldName="Ubicacion" VisibleIndex="8">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn Caption="N° Pallet" FieldName="SSCC" VisibleIndex="6">
+            <dx:GridViewDataTextColumn Caption="N° Pallet" FieldName="SSCC" VisibleIndex="5">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="Site_Id" Visible="False" VisibleIndex="14">
+            <dx:GridViewDataTextColumn FieldName="Site_Id" Visible="False" VisibleIndex="13">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn Caption="Origen Producto" FieldName="PaisOrigen" VisibleIndex="15">
+            <dx:GridViewDataTextColumn Caption="Origen Producto" FieldName="PaisOrigen" VisibleIndex="14">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="LotProveedor" VisibleIndex="5">
+            <dx:GridViewDataTextColumn FieldName="LotProveedor" VisibleIndex="4">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="EstadoPallet" VisibleIndex="7">
+            <dx:GridViewDataTextColumn FieldName="EstadoPallet" VisibleIndex="6">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Vida Util" FieldName="DiasTotales" VisibleIndex="15">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="Dias Trancurridos" FieldName="DiasTranscurrido" VisibleIndex="16">
+            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataTextColumn Caption="% Vida Util Restante" FieldName="VidaUtilRestante" VisibleIndex="17">
             </dx:GridViewDataTextColumn>
         </Columns>
     </dx:ASPxGridView>

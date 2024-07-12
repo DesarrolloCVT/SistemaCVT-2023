@@ -886,43 +886,43 @@ namespace DBMermasRecepcion
                     doc.Lines.ItemCode = d.ArticleProvider_CodClient;
                     doc.Lines.ShipDate = DateTime.Now;
                     doc.Lines.Quantity = (double)d.Quantity;
-                    if (d.ArticleProvider_CodClient == "M-ARRKG510" ||
-                        d.ArticleProvider_CodClient == "M-ARRKG511" ||
-                        d.ArticleProvider_CodClient == "M-ARRKG512" ||
-                        d.ArticleProvider_CodClient == "M-ARVKG510" ||
-                        d.ArticleProvider_CodClient == "M-AZUKG510" ||
-                        d.ArticleProvider_CodClient == "M-GARKG510" ||
-                        d.ArticleProvider_CodClient == "M-LENKG510" ||
-                        d.ArticleProvider_CodClient == "M-PASKG510" ||
-                        d.ArticleProvider_CodClient == "M-PASKG511" ||
-                        d.ArticleProvider_CodClient == "M-PORKG510" ||
-                        d.ArticleProvider_CodClient == "M-REPARR02" ||
-                        d.ArticleProvider_CodClient == "M-REPARRPAR" ||
-                        d.ArticleProvider_CodClient == "M-REPARV01" ||
-                        d.ArticleProvider_CodClient == "M-REPAZU02" ||
-                        d.ArticleProvider_CodClient == "M-REPGAR01" ||
-                        d.ArticleProvider_CodClient == "M-REPGAR03" ||
-                        d.ArticleProvider_CodClient == "M-REPLEN01" ||
-                        d.ArticleProvider_CodClient == "M-REPPOR01" ||
-                        d.ArticleProvider_CodClient == "M-PASKG500" ||
-                        d.ArticleProvider_CodClient == "M-PASKG501" ||
-                        d.ArticleProvider_CodClient == "M-PASKG502" ||
-                        d.ArticleProvider_CodClient == "M-PASKG503" ||
-                        d.ArticleProvider_CodClient == "M-VARLEG01" ||
-                        d.ArticleProvider_CodClient == "M-YERKG500" ||
-                        d.ArticleProvider_CodClient == "M-REPPOR02" ||
-                        d.ArticleProvider_CodClient== "M-REPAZU03")
-                    {
+                    //if (d.ArticleProvider_CodClient == "M-ARRKG510" ||
+                    //    d.ArticleProvider_CodClient == "M-ARRKG511" ||
+                    //    d.ArticleProvider_CodClient == "M-ARRKG512" ||
+                    //    d.ArticleProvider_CodClient == "M-ARVKG510" ||
+                    //    d.ArticleProvider_CodClient == "M-AZUKG510" ||
+                    //    d.ArticleProvider_CodClient == "M-GARKG510" ||
+                    //    d.ArticleProvider_CodClient == "M-LENKG510" ||
+                    //    d.ArticleProvider_CodClient == "M-PASKG510" ||
+                    //    d.ArticleProvider_CodClient == "M-PASKG511" ||
+                    //    d.ArticleProvider_CodClient == "M-PORKG510" ||
+                    //    d.ArticleProvider_CodClient == "M-REPARR02" ||
+                    //    d.ArticleProvider_CodClient == "M-REPARRPAR" ||
+                    //    d.ArticleProvider_CodClient == "M-REPARV01" ||
+                    //    d.ArticleProvider_CodClient == "M-REPAZU02" ||
+                    //    d.ArticleProvider_CodClient == "M-REPGAR01" ||
+                    //    d.ArticleProvider_CodClient == "M-REPGAR03" ||
+                    //    d.ArticleProvider_CodClient == "M-REPLEN01" ||
+                    //    d.ArticleProvider_CodClient == "M-REPPOR01" ||
+                    //    d.ArticleProvider_CodClient == "M-PASKG500" ||
+                    //    d.ArticleProvider_CodClient == "M-PASKG501" ||
+                    //    d.ArticleProvider_CodClient == "M-PASKG502" ||
+                    //    d.ArticleProvider_CodClient == "M-PASKG503" ||
+                    //    d.ArticleProvider_CodClient == "M-VARLEG01" ||
+                    //    d.ArticleProvider_CodClient == "M-YERKG500" ||
+                    //    d.ArticleProvider_CodClient == "M-REPPOR02" ||
+                    //    d.ArticleProvider_CodClient== "M-REPAZU03")
+                    //{
                         double precioPadre= ObtienePrecioPromedioProducto(d.Origen);
                         precioPadre = precioPadre * (double)d.OrigenCantidad;
                         precioPadre = precioPadre / (double)d.Quantity;
 
                         doc.Lines.UnitPrice = precioPadre;
-                    }
-                    else
-                    {
-                        doc.Lines.UnitPrice = ObtienePrecioPromedioProducto(d.ArticleProvider_CodClient);
-                    }
+                    //}
+                    //else
+                    //{
+                    //    doc.Lines.UnitPrice = ObtienePrecioPromedioProducto(d.ArticleProvider_CodClient);
+                    //}
                     doc.Lines.WarehouseCode = d.Site_ShortDescription;
 
 

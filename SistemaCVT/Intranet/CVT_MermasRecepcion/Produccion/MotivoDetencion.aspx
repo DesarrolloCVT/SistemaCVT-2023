@@ -48,11 +48,21 @@
                     </PropertiesComboBox>
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataComboBoxColumn>
-                <dx:GridViewDataComboBoxColumn FieldName="Estado" VisibleIndex="4">
+                <dx:GridViewDataComboBoxColumn FieldName="Estado" VisibleIndex="6">
                     <PropertiesComboBox>
                         <Items>
                             <dx:ListEditItem Text="Activo" Value="1" />
                             <dx:ListEditItem Text="Inactivo" Value="0" />
+                        </Items>
+                    </PropertiesComboBox>
+                </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataTextColumn FieldName="TiempoEstimado" VisibleIndex="5">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataComboBoxColumn FieldName="Tipo" VisibleIndex="4">
+                    <PropertiesComboBox>
+                        <Items>
+                            <dx:ListEditItem Text="Programada" Value="1" />
+                            <dx:ListEditItem Text="No Programada" Value="2" />
                         </Items>
                     </PropertiesComboBox>
                 </dx:GridViewDataComboBoxColumn>
@@ -87,6 +97,11 @@
                 </dx:GridViewToolbar>
             </Toolbars>
             <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="Default" />
+
+<SettingsPopup>
+<FilterControl AutoUpdatePosition="False"></FilterControl>
+</SettingsPopup>
+
             <SettingsSearchPanel CustomEditorID="tbToolbarSearch" />
             <Styles>
                 <FocusedRow BackColor="#FF9933">
