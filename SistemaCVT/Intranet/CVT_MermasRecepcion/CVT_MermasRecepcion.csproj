@@ -1973,6 +1973,13 @@
       <DependentUpon>EtiquetaUbicacion.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="EtiquetaUbicacion2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EtiquetaUbicacion2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="FillRateProveedores.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -2253,7 +2260,7 @@
     </Compile>
     <Compile Include="KPI\VentasPbi.aspx.designer.cs">
       <DependentUpon>VentasPbi.aspx</DependentUpon>
-	</Compile>
+    </Compile>
     <Compile Include="KPI\Ventas.aspx.cs">
       <DependentUpon>Ventas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -5968,6 +5975,11 @@
     <EmbeddedResource Include="EtiquetaPreciosMayorista7x4.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>EtiquetaPreciosMayorista7x4.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EtiquetaUbicacion2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EtiquetaUbicacion2.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="FillRateProveedores.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
