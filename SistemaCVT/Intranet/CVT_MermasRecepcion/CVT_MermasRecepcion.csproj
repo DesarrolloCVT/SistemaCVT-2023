@@ -876,11 +876,8 @@
     <Content Include="KPI\ProduccionPBI.aspx" />
     <Content Include="KPI\Recuperacion.aspx" />
     <Content Include="KPI\RecuperacionPBI.aspx" />
-<<<<<<< HEAD
     <Content Include="KPI\VentasPbi.aspx" />
-=======
     <Content Include="KPI\Ventas.aspx" />
->>>>>>> 50f399976afd3f5833e6585d1450637a8cf4b3d0
     <Content Include="Legal.html" />
     <Content Include="Login.aspx" />
     <Content Include="Logistica\AsignacionRuta.aspx" />
@@ -2250,21 +2247,19 @@
     <Compile Include="KPI\RecuperacionPBI.aspx.designer.cs">
       <DependentUpon>RecuperacionPBI.aspx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="KPI\VentasPbi.aspx.cs">
       <DependentUpon>VentasPbi.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="KPI\VentasPbi.aspx.designer.cs">
       <DependentUpon>VentasPbi.aspx</DependentUpon>
-=======
+	</Compile>
     <Compile Include="KPI\Ventas.aspx.cs">
       <DependentUpon>Ventas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="KPI\Ventas.aspx.designer.cs">
       <DependentUpon>Ventas.aspx</DependentUpon>
->>>>>>> 50f399976afd3f5833e6585d1450637a8cf4b3d0
     </Compile>
     <Compile Include="LaboresTurno.cs">
       <AutoGen>True</AutoGen>
