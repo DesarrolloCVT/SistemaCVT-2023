@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CVT_MermasRecepcion.Trazabilidad {
-    
-    
-    public partial class ExpedicionPorProducto {
-        
+namespace CVT_MermasRecepcion.Trazabilidad
+{
+
+
+    public partial class ExpedicionPorProducto
+    {
+
         /// <summary>
         /// Control txtNExpedicion.
         /// </summary>
@@ -20,7 +22,7 @@ namespace CVT_MermasRecepcion.Trazabilidad {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox txtNExpedicion;
-        
+
         /// <summary>
         /// Control txtCodProducto.
         /// </summary>
@@ -29,7 +31,7 @@ namespace CVT_MermasRecepcion.Trazabilidad {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox txtCodProducto;
-        
+
         /// <summary>
         /// Control txtLote.
         /// </summary>
@@ -38,7 +40,7 @@ namespace CVT_MermasRecepcion.Trazabilidad {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::DevExpress.Web.ASPxTextBox txtLote;
-        
+
         /// <summary>
         /// Control btn_Buscar.
         /// </summary>
@@ -47,5 +49,32 @@ namespace CVT_MermasRecepcion.Trazabilidad {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton btn_Buscar;
+
+        /// <summary>
+        /// Control txt_prodMasivo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txt_prodMasivo;
+
+        /// <summary>
+        /// Control txt_lotemasivo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox txt_lotemasivo;
+
+        /// <summary>
+        /// Control bt_buscarmasivo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton bt_buscarmasivo;
     }
 }

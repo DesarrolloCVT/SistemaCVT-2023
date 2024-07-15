@@ -1955,6 +1955,13 @@
       <DependentUpon>CVT_VistaStockMpParaConsumosxOF.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DetalleExpedicionTrazabilidad.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DetalleExpedicionTrazabilidad.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="EtiquetaPallet_Vertical.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -5971,6 +5978,11 @@
     <EmbeddedResource Include="CotizacionCajasSMM.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CotizacionCajasSMM.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalleExpedicionTrazabilidad.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DetalleExpedicionTrazabilidad.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="EtiquetaPreciosMayorista7x4.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

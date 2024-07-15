@@ -29,5 +29,23 @@ namespace CVT_MermasRecepcion.Trazabilidad
             // Info.ExportToDisk(ExportFormatType.PortableDocFormat, @"C:\Users\mrivero\Desktop\report.pdf");
             Info.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "report.pdf");
         }
+
+        protected void btn_BuscarMasivo_Click(object sender, EventArgs e)
+        {
+            
+            string codpro = txt_prodMasivo.Text;
+            string lote = txt_lotemasivo.Text;
+
+            ReportDocument Info = new ReportDocument();
+            Info.Load(Server.MapPath("~/DetalleExpedicionTrazabilidad.rpt"));
+            Info.SetDatabaseLogon("sa", "cvt.vdp22$");
+            Info.SetParameterValue(0, codpro);
+            Info.SetParameterValue(1, lote);
+            ExportOptions op = new ExportOptions();
+            Response.Buffer = false;
+            Response.Clear();
+            // Info.ExportToDisk(ExportFormatType.PortableDocFormat, @"C:\Users\mrivero\Desktop\report.pdf");
+            Info.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "report.pdf");
+        }
     }
 }

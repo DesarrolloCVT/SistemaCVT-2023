@@ -28,7 +28,7 @@
                 <td>
                     <label>N° Expedicion</label>
                     <dx:ASPxTextBox ID="txtNExpedicion" runat="server" Width="170px" Height="30px">
-                        <ValidationSettings Display="Dynamic">
+                        <ValidationSettings Display="Dynamic" ValidationGroup="Imp1">
                             <RequiredField IsRequired="True" />
                         </ValidationSettings>
                     </dx:ASPxTextBox>
@@ -37,7 +37,7 @@
                 <td>
                     <label>Cod.Producto</label>
                     <dx:ASPxTextBox ID="txtCodProducto" runat="server" Width="170px" Height="30px">
-                        <ValidationSettings Display="Dynamic">
+                        <ValidationSettings Display="Dynamic" ValidationGroup="Imp1">
                             <RequiredField IsRequired="True" />
                         </ValidationSettings>
                     </dx:ASPxTextBox>
@@ -46,16 +46,42 @@
                 <td>
                     <label>Lote</label>
                     <dx:ASPxTextBox ID="txtLote" runat="server" Width="170px" Height="30px">
-                        <ValidationSettings Display="Dynamic">
+                        <ValidationSettings Display="Dynamic" ValidationGroup="Imp1">
                             <RequiredField IsRequired="True" />
                         </ValidationSettings>
                     </dx:ASPxTextBox>
                 </td>
                 <td class="auto-style5"></td>
                 <td>
-                    <dx:ASPxButton ID="btn_Buscar" runat="server" Text="Buscar" Height="53px" Width="87px" OnClick="btn_Buscar_Click"></dx:ASPxButton>
+                    <dx:ASPxButton ID="btn_Buscar" runat="server" Text="Buscar" Height="53px" Width="87px" OnClick="btn_Buscar_Click" ValidationGroup="imp1"></dx:ASPxButton>
                 </td>
             </tr>
         </table>
+        <table>
+    <tr>
+       
+        <td>
+            <label>Cod.Producto</label>
+            <dx:ASPxTextBox ID="txt_prodMasivo" runat="server" Width="170px" Height="30px">
+                <ValidationSettings Display="Dynamic" ValidationGroup="imp2">
+                    <RequiredField IsRequired="True" />
+                </ValidationSettings>
+            </dx:ASPxTextBox>
+        </td>
+        <td class="auto-style5"></td>
+        <td>
+            <label>Lote</label>
+            <dx:ASPxTextBox ID="txt_lotemasivo" runat="server" Width="170px" Height="30px">
+                <ValidationSettings Display="Dynamic" ValidationGroup="imp2">
+                    <RequiredField IsRequired="True" />
+                </ValidationSettings>
+            </dx:ASPxTextBox>
+        </td>
+        <td class="auto-style5"></td>
+        <td>
+            <dx:ASPxButton ID="bt_buscarmasivo" runat="server" Text="Buscar" Height="53px" Width="87px" OnClick="btn_BuscarMasivo_Click" ValidationGroup="imp2"></dx:ASPxButton>
+        </td>
+    </tr>
+</table>
     </div>
 </asp:Content>
