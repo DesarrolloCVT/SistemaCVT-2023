@@ -2006,4 +2006,19 @@
     <Parameter Name="transferrechazoint" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.SP_PosicionamientosFecha" Method="SP_PosicionamientosFecha">
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="SP_PosicionamientosFechaResult">
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NPallet" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Bodega" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CodUbicacionDestino" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UbicacionDestino" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaMovimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CodUbicacionOrigen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UbicacionOrigen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

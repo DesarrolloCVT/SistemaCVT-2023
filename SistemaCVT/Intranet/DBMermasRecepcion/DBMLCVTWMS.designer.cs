@@ -1204,6 +1204,13 @@ namespace DBMermasRecepcion
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idtransferactual, idpallet, transferrechazoint);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_PosicionamientosFecha")]
+		public ISingleResult<SP_PosicionamientosFechaResult> SP_PosicionamientosFecha([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fecha", DbType="Date")] System.Nullable<System.DateTime> fecha)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fecha);
+			return ((ISingleResult<SP_PosicionamientosFechaResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Movement")]
@@ -32167,6 +32174,194 @@ namespace DBMermasRecepcion
 				if ((this._VALORSOBRECARGO != value))
 				{
 					this._VALORSOBRECARGO = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_PosicionamientosFechaResult
+	{
+		
+		private string _Usuario;
+		
+		private string _NPallet;
+		
+		private string _CodProducto;
+		
+		private string _Producto;
+		
+		private string _Bodega;
+		
+		private int _CodUbicacionDestino;
+		
+		private string _UbicacionDestino;
+		
+		private System.DateTime _FechaMovimiento;
+		
+		private System.Nullable<int> _CodUbicacionOrigen;
+		
+		private string _UbicacionOrigen;
+		
+		public SP_PosicionamientosFechaResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Usuario", DbType="VarChar(50)")]
+		public string Usuario
+		{
+			get
+			{
+				return this._Usuario;
+			}
+			set
+			{
+				if ((this._Usuario != value))
+				{
+					this._Usuario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NPallet", DbType="VarChar(128)")]
+		public string NPallet
+		{
+			get
+			{
+				return this._NPallet;
+			}
+			set
+			{
+				if ((this._NPallet != value))
+				{
+					this._NPallet = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodProducto", DbType="VarChar(128)")]
+		public string CodProducto
+		{
+			get
+			{
+				return this._CodProducto;
+			}
+			set
+			{
+				if ((this._CodProducto != value))
+				{
+					this._CodProducto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Producto", DbType="VarChar(MAX)")]
+		public string Producto
+		{
+			get
+			{
+				return this._Producto;
+			}
+			set
+			{
+				if ((this._Producto != value))
+				{
+					this._Producto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Bodega", DbType="VarChar(10)")]
+		public string Bodega
+		{
+			get
+			{
+				return this._Bodega;
+			}
+			set
+			{
+				if ((this._Bodega != value))
+				{
+					this._Bodega = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodUbicacionDestino", DbType="Int NOT NULL")]
+		public int CodUbicacionDestino
+		{
+			get
+			{
+				return this._CodUbicacionDestino;
+			}
+			set
+			{
+				if ((this._CodUbicacionDestino != value))
+				{
+					this._CodUbicacionDestino = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UbicacionDestino", DbType="VarChar(50)")]
+		public string UbicacionDestino
+		{
+			get
+			{
+				return this._UbicacionDestino;
+			}
+			set
+			{
+				if ((this._UbicacionDestino != value))
+				{
+					this._UbicacionDestino = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaMovimiento", DbType="DateTime NOT NULL")]
+		public System.DateTime FechaMovimiento
+		{
+			get
+			{
+				return this._FechaMovimiento;
+			}
+			set
+			{
+				if ((this._FechaMovimiento != value))
+				{
+					this._FechaMovimiento = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodUbicacionOrigen", DbType="Int")]
+		public System.Nullable<int> CodUbicacionOrigen
+		{
+			get
+			{
+				return this._CodUbicacionOrigen;
+			}
+			set
+			{
+				if ((this._CodUbicacionOrigen != value))
+				{
+					this._CodUbicacionOrigen = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UbicacionOrigen", DbType="VarChar(50)")]
+		public string UbicacionOrigen
+		{
+			get
+			{
+				return this._UbicacionOrigen;
+			}
+			set
+			{
+				if ((this._UbicacionOrigen != value))
+				{
+					this._UbicacionOrigen = value;
 				}
 			}
 		}

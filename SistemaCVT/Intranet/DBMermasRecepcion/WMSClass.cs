@@ -3891,6 +3891,20 @@ namespace DBMermasRecepcion
             }
             return ret;
         }
+        public DataTable SP_PosicionamientoFecha(DateTime fecha)
+        {
+            DataTable ret = new DataTable();
+            try
+            {
+                DBDatos.CommandTimeout = 6000;
+                ret = Utilidades.LINQToDataTable(DBDatos.SP_PosicionamientosFecha(fecha));
+            }
+            catch (Exception)
+            {
+
+            }
+            return ret;
+        }
 
     }
 }

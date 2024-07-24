@@ -1331,6 +1331,7 @@
     <Content Include="WMS\Pedidos.aspx" />
     <Content Include="WMS\PedidosDetalle.aspx" />
     <Content Include="WMS\Posicionamiento.aspx" />
+    <Content Include="WMS\PosicionamientoFecha.aspx" />
     <Content Include="WMS\PosicionamientoMasivoMP.aspx" />
     <Content Include="WMS\RebajaPalletCV300.aspx" />
     <Content Include="WMS\Recepcion.aspx" />
@@ -5721,6 +5722,13 @@
     </Compile>
     <Compile Include="WMS\Posicionamiento.aspx.designer.cs">
       <DependentUpon>Posicionamiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WMS\PosicionamientoFecha.aspx.cs">
+      <DependentUpon>PosicionamientoFecha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WMS\PosicionamientoFecha.aspx.designer.cs">
+      <DependentUpon>PosicionamientoFecha.aspx</DependentUpon>
     </Compile>
     <Compile Include="WMS\PosicionamientoMasivoMP.aspx.cs">
       <DependentUpon>PosicionamientoMasivoMP.aspx</DependentUpon>
