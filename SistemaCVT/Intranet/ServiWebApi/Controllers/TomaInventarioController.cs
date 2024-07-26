@@ -158,7 +158,25 @@ namespace ServiWebApi.Controllers
         public bool InsertaRegistroInventarioTest(string CodProducto, string Lote, int Cantidad, int Ubicacion, string Usuario, int NPallet, int Inventario_Id)
         {
             bool ret = false;
+            int ubicacionanterior = 0;
+            int cantidadanterior = 0;
             //string lot = Lote.Replace("¡", "+");
+
+            try
+            {
+                var temp = (from p in DBWms.Package
+                            where p.Package_SSCC.Equals(NPallet) && p.Package_Quantity > 0 && p.Package_Status != 7
+                            select new { p.Layout_Id, p.Package_Quantity }).FirstOrDefault();
+                if (temp != null)
+                {
+                    ubicacionanterior = Convert.ToInt32(temp.Layout_Id);
+                    cantidadanterior = Convert.ToInt32(temp.Package_Quantity);
+                }
+            }
+            catch
+            {
+            }
+
 
             byte[] mylote = System.Convert.FromBase64String(Lote);
             string loteDesc = System.Text.Encoding.UTF8.GetString(mylote);
@@ -175,6 +193,8 @@ namespace ServiWebApi.Controllers
                 vDi.Lote = loteDesc;
                 vDi.Usuario = Usuario;
                 vDi.FechaRegistro = DateTime.Now;
+                vDi.CantidadPallet = cantidadanterior;
+                vDi.UbicacionAnterior = ubicacionanterior;
 
                 dbDsa.CVT_DetalleInventario.InsertOnSubmit(vDi);
                 dbDsa.SubmitChanges();

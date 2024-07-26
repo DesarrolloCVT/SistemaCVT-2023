@@ -57,7 +57,7 @@ namespace CVT_MermasRecepcion.Transferencias
                 int UserCreador = vWMS.ObtieneIdStaffTransfer(TransferId);
                 int PreUsuario = vWMS.ObtieneIdStaff(Session["CIDUsuario"].ToString());
 
-                if (UserCreador == PreUsuario || Convert.ToInt32(Session["PerfilId"]) == 1)
+                if (UserCreador == PreUsuario || Convert.ToInt32(Session["PerfilId"]) == 1 || Convert.ToInt32(Session["PerfilId"]) == 13)
                 {
                     if (CantDet > 0)
                     {
@@ -515,7 +515,7 @@ namespace CVT_MermasRecepcion.Transferencias
                     {
                     }
                 }
-                else if (UserCreador == PreUsuario || Convert.ToInt32(Session["PerfilId"]) == 1)
+                else if (UserCreador == PreUsuario || Convert.ToInt32(Session["PerfilId"]) == 1 || Convert.ToInt32(Session["PerfilId"]) == 13)
                 {
                     vWMS.ActualizaEstadoTransfer(TransferIdCon, 3,"U");
                 }

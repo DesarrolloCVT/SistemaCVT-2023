@@ -3582,21 +3582,6 @@
       <Column Name="ItemName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.CVT_DetalleInventario" Member="CVT_DetalleInventario">
-    <Type Name="CVT_DetalleInventario">
-      <Column Name="InventarioDet_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Inventario_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="NPallet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-      <Column Name="Ubicacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="FProduccion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FVencimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Lote" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.CVT_VW_DiferenciasDuplicados" Member="CVT_VW_DiferenciasDuplicados">
     <Type Name="CVT_VW_DiferenciasDuplicados">
       <Column Name="InventarioDet_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -5138,6 +5123,23 @@
       <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Tipo" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TiempoEstimado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_DetalleInventario" Member="CVT_DetalleInventario">
+    <Type Name="CVT_DetalleInventario">
+      <Column Name="InventarioDet_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Inventario_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NPallet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodProducto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Ubicacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FProduccion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FVencimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UbicacionAnterior" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CantidadPallet" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.CVT_AGENDAPROD_LeeStockReceta" Method="CVT_AGENDAPROD_LeeStockReceta">

@@ -1808,12 +1808,6 @@
         <elementListCompartment Id="d6170f40-8280-4731-afc2-c04494646369" absoluteBounds="6.8900000000000006, 17.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7833f1c9-a53f-4943-8bca-c6a30f0b8a2c" isExpanded="false" absoluteBounds="2.625, 11, 2, 0.45">
-      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_DetalleInventario" />
-      <nestedChildShapes>
-        <elementListCompartment Id="bce4dff4-3b63-4c9a-a1d9-ee9fffe3029b" absoluteBounds="2.64, 11.46, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="9393592a-2da7-4c50-8a8e-ccb808ac2375" isExpanded="false" absoluteBounds="4.75, 11.5, 2, 0.45">
       <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_VW_DiferenciasDuplicados" />
       <nestedChildShapes>
@@ -2472,6 +2466,12 @@
       <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_MotivoDentecion" />
       <nestedChildShapes>
         <elementListCompartment Id="15cdf21a-31fa-44c3-b540-db75a207a479" absoluteBounds="4.765, 9.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="36c74362-73f9-42b9-b4b3-7af6c43c666e" isExpanded="false" absoluteBounds="2.625, 11, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_DetalleInventario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d373bc41-b3ba-4819-9b93-67ecb958dea4" absoluteBounds="2.64, 11.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

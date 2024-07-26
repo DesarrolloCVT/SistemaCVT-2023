@@ -56,9 +56,8 @@
                         </dx:ListBoxColumn>
                     </Columns>
                 </dx:ASPxComboBox>
-                <asp:LinqDataSource ID="LqDsClientes" runat="server" ContextTypeName="DBMermasRecepcion.DBMLCVTSAPDataContext" EntityTypeName="" Select="new (CardCode, CardName)" TableName="OCRD" Where="validFor == @validFor &amp;&amp; CardType == @CardType">
+                <asp:LinqDataSource ID="LqDsClientes" runat="server" ContextTypeName="DBMermasRecepcion.DBMLCVTSAPDataContext" EntityTypeName="" Select="new (CardCode, CardName)" TableName="OCRD" Where="CardType == @CardType">
                     <WhereParameters>
-                        <asp:Parameter DefaultValue="Y" Name="validFor" Type="Char" />
                         <asp:Parameter DefaultValue="C" Name="CardType" Type="Char" />
                     </WhereParameters>
                 </asp:LinqDataSource>
