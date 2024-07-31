@@ -4973,22 +4973,6 @@
       <Column Name="Usuario_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.CVT_ControlAcceso_Visita" Member="CVT_ControlAcceso_Visita">
-    <Type Name="CVT_ControlAcceso_Visita">
-      <Column Name="Visita_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="FechaEntrada" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="FechaSalida" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="RUN" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="Area" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Empleado" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="Motivo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="EPP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Patente" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="NTarjeta" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Observacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.CVT_GestionExternosBono_JDB" Member="CVT_GestionExternosBono_JDB">
     <Type Name="CVT_GestionExternosBono_JDB">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -5140,6 +5124,67 @@
       <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="UbicacionAnterior" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="CantidadPallet" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_RegistroFallaGruas" Member="CVT_RegistroFallaGruas">
+    <Type Name="CVT_RegistroFallaGruas">
+      <Column Name="RFG_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpresaReclamo" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Grua_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TFalla_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFalla" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ChoferMomentoFalla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioCreacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaReparacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UsuarioCierre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaCierre" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_Gruas" Member="CVT_Gruas">
+    <Type Name="CVT_Gruas">
+      <Column Name="Grua_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Grua_Numero" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Grua_Descripcion" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_TFallaGrua" Member="CVT_TFallaGrua">
+    <Type Name="CVT_TFallaGrua">
+      <Column Name="TFalla_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TFalla_Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_ControlAcceso_Visita" Member="CVT_ControlAcceso_Visita">
+    <Type Name="CVT_ControlAcceso_Visita">
+      <Column Name="Visita_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FechaEntrada" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaSalida" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RUN" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Area" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Empleado" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Motivo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EPP" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Patente" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="NTarjeta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Empresa" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_Ronda_CheckPoint" Member="CVT_Ronda_CheckPoint">
+    <Type Name="CVT_Ronda_CheckPoint">
+      <Column Name="CheckPoint_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CheckPoint_Lugar" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CheckPoint_Coordenadas" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_Ronda_Registro" Member="CVT_Ronda_Registro">
+    <Type Name="CVT_Ronda_Registro">
+      <Column Name="RegistroRonda_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="URL_Ubicacion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Punto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.CVT_AGENDAPROD_LeeStockReceta" Method="CVT_AGENDAPROD_LeeStockReceta">

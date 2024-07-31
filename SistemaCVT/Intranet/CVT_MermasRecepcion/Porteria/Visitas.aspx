@@ -60,12 +60,12 @@
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
                 <dx:GridViewDataDateColumn FieldName="FechaEntrada" VisibleIndex="2">
-                    <PropertiesDateEdit DisplayFormatString="dd-MM-yyyy hh:mm">
+                    <PropertiesDateEdit DisplayFormatString="dd-MM-yyyy hh:mm tt" EditFormat="DateTime">
                     </PropertiesDateEdit>
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataDateColumn>
                 <dx:GridViewDataDateColumn FieldName="FechaSalida" VisibleIndex="3">
-                    <PropertiesDateEdit DisplayFormatString="dd-MM-yyyy hh:mm">
+                    <PropertiesDateEdit DisplayFormatString="dd-MM-yyyy hh:mm tt">
                     </PropertiesDateEdit>
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataDateColumn>
@@ -73,7 +73,7 @@
                 </dx:GridViewDataTextColumn>
                 <dx:GridViewDataTextColumn FieldName="Nombre" VisibleIndex="5">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Patente" VisibleIndex="11">
+                <dx:GridViewDataTextColumn FieldName="Patente" VisibleIndex="12">
                 </dx:GridViewDataTextColumn>
                 <dx:GridViewDataComboBoxColumn FieldName="Area" VisibleIndex="7">
                     <PropertiesComboBox DataSourceID="LqDsArea" TextField="Nombre" ValueField="Id_Area">
@@ -102,7 +102,7 @@
                 </dx:GridViewDataComboBoxColumn>
                 <dx:GridViewDataCheckColumn FieldName="EPP" VisibleIndex="10">
                 </dx:GridViewDataCheckColumn>
-                 <dx:GridViewDataHyperLinkColumn Caption="Salida" VisibleIndex="13">
+                 <dx:GridViewDataHyperLinkColumn Caption="Salida" VisibleIndex="14">
      <EditFormSettings Visible="False" />
      <DataItemTemplate>
          <asp:ImageButton ID="Salida" CommandName="cmdSalida" runat="server"
@@ -111,7 +111,9 @@
  </dx:GridViewDataHyperLinkColumn>
                 <dx:GridViewDataTextColumn Caption="N Tarjeta" FieldName="NTarjeta" VisibleIndex="6">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn Caption="Observacion" FieldName="Observacion" VisibleIndex="12">
+                <dx:GridViewDataTextColumn Caption="Observacion" FieldName="Observacion" VisibleIndex="13">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Empresa" VisibleIndex="11">
                 </dx:GridViewDataTextColumn>
             </Columns>
         </dx:ASPxGridView>

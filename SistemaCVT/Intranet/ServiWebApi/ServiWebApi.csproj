@@ -176,6 +176,7 @@
     <Compile Include="Controllers\ProduccionController.cs" />
     <Compile Include="Controllers\RecepcionSMMController.cs" />
     <Compile Include="Controllers\RepaletizadoSMMController.cs" />
+    <Compile Include="Controllers\RondaController.cs" />
     <Compile Include="Controllers\SMMArmadoPedidoController.cs" />
     <Compile Include="Controllers\SMMCheckListController.cs" />
     <Compile Include="Controllers\SMMCumplRepoSalaController.cs" />

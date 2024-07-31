@@ -658,6 +658,7 @@
     <Content Include="GestionExternos\CalculoPedidosCamionPropio.aspx" />
     <Content Include="GestionExternos\CalculoPedidosRetiraCliente.aspx" />
     <Content Include="GestionExternos\RegistroBonoCVT.aspx" />
+    <Content Include="GestionExternos\RegistroFallaGruas.aspx" />
     <Content Include="Gestion\BuscaLoteMP.aspx" />
     <Content Include="Gestion\CertificadosFumigacion.aspx" />
     <Content Include="Gestion\CertificadosResolucionesPlanta.aspx" />
@@ -1104,6 +1105,7 @@
     <Content Include="Porteria\ControlAcceso.aspx" />
     <Content Include="Porteria\ControlAccesoCamiones.aspx" />
     <Content Include="Porteria\LibroNovedades.aspx" />
+    <Content Include="Porteria\RegistroRondas.aspx" />
     <Content Include="Porteria\Visitas.aspx" />
     <Content Include="PRiesgo\CheckExtintores.aspx" />
     <Content Include="PRiesgo\CheckExtintoresDetalle.aspx" />
@@ -2035,6 +2037,13 @@
     <Compile Include="GestionExternos\RegistroBonoCVT.aspx.designer.cs">
       <DependentUpon>RegistroBonoCVT.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GestionExternos\RegistroFallaGruas.aspx.cs">
+      <DependentUpon>RegistroFallaGruas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionExternos\RegistroFallaGruas.aspx.designer.cs">
+      <DependentUpon>RegistroFallaGruas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Gestion\InformeTickets.aspx.cs">
       <DependentUpon>InformeTickets.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2862,6 +2871,13 @@
     </Compile>
     <Compile Include="Porteria\LibroNovedades.aspx.designer.cs">
       <DependentUpon>LibroNovedades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Porteria\RegistroRondas.aspx.cs">
+      <DependentUpon>RegistroRondas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Porteria\RegistroRondas.aspx.designer.cs">
+      <DependentUpon>RegistroRondas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Porteria\Visitas.aspx.cs">
       <DependentUpon>Visitas.aspx</DependentUpon>

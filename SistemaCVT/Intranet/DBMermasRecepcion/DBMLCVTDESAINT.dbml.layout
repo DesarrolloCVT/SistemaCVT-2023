@@ -2408,12 +2408,6 @@
         <elementListCompartment Id="c7ed66e4-f246-4dd3-8658-833d64b29df1" absoluteBounds="2.515, 31.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="bc19d965-4409-41fc-9b46-c984a5275b2f" isExpanded="false" absoluteBounds="2.625, 31.5, 2, 0.45">
-      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_ControlAcceso_Visita" />
-      <nestedChildShapes>
-        <elementListCompartment Id="01f14d44-a73b-4f73-b3d2-562f3a266abc" absoluteBounds="2.64, 31.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="f78ddfe0-b511-46f6-a5ad-c00c1a5c1250" isExpanded="false" absoluteBounds="6.875, 20, 2, 0.45">
       <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_GestionExternosBono_JDB" />
       <nestedChildShapes>
@@ -2472,6 +2466,42 @@
       <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_DetalleInventario" />
       <nestedChildShapes>
         <elementListCompartment Id="d373bc41-b3ba-4819-9b93-67ecb958dea4" absoluteBounds="2.64, 11.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b11816db-9083-4fdc-83e1-13df90711ffe" isExpanded="false" absoluteBounds="4.75, 23.5, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_RegistroFallaGruas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="642a13f0-cfcc-462a-87b2-6c96eb9949ab" absoluteBounds="4.765, 23.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c72dc18d-3d85-4d4d-b8f8-96ad0d66a6ba" isExpanded="false" absoluteBounds="4.75, 24, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_Gruas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0256a9e3-053e-4be8-935d-f5e10e969a9e" absoluteBounds="4.765, 24.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1f20e040-2937-47af-947d-e72a16bbea19" isExpanded="false" absoluteBounds="4.75, 24.5, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_TFallaGrua" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9aef1581-85d2-41fb-921c-6309acd77f78" absoluteBounds="4.765, 24.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="009a969e-26d5-43d1-b8a4-f5ec451058c2" isExpanded="false" absoluteBounds="2.5, 31.5, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_ControlAcceso_Visita" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6917c6c-ac58-404a-869f-41e49ecfbaf1" absoluteBounds="2.515, 31.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bac62c3c-1363-49e7-b6db-ca3bbeb2e22b" isExpanded="false" absoluteBounds="4.75, 25, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_Ronda_CheckPoint" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ab32176e-1ad8-4cea-93db-131cc0264347" absoluteBounds="4.765, 25.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ea6db1a-0587-43f0-b078-b87cb4b24cd5" isExpanded="false" absoluteBounds="4.75, 25.5, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_Ronda_Registro" />
+      <nestedChildShapes>
+        <elementListCompartment Id="63a5c876-2a01-40ff-9713-2cf16a2d9641" absoluteBounds="4.765, 25.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
