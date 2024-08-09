@@ -125,6 +125,7 @@
     <Reference Include="DevExpress.Utils.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Web.ASPxDiagram.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.ASPxHtmlEditor.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Web.ASPxPivotGrid.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -340,179 +341,8 @@
     <Content Include="App_Themes\IDA\ui\Save.png" />
     <Content Include="App_Themes\IDA\ui\sprite-banderas.png" />
     <Content Include="App_Themes\IDA\ui\tab-end.png" />
-    <Content Include="App_Themes\InnvitaSP.png" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtButtonBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtButtonBackHover.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtButtonEditButtonBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtButtonEditButtonBackDis.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtCalendarButtonBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtCalendarButtonHBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtCalendarButtonPBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtCalendarFooterBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtCalendarHeaderBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtDropDownButtonHoverBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtDropDownButtonPressedBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtProgressIndicatorBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtProgressPositionBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtSpinDecBtnBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtSpinDecBtnHBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtSpinDecBtnPBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtSpinIncBtnBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtSpinIncBtnHBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtSpinIncBtnPBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtSpinLargeIncBtnBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtSpinLargeIncBtnHBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\edtSpinLargeIncBtnPBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\lbHeaderBackground.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\Loading.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\sprite.css" />
-    <Content Include="App_Themes\PlasticBlue\Editors\sprite.gif" />
-    <Content Include="App_Themes\PlasticBlue\Editors\sprite.png" />
-    <Content Include="App_Themes\PlasticBlue\Editors\styles.css" />
-    <Content Include="App_Themes\PlasticBlue\GridView\gvHeaderBackground.gif" />
-    <Content Include="App_Themes\PlasticBlue\GridView\gvLoadingOnStatusBar.gif" />
-    <Content Include="App_Themes\PlasticBlue\GridView\Loading.gif" />
-    <Content Include="App_Themes\PlasticBlue\GridView\sprite.css" />
-    <Content Include="App_Themes\PlasticBlue\GridView\sprite.gif" />
-    <Content Include="App_Themes\PlasticBlue\GridView\sprite.png" />
-    <Content Include="App_Themes\PlasticBlue\GridView\styles.css" />
-    <Content Include="App_Themes\PlasticBlue\PivotGrid\Loading.gif" />
-    <Content Include="App_Themes\PlasticBlue\PivotGrid\pgCustomizationFormBackground.gif" />
-    <Content Include="App_Themes\PlasticBlue\PivotGrid\pgHeaderBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\PivotGrid\pgHeaderBackHot.gif" />
-    <Content Include="App_Themes\PlasticBlue\PivotGrid\sprite.css" />
-    <Content Include="App_Themes\PlasticBlue\PivotGrid\sprite.gif" />
-    <Content Include="App_Themes\PlasticBlue\PivotGrid\sprite.png" />
-    <Content Include="App_Themes\PlasticBlue\PivotGrid\styles.css" />
-    <Content Include="App_Themes\PlasticBlue\Scheduler\CssImages\AdaBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Scheduler\CssImages\ButtonBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Scheduler\CssImages\ButtonHoverBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Scheduler\CssImages\HeaderAltBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Scheduler\CssImages\HeaderBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Scheduler\CssImages\NavigationButtonBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Scheduler\CssImages\ResHeaderBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Scheduler\CssImages\ToolbarBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Scheduler\CssImages\ViewNavigatorButtonBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Scheduler\CssImages\ViewNavigatorButtonBackHover.gif" />
-    <Content Include="App_Themes\PlasticBlue\Scheduler\CssImages\ViewNavigatorButtonBackPressed.gif" />
-    <Content Include="App_Themes\PlasticBlue\Scheduler\Loading.gif" />
-    <Content Include="App_Themes\PlasticBlue\Scheduler\sprite.css" />
-    <Content Include="App_Themes\PlasticBlue\Scheduler\sprite.gif" />
-    <Content Include="App_Themes\PlasticBlue\Scheduler\sprite.png" />
-    <Content Include="App_Themes\PlasticBlue\Scheduler\styles.css" />
-    <Content Include="App_Themes\PlasticBlue\TreeList\CssImages\HeaderBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\TreeList\CssImages\TreeLineFirst.gif" />
-    <Content Include="App_Themes\PlasticBlue\TreeList\CssImages\TreeLineFirstRtl.gif" />
-    <Content Include="App_Themes\PlasticBlue\TreeList\CssImages\TreeLineLast.gif" />
-    <Content Include="App_Themes\PlasticBlue\TreeList\CssImages\TreeLineLastRtl.gif" />
-    <Content Include="App_Themes\PlasticBlue\TreeList\CssImages\TreeLineMiddle.gif" />
-    <Content Include="App_Themes\PlasticBlue\TreeList\CssImages\TreeLineMiddleRtl.gif" />
-    <Content Include="App_Themes\PlasticBlue\TreeList\CssImages\TreeLineRoot.gif" />
-    <Content Include="App_Themes\PlasticBlue\TreeList\Loading.gif" />
-    <Content Include="App_Themes\PlasticBlue\TreeList\sprite.css" />
-    <Content Include="App_Themes\PlasticBlue\TreeList\sprite.gif" />
-    <Content Include="App_Themes\PlasticBlue\TreeList\sprite.png" />
-    <Content Include="App_Themes\PlasticBlue\TreeList\styles.css" />
-    <Content Include="App_Themes\PlasticBlue\Web\dvLoading.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\dvPagerBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\fmSplitterSeparator.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\Loading.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\mItemBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\mItemHBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\mItemSBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\mScrollBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\mScrollHBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\mSeparator.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\mSeparatorHor.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\nbHeaderBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\nbLoading.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\ncLoading.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\pcFooterBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\pcHeaderBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\pcModalBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\rcMapImage.png" />
-    <Content Include="App_Themes\PlasticBlue\Web\rpBottomEdge.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\rpHeaderLeftEdge.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\rpHeaderRightEdge.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\rpHeaderSeparator.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\rpHeaderTopEdge.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\rpLeftEdge.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\rpNoHeaderTopEdge.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\rpRightEdge.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\smLevel0Back.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\splHSeparatorBackgroundHover.png" />
-    <Content Include="App_Themes\PlasticBlue\Web\splResizingPointer.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\splVSeparatorBackgroundHover.png" />
-    <Content Include="App_Themes\PlasticBlue\Web\sprite.css" />
-    <Content Include="App_Themes\PlasticBlue\Web\sprite.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\sprite.png" />
-    <Content Include="App_Themes\PlasticBlue\Web\styles.css" />
-    <Content Include="App_Themes\PlasticBlue\Web\tcContentBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tcContentBackHor.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tcLoading.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tcTabABack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tcTabBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tcTabBottomABack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tcTabBottomBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tcTabBottomHBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tcTabHBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tcTabLeftABack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tcTabLeftBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tcTabLeftHBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tcTabRightABack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tcTabRightBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tcTabRightHBack.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tiGroupHeader.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tiLoading.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tvElbow.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tvElbowRtl.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tvLine.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\tvNodeLoading.gif" />
-    <Content Include="App_Themes\PlasticBlue\Web\ucProgressIndicatorBack.gif" />
-    <Content Include="App_Themes\SAP\chat.css" />
-    <Content Include="App_Themes\SAP\icons\back.gif" />
-    <Content Include="App_Themes\SAP\icons\cancel.gif" />
-    <Content Include="App_Themes\SAP\icons\copy.gif" />
-    <Content Include="App_Themes\SAP\icons\delete.gif" />
-    <Content Include="App_Themes\SAP\icons\down.gif" />
-    <Content Include="App_Themes\SAP\icons\down_off.gif" />
-    <Content Include="App_Themes\SAP\icons\edit.gif" />
-    <Content Include="App_Themes\SAP\icons\f4help.gif" />
-    <Content Include="App_Themes\SAP\icons\filter.gif" />
-    <Content Include="App_Themes\SAP\icons\find.gif" />
-    <Content Include="App_Themes\SAP\icons\first.gif" />
-    <Content Include="App_Themes\SAP\icons\first_off.gif" />
-    <Content Include="App_Themes\SAP\icons\ico12_msg_error.gif" />
-    <Content Include="App_Themes\SAP\icons\ico12_msg_success.gif" />
-    <Content Include="App_Themes\SAP\icons\ico12_msg_warning.gif" />
-    <Content Include="App_Themes\SAP\icons\info.gif" />
-    <Content Include="App_Themes\SAP\icons\last.gif" />
-    <Content Include="App_Themes\SAP\icons\last_off.gif" />
-    <Content Include="App_Themes\SAP\icons\longtext.gif" />
-    <Content Include="App_Themes\SAP\icons\new.gif" />
-    <Content Include="App_Themes\SAP\icons\OK.gif" />
-    <Content Include="App_Themes\SAP\icons\refresh.gif" />
-    <Content Include="App_Themes\SAP\icons\saplogo.gif" />
-    <Content Include="App_Themes\SAP\icons\save.gif" />
-    <Content Include="App_Themes\SAP\icons\search1.gif" />
-    <Content Include="App_Themes\SAP\icons\sort_ascending.gif" />
-    <Content Include="App_Themes\SAP\icons\sort_descending.gif" />
-    <Content Include="App_Themes\SAP\icons\status_green.gif" />
-    <Content Include="App_Themes\SAP\icons\status_grey.gif" />
-    <Content Include="App_Themes\SAP\icons\status_red.gif" />
-    <Content Include="App_Themes\SAP\icons\status_yellow.gif" />
-    <Content Include="App_Themes\SAP\icons\sync.gif" />
-    <Content Include="App_Themes\SAP\icons\textdisplay.gif" />
-    <Content Include="App_Themes\SAP\icons\undo.gif" />
-    <Content Include="App_Themes\SAP\icons\up.gif" />
-    <Content Include="App_Themes\SAP\icons\up_off.gif" />
-    <Content Include="App_Themes\SAP\icons\yearback.gif" />
-    <Content Include="App_Themes\SAP\icons\yearforward.gif" />
-    <Content Include="App_Themes\SAP\jquery.gritter.css" />
-    <Content Include="App_Themes\SAP\SAPStyle.css" />
-    <Content Include="App_Themes\SAP\screen.css" />
-    <Content Include="App_Themes\SAP\screen_ie.css" />
     <Content Include="Blank.aspx" />
+    <Content Include="Blank2.aspx" />
     <Content Include="BloqueoProducto\MantenedorTipoBloqueo.aspx" />
     <Content Include="BloqueoProducto\ProductoBloqueado.aspx" />
     <Content Include="BloqueoProducto\ProductoBloqueadoDetalle.aspx" />
@@ -644,14 +474,6 @@
     <Content Include="ControlFilm\TransferenciaFilm.aspx" />
     <Content Include="ControlFilm\TransferenciaFilmDetalle.aspx" />
     <Content Include="ControlFilm\TransferenciasEfectuadasFilm.aspx" />
-    <Content Include="Css\bootstrap-grid.css" />
-    <Content Include="Css\bootstrap-grid.min.css" />
-    <Content Include="Css\bootstrap-reboot.css" />
-    <Content Include="Css\bootstrap-reboot.min.css" />
-    <Content Include="Css\bootstrap.css" />
-    <Content Include="Css\bootstrap.min.css" />
-    <Content Include="Css\Spin.css" />
-    <Content Include="Css\Styles.css" />
     <Content Include="Dashboards.aspx" />
     <Content Include="GestionExternos\CalculoDescargas.aspx" />
     <Content Include="GestionExternos\CalculoPedidosCamionExterno.aspx" />
@@ -663,6 +485,7 @@
     <Content Include="Gestion\CertificadosFumigacion.aspx" />
     <Content Include="Gestion\CertificadosResolucionesPlanta.aspx" />
     <Content Include="Gestion\EmpresasRelacionadas.aspx" />
+    <Content Include="Gestion\InformeReimpresionEtiquetas.aspx" />
     <Content Include="Gestion\InformeTickets.aspx" />
     <Content Include="Gestion\ListadoFichasTecnicas.aspx" />
     <Content Include="Gestion\ListadoPlantillasRegistros.aspx" />
@@ -1352,13 +1175,6 @@
     <Content Include="WMS\RepaletizadoLotes.aspx" />
     <Content Include="WMS\ReporteControlBodega.aspx" />
     <Content Include="WMS\TransferenciasDetalle.aspx" />
-    <None Include="Css\.DS_Store" />
-    <None Include="Css\bootstrap-grid.css.map" />
-    <None Include="Css\bootstrap-grid.min.css.map" />
-    <None Include="Css\bootstrap-reboot.css.map" />
-    <None Include="Css\bootstrap-reboot.min.css.map" />
-    <None Include="Css\bootstrap.css.map" />
-    <None Include="Css\bootstrap.min.css.map" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1404,6 +1220,7 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="UtilidadCVT\EtiquetaQr1.repx" />
+    <Content Include="Site2.Master" />
     <None Include="Web References\cl.bcentral.si3\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -1434,6 +1251,13 @@
     </Compile>
     <Compile Include="Blank.aspx.designer.cs">
       <DependentUpon>Blank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Blank2.aspx.cs">
+      <DependentUpon>Blank2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Blank2.aspx.designer.cs">
+      <DependentUpon>Blank2.aspx</DependentUpon>
     </Compile>
     <Compile Include="BloqueoProducto\MantenedorTipoBloqueo.aspx.cs">
       <DependentUpon>MantenedorTipoBloqueo.aspx</DependentUpon>
@@ -2043,6 +1867,13 @@
     </Compile>
     <Compile Include="GestionExternos\RegistroFallaGruas.aspx.designer.cs">
       <DependentUpon>RegistroFallaGruas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gestion\InformeReimpresionEtiquetas.aspx.cs">
+      <DependentUpon>InformeReimpresionEtiquetas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gestion\InformeReimpresionEtiquetas.aspx.designer.cs">
+      <DependentUpon>InformeReimpresionEtiquetas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Gestion\InformeTickets.aspx.cs">
       <DependentUpon>InformeTickets.aspx</DependentUpon>
@@ -5234,6 +5065,13 @@
     <Compile Include="Sistema\Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site2.Master.designer.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -5886,36 +5724,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Themes\PlasticBlue\ASPxButton.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxButtonEdit.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxCalendar.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxCaptcha.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxCheckBox.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxColorEdit.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxComboBox.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxDateEdit.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxDateNavigator.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxDropDownEdit.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxFilterControl.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxGridLookup.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxGridView.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxHyperLink.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxLabel.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxListBox.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxMemo.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxPivotGrid.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxProgressBar.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxRadioButton.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxRadioButtonList.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxScheduler.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxSpinEdit.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxTextBox.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxTimeEdit.skin" />
-    <Content Include="App_Themes\PlasticBlue\ASPxTreeList.skin" />
-    <Content Include="App_Themes\PlasticBlue\MonthEdit.skin" />
-    <Content Include="App_Themes\PlasticBlue\RecurrenceTypeEdit.skin" />
-    <Content Include="App_Themes\PlasticBlue\WeekDaysEdit.skin" />
-    <Content Include="App_Themes\PlasticBlue\WeekOfMonthEdit.skin" />
     <None Include="Images\Certificados\CER AIB FRIFORT PARTICIPACION.PDF" />
     <None Include="Images\Certificados\CERT AIB FRIOFORT.PDF" />
     <None Include="Images\Certificados\CERTIFICACION GMP.PDF" />

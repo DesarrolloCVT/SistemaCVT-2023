@@ -1044,6 +1044,14 @@ namespace DBMermasRecepcion
 			}
 		}
 		
+		public System.Data.Linq.Table<CVT_VW_PartidasAbiertas_Inicio> CVT_VW_PartidasAbiertas_Inicio
+		{
+			get
+			{
+				return this.GetTable<CVT_VW_PartidasAbiertas_Inicio>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CVT_ACTUALIZA_CLAVE_ENCRIPTADASTAFF")]
 		public int CVT_ACTUALIZA_CLAVE_ENCRIPTADASTAFF([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ClaveEncrypt", DbType="NVarChar(20)")] string claveEncrypt, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="Int")] System.Nullable<int> usuario)
 		{
@@ -28384,6 +28392,51 @@ namespace DBMermasRecepcion
 				if ((this._TiempoPorPallet != value))
 				{
 					this._TiempoPorPallet = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CVT_VW_PartidasAbiertas_Inicio")]
+	public partial class CVT_VW_PartidasAbiertas_Inicio
+	{
+		
+		private string _Tipo;
+		
+		private System.Nullable<int> _Cantidad;
+		
+		public CVT_VW_PartidasAbiertas_Inicio()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tipo", DbType="VarChar(26) NOT NULL", CanBeNull=false)]
+		public string Tipo
+		{
+			get
+			{
+				return this._Tipo;
+			}
+			set
+			{
+				if ((this._Tipo != value))
+				{
+					this._Tipo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int")]
+		public System.Nullable<int> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
 				}
 			}
 		}

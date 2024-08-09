@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.375, 14.375" name="DBMLCVTWMS">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13.375, 14.875" name="DBMLCVTWMS">
   <DataContextMoniker Name="/DBMLCVTWMSDataContext" />
   <nestedChildShapes>
     <classShape Id="5d0b1774-919d-4caa-8af9-a4e88d424628" isExpanded="false" absoluteBounds="0.5, 3.5, 2, 0.45">
@@ -660,6 +660,12 @@
       <DataClassMoniker Name="/DBMLCVTWMSDataContext/CVT_TIEMPOBAJADAPEDIDO" />
       <nestedChildShapes>
         <elementListCompartment Id="e0ef038b-d70e-487e-8da5-c04a01f5455f" absoluteBounds="3.5149999999999997, 13.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8e22b6bb-b21b-4d9b-96ea-8291d59139f6" isExpanded="false" absoluteBounds="0.5, 14.125, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSDataContext/CVT_VW_PartidasAbiertas_Inicio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8884234a-b76e-4317-aecd-a173c65e8264" absoluteBounds="0.51500000000000012, 14.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

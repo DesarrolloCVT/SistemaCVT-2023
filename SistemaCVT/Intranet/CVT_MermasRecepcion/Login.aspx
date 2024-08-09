@@ -7,6 +7,7 @@
     <title>Intranet CVT </title>
     <link rel="shortcut icon" href="Images/favicon.ico" />
     <link rel="icon" href="Images/favicon.ico" />
+    <link rel="Stylesheet" href="App_Themes/IDA/styles.css" />
 </head>
 <body id="login" style="background-color:White;">
 <script type ="text/javascript" >
@@ -26,7 +27,7 @@
         <PanelCollection>
 <dx:PanelContent ID="PanelContent1" runat="server">
         <div id="siteWrapper">
-           <img id="logo-grande" src="/App_Themes/IDA/ui/Logo.png" width="200px" height="200px" />
+           <img id="logo-grande" src="/App_Themes/IDA/ui/Logo1.png" width="300px" height="200px" />
         <div id="loginBox">
     <form id="frmMain" runat="server">
       

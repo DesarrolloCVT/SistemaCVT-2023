@@ -2468,12 +2468,6 @@
         <elementListCompartment Id="d373bc41-b3ba-4819-9b93-67ecb958dea4" absoluteBounds="2.64, 11.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b11816db-9083-4fdc-83e1-13df90711ffe" isExpanded="false" absoluteBounds="4.75, 23.5, 2, 0.45">
-      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_RegistroFallaGruas" />
-      <nestedChildShapes>
-        <elementListCompartment Id="642a13f0-cfcc-462a-87b2-6c96eb9949ab" absoluteBounds="4.765, 23.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="c72dc18d-3d85-4d4d-b8f8-96ad0d66a6ba" isExpanded="false" absoluteBounds="4.75, 24, 2, 0.45">
       <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_Gruas" />
       <nestedChildShapes>
@@ -2502,6 +2496,24 @@
       <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_Ronda_Registro" />
       <nestedChildShapes>
         <elementListCompartment Id="63a5c876-2a01-40ff-9713-2cf16a2d9641" absoluteBounds="4.765, 25.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="55c84ea4-e896-4983-b0e5-085507fe7b5c" isExpanded="false" absoluteBounds="4.75, 23.5, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_RegistroFallaGruas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f390dd96-2c5f-4005-9875-b4753e7a5d21" absoluteBounds="4.765, 23.96, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9c73d091-2ded-410a-9841-b19e64fba467" isExpanded="false" absoluteBounds="4.75, 26, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_VW_ReimpresionEtiquetas" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc32fb27-de4d-4151-9d31-403020de8e9b" absoluteBounds="4.765, 26.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="975f19ed-b512-4a74-aa47-5127fb1fb4d6" isExpanded="false" absoluteBounds="4.75, 26.5, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_MenusXPerfil" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2cfd7f85-483c-4a3a-98b3-53bd7e2d0af4" absoluteBounds="4.765, 26.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

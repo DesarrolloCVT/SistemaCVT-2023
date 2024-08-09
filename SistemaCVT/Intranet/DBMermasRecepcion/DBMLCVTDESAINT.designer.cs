@@ -843,9 +843,6 @@ namespace DBMermasRecepcion
     partial void InsertCVT_DetalleInventario(CVT_DetalleInventario instance);
     partial void UpdateCVT_DetalleInventario(CVT_DetalleInventario instance);
     partial void DeleteCVT_DetalleInventario(CVT_DetalleInventario instance);
-    partial void InsertCVT_RegistroFallaGruas(CVT_RegistroFallaGruas instance);
-    partial void UpdateCVT_RegistroFallaGruas(CVT_RegistroFallaGruas instance);
-    partial void DeleteCVT_RegistroFallaGruas(CVT_RegistroFallaGruas instance);
     partial void InsertCVT_Gruas(CVT_Gruas instance);
     partial void UpdateCVT_Gruas(CVT_Gruas instance);
     partial void DeleteCVT_Gruas(CVT_Gruas instance);
@@ -861,6 +858,9 @@ namespace DBMermasRecepcion
     partial void InsertCVT_Ronda_Registro(CVT_Ronda_Registro instance);
     partial void UpdateCVT_Ronda_Registro(CVT_Ronda_Registro instance);
     partial void DeleteCVT_Ronda_Registro(CVT_Ronda_Registro instance);
+    partial void InsertCVT_RegistroFallaGruas(CVT_RegistroFallaGruas instance);
+    partial void UpdateCVT_RegistroFallaGruas(CVT_RegistroFallaGruas instance);
+    partial void DeleteCVT_RegistroFallaGruas(CVT_RegistroFallaGruas instance);
     #endregion
 		
 		public DBMLCVTDESAINTDataContext() : 
@@ -4181,14 +4181,6 @@ namespace DBMermasRecepcion
 			}
 		}
 		
-		public System.Data.Linq.Table<CVT_RegistroFallaGruas> CVT_RegistroFallaGruas
-		{
-			get
-			{
-				return this.GetTable<CVT_RegistroFallaGruas>();
-			}
-		}
-		
 		public System.Data.Linq.Table<CVT_Gruas> CVT_Gruas
 		{
 			get
@@ -4226,6 +4218,30 @@ namespace DBMermasRecepcion
 			get
 			{
 				return this.GetTable<CVT_Ronda_Registro>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CVT_RegistroFallaGruas> CVT_RegistroFallaGruas
+		{
+			get
+			{
+				return this.GetTable<CVT_RegistroFallaGruas>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CVT_VW_ReimpresionEtiquetas> CVT_VW_ReimpresionEtiquetas
+		{
+			get
+			{
+				return this.GetTable<CVT_VW_ReimpresionEtiquetas>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CVT_MenusXPerfil> CVT_MenusXPerfil
+		{
+			get
+			{
+				return this.GetTable<CVT_MenusXPerfil>();
 			}
 		}
 		
@@ -92405,308 +92421,6 @@ namespace DBMermasRecepcion
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CVT_RegistroFallaGruas")]
-	public partial class CVT_RegistroFallaGruas : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _RFG_ID;
-		
-		private string _EmpresaReclamo;
-		
-		private int _Grua_ID;
-		
-		private int _TFalla_ID;
-		
-		private System.DateTime _FechaFalla;
-		
-		private int _ChoferMomentoFalla;
-		
-		private int _UsuarioCreacion;
-		
-		private System.DateTime _FechaCreacion;
-		
-		private System.Nullable<System.DateTime> _FechaReparacion;
-		
-		private System.Nullable<int> _UsuarioCierre;
-		
-		private System.Nullable<System.DateTime> _FechaCierre;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnRFG_IDChanging(int value);
-    partial void OnRFG_IDChanged();
-    partial void OnEmpresaReclamoChanging(string value);
-    partial void OnEmpresaReclamoChanged();
-    partial void OnGrua_IDChanging(int value);
-    partial void OnGrua_IDChanged();
-    partial void OnTFalla_IDChanging(int value);
-    partial void OnTFalla_IDChanged();
-    partial void OnFechaFallaChanging(System.DateTime value);
-    partial void OnFechaFallaChanged();
-    partial void OnChoferMomentoFallaChanging(int value);
-    partial void OnChoferMomentoFallaChanged();
-    partial void OnUsuarioCreacionChanging(int value);
-    partial void OnUsuarioCreacionChanged();
-    partial void OnFechaCreacionChanging(System.DateTime value);
-    partial void OnFechaCreacionChanged();
-    partial void OnFechaReparacionChanging(System.Nullable<System.DateTime> value);
-    partial void OnFechaReparacionChanged();
-    partial void OnUsuarioCierreChanging(System.Nullable<int> value);
-    partial void OnUsuarioCierreChanged();
-    partial void OnFechaCierreChanging(System.Nullable<System.DateTime> value);
-    partial void OnFechaCierreChanged();
-    #endregion
-		
-		public CVT_RegistroFallaGruas()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RFG_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int RFG_ID
-		{
-			get
-			{
-				return this._RFG_ID;
-			}
-			set
-			{
-				if ((this._RFG_ID != value))
-				{
-					this.OnRFG_IDChanging(value);
-					this.SendPropertyChanging();
-					this._RFG_ID = value;
-					this.SendPropertyChanged("RFG_ID");
-					this.OnRFG_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaReclamo", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
-		public string EmpresaReclamo
-		{
-			get
-			{
-				return this._EmpresaReclamo;
-			}
-			set
-			{
-				if ((this._EmpresaReclamo != value))
-				{
-					this.OnEmpresaReclamoChanging(value);
-					this.SendPropertyChanging();
-					this._EmpresaReclamo = value;
-					this.SendPropertyChanged("EmpresaReclamo");
-					this.OnEmpresaReclamoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Grua_ID", DbType="Int NOT NULL")]
-		public int Grua_ID
-		{
-			get
-			{
-				return this._Grua_ID;
-			}
-			set
-			{
-				if ((this._Grua_ID != value))
-				{
-					this.OnGrua_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Grua_ID = value;
-					this.SendPropertyChanged("Grua_ID");
-					this.OnGrua_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TFalla_ID", DbType="Int NOT NULL")]
-		public int TFalla_ID
-		{
-			get
-			{
-				return this._TFalla_ID;
-			}
-			set
-			{
-				if ((this._TFalla_ID != value))
-				{
-					this.OnTFalla_IDChanging(value);
-					this.SendPropertyChanging();
-					this._TFalla_ID = value;
-					this.SendPropertyChanged("TFalla_ID");
-					this.OnTFalla_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaFalla", DbType="DateTime NOT NULL")]
-		public System.DateTime FechaFalla
-		{
-			get
-			{
-				return this._FechaFalla;
-			}
-			set
-			{
-				if ((this._FechaFalla != value))
-				{
-					this.OnFechaFallaChanging(value);
-					this.SendPropertyChanging();
-					this._FechaFalla = value;
-					this.SendPropertyChanged("FechaFalla");
-					this.OnFechaFallaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChoferMomentoFalla", DbType="Int NOT NULL")]
-		public int ChoferMomentoFalla
-		{
-			get
-			{
-				return this._ChoferMomentoFalla;
-			}
-			set
-			{
-				if ((this._ChoferMomentoFalla != value))
-				{
-					this.OnChoferMomentoFallaChanging(value);
-					this.SendPropertyChanging();
-					this._ChoferMomentoFalla = value;
-					this.SendPropertyChanged("ChoferMomentoFalla");
-					this.OnChoferMomentoFallaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UsuarioCreacion", DbType="Int NOT NULL")]
-		public int UsuarioCreacion
-		{
-			get
-			{
-				return this._UsuarioCreacion;
-			}
-			set
-			{
-				if ((this._UsuarioCreacion != value))
-				{
-					this.OnUsuarioCreacionChanging(value);
-					this.SendPropertyChanging();
-					this._UsuarioCreacion = value;
-					this.SendPropertyChanged("UsuarioCreacion");
-					this.OnUsuarioCreacionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaCreacion", DbType="DateTime NOT NULL")]
-		public System.DateTime FechaCreacion
-		{
-			get
-			{
-				return this._FechaCreacion;
-			}
-			set
-			{
-				if ((this._FechaCreacion != value))
-				{
-					this.OnFechaCreacionChanging(value);
-					this.SendPropertyChanging();
-					this._FechaCreacion = value;
-					this.SendPropertyChanged("FechaCreacion");
-					this.OnFechaCreacionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaReparacion", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FechaReparacion
-		{
-			get
-			{
-				return this._FechaReparacion;
-			}
-			set
-			{
-				if ((this._FechaReparacion != value))
-				{
-					this.OnFechaReparacionChanging(value);
-					this.SendPropertyChanging();
-					this._FechaReparacion = value;
-					this.SendPropertyChanged("FechaReparacion");
-					this.OnFechaReparacionChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UsuarioCierre", DbType="Int")]
-		public System.Nullable<int> UsuarioCierre
-		{
-			get
-			{
-				return this._UsuarioCierre;
-			}
-			set
-			{
-				if ((this._UsuarioCierre != value))
-				{
-					this.OnUsuarioCierreChanging(value);
-					this.SendPropertyChanging();
-					this._UsuarioCierre = value;
-					this.SendPropertyChanged("UsuarioCierre");
-					this.OnUsuarioCierreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaCierre", DbType="DateTime")]
-		public System.Nullable<System.DateTime> FechaCierre
-		{
-			get
-			{
-				return this._FechaCierre;
-			}
-			set
-			{
-				if ((this._FechaCierre != value))
-				{
-					this.OnFechaCierreChanging(value);
-					this.SendPropertyChanging();
-					this._FechaCierre = value;
-					this.SendPropertyChanged("FechaCierre");
-					this.OnFechaCierreChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CVT_Gruas")]
 	public partial class CVT_Gruas : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -93517,6 +93231,602 @@ namespace DBMermasRecepcion
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CVT_RegistroFallaGruas")]
+	public partial class CVT_RegistroFallaGruas : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _RFG_ID;
+		
+		private string _EmpresaReclamo;
+		
+		private int _Grua_ID;
+		
+		private int _TFalla_ID;
+		
+		private System.DateTime _FechaFalla;
+		
+		private int _ChoferMomentoFalla;
+		
+		private int _UsuarioCreacion;
+		
+		private System.DateTime _FechaCreacion;
+		
+		private System.Nullable<System.DateTime> _FechaReparacion;
+		
+		private System.Nullable<int> _UsuarioCierre;
+		
+		private System.Nullable<System.DateTime> _FechaCierre;
+		
+		private string _Comentario;
+		
+		private string _Resolucion;
+		
+		private int _EstadoGrua;
+		
+		private decimal _Horometro;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRFG_IDChanging(int value);
+    partial void OnRFG_IDChanged();
+    partial void OnEmpresaReclamoChanging(string value);
+    partial void OnEmpresaReclamoChanged();
+    partial void OnGrua_IDChanging(int value);
+    partial void OnGrua_IDChanged();
+    partial void OnTFalla_IDChanging(int value);
+    partial void OnTFalla_IDChanged();
+    partial void OnFechaFallaChanging(System.DateTime value);
+    partial void OnFechaFallaChanged();
+    partial void OnChoferMomentoFallaChanging(int value);
+    partial void OnChoferMomentoFallaChanged();
+    partial void OnUsuarioCreacionChanging(int value);
+    partial void OnUsuarioCreacionChanged();
+    partial void OnFechaCreacionChanging(System.DateTime value);
+    partial void OnFechaCreacionChanged();
+    partial void OnFechaReparacionChanging(System.Nullable<System.DateTime> value);
+    partial void OnFechaReparacionChanged();
+    partial void OnUsuarioCierreChanging(System.Nullable<int> value);
+    partial void OnUsuarioCierreChanged();
+    partial void OnFechaCierreChanging(System.Nullable<System.DateTime> value);
+    partial void OnFechaCierreChanged();
+    partial void OnComentarioChanging(string value);
+    partial void OnComentarioChanged();
+    partial void OnResolucionChanging(string value);
+    partial void OnResolucionChanged();
+    partial void OnEstadoGruaChanging(int value);
+    partial void OnEstadoGruaChanged();
+    partial void OnHorometroChanging(decimal value);
+    partial void OnHorometroChanged();
+    #endregion
+		
+		public CVT_RegistroFallaGruas()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RFG_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int RFG_ID
+		{
+			get
+			{
+				return this._RFG_ID;
+			}
+			set
+			{
+				if ((this._RFG_ID != value))
+				{
+					this.OnRFG_IDChanging(value);
+					this.SendPropertyChanging();
+					this._RFG_ID = value;
+					this.SendPropertyChanged("RFG_ID");
+					this.OnRFG_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmpresaReclamo", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string EmpresaReclamo
+		{
+			get
+			{
+				return this._EmpresaReclamo;
+			}
+			set
+			{
+				if ((this._EmpresaReclamo != value))
+				{
+					this.OnEmpresaReclamoChanging(value);
+					this.SendPropertyChanging();
+					this._EmpresaReclamo = value;
+					this.SendPropertyChanged("EmpresaReclamo");
+					this.OnEmpresaReclamoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Grua_ID", DbType="Int NOT NULL")]
+		public int Grua_ID
+		{
+			get
+			{
+				return this._Grua_ID;
+			}
+			set
+			{
+				if ((this._Grua_ID != value))
+				{
+					this.OnGrua_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Grua_ID = value;
+					this.SendPropertyChanged("Grua_ID");
+					this.OnGrua_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TFalla_ID", DbType="Int NOT NULL")]
+		public int TFalla_ID
+		{
+			get
+			{
+				return this._TFalla_ID;
+			}
+			set
+			{
+				if ((this._TFalla_ID != value))
+				{
+					this.OnTFalla_IDChanging(value);
+					this.SendPropertyChanging();
+					this._TFalla_ID = value;
+					this.SendPropertyChanged("TFalla_ID");
+					this.OnTFalla_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaFalla", DbType="DateTime NOT NULL")]
+		public System.DateTime FechaFalla
+		{
+			get
+			{
+				return this._FechaFalla;
+			}
+			set
+			{
+				if ((this._FechaFalla != value))
+				{
+					this.OnFechaFallaChanging(value);
+					this.SendPropertyChanging();
+					this._FechaFalla = value;
+					this.SendPropertyChanged("FechaFalla");
+					this.OnFechaFallaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChoferMomentoFalla", DbType="Int NOT NULL")]
+		public int ChoferMomentoFalla
+		{
+			get
+			{
+				return this._ChoferMomentoFalla;
+			}
+			set
+			{
+				if ((this._ChoferMomentoFalla != value))
+				{
+					this.OnChoferMomentoFallaChanging(value);
+					this.SendPropertyChanging();
+					this._ChoferMomentoFalla = value;
+					this.SendPropertyChanged("ChoferMomentoFalla");
+					this.OnChoferMomentoFallaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UsuarioCreacion", DbType="Int NOT NULL")]
+		public int UsuarioCreacion
+		{
+			get
+			{
+				return this._UsuarioCreacion;
+			}
+			set
+			{
+				if ((this._UsuarioCreacion != value))
+				{
+					this.OnUsuarioCreacionChanging(value);
+					this.SendPropertyChanging();
+					this._UsuarioCreacion = value;
+					this.SendPropertyChanged("UsuarioCreacion");
+					this.OnUsuarioCreacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaCreacion", DbType="DateTime NOT NULL")]
+		public System.DateTime FechaCreacion
+		{
+			get
+			{
+				return this._FechaCreacion;
+			}
+			set
+			{
+				if ((this._FechaCreacion != value))
+				{
+					this.OnFechaCreacionChanging(value);
+					this.SendPropertyChanging();
+					this._FechaCreacion = value;
+					this.SendPropertyChanged("FechaCreacion");
+					this.OnFechaCreacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaReparacion", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaReparacion
+		{
+			get
+			{
+				return this._FechaReparacion;
+			}
+			set
+			{
+				if ((this._FechaReparacion != value))
+				{
+					this.OnFechaReparacionChanging(value);
+					this.SendPropertyChanging();
+					this._FechaReparacion = value;
+					this.SendPropertyChanged("FechaReparacion");
+					this.OnFechaReparacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UsuarioCierre", DbType="Int")]
+		public System.Nullable<int> UsuarioCierre
+		{
+			get
+			{
+				return this._UsuarioCierre;
+			}
+			set
+			{
+				if ((this._UsuarioCierre != value))
+				{
+					this.OnUsuarioCierreChanging(value);
+					this.SendPropertyChanging();
+					this._UsuarioCierre = value;
+					this.SendPropertyChanged("UsuarioCierre");
+					this.OnUsuarioCierreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaCierre", DbType="DateTime")]
+		public System.Nullable<System.DateTime> FechaCierre
+		{
+			get
+			{
+				return this._FechaCierre;
+			}
+			set
+			{
+				if ((this._FechaCierre != value))
+				{
+					this.OnFechaCierreChanging(value);
+					this.SendPropertyChanging();
+					this._FechaCierre = value;
+					this.SendPropertyChanged("FechaCierre");
+					this.OnFechaCierreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Comentario", DbType="VarChar(MAX)")]
+		public string Comentario
+		{
+			get
+			{
+				return this._Comentario;
+			}
+			set
+			{
+				if ((this._Comentario != value))
+				{
+					this.OnComentarioChanging(value);
+					this.SendPropertyChanging();
+					this._Comentario = value;
+					this.SendPropertyChanged("Comentario");
+					this.OnComentarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Resolucion", DbType="VarChar(MAX)")]
+		public string Resolucion
+		{
+			get
+			{
+				return this._Resolucion;
+			}
+			set
+			{
+				if ((this._Resolucion != value))
+				{
+					this.OnResolucionChanging(value);
+					this.SendPropertyChanging();
+					this._Resolucion = value;
+					this.SendPropertyChanged("Resolucion");
+					this.OnResolucionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoGrua", DbType="Int NOT NULL")]
+		public int EstadoGrua
+		{
+			get
+			{
+				return this._EstadoGrua;
+			}
+			set
+			{
+				if ((this._EstadoGrua != value))
+				{
+					this.OnEstadoGruaChanging(value);
+					this.SendPropertyChanging();
+					this._EstadoGrua = value;
+					this.SendPropertyChanged("EstadoGrua");
+					this.OnEstadoGruaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Horometro", DbType="Decimal(18,0) NOT NULL")]
+		public decimal Horometro
+		{
+			get
+			{
+				return this._Horometro;
+			}
+			set
+			{
+				if ((this._Horometro != value))
+				{
+					this.OnHorometroChanging(value);
+					this.SendPropertyChanging();
+					this._Horometro = value;
+					this.SendPropertyChanged("Horometro");
+					this.OnHorometroChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CVT_VW_ReimpresionEtiquetas")]
+	public partial class CVT_VW_ReimpresionEtiquetas
+	{
+		
+		private string _Usuario;
+		
+		private System.DateTime _Fecha;
+		
+		private int _NPallet;
+		
+		public CVT_VW_ReimpresionEtiquetas()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Usuario", DbType="VarChar(50)")]
+		public string Usuario
+		{
+			get
+			{
+				return this._Usuario;
+			}
+			set
+			{
+				if ((this._Usuario != value))
+				{
+					this._Usuario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NPallet", DbType="Int NOT NULL")]
+		public int NPallet
+		{
+			get
+			{
+				return this._NPallet;
+			}
+			set
+			{
+				if ((this._NPallet != value))
+				{
+					this._NPallet = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CVT_MenusXPerfil")]
+	public partial class CVT_MenusXPerfil
+	{
+		
+		private int _IdPerfil;
+		
+		private string _Nombre_Perfil;
+		
+		private int _IdMenu;
+		
+		private string _Nombre_Menu;
+		
+		private int _IdSubMenu;
+		
+		private string _Nombre_SubMenu;
+		
+		private string _URL_SubMenu;
+		
+		public CVT_MenusXPerfil()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPerfil", DbType="Int NOT NULL")]
+		public int IdPerfil
+		{
+			get
+			{
+				return this._IdPerfil;
+			}
+			set
+			{
+				if ((this._IdPerfil != value))
+				{
+					this._IdPerfil = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre_Perfil", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Nombre_Perfil
+		{
+			get
+			{
+				return this._Nombre_Perfil;
+			}
+			set
+			{
+				if ((this._Nombre_Perfil != value))
+				{
+					this._Nombre_Perfil = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdMenu", DbType="Int NOT NULL")]
+		public int IdMenu
+		{
+			get
+			{
+				return this._IdMenu;
+			}
+			set
+			{
+				if ((this._IdMenu != value))
+				{
+					this._IdMenu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre_Menu", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string Nombre_Menu
+		{
+			get
+			{
+				return this._Nombre_Menu;
+			}
+			set
+			{
+				if ((this._Nombre_Menu != value))
+				{
+					this._Nombre_Menu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdSubMenu", DbType="Int NOT NULL")]
+		public int IdSubMenu
+		{
+			get
+			{
+				return this._IdSubMenu;
+			}
+			set
+			{
+				if ((this._IdSubMenu != value))
+				{
+					this._IdSubMenu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre_SubMenu", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string Nombre_SubMenu
+		{
+			get
+			{
+				return this._Nombre_SubMenu;
+			}
+			set
+			{
+				if ((this._Nombre_SubMenu != value))
+				{
+					this._Nombre_SubMenu = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_URL_SubMenu", DbType="VarChar(250) NOT NULL", CanBeNull=false)]
+		public string URL_SubMenu
+		{
+			get
+			{
+				return this._URL_SubMenu;
+			}
+			set
+			{
+				if ((this._URL_SubMenu != value))
+				{
+					this._URL_SubMenu = value;
+				}
 			}
 		}
 	}

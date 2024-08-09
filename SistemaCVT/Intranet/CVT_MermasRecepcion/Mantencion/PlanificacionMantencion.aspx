@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="PlanificacionMantencion.aspx.cs" Inherits="CVT_MermasRecepcion.Mantencion.PlanificacionMantencion" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="PlanificacionMantencion.aspx.cs" Inherits="CVT_MermasRecepcion.Mantencion.PlanificacionMantencion" %>
 <%@ Register Assembly="DevExpress.Web.ASPxScheduler.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.Web.ASPxScheduler" TagPrefix="dxwschs" %>
 <%@ Register assembly="DevExpress.XtraScheduler.v22.1.Core, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.XtraScheduler" tagprefix="cc1" %>

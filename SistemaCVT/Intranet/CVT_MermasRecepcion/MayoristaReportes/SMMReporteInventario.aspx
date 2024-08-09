@@ -1,5 +1,5 @@
 ﻿
-<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="SMMReporteInventario.aspx.cs" Inherits="CVT_MermasRecepcion.MayoristaReportes.SMMReporteInventario" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="SMMReporteInventario.aspx.cs" Inherits="CVT_MermasRecepcion.MayoristaReportes.SMMReporteInventario" %>
 
 <%@ Register Assembly="DevExpress.Web.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 

@@ -5126,21 +5126,6 @@
       <Column Name="CantidadPallet" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.CVT_RegistroFallaGruas" Member="CVT_RegistroFallaGruas">
-    <Type Name="CVT_RegistroFallaGruas">
-      <Column Name="RFG_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="EmpresaReclamo" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="Grua_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TFalla_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="FechaFalla" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="ChoferMomentoFalla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="UsuarioCreacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="FechaReparacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="UsuarioCierre" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="FechaCierre" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.CVT_Gruas" Member="CVT_Gruas">
     <Type Name="CVT_Gruas">
       <Column Name="Grua_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -5185,6 +5170,43 @@
       <Column Name="Usuario" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="URL_Ubicacion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="Punto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_RegistroFallaGruas" Member="CVT_RegistroFallaGruas">
+    <Type Name="CVT_RegistroFallaGruas">
+      <Column Name="RFG_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmpresaReclamo" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Grua_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TFalla_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFalla" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ChoferMomentoFalla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioCreacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaReparacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UsuarioCierre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaCierre" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comentario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Resolucion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EstadoGrua" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Horometro" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_ReimpresionEtiquetas" Member="CVT_VW_ReimpresionEtiquetas">
+    <Type Name="CVT_VW_ReimpresionEtiquetas">
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NPallet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_MenusXPerfil" Member="CVT_MenusXPerfil">
+    <Type Name="CVT_MenusXPerfil">
+      <Column Name="IdPerfil" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre_Perfil" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IdMenu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre_Menu" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="IdSubMenu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre_SubMenu" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="URL_SubMenu" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.CVT_AGENDAPROD_LeeStockReceta" Method="CVT_AGENDAPROD_LeeStockReceta">

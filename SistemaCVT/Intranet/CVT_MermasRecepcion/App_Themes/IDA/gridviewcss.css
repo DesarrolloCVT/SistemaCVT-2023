@@ -299,12 +299,12 @@
 .dxgvHeader table {
 	/*color: Black;
 	font: 9pt Tahoma;*/
-	color: #fff;
-    background: url(ui/bg-table-th.jpg) repeat-x;
+	/*color: #fff;*/
+    /*background: url(ui/bg-table-th.jpg) repeat-x;*/
     text-align: left;
     font-weight: bold;
-    border-left: 1px solid #4089BC;
-    border-right: 1px solid #004B7F;
+    /*border-left: 1px solid #4089BC;
+    border-right: 1px solid #004B7F;*/
 }
 .dxgvHeader td {
 	/*white-space: nowrap;*/

@@ -1666,6 +1666,12 @@
       <Column Name="TiempoPorPallet" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.CVT_VW_PartidasAbiertas_Inicio" Member="CVT_VW_PartidasAbiertas_Inicio">
+    <Type Name="CVT_VW_PartidasAbiertas_Inicio">
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(26) NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.CVT_ACTUALIZA_CLAVE_ENCRIPTADASTAFF" Method="CVT_ACTUALIZA_CLAVE_ENCRIPTADASTAFF">
     <Parameter Name="ClaveEncrypt" Parameter="claveEncrypt" Type="System.String" DbType="NVarChar(20)" />
     <Parameter Name="Usuario" Parameter="usuario" Type="System.Int32" DbType="Int" />

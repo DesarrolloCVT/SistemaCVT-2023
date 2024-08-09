@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CVT_MermasRecepcion {
-    
-    
-    public partial class Site1 {
-        
+namespace CVT_MermasRecepcion
+{
+
+
+    public partial class Site1
+    {
+
         /// <summary>
         /// Control Head1.
         /// </summary>
@@ -20,7 +22,7 @@ namespace CVT_MermasRecepcion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-        
+
         /// <summary>
         /// Control head.
         /// </summary>
@@ -29,7 +31,7 @@ namespace CVT_MermasRecepcion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-        
+
         /// <summary>
         /// Control frmMaster.
         /// </summary>
@@ -38,7 +40,7 @@ namespace CVT_MermasRecepcion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm frmMaster;
-        
+
         /// <summary>
         /// Control ASPxPanel1.
         /// </summary>
@@ -47,7 +49,7 @@ namespace CVT_MermasRecepcion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::DevExpress.Web.ASPxPanel ASPxPanel1;
-        
+
         /// <summary>
         /// Control lblUser.
         /// </summary>
@@ -56,7 +58,7 @@ namespace CVT_MermasRecepcion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton lblUser;
-        
+
         /// <summary>
         /// Control cmdCerrarS.
         /// </summary>
@@ -65,7 +67,7 @@ namespace CVT_MermasRecepcion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton cmdCerrarS;
-        
+
         /// <summary>
         /// Control lblAmbiente.
         /// </summary>
@@ -74,7 +76,7 @@ namespace CVT_MermasRecepcion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblAmbiente;
-        
+
         /// <summary>
         /// Control Contactar.
         /// </summary>
@@ -83,7 +85,7 @@ namespace CVT_MermasRecepcion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton Contactar;
-        
+
         /// <summary>
         /// Control ScriptManager1.
         /// </summary>
@@ -92,7 +94,7 @@ namespace CVT_MermasRecepcion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
+
         /// <summary>
         /// Control MenuInnvita1.
         /// </summary>
@@ -101,7 +103,7 @@ namespace CVT_MermasRecepcion {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::ControlesInnvita.MenuInnvita MenuInnvita1;
-        
+
         /// <summary>
         /// Control cntMaster.
         /// </summary>

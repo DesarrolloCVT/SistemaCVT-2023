@@ -48,7 +48,7 @@ namespace CVT_MermasRecepcion
                 }
 
                 //redirecciona a pagina principal
-                Response.Redirect("Blank.aspx");
+                Response.Redirect("Blank2.aspx");
             }
             else
             {

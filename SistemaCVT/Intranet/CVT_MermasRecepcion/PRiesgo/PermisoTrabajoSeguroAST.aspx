@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="PermisoTrabajoSeguroAST.aspx.cs" Inherits="CVT_MermasRecepcion.PRiesgo.PermisoTrabajoSeguroAST" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="PermisoTrabajoSeguroAST.aspx.cs" Inherits="CVT_MermasRecepcion.PRiesgo.PermisoTrabajoSeguroAST" %>
 
 <%@ Register Assembly="DevExpress.Web.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 

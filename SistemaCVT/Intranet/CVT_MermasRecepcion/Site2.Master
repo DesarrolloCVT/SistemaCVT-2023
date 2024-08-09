@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.Master.cs" Inherits="CVT_MermasRecepcion.Site2" %>
+
+<%@ Register assembly="DevExpress.Web.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web" tagprefix="dx" %>
+<!DOCTYPE html">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+<head runat="server">
+    
+    <title>Intranet CVT</title>
+    <link rel="stylesheet" type="text/css" href="Css/ResponsiveMenu.css" />
+    <script type="text/javascript">
+        function onListBoxValueChanged() {
+            GridView.Refresh();
+        }
+        function updateHeaderMenuOrientation() {
+            var orientation = TopPanel.IsExpandable() ? 'Vertical' : 'Horizontal';
+            if (orientation !== HeaderMenu.GetOrientation())
+                HeaderMenu.SetOrientation(orientation);
+        }
+        function updateGridHeight() {
+            GridView.SetHeight(0);
+            var containerHeight = ASPxClientUtils.GetDocumentClientHeight();
+            if (document.body.scrollHeight > containerHeight)
+                containerHeight = document.body.scrollHeight;
+            GridView.SetHeight(containerHeight - TopPanel.GetHeight() - EmployeeSelectorPanel.GetHeight());
+        }
+    </script>
+    <script type="text/javascript">
+        // <![CDATA[
+        ASPxClientControl.GetControlCollection().ControlsInitialized.AddHandler(function (s, e) {
+            updateHeaderMenuOrientation();
+            updateGridHeight();
+        });
+        ASPxClientControl.GetControlCollection().BrowserWindowResized.AddHandler(function (s, e) {
+            updateHeaderMenuOrientation();
+            updateGridHeight();
+        });
+        // ]]>
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    
+</head>
+<body">
+    <form id="form1" runat="server">
+            <dx:ASPxPanel ID="TopPanel" runat="server" FixedPosition="WindowTop" ClientInstanceName="TopPanel" CssClass="topPanel" Collapsible="true">
+            <Styles>
+                <ExpandedPanel CssClass ="expandedPanel" />
+            </Styles>
+            <SettingsAdaptivity CollapseAtWindowInnerWidth="580" />
+            <PanelCollection>
+                <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
+                    <dx:ASPxImage runat="server" ImageUrl="~/App_Themes/IDA/ui/logo1.png" Height="76px" Width="178px">
+                        <ClientSideEvents Click="function(s, e) {
+	window.location.replace(&quot;/Blank2.aspx&quot;);
+}" />
+                    </dx:ASPxImage>
+                    <div  id="usrData">
+                    <dx:ASPxMenu ID="mMain" ClientInstanceName="HeaderMenu" runat="server" CssClass="mainMenu">
+                        <Items>
+                            <dx:MenuItem ToolTip="Tickets" Text="" NavigateUrl="Contacto.aspx" Image-Url="Images/Contactar.png" Image-Height="35px" Image-Width="100px">
+                                <Image Height="35px" Width="100px" Url="Images/Contactar.png"></Image>
+                            </dx:MenuItem>
+                            <dx:MenuItem ToolTip="Cerrar" Text="" NavigateUrl="Login.aspx" Image-Url="Images/apagar.png" Image-Height="28px" Image-Width="28px">
+                                <Image Height="28px" Width="28px" Url="Images/apagar.png"></Image>
+                            </dx:MenuItem>
+                        </Items>
+                    </dx:ASPxMenu>
+                    </div>
+                </dx:PanelContent>
+            </PanelCollection>
+            <ExpandBarTemplate>
+                <div  id="usrData" class="titleRS"></div>
+            </ExpandBarTemplate>
+        </dx:ASPxPanel>
+            <dx:ASPxPanel ID="LeftPanel" runat="server" FixedPosition="WindowLeft" Collapsible="true" ScrollBars="Auto">
+                <SettingsAdaptivity CollapseAtWindowInnerWidth="900" />
+                    <PanelCollection>
+                        <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
+                            <dx:ASPxNavBar ID="ASPxNavBar1" runat="server" AllowSelectItem="True"></dx:ASPxNavBar>
+                        </dx:PanelContent>
+                    </PanelCollection>
+             </dx:ASPxPanel>
+           <asp:ContentPlaceHolder ID="cntMaster" runat="server">
+</asp:ContentPlaceHolder>
+    </form>     
+
+</body>
+</html>

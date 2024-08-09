@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="TransferenciaProforma.aspx.cs" Inherits="CVT_MermasRecepcion.WMS.TransferenciaProforma" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="TransferenciaProforma.aspx.cs" Inherits="CVT_MermasRecepcion.WMS.TransferenciaProforma" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">

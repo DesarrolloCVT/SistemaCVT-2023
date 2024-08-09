@@ -10018,6 +10018,17 @@
       <Column Name="FechaActualizacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.CVT_VW_ProduccionHoy" Member="CVT_VW_ProduccionHoy">
+    <Type Name="CVT_VW_ProduccionHoy">
+      <Column Name="[OF]" Member="OF" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodProducto" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Producto" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Sala" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Origen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CantidadProducida" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="KilosRechazados" Type="System.Decimal" DbType="Decimal(38,3) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="dbo.CVT_RPT_ListaCobranza1" Method="CVT_RPT_ListaCobranza1">
     <Parameter Name="SlpCode" Parameter="slpCode" Type="System.Int32" DbType="Int" />
     <Parameter Name="CardCode" Parameter="cardCode" Type="System.String" DbType="NVarChar(20)" />

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="SMMImpresionEtiquetaQR.aspx.cs" Inherits="CVT_MermasRecepcion.MayoristaOP.SMMImpresionEtiquetaQR" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="SMMImpresionEtiquetaQR.aspx.cs" Inherits="CVT_MermasRecepcion.MayoristaOP.SMMImpresionEtiquetaQR" %>
 
 <%@ Register Assembly="DevExpress.XtraReports.v22.1.Web.WebForms, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx" %>
 

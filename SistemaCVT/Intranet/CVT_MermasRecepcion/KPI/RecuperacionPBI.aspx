@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="RecuperacionPBI.aspx.cs" Inherits="CVT_MermasRecepcion.KPI.RecuperacionPBI" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site2.Master" AutoEventWireup="true" CodeBehind="RecuperacionPBI.aspx.cs" Inherits="CVT_MermasRecepcion.KPI.RecuperacionPBI" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
