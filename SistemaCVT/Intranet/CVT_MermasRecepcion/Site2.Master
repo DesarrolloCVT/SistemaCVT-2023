@@ -46,9 +46,9 @@
     <form id="form1" runat="server">
             <dx:ASPxPanel ID="TopPanel" runat="server" FixedPosition="WindowTop" ClientInstanceName="TopPanel" CssClass="topPanel" Collapsible="true">
             <Styles>
-                <ExpandedPanel CssClass ="expandedPanel" />
+                <ExpandedPanel CssClass ="expandedPanelRS" />
             </Styles>
-            <SettingsAdaptivity CollapseAtWindowInnerWidth="580" />
+            <SettingsAdaptivity CollapseAtWindowInnerWidth="500" CollapseAtWindowInnerHeight="500" />
             <PanelCollection>
                 <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
                     <dx:ASPxImage runat="server" ImageUrl="~/App_Themes/IDA/ui/logo1.png" Height="76px" Width="178px">
@@ -57,7 +57,7 @@
 }" />
                     </dx:ASPxImage>
                     <div  id="usrData">
-                    <dx:ASPxMenu ID="mMain" ClientInstanceName="HeaderMenu" runat="server" CssClass="mainMenu">
+                    <dx:ASPxMenu ID="mMain" ClientInstanceName="HeaderMenu" runat="server" CssClass="mainMenuRS">
                         <Items>
                             <dx:MenuItem ToolTip="Tickets" Text="" NavigateUrl="Contacto.aspx" Image-Url="Images/Contactar.png" Image-Height="35px" Image-Width="100px">
                                 <Image Height="35px" Width="100px" Url="Images/Contactar.png"></Image>
@@ -74,13 +74,19 @@
                 <div  id="usrData" class="titleRS"></div>
             </ExpandBarTemplate>
         </dx:ASPxPanel>
-            <dx:ASPxPanel ID="LeftPanel" runat="server" FixedPosition="WindowLeft" Collapsible="true" ScrollBars="Auto">
-                <SettingsAdaptivity CollapseAtWindowInnerWidth="900" />
+            <dx:ASPxPanel ID="LeftPanel" runat="server" FixedPosition="WindowLeft" Collapsible="true" ScrollBars="Auto" >
+                <Styles>
+                    <ExpandedPanel CssClass ="expandedPanelRS" />
+                </Styles>
+                <SettingsAdaptivity CollapseAtWindowInnerWidth="1500"  />
                     <PanelCollection>
                         <dx:PanelContent runat="server" SupportsDisabledAttribute="True">
                             <dx:ASPxNavBar ID="ASPxNavBar1" runat="server" AllowSelectItem="True"></dx:ASPxNavBar>
                         </dx:PanelContent>
                     </PanelCollection>
+                    <ExpandBarTemplate>
+                        <div class="titleRS"></div>
+                    </ExpandBarTemplate>
              </dx:ASPxPanel>
            <asp:ContentPlaceHolder ID="cntMaster" runat="server">
 </asp:ContentPlaceHolder>

@@ -38,9 +38,7 @@ a img {border: 0;}
 body {
     font: 16px/20px  Arial, Helvetica, Verdana, sans;
     color: #787878;
-    background: 
-        /*url(ui/bg-body-illustration.png) 0 400px no-repeat,*/
-        url(ui/bg-body.png) left top repeat-y;
+    
 }
 body#login{
     background: #e9e9e9;
@@ -56,7 +54,7 @@ a{
 }
 #header{
     height: 100px;
-    background: url(ui/bg-header.png) left bottom repeat-x;
+   
 }
 .logo{
     margin: 10px 0 0 20px;
@@ -69,7 +67,7 @@ a{
 }
 #usrData p{
     margin-bottom: 0;
-    background: url(ui/ico-usr.png)0 0 no-repeat;
+    
     padding-left: 25px;
     font-size: 12px;
 }
@@ -105,9 +103,7 @@ a{
     display: block;
 }
 
-#mainNav ul li ul{
-    background: #003257 url(ui/bg-accordeon.jpg) 0 0 repeat;
-}
+
 #mainNav ul li ul li{
     margin-left: 40px;
     padding-left: 0;
@@ -117,13 +113,9 @@ a{
 }
 #mainNav ul li ul li a{
     padding-left: 15px;
-    background: 
-        url(ui/regular-bullet.png) left top no-repeat,
-        url(ui/nav-hover.jpg) 0 0 repeat-x;
+    
 }
-#mainNav ul li ul li a:hover{
-    background: #14476D url(ui/regular-bullet-over.png) left top no-repeat;
-}
+
 .acceso{
     background: 
         url(ui/ico-gen-menu.png) 92% 12px no-repeat,
@@ -1270,5 +1262,31 @@ ul#agendaTabs li.active a {
   100% {
     opacity: 0;
   }
+}
+.titleRS {
+    float: left;
+    padding: 1px 4px 2px;
+    font-size: 2.2em;
+}
+
+.expandedPanelRS .titleRS {
+    display: none;
+}
+
+.mainMenuRS {
+   /* float: right !important;*/
+    margin: 8px 0 4px;
+}
+
+.expandedPanelRS .mainMenuRS {
+    width: 100%;
+}
+
+.gridRS,
+.gridRS .dxgvHSDCRS,
+.gridRS .dxgvCSDRS {
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-bottom: 0 !important;
 }
 
