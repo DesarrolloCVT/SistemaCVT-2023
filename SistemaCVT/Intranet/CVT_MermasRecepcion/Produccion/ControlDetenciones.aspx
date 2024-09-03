@@ -61,11 +61,11 @@
                     </dx:ASPxLabel>
                 </td>
                 <td class="auto-style5">
-                    <dx:ASPxTextBox ID="txt_hrini" runat="server" Height="22px" Width="50px" NullText="HH" MaxLength="2">
+                    <dx:ASPxTextBox ID="txt_hrini" runat="server" Height="22px" Width="50px" NullText="HH" MaxLength="2" AutoCompleteType="Disabled">
                     </dx:ASPxTextBox>
                 </td>
                 <td colspan="4">
-                    <dx:ASPxTextBox ID="txt_minini" runat="server" Height="22px" Width="50px" NullText="MM" MaxLength="2">
+                    <dx:ASPxTextBox ID="txt_minini" runat="server" Height="22px" Width="50px" NullText="MM" MaxLength="2" AutoCompleteType="Disabled">
                     </dx:ASPxTextBox>
                 </td>
                 <td>&nbsp;</td>
@@ -86,11 +86,11 @@
                     </dx:ASPxLabel>
                 </td>
                 <td colspan="2">
-                    <dx:ASPxTextBox ID="txt_hrter" runat="server" Height="22px" Width="50px" NullText="HH" MaxLength="2">
+                    <dx:ASPxTextBox ID="txt_hrter" runat="server" Height="22px" Width="50px" NullText="HH" MaxLength="2" AutoCompleteType="Disabled">
                     </dx:ASPxTextBox>
                 </td>
                 <td colspan="2">
-                    <dx:ASPxTextBox ID="txt_minter" runat="server" Height="22px" Width="50px" NullText="MM" MaxLength="2">
+                    <dx:ASPxTextBox ID="txt_minter" runat="server" Height="22px" Width="50px" NullText="MM" MaxLength="2" AutoCompleteType="Disabled">
                     </dx:ASPxTextBox>
                 </td>
                 <td colspan="2">&nbsp;</td>

@@ -36,96 +36,286 @@ namespace CVT_MermasRecepcion.UtilidadCVT
             WMSClass vWMS = new WMSClass();
             LogClass vLog = new LogClass();
             int usuario = vWMS.ObtieneIdStaff(Session["CIDUsuario"].ToString());
-            EtiquetaQr1 r = new EtiquetaQr1();
+        
             string Imp = cboList.Value.ToString();
-            try
+            if (Convert.ToInt32(rb_Etiqueta.Value) == 1)
             {
-                if (Convert.ToInt32(rb_tipo.Value) == 1)
+                EtiquetaQr1 r = new EtiquetaQr1();
+                try
                 {
-                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 1);
-                    using (MemoryStream ms = new MemoryStream())
+                    if (Convert.ToInt32(rb_tipo.Value) == 1)
                     {
-                        r.Parameters["Num_Pallet"].Value = Convert.ToInt32(txt_npallet.Text);
-                        r.Parameters["Num_Recep"].Value = 0;
-                        r.Parameters["Num_Ubicacion"].Value = 1;
+                        vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 1);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            r.Parameters["Num_Pallet"].Value = Convert.ToInt32(txt_npallet.Text);
+                            r.Parameters["Num_Recep"].Value = 0;
+                            r.Parameters["Num_Ubicacion"].Value = 1;
 
-                        r.CreateDocument();
-                        DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
-                        r.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
-                        //DevExpress.XtraReports.UI.ReportPrintTool printTool = new DevExpress.XtraReports.UI.ReportPrintTool(r);
+                            r.CreateDocument();
+                            DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                            r.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
+                            //DevExpress.XtraReports.UI.ReportPrintTool printTool = new DevExpress.XtraReports.UI.ReportPrintTool(r);
 
-                        //printTool.PrinterSettings.Copies= Convert.ToInt16(txtCantCopias.Text);
-                        //printTool.Print(cboList.Text);
-                        opts.ShowPrintDialogOnOpen = true;
-                        r.Print(Imp);
-                        //r.ShowPrintStatusDialog=true;
-                        //printTool.Dispose();
-                        r.Dispose();
+                            //printTool.PrinterSettings.Copies= Convert.ToInt16(txtCantCopias.Text);
+                            //printTool.Print(cboList.Text);
+                            opts.ShowPrintDialogOnOpen = true;
+                            r.Print(Imp);
+                            //r.ShowPrintStatusDialog=true;
+                            //printTool.Dispose();
+                            r.Dispose();
+                        }
                     }
+                    if (Convert.ToInt32(rb_tipo.Value) == 2)
+                    {
+                        vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 2);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            r.Parameters["Num_Pallet"].Value = 0.ToString();
+                            r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                            r.Parameters["Num_Ubicacion"].Value = 1;
+
+                            r.CreateDocument();
+                            DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                            opts.ShowPrintDialogOnOpen = false;
+                            r.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
+                            r.Print(Imp);
+
+                            r.Dispose();
+
+                        }
+                    }
+                    if (Convert.ToInt32(rb_tipo.Value) == 3)
+                    {
+                        vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 3);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            r.Parameters["Num_Pallet"].Value = 0.ToString();
+                            r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                            r.Parameters["Num_Ubicacion"].Value = 2;
+                            r.CreateDocument();
+                            DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                            opts.ShowPrintDialogOnOpen = false;
+                            r.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
+                            r.Print(Imp);
+
+                            r.Dispose();
+                        }
+                    }
+                    if (Convert.ToInt32(rb_tipo.Value) == 4)
+                    {
+                        vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 4);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            r.Parameters["Num_Pallet"].Value = 0.ToString();
+                            r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                            r.Parameters["Num_Ubicacion"].Value = 3;
+
+                            r.CreateDocument();
+                            DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                            opts.ShowPrintDialogOnOpen = false;
+                            r.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
+                            r.Print(Imp);
+                            r.Dispose();
+                        }
+
+                    }
+
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('impresion completa favor verificar');", true);
+                    divRemoto.Visible = false;
+                    cboList.SelectedIndex = -1;
+                    txtCantCopias.Text = "1";
                 }
-                if (Convert.ToInt32(rb_tipo.Value) == 2)
+                catch (Exception ex)
                 {
-                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 2);
-                    using (MemoryStream ms = new MemoryStream())
-                    {
-                        r.Parameters["Num_Pallet"].Value = 0.ToString();
-                        r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
-                        r.Parameters["Num_Ubicacion"].Value = 1;
-
-                        r.CreateDocument();
-                        DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
-                        opts.ShowPrintDialogOnOpen = false;
-                        r.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
-                        r.Print(Imp);
-
-                        r.Dispose();
-
-                    }
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('Error: " + ex.ToString() + " ');", true);
                 }
-                if (Convert.ToInt32(rb_tipo.Value) == 3)
-                {
-                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 3);
-                    using (MemoryStream ms = new MemoryStream())
-                    {
-                        r.Parameters["Num_Pallet"].Value = 0.ToString();
-                        r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
-                        r.Parameters["Num_Ubicacion"].Value = 2;
-                        r.CreateDocument();
-                        DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
-                        opts.ShowPrintDialogOnOpen = false;
-                        r.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
-                        r.Print(Imp);
-
-                        r.Dispose();
-                    }
-                }
-                if (Convert.ToInt32(rb_tipo.Value) == 4)
-                {
-                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 4);
-                    using (MemoryStream ms = new MemoryStream())
-                    {
-                        r.Parameters["Num_Pallet"].Value = 0.ToString();
-                        r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
-                        r.Parameters["Num_Ubicacion"].Value = 3;
-
-                        r.CreateDocument();
-                        DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
-                        opts.ShowPrintDialogOnOpen = false;
-                        r.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
-                        r.Print(Imp);
-                        r.Dispose();
-                    }
-
-                }
-
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('impresion completa favor verificar');", true);
-                divRemoto.Visible = false;
-                cboList.SelectedIndex = -1;
-                txtCantCopias.Text = "1";
             }
-            catch (Exception ex)
+            if (Convert.ToInt32(rb_Etiqueta.Value) == 2)
             {
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('Error: " + ex.ToString() + " ');", true);
+                EtiquetaQr100x300 r = new EtiquetaQr100x300();
+                try
+                {
+                    if (Convert.ToInt32(rb_tipo.Value) == 1)
+                    {
+                        vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 1);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            r.Parameters["Num_Pallet"].Value = Convert.ToInt32(txt_npallet.Text);
+                            r.Parameters["Num_Recep"].Value = 0;
+                            r.Parameters["Num_Ubicacion"].Value = 1;
+
+                            r.CreateDocument();
+                            DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                            r.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
+                            //DevExpress.XtraReports.UI.ReportPrintTool printTool = new DevExpress.XtraReports.UI.ReportPrintTool(r);
+
+                            //printTool.PrinterSettings.Copies= Convert.ToInt16(txtCantCopias.Text);
+                            //printTool.Print(cboList.Text);
+                            opts.ShowPrintDialogOnOpen = true;
+                            r.Print(Imp);
+                            //r.ShowPrintStatusDialog=true;
+                            //printTool.Dispose();
+                            r.Dispose();
+                        }
+                    }
+                    if (Convert.ToInt32(rb_tipo.Value) == 2)
+                    {
+                        vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 2);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            r.Parameters["Num_Pallet"].Value = 0.ToString();
+                            r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                            r.Parameters["Num_Ubicacion"].Value = 1;
+
+                            r.CreateDocument();
+                            DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                            opts.ShowPrintDialogOnOpen = false;
+                            r.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
+                            r.Print(Imp);
+
+                            r.Dispose();
+
+                        }
+                    }
+                    if (Convert.ToInt32(rb_tipo.Value) == 3)
+                    {
+                        vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 3);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            r.Parameters["Num_Pallet"].Value = 0.ToString();
+                            r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                            r.Parameters["Num_Ubicacion"].Value = 2;
+                            r.CreateDocument();
+                            DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                            opts.ShowPrintDialogOnOpen = false;
+                            r.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
+                            r.Print(Imp);
+
+                            r.Dispose();
+                        }
+                    }
+                    if (Convert.ToInt32(rb_tipo.Value) == 4)
+                    {
+                        vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 4);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            r.Parameters["Num_Pallet"].Value = 0.ToString();
+                            r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                            r.Parameters["Num_Ubicacion"].Value = 3;
+
+                            r.CreateDocument();
+                            DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                            opts.ShowPrintDialogOnOpen = false;
+                            r.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
+                            r.Print(Imp);
+                            r.Dispose();
+                        }
+
+                    }
+
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('impresion completa favor verificar');", true);
+                    divRemoto.Visible = false;
+                    cboList.SelectedIndex = -1;
+                    txtCantCopias.Text = "1";
+                }
+                catch (Exception ex)
+                {
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('Error: " + ex.ToString() + " ');", true);
+                }
+            }
+            if (Convert.ToInt32(rb_Etiqueta.Value) == 3)
+            {
+                EtiquetaQr100x300MP r = new EtiquetaQr100x300MP();
+                try
+                {
+                    if (Convert.ToInt32(rb_tipo.Value) == 1)
+                    {
+                        vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 1);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            r.Parameters["Num_Pallet"].Value = Convert.ToInt32(txt_npallet.Text);
+                            r.Parameters["Num_Recep"].Value = 0;
+                            r.Parameters["Num_Ubicacion"].Value = 1;
+
+                            r.CreateDocument();
+                            DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                            r.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
+                            //DevExpress.XtraReports.UI.ReportPrintTool printTool = new DevExpress.XtraReports.UI.ReportPrintTool(r);
+
+                            //printTool.PrinterSettings.Copies= Convert.ToInt16(txtCantCopias.Text);
+                            //printTool.Print(cboList.Text);
+                            opts.ShowPrintDialogOnOpen = true;
+                            r.Print(Imp);
+                            //r.ShowPrintStatusDialog=true;
+                            //printTool.Dispose();
+                            r.Dispose();
+                        }
+                    }
+                    if (Convert.ToInt32(rb_tipo.Value) == 2)
+                    {
+                        vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 2);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            r.Parameters["Num_Pallet"].Value = 0.ToString();
+                            r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                            r.Parameters["Num_Ubicacion"].Value = 1;
+
+                            r.CreateDocument();
+                            DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                            opts.ShowPrintDialogOnOpen = false;
+                            r.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
+                            r.Print(Imp);
+
+                            r.Dispose();
+
+                        }
+                    }
+                    if (Convert.ToInt32(rb_tipo.Value) == 3)
+                    {
+                        vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 3);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            r.Parameters["Num_Pallet"].Value = 0.ToString();
+                            r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                            r.Parameters["Num_Ubicacion"].Value = 2;
+                            r.CreateDocument();
+                            DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                            opts.ShowPrintDialogOnOpen = false;
+                            r.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
+                            r.Print(Imp);
+
+                            r.Dispose();
+                        }
+                    }
+                    if (Convert.ToInt32(rb_tipo.Value) == 4)
+                    {
+                        vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 4);
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            r.Parameters["Num_Pallet"].Value = 0.ToString();
+                            r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                            r.Parameters["Num_Ubicacion"].Value = 3;
+
+                            r.CreateDocument();
+                            DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                            opts.ShowPrintDialogOnOpen = false;
+                            r.PrintingSystem.StartPrint += PrintingSystem_StartPrint;
+                            r.Print(Imp);
+                            r.Dispose();
+                        }
+
+                    }
+
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('impresion completa favor verificar');", true);
+                    divRemoto.Visible = false;
+                    cboList.SelectedIndex = -1;
+                    txtCantCopias.Text = "1";
+                }
+                catch (Exception ex)
+                {
+                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('Error: " + ex.ToString() + " ');", true);
+                }
             }
 
         }
@@ -140,98 +330,296 @@ namespace CVT_MermasRecepcion.UtilidadCVT
             WMSClass vWMS = new WMSClass();
             LogClass vLog = new LogClass();
             int usuario = vWMS.ObtieneIdStaff(Session["CIDUsuario"].ToString());
-            EtiquetaQr1 r = new EtiquetaQr1();
-            //report.ShowPrintStatusDialog = false;           
-
-            if (Convert.ToInt32(rb_tipo.Value) == 1)
+            if (Convert.ToInt32(rb_Etiqueta.Value) == 1)
             {
-                vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 1);
-                using (MemoryStream ms = new MemoryStream())
+                EtiquetaQr1 r = new EtiquetaQr1();
+
+                //report.ShowPrintStatusDialog = false;           
+
+                if (Convert.ToInt32(rb_tipo.Value) == 1)
                 {
+                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 1);
+                    using (MemoryStream ms = new MemoryStream())
+                    {
 
-                    r.Parameters["Num_Pallet"].Value = Convert.ToInt32(txt_npallet.Text);
-                    r.Parameters["Num_Recep"].Value = 0;
-                    r.Parameters["Num_Ubicacion"].Value = 1;
+                        r.Parameters["Num_Pallet"].Value = Convert.ToInt32(txt_npallet.Text);
+                        r.Parameters["Num_Recep"].Value = 0;
+                        r.Parameters["Num_Ubicacion"].Value = 1;
 
-                    r.CreateDocument();
-                    DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
-                    opts.ShowPrintDialogOnOpen = true;
+                        r.CreateDocument();
+                        DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                        opts.ShowPrintDialogOnOpen = true;
 
-                    r.ExportToPdf(ms, opts);
-                    ms.Seek(0, SeekOrigin.Begin);
-                    byte[] report = ms.ToArray();
-                    Page.Response.ContentType = "application/pdf";
-                    Page.Response.Clear();
-                    Page.Response.OutputStream.Write(report, 0, report.Length);
+                        r.ExportToPdf(ms, opts);
+                        ms.Seek(0, SeekOrigin.Begin);
+                        byte[] report = ms.ToArray();
+                        Page.Response.ContentType = "application/pdf";
+                        Page.Response.Clear();
+                        Page.Response.OutputStream.Write(report, 0, report.Length);
+                    }
+                }
+                if (Convert.ToInt32(rb_tipo.Value) == 2)
+                {
+                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 2);
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+
+                        r.Parameters["Num_Pallet"].Value = 0.ToString();
+                        r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                        r.Parameters["Num_Ubicacion"].Value = 1;
+
+                        r.CreateDocument();
+                        DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                        opts.ShowPrintDialogOnOpen = true;
+
+                        r.ExportToPdf(ms, opts);
+                        ms.Seek(0, SeekOrigin.Begin);
+                        byte[] report = ms.ToArray();
+                        Page.Response.ContentType = "application/pdf";
+                        Page.Response.Clear();
+                        Page.Response.OutputStream.Write(report, 0, report.Length);
+                    }
+                }
+                if (Convert.ToInt32(rb_tipo.Value) == 3)
+                {
+                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 3);
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+
+                        r.Parameters["Num_Pallet"].Value = 0.ToString();
+                        r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                        r.Parameters["Num_Ubicacion"].Value = 2;
+
+                        r.CreateDocument();
+                        DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                        opts.ShowPrintDialogOnOpen = true;
+
+                        r.ExportToPdf(ms, opts);
+                        ms.Seek(0, SeekOrigin.Begin);
+                        byte[] report = ms.ToArray();
+                        Page.Response.ContentType = "application/pdf";
+                        Page.Response.Clear();
+                        Page.Response.OutputStream.Write(report, 0, report.Length);
+                    }
+
+                }
+                if (Convert.ToInt32(rb_tipo.Value) == 4)
+                {
+                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 4);
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+
+                        r.Parameters["Num_Pallet"].Value = 0.ToString();
+                        r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                        r.Parameters["Num_Ubicacion"].Value = 3;
+
+                        r.CreateDocument();
+                        DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                        opts.ShowPrintDialogOnOpen = true;
+
+                        r.ExportToPdf(ms, opts);
+                        ms.Seek(0, SeekOrigin.Begin);
+                        byte[] report = ms.ToArray();
+                        Page.Response.ContentType = "application/pdf";
+                        Page.Response.Clear();
+                        Page.Response.OutputStream.Write(report, 0, report.Length);
+                    }
+
                 }
             }
-            if (Convert.ToInt32(rb_tipo.Value) == 2)
+            if (Convert.ToInt32(rb_Etiqueta.Value) == 2)
             {
-                vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 2);
-                using (MemoryStream ms = new MemoryStream())
+                EtiquetaQr100x300 r = new EtiquetaQr100x300();
+
+                //report.ShowPrintStatusDialog = false;           
+
+                if (Convert.ToInt32(rb_tipo.Value) == 1)
                 {
+                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 1);
+                    using (MemoryStream ms = new MemoryStream())
+                    {
 
-                    r.Parameters["Num_Pallet"].Value = 0.ToString();
-                    r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
-                    r.Parameters["Num_Ubicacion"].Value = 1;
+                        r.Parameters["Num_Pallet"].Value = Convert.ToInt32(txt_npallet.Text);
+                        r.Parameters["Num_Recep"].Value = 0;
+                        r.Parameters["Num_Ubicacion"].Value = 1;
 
-                    r.CreateDocument();
-                    DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
-                    opts.ShowPrintDialogOnOpen = true;
+                        r.CreateDocument();
+                        DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                        opts.ShowPrintDialogOnOpen = true;
 
-                    r.ExportToPdf(ms, opts);
-                    ms.Seek(0, SeekOrigin.Begin);
-                    byte[] report = ms.ToArray();
-                    Page.Response.ContentType = "application/pdf";
-                    Page.Response.Clear();
-                    Page.Response.OutputStream.Write(report, 0, report.Length);
+                        r.ExportToPdf(ms, opts);
+                        ms.Seek(0, SeekOrigin.Begin);
+                        byte[] report = ms.ToArray();
+                        Page.Response.ContentType = "application/pdf";
+                        Page.Response.Clear();
+                        Page.Response.OutputStream.Write(report, 0, report.Length);
+                    }
+                }
+                if (Convert.ToInt32(rb_tipo.Value) == 2)
+                {
+                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 2);
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+
+                        r.Parameters["Num_Pallet"].Value = 0.ToString();
+                        r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                        r.Parameters["Num_Ubicacion"].Value = 1;
+
+                        r.CreateDocument();
+                        DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                        opts.ShowPrintDialogOnOpen = true;
+
+                        r.ExportToPdf(ms, opts);
+                        ms.Seek(0, SeekOrigin.Begin);
+                        byte[] report = ms.ToArray();
+                        Page.Response.ContentType = "application/pdf";
+                        Page.Response.Clear();
+                        Page.Response.OutputStream.Write(report, 0, report.Length);
+                    }
+                }
+                if (Convert.ToInt32(rb_tipo.Value) == 3)
+                {
+                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 3);
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+
+                        r.Parameters["Num_Pallet"].Value = 0.ToString();
+                        r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                        r.Parameters["Num_Ubicacion"].Value = 2;
+
+                        r.CreateDocument();
+                        DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                        opts.ShowPrintDialogOnOpen = true;
+
+                        r.ExportToPdf(ms, opts);
+                        ms.Seek(0, SeekOrigin.Begin);
+                        byte[] report = ms.ToArray();
+                        Page.Response.ContentType = "application/pdf";
+                        Page.Response.Clear();
+                        Page.Response.OutputStream.Write(report, 0, report.Length);
+                    }
+
+                }
+                if (Convert.ToInt32(rb_tipo.Value) == 4)
+                {
+                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 4);
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+
+                        r.Parameters["Num_Pallet"].Value = 0.ToString();
+                        r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                        r.Parameters["Num_Ubicacion"].Value = 3;
+
+                        r.CreateDocument();
+                        DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                        opts.ShowPrintDialogOnOpen = true;
+
+                        r.ExportToPdf(ms, opts);
+                        ms.Seek(0, SeekOrigin.Begin);
+                        byte[] report = ms.ToArray();
+                        Page.Response.ContentType = "application/pdf";
+                        Page.Response.Clear();
+                        Page.Response.OutputStream.Write(report, 0, report.Length);
+                    }
+
                 }
             }
-            if (Convert.ToInt32(rb_tipo.Value) == 3)
+            if (Convert.ToInt32(rb_Etiqueta.Value) == 3)
             {
-                vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 3);
-                using (MemoryStream ms = new MemoryStream())
+                EtiquetaQr100x300MP r = new EtiquetaQr100x300MP();
+
+                //report.ShowPrintStatusDialog = false;           
+
+                if (Convert.ToInt32(rb_tipo.Value) == 1)
                 {
+                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 1);
+                    using (MemoryStream ms = new MemoryStream())
+                    {
 
-                    r.Parameters["Num_Pallet"].Value = 0.ToString();
-                    r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
-                    r.Parameters["Num_Ubicacion"].Value = 2;
+                        r.Parameters["Num_Pallet"].Value = Convert.ToInt32(txt_npallet.Text);
+                        r.Parameters["Num_Recep"].Value = 0;
+                        r.Parameters["Num_Ubicacion"].Value = 1;
 
-                    r.CreateDocument();
-                    DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
-                    opts.ShowPrintDialogOnOpen = true;
+                        r.CreateDocument();
+                        DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                        opts.ShowPrintDialogOnOpen = true;
 
-                    r.ExportToPdf(ms, opts);
-                    ms.Seek(0, SeekOrigin.Begin);
-                    byte[] report = ms.ToArray();
-                    Page.Response.ContentType = "application/pdf";
-                    Page.Response.Clear();
-                    Page.Response.OutputStream.Write(report, 0, report.Length);
+                        r.ExportToPdf(ms, opts);
+                        ms.Seek(0, SeekOrigin.Begin);
+                        byte[] report = ms.ToArray();
+                        Page.Response.ContentType = "application/pdf";
+                        Page.Response.Clear();
+                        Page.Response.OutputStream.Write(report, 0, report.Length);
+                    }
                 }
-
-            }
-            if (Convert.ToInt32(rb_tipo.Value) == 4)
-            {
-                vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 4);
-                using (MemoryStream ms = new MemoryStream())
+                if (Convert.ToInt32(rb_tipo.Value) == 2)
                 {
+                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 2);
+                    using (MemoryStream ms = new MemoryStream())
+                    {
 
-                    r.Parameters["Num_Pallet"].Value = 0.ToString();
-                    r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
-                    r.Parameters["Num_Ubicacion"].Value = 3;
+                        r.Parameters["Num_Pallet"].Value = 0.ToString();
+                        r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                        r.Parameters["Num_Ubicacion"].Value = 1;
 
-                    r.CreateDocument();
-                    DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
-                    opts.ShowPrintDialogOnOpen = true;
+                        r.CreateDocument();
+                        DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                        opts.ShowPrintDialogOnOpen = true;
 
-                    r.ExportToPdf(ms, opts);
-                    ms.Seek(0, SeekOrigin.Begin);
-                    byte[] report = ms.ToArray();
-                    Page.Response.ContentType = "application/pdf";
-                    Page.Response.Clear();
-                    Page.Response.OutputStream.Write(report, 0, report.Length);
+                        r.ExportToPdf(ms, opts);
+                        ms.Seek(0, SeekOrigin.Begin);
+                        byte[] report = ms.ToArray();
+                        Page.Response.ContentType = "application/pdf";
+                        Page.Response.Clear();
+                        Page.Response.OutputStream.Write(report, 0, report.Length);
+                    }
                 }
+                if (Convert.ToInt32(rb_tipo.Value) == 3)
+                {
+                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 3);
+                    using (MemoryStream ms = new MemoryStream())
+                    {
 
+                        r.Parameters["Num_Pallet"].Value = 0.ToString();
+                        r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                        r.Parameters["Num_Ubicacion"].Value = 2;
+
+                        r.CreateDocument();
+                        DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                        opts.ShowPrintDialogOnOpen = true;
+
+                        r.ExportToPdf(ms, opts);
+                        ms.Seek(0, SeekOrigin.Begin);
+                        byte[] report = ms.ToArray();
+                        Page.Response.ContentType = "application/pdf";
+                        Page.Response.Clear();
+                        Page.Response.OutputStream.Write(report, 0, report.Length);
+                    }
+
+                }
+                if (Convert.ToInt32(rb_tipo.Value) == 4)
+                {
+                    vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(txt_npallet.Text), 4);
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+
+                        r.Parameters["Num_Pallet"].Value = 0.ToString();
+                        r.Parameters["Num_Recep"].Value = Convert.ToInt32(txt_npallet.Text);
+                        r.Parameters["Num_Ubicacion"].Value = 3;
+
+                        r.CreateDocument();
+                        DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                        opts.ShowPrintDialogOnOpen = true;
+
+                        r.ExportToPdf(ms, opts);
+                        ms.Seek(0, SeekOrigin.Begin);
+                        byte[] report = ms.ToArray();
+                        Page.Response.ContentType = "application/pdf";
+                        Page.Response.Clear();
+                        Page.Response.OutputStream.Write(report, 0, report.Length);
+                    }
+
+                }
             }
         }
 

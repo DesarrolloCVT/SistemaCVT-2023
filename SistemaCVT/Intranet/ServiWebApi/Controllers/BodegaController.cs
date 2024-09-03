@@ -8,6 +8,7 @@ using System.Web.Http;
 
 namespace ServiWebApi.Controllers
 {
+    //[Route("api/BodegaController")]
     public class BodegaController : ApiController
     {
         DBMLCVTDESAINTDataContext dbDsa = new DBMLCVTDESAINTDataContext();
@@ -56,6 +57,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
         public List<CVT_DatosLayout> ObtieneInfoLayout(int CodLayoutInfo)
         {
@@ -73,6 +75,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
 
         public List<VW_BODEGAS_XAMARIN> ObtieneBodegas()
@@ -90,7 +93,43 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
-  
+
+        [HttpGet]
+        public bool AgregaPalletTransferRF(int transferid, int packageid, string username)
+        {
+            bool ret = false;
+            try
+            {
+                WMSClass vWms = new WMSClass();
+                vWms.AgregaBultoTransferenciaRF(transferid, packageid, username);
+                ret = true;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return ret;
+        }
+
+        [HttpGet]
+        public List<Transfer> ObtieneTransferenciasAbiertas(int tranferencias)
+        {
+            List<Transfer> ret = new List<Transfer>();
+            try
+            {
+                ret = (from t in DBDatos.Transfer
+                       where t.Status.Equals(1)
+                       select t).ToList<Transfer>();
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return ret;
+        }
+
 
     }
 }

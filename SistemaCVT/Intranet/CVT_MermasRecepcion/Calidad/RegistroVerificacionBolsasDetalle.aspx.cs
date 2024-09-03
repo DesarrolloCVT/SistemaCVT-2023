@@ -22,7 +22,7 @@ namespace CVT_MermasRecepcion.Calidad
             CVT_RegistroVerificacionBolsasDetalle rvb = new CVT_RegistroVerificacionBolsasDetalle();
 
             rvb.Id_VerificacionBolsas = Convert.ToInt32(Session["Id_VerificacionBolsas"]);
-            rvb.Hora = TimeSpan.Parse(txtHora.Text);
+            rvb.Hora = TimeSpan.Parse(DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString());
             rvb.Fecha_elaboracion = Convert.ToInt16(cboFechElab.Value);
             rvb.Fecha_vencimiento = Convert.ToInt16(cboFechVenc.Value);
             rvb.Lote_Correcto = Convert.ToInt16(cboLoteCorrecto.Value);

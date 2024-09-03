@@ -1346,12 +1346,6 @@
         <elementListCompartment Id="980e5f1c-c1c6-4152-95ef-47c3c40c138e" absoluteBounds="19.64, 8.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4a002d3c-19fd-48ad-b5ed-8e1d3864bac2" isExpanded="false" absoluteBounds="19.625, 9, 2, 0.45">
-      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_ConfGrupoArticulos" />
-      <nestedChildShapes>
-        <elementListCompartment Id="488e0502-4718-41fc-a355-4fe51ef95168" absoluteBounds="19.64, 9.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="b46754d2-4ce9-4c2a-a153-351196ff3165" isExpanded="false" absoluteBounds="19.625, 9.5, 2, 0.45">
       <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/VW_MENUXAMARIN" />
       <nestedChildShapes>
@@ -2514,6 +2508,24 @@
       <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_MenusXPerfil" />
       <nestedChildShapes>
         <elementListCompartment Id="2cfd7f85-483c-4a3a-98b3-53bd7e2d0af4" absoluteBounds="4.765, 26.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f59bf4ce-6a6d-4121-b732-4a19b82c5829" isExpanded="false" absoluteBounds="2.5, 32, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_CA_ProveedoresNacionales" />
+      <nestedChildShapes>
+        <elementListCompartment Id="baf264a8-cb04-4e4c-a7cc-2547ef4b64f0" absoluteBounds="2.515, 32.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="045de7af-bf28-4402-a386-3de51481093e" isExpanded="false" absoluteBounds="2.625, 32.5, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_OCAbiertas_EERR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="04edc3fc-c665-4042-9942-c599e3703178" absoluteBounds="2.64, 32.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2723c32b-eceb-4b78-93a5-0de810df4df9" isExpanded="false" absoluteBounds="19.625, 9, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_ConfGrupoArticulos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d29d8a87-6fde-49f8-b0c0-638b3be75f7a" absoluteBounds="19.64, 9.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

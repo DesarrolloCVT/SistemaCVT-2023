@@ -24,6 +24,15 @@ namespace CVT_MermasRecepcion.UtilidadCVT
         protected global::DevExpress.Web.ASPxRadioButtonList rb_tipo;
 
         /// <summary>
+        /// Control rb_Etiqueta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxRadioButtonList rb_Etiqueta;
+
+        /// <summary>
         /// Control ASPxLabel2.
         /// </summary>
         /// <remarks>

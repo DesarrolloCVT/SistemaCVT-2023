@@ -235,12 +235,14 @@ namespace CVT_MermasRecepcion.WMS
                 WMSClass vWMS = new WMSClass();
                 if (chk_tipo.Value.ToString() == "1")
                 {
-                    if (vWMS.VerificaReservaPallet(txt_origen.Text) == 0)
+                    if (txt_destino.Text != string.Empty)
                     {
-                        if (vWMS.VerificaReservaPallet(txt_destino.Text) == 0)
+                        if (vWMS.VerificaReservaPallet(txt_origen.Text) == 0)
                         {
-                            if (vWMS.RepaletizaConDestino(txt_origen.Text, txt_destino.Text, Convert.ToInt32(txt_cantidad.Text), Session["CIDUsuario"].ToString()))
+                            if (vWMS.VerificaReservaPallet(txt_destino.Text) == 0)
                             {
+                                if (vWMS.RepaletizaConDestino(txt_origen.Text, txt_destino.Text, Convert.ToInt32(txt_cantidad.Text), Session["CIDUsuario"].ToString()))
+                                {
                                 LogClass vLog = new LogClass();
                                 vLog.LOGUsabilidad(Convert.ToInt32(Session["IDCVTUsuario"]), 20, "Crea Repalletizado");
                                 #region Limpia Componentes
@@ -263,65 +265,72 @@ namespace CVT_MermasRecepcion.WMS
                                 lbl_cantrepaletizar.Visible = false;
                                 lbl_compatible.Visible = false;
                                 #endregion
+                                }
+                            }
+                            else
+                            {
+                            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('Pallet destino posee reserva, no es posible realizar repaletizado');", true);
                             }
                         }
                         else
                         {
-                            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('Pallet destino posee reserva, no es posible realizar repaletizado');", true);
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert(' pallet origen posee reserva,no es posible realizar repaletizado');", true);
                         }
                     }
                     else
                     {
-                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert(' pallet origen posee reserva,no es posible realizar repaletizado');", true);
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('Debe ingresar Pallet destino');", true);
                     }
                 }
                 else
                 {
                     try
                     {
-                        if (Convert.ToInt32(lbl_cantidad.Text) >= Convert.ToInt32(txt_cantidad.Text))
-                        {
-                            if (vWMS.VerificaReservaPallet(txt_origen.Text) == 0)
+                        
+                            if (Convert.ToInt32(lbl_cantidad.Text) >= Convert.ToInt32(txt_cantidad.Text))
                             {
-                                string Npallet = vWMS.RepaletizaNuevo(txt_origen.Text, Convert.ToInt32(txt_cantidad.Text), Session["CIDUsuario"].ToString());
-                                LogClass vLog = new LogClass();
-                                vLog.LOGUsabilidad(Convert.ToInt32(Session["IDCVTUsuario"]), 20, "Crea Repalletizado");
-                                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('Su Nuevo Pallet es: " + Npallet + "');", true);
+                                if (vWMS.VerificaReservaPallet(txt_origen.Text) == 0)
+                                {
+                                    string Npallet = vWMS.RepaletizaNuevo(txt_origen.Text, Convert.ToInt32(txt_cantidad.Text), Session["CIDUsuario"].ToString());
+                                    LogClass vLog = new LogClass();
+                                    vLog.LOGUsabilidad(Convert.ToInt32(Session["IDCVTUsuario"]), 20, "Crea Repalletizado");
+                                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('Su Nuevo Pallet es: " + Npallet + "');", true);
 
-                                #region AccTipoPallet
-                                vWMS.ActualizaTipoPallet(Convert.ToInt32(Npallet), Convert.ToInt32(cboTipoPallet.Value));
-                                #endregion
-                                #region Limpia Componentes
-                                txt_origen.Text = string.Empty;
-                                lbl_codproducto.Text = string.Empty;
-                                lbl_producto.Text = string.Empty;
-                                lbl_lote.Text = string.Empty;
-                                lbl_cantidad.Text = string.Empty;
-                                txt_destino.Text = string.Empty;
-                                lbl_dcodproducto.Visible = false;
-                                lbl_dcodproducto.Text = string.Empty;
-                                lbl_dproducto.Visible = false;
-                                lbl_dproducto.Text = string.Empty;
-                                lbl_dlote.Visible = false;
-                                lbl_dlote.Text = string.Empty;
-                                lbl_dcantidad.Visible = false;
-                                lbl_dcantidad.Text = string.Empty;
-                                //txt_cantidad.Visible=false;
-                                txt_cantidad.Text = string.Empty;
-                                lbl_cantrepaletizar.Visible = false;
-                                lbl_compatible.Visible = false;
-                                #endregion
+                                    #region AccTipoPallet
+                                    vWMS.ActualizaTipoPallet(Convert.ToInt32(Npallet), Convert.ToInt32(cboTipoPallet.Value));
+                                    #endregion
+                                    #region Limpia Componentes
+                                    txt_origen.Text = string.Empty;
+                                    lbl_codproducto.Text = string.Empty;
+                                    lbl_producto.Text = string.Empty;
+                                    lbl_lote.Text = string.Empty;
+                                    lbl_cantidad.Text = string.Empty;
+                                    txt_destino.Text = string.Empty;
+                                    lbl_dcodproducto.Visible = false;
+                                    lbl_dcodproducto.Text = string.Empty;
+                                    lbl_dproducto.Visible = false;
+                                    lbl_dproducto.Text = string.Empty;
+                                    lbl_dlote.Visible = false;
+                                    lbl_dlote.Text = string.Empty;
+                                    lbl_dcantidad.Visible = false;
+                                    lbl_dcantidad.Text = string.Empty;
+                                    //txt_cantidad.Visible=false;
+                                    txt_cantidad.Text = string.Empty;
+                                    lbl_cantrepaletizar.Visible = false;
+                                    lbl_compatible.Visible = false;
+                                    #endregion
 
+                                }
+                                else
+                                {
+                                    ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('Pallet Origen posee reserva, no es posible realizar repaletizado');", true);
+                                }
                             }
                             else
                             {
-                                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('Pallet Origen posee reserva, no es posible realizar repaletizado');", true);
+                                ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('Excede cantidad permitida');", true);
                             }
-                        }
-                        else
-                        {
-                            ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('Excede cantidad permitida');", true);
-                        }
+                        
                     }
                     catch (Exception)
                     {

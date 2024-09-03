@@ -987,6 +987,77 @@ namespace DBMermasRecepcion
             }
             return ret;
         }
+        public bool AgregaBultoTransferenciaRF(int transferid, int packageid,  string username)
+        {
+            bool ret = false;
+            int artId = 0;
+            string lote = string.Empty;
+            int cantidad = 0;
+            int? layoutID = 0;
+            int sitioid = 0;
+
+            try
+            {
+                IQueryable<Package> queryable = from t in this.DBDatos.Package
+                                                where t.Package_Id.Equals(packageid)
+                                                select t;
+                foreach (Package package in queryable)
+                {
+                    lote = package.Package_Lot;
+                    artId = package.ArticleProvider_Id;
+                    cantidad = package.Package_Quantity;
+                    layoutID = package.Layout_Id;
+                    package.Package_ReserveQuantity = package.Package_Quantity;
+
+                }
+                this.DBDatos.SubmitChanges();
+                IQueryable<Layout> queryable1 = from t in this.DBDatos.Layout
+                                                where t.Layout_Id.Equals(layoutID)
+                                                select t;
+                foreach (Layout layoutq in queryable1)
+                {
+                    sitioid = layoutq.Site_Id;
+                }
+                
+                Transfer_Detail vTD = new Transfer_Detail();
+                vTD.Transfer_Id = transferid;
+                vTD.Task_Id = 0;
+                vTD.Status = 1;
+                vTD.Site_Id = sitioid;
+                vTD.Package_Id = packageid;
+                vTD.Layout_Id_Actual = layoutID;
+                vTD.Date = DateTime.Now;
+                vTD.Company_Id = 1;
+                DBDatos.Transfer_Detail.InsertOnSubmit(vTD);
+                DBDatos.SubmitChanges();
+
+                
+
+
+                Reserve vRE = new Reserve();
+                vRE.Company_Id = 1;
+                vRE.Package_Id = packageid;
+                vRE.Layout_Id = layoutID;
+                vRE.ArticleProvider_Id = artId;
+                vRE.Lot = lote;
+                vRE.Reserve_Quantity = cantidad;
+                vRE.Reserve_Status = 1;
+                vRE.Reserve_Date = DateTime.Now;
+                vRE.Staff_Id = ObtieneIdStaff(username);
+                vRE.Transfer_Id = transferid;
+
+                DBDatos.Reserve.InsertOnSubmit(vRE);
+                DBDatos.SubmitChanges();
+                ret = true;
+
+            }
+            catch (Exception er)
+            {
+                string error = er.Message;
+
+            }
+            return ret;
+        }
         public bool EliminaBultoTransferencia(int transferid, int packageid)
         {
             bool ret = false;

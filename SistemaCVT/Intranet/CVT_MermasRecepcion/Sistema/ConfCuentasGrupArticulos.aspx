@@ -70,8 +70,17 @@
                     <PropertiesComboBox DataSourceID="lqsGrupArticulo" TextField="ItmsGrpNam" ValueField="ItmsGrpCod">
                     </PropertiesComboBox>
                 </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataTextColumn FieldName="ctaMuestra" VisibleIndex="6">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="ctaAjuste" VisibleIndex="7">
+                </dx:GridViewDataTextColumn>
             </Columns>
             <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="Default" />
+
+<SettingsPopup>
+<FilterControl AutoUpdatePosition="False"></FilterControl>
+</SettingsPopup>
+
             <SettingsSearchPanel CustomEditorID="tbToolbarSearch" />
         </dx:ASPxGridView>
         <asp:LinqDataSource ID="LqsConfCuentGrupoArticulos" runat="server" ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EnableDelete="True" EnableInsert="True" EnableUpdate="True" EntityTypeName="" TableName="CVT_ConfGrupoArticulos">

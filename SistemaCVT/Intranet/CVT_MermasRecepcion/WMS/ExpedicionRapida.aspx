@@ -197,6 +197,8 @@
                             <dx:ListEditItem Text="FALTANTE PROVEEDOR" Value="300300" />
                             <dx:ListEditItem Text="DESECHO" Value="300100" />
                             <dx:ListEditItem Text="SIN SINCRONIZACION " Value="00" />
+                            <dx:ListEditItem Text="AJUSTE INVENTARIO" Value="300500" />
+                            <dx:ListEditItem Text="MUESTRA CALIDAD" Value="300400" />
                         </Items>
                         <ValidationSettings Display="Dynamic">
                             <RequiredField IsRequired="True" />
@@ -235,6 +237,11 @@
                 </FocusedRow>
             </Styles>
             <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="Default" />
+
+<SettingsPopup>
+<FilterControl AutoUpdatePosition="False"></FilterControl>
+</SettingsPopup>
+
             <SettingsSearchPanel CustomEditorID="tbToolbarSearch" />
         </dx:ASPxGridView>
         <asp:LinqDataSource ID="LqsExpedicion" runat="server" ContextTypeName="DBMermasRecepcion.DBMLCVTWMSDataContext" EntityTypeName="" TableName="Expedition" Where="Expedition_DateIn &gt;= @Expedition_DateIn &amp;&amp; Expedition_DateIn &lt;= @Expedition_DateIn1" OrderBy="Expedition_DateIn desc" EnableDelete="True" EnableInsert="True" EnableUpdate="True">

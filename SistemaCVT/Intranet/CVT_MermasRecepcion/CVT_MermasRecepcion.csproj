@@ -928,6 +928,7 @@
     <Content Include="Porteria\ControlAcceso.aspx" />
     <Content Include="Porteria\ControlAccesoCamiones.aspx" />
     <Content Include="Porteria\LibroNovedades.aspx" />
+    <Content Include="Porteria\ProveedoresNacionales.aspx" />
     <Content Include="Porteria\RegistroRondas.aspx" />
     <Content Include="Porteria\Visitas.aspx" />
     <Content Include="PRiesgo\CheckExtintores.aspx" />
@@ -2703,6 +2704,13 @@
     <Compile Include="Porteria\LibroNovedades.aspx.designer.cs">
       <DependentUpon>LibroNovedades.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Porteria\ProveedoresNacionales.aspx.cs">
+      <DependentUpon>ProveedoresNacionales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Porteria\ProveedoresNacionales.aspx.designer.cs">
+      <DependentUpon>ProveedoresNacionales.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Porteria\RegistroRondas.aspx.cs">
       <DependentUpon>RegistroRondas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2797,6 +2805,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="QrPallets300.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QrPallets300.Designer.cs">
+      <DependentUpon>QrPallets300.cs</DependentUpon>
     </Compile>
     <Compile Include="QrPallets.cs">
       <SubType>Component</SubType>
@@ -5399,6 +5413,12 @@
     <Compile Include="Trazabilidad\ResumenReclamoClienteImportado.aspx.designer.cs">
       <DependentUpon>ResumenReclamoClienteImportado.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UtilidadCVT\EtiquetaQr100x300MP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UtilidadCVT\EtiquetaQr100x300.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UtilidadCVT\EtiquetaQr1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -5874,6 +5894,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="QrPallets300.resx">
+      <DependentUpon>QrPallets300.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QrPallets.resx">
       <DependentUpon>QrPallets.cs</DependentUpon>
     </EmbeddedResource>
@@ -6049,6 +6072,12 @@
     <EmbeddedResource Include="SMM_FlujoCaja.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>SMM_FlujoCaja.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UtilidadCVT\EtiquetaQr100x300MP.resx">
+      <DependentUpon>EtiquetaQr100x300MP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UtilidadCVT\EtiquetaQr100x300.resx">
+      <DependentUpon>EtiquetaQr100x300.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UtilidadCVT\EtiquetaQr1.resx">
       <DependentUpon>EtiquetaQr1.cs</DependentUpon>

@@ -93,6 +93,10 @@
                     </PropertiesComboBox>
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataComboBoxColumn>
+                <dx:GridViewDataTextColumn FieldName="UbicacionAnterior" VisibleIndex="14">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn Caption="Cantidad Sistema" FieldName="CantidadPallet" VisibleIndex="15">
+                </dx:GridViewDataTextColumn>
             </Columns>
             <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="Default" />
 

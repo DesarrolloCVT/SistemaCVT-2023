@@ -284,7 +284,31 @@ namespace DBMermasRecepcion
                 {
 
                    tr.FechaSalida=DateTime.Now;
-                    
+                    ret = true;
+                }
+                this.DBDesaint.SubmitChanges();
+            }
+            catch (Exception)
+            {
+
+
+            }
+            return ret;
+        }
+        public bool IngresaHoraSalidaProvNac(int ID)
+        {
+            bool ret = false;
+            try
+            {
+                IQueryable<CVT_CA_ProveedoresNacionales> queryable = from t in this.DBDesaint.CVT_CA_ProveedoresNacionales
+                                                                 where t.CA_PN_ID.Equals(ID)
+                                                                 select t;
+                foreach (CVT_CA_ProveedoresNacionales tr in queryable)
+                {
+
+                    tr.FechaSalida = DateTime.Now;
+                    ret = true;
+
                 }
                 this.DBDesaint.SubmitChanges();
             }

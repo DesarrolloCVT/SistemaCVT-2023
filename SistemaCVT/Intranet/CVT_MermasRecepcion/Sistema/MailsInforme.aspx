@@ -71,6 +71,7 @@
                             <dx:ListEditItem Text="Inventario-Mayorista" Value="Inventario-Mayorista" />
                             <dx:ListEditItem Text="Mayorista-Valorizado" Value="Mayorista-Valorizado" />
                             <dx:ListEditItem Text="InformeVentas" Value="InformeVentas" />
+                            <dx:ListEditItem Text="VidaUtil" Value="VidaUtil" />
                             
                         </Items>
                     </PropertiesComboBox>

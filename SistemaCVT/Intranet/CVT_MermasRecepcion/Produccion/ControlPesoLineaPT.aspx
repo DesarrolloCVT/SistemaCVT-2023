@@ -414,7 +414,7 @@
                                 <tr>
                                     <td class="auto-style6">
                                         <dx:ASPxLabel ID="ASPxLabel13" runat="server" Text="Vaso 1" Font-Size="Medium" Font-Bold="true"></dx:ASPxLabel>
-                                        <dx:ASPxTextBox ID="txtVaso1" runat="server" Width="80px" Height="25px">
+                                        <dx:ASPxTextBox ID="txtVaso1" runat="server" Width="80px" Height="25px" AutoCompleteType="Disabled">
                                             <ValidationSettings Display="Dynamic">
                                                 <RegularExpression ErrorText="*" ValidationExpression="\d+" />
                                                 <RequiredField IsRequired="True" />
@@ -424,7 +424,7 @@
                                     <td class="auto-style7"></td>
                                     <td class="auto-style6">
                                         <dx:ASPxLabel ID="ASPxLabel14" runat="server" Text="Vaso 2" Font-Size="Medium" Font-Bold="true"></dx:ASPxLabel>
-                                        <dx:ASPxTextBox ID="txtVaso2" runat="server" Width="80px" Height="25px">
+                                        <dx:ASPxTextBox ID="txtVaso2" runat="server" Width="80px" Height="25px" AutoCompleteType="Disabled">
                                             <ValidationSettings Display="Dynamic">
                                                 <RegularExpression ErrorText="*" ValidationExpression="\d+" />
                                                 <RequiredField IsRequired="True" />
@@ -434,7 +434,7 @@
                                     <td class="auto-style7"></td>
                                     <td class="auto-style6">
                                         <dx:ASPxLabel ID="ASPxLabel15" runat="server" Text="Vaso 3" Font-Size="Medium" Font-Bold="true"></dx:ASPxLabel>
-                                        <dx:ASPxTextBox ID="txtVaso3" runat="server" Width="80px" Height="25px">
+                                        <dx:ASPxTextBox ID="txtVaso3" runat="server" Width="80px" Height="25px" AutoCompleteType="Disabled">
                                             <ValidationSettings Display="Dynamic">
                                                 <RegularExpression ErrorText="*" ValidationExpression="\d+" />
                                                 <RequiredField IsRequired="True" />
@@ -444,7 +444,7 @@
                                     <td class="auto-style7"></td>
                                     <td class="auto-style6">
                                         <dx:ASPxLabel ID="ASPxLabel16" runat="server" Text="Vaso 4" Font-Size="Medium" Font-Bold="true"></dx:ASPxLabel>
-                                        <dx:ASPxTextBox ID="txtVaso4" runat="server" Width="80px" Height="25px">
+                                        <dx:ASPxTextBox ID="txtVaso4" runat="server" Width="80px" Height="25px" AutoCompleteType="Disabled">
                                             <ValidationSettings Display="Dynamic">
                                                 <RegularExpression ErrorText="*" ValidationExpression="\d+" />
                                                 <RequiredField IsRequired="True" />

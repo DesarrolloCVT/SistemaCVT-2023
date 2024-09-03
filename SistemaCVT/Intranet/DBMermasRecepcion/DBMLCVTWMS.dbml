@@ -1846,16 +1846,6 @@
       <Column Name="Familia" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SP_CONSULTAPOSICION_XAMARIN" Method="SP_CONSULTAPOSICION_XAMARIN">
-    <Parameter Name="idPosicion" Type="System.Int32" DbType="Int" />
-    <ElementType Name="SP_CONSULTAPOSICION_XAMARINResult">
-      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
-      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
-      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Package_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Staff_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.SP_RESUMEN_CONSULTAPOSICION_XAMARIN" Method="SP_RESUMEN_CONSULTAPOSICION_XAMARIN">
     <Parameter Name="idPosicion" Type="System.Int32" DbType="Int" />
     <ElementType Name="SP_RESUMEN_CONSULTAPOSICION_XAMARINResult">
@@ -2025,6 +2015,17 @@
       <Column Name="FechaMovimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="CodUbicacionOrigen" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="UbicacionOrigen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CONSULTAPOSICION_XAMARIN" Method="SP_CONSULTAPOSICION_XAMARIN">
+    <Parameter Name="idPosicion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_CONSULTAPOSICION_XAMARINResult">
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

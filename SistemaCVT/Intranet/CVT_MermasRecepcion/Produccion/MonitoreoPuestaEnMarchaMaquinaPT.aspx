@@ -1052,7 +1052,7 @@
                                 <tr>
                                     <td>
                                         <dx:ASPxLabel ID="ASPxLabel30" runat="server" Text="Cantidad" Font-Size="Medium" Font-Bold="true"></dx:ASPxLabel>
-                                        <dx:ASPxTextBox ID="txtCantCintaImp" runat="server" Width="170px" Height="30px">
+                                        <dx:ASPxTextBox ID="txtCantCintaImp" runat="server" Width="170px" Height="30px" AutoCompleteType="Disabled">
                                             <ValidationSettings Display="Dynamic" ValidationGroup="z1">
                                                 <RegularExpression ValidationExpression="\d+" />
                                                 <RequiredField IsRequired="True" />
@@ -1062,7 +1062,7 @@
                                     <td class="auto-style5"></td>
                                     <td>
                                         <dx:ASPxLabel ID="ASPxLabel31" runat="server" Text="Lote" Font-Size="Medium" Font-Bold="true"></dx:ASPxLabel>
-                                        <dx:ASPxTextBox ID="txtLoteCintImp" runat="server" Width="170px" Height="30px">
+                                        <dx:ASPxTextBox ID="txtLoteCintImp" runat="server" Width="170px" Height="30px" AutoCompleteType="Disabled">
                                             <ValidationSettings Display="Dynamic" ValidationGroup="z1">
                                                 <RequiredField IsRequired="True" />
                                             </ValidationSettings>

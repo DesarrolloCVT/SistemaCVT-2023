@@ -383,6 +383,7 @@
                                         <dx:ListEditItem Text="Orden de Compra" Value="22" />
                                         <dx:ListEditItem Text="Ajuste Entrada" Value="59" />
                                         <dx:ListEditItem Text="Factura Reserva" Value="18" />
+                                        <dx:ListEditItem Text="Sin Sincronizacion" Value="0" />
                                     </Items>
                                 </PropertiesComboBox>
                             </dx:GridViewDataComboBoxColumn>

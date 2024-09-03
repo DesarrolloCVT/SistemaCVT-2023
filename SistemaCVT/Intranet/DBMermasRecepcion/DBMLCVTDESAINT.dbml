@@ -2550,15 +2550,6 @@
       <Column Name="NombreAPP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.CVT_ConfGrupoArticulos" Member="CVT_ConfGrupoArticulos">
-    <Type Name="CVT_ConfGrupoArticulos">
-      <Column Name="Id_Grupo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ctaTransformacion" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="ctaDesecho" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="ctaHurto" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="ctaFaltante" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.VW_MENUXAMARIN" Member="VW_MENUXAMARIN">
     <Type Name="VW_MENUXAMARIN">
       <Column Name="idPerfil" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -5207,6 +5198,39 @@
       <Column Name="IdSubMenu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Nombre_SubMenu" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="URL_SubMenu" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_CA_ProveedoresNacionales" Member="CVT_CA_ProveedoresNacionales">
+    <Type Name="CVT_CA_ProveedoresNacionales">
+      <Column Name="CA_PN_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CardCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OC" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Empresa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoDocumento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroDocumento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaIngreso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaSalida" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Comentario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_OCAbiertas_EERR" Member="CVT_OCAbiertas_EERR">
+    <Type Name="CVT_OCAbiertas_EERR">
+      <Column Name="Empresa" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="CardName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DocNum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SlpName" Type="System.String" DbType="NVarChar(155) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_ConfGrupoArticulos" Member="CVT_ConfGrupoArticulos">
+    <Type Name="CVT_ConfGrupoArticulos">
+      <Column Name="Id_Grupo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ctaTransformacion" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ctaDesecho" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ctaHurto" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ctaFaltante" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ctaAjuste" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ctaMuestra" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.CVT_AGENDAPROD_LeeStockReceta" Method="CVT_AGENDAPROD_LeeStockReceta">

@@ -1129,13 +1129,6 @@ namespace DBMermasRecepcion
 			return ((ISingleResult<CVT_TRANSFERENCIAS_EFECTUADASResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CONSULTAPOSICION_XAMARIN")]
-		public ISingleResult<SP_CONSULTAPOSICION_XAMARINResult> SP_CONSULTAPOSICION_XAMARIN([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idPosicion)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idPosicion);
-			return ((ISingleResult<SP_CONSULTAPOSICION_XAMARINResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_RESUMEN_CONSULTAPOSICION_XAMARIN")]
 		public ISingleResult<SP_RESUMEN_CONSULTAPOSICION_XAMARINResult> SP_RESUMEN_CONSULTAPOSICION_XAMARIN([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idPosicion)
 		{
@@ -1218,6 +1211,13 @@ namespace DBMermasRecepcion
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fecha);
 			return ((ISingleResult<SP_PosicionamientosFechaResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_CONSULTAPOSICION_XAMARIN")]
+		public ISingleResult<SP_CONSULTAPOSICION_XAMARINResult> SP_CONSULTAPOSICION_XAMARIN([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idPosicion)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idPosicion);
+			return ((ISingleResult<SP_CONSULTAPOSICION_XAMARINResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -30512,104 +30512,6 @@ namespace DBMermasRecepcion
 		}
 	}
 	
-	public partial class SP_CONSULTAPOSICION_XAMARINResult
-	{
-		
-		private string _Package_SSCC;
-		
-		private string _ArticleProvider_CodClient;
-		
-		private string _ArticleProvider_Description;
-		
-		private int _Package_Quantity;
-		
-		private string _Staff_Name;
-		
-		public SP_CONSULTAPOSICION_XAMARINResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Package_SSCC", DbType="VarChar(128)")]
-		public string Package_SSCC
-		{
-			get
-			{
-				return this._Package_SSCC;
-			}
-			set
-			{
-				if ((this._Package_SSCC != value))
-				{
-					this._Package_SSCC = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArticleProvider_CodClient", DbType="VarChar(128)")]
-		public string ArticleProvider_CodClient
-		{
-			get
-			{
-				return this._ArticleProvider_CodClient;
-			}
-			set
-			{
-				if ((this._ArticleProvider_CodClient != value))
-				{
-					this._ArticleProvider_CodClient = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArticleProvider_Description", DbType="VarChar(MAX)")]
-		public string ArticleProvider_Description
-		{
-			get
-			{
-				return this._ArticleProvider_Description;
-			}
-			set
-			{
-				if ((this._ArticleProvider_Description != value))
-				{
-					this._ArticleProvider_Description = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Package_Quantity", DbType="Int NOT NULL")]
-		public int Package_Quantity
-		{
-			get
-			{
-				return this._Package_Quantity;
-			}
-			set
-			{
-				if ((this._Package_Quantity != value))
-				{
-					this._Package_Quantity = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Staff_Name", DbType="VarChar(50)")]
-		public string Staff_Name
-		{
-			get
-			{
-				return this._Staff_Name;
-			}
-			set
-			{
-				if ((this._Staff_Name != value))
-				{
-					this._Staff_Name = value;
-				}
-			}
-		}
-	}
-	
 	public partial class SP_RESUMEN_CONSULTAPOSICION_XAMARINResult
 	{
 		
@@ -32415,6 +32317,122 @@ namespace DBMermasRecepcion
 				if ((this._UbicacionOrigen != value))
 				{
 					this._UbicacionOrigen = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_CONSULTAPOSICION_XAMARINResult
+	{
+		
+		private string _Package_SSCC;
+		
+		private string _ArticleProvider_CodClient;
+		
+		private string _ArticleProvider_Description;
+		
+		private int _Package_Quantity;
+		
+		private string _Staff_Name;
+		
+		private System.DateTime _Package_ProductionDate;
+		
+		public SP_CONSULTAPOSICION_XAMARINResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Package_SSCC", DbType="VarChar(128)")]
+		public string Package_SSCC
+		{
+			get
+			{
+				return this._Package_SSCC;
+			}
+			set
+			{
+				if ((this._Package_SSCC != value))
+				{
+					this._Package_SSCC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArticleProvider_CodClient", DbType="VarChar(128)")]
+		public string ArticleProvider_CodClient
+		{
+			get
+			{
+				return this._ArticleProvider_CodClient;
+			}
+			set
+			{
+				if ((this._ArticleProvider_CodClient != value))
+				{
+					this._ArticleProvider_CodClient = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArticleProvider_Description", DbType="VarChar(MAX)")]
+		public string ArticleProvider_Description
+		{
+			get
+			{
+				return this._ArticleProvider_Description;
+			}
+			set
+			{
+				if ((this._ArticleProvider_Description != value))
+				{
+					this._ArticleProvider_Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Package_Quantity", DbType="Int NOT NULL")]
+		public int Package_Quantity
+		{
+			get
+			{
+				return this._Package_Quantity;
+			}
+			set
+			{
+				if ((this._Package_Quantity != value))
+				{
+					this._Package_Quantity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Staff_Name", DbType="VarChar(50)")]
+		public string Staff_Name
+		{
+			get
+			{
+				return this._Staff_Name;
+			}
+			set
+			{
+				if ((this._Staff_Name != value))
+				{
+					this._Staff_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Package_ProductionDate", DbType="DateTime NOT NULL")]
+		public System.DateTime Package_ProductionDate
+		{
+			get
+			{
+				return this._Package_ProductionDate;
+			}
+			set
+			{
+				if ((this._Package_ProductionDate != value))
+				{
+					this._Package_ProductionDate = value;
 				}
 			}
 		}

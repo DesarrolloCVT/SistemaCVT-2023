@@ -44,6 +44,13 @@
                     ImageUrl="~/App_Themes/IDA/ui/ico-file-excel.png" OnClick="cmdExcel_Click"
                     Style="width: 20px" />
                 Exportar Excel</a>--%>
+            <dx:ASPxComboBox ID="cbo_etiqueta" runat="server" SelectedIndex="0">
+                <Items>
+                    <dx:ListEditItem Selected="True" Text="Etiqueta 100x150" Value="1" />
+                    <dx:ListEditItem Text="Etiqueta 100x300 PT" Value="2" />
+                    <dx:ListEditItem Text="Etiqueta 100x300 MP" Value="3" />
+                </Items>
+            </dx:ASPxComboBox>
             <a>
                 <asp:ImageButton ID="cmdImprimir" runat="server"
                     ImageUrl="~/App_Themes/IDA/ui/ico-print.png" OnClick="cmdImprimir_Click"

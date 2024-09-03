@@ -44,7 +44,17 @@
                         </Items>
                     </dx:ASPxRadioButtonList>
                 </td>
-                <td>&nbsp;</td>
+                <td>
+                    <dx:ASPxRadioButtonList ID="rb_Etiqueta" runat="server" SelectedIndex="0" Border-BorderStyle="None" Theme="MaterialCompact">
+                        <Items>
+                            <dx:ListEditItem Selected="True" Text="Etiqueta 100 x 150 normal" Value="1" />
+                            <dx:ListEditItem Text="Etiqueta 100 x 300 PT" Value="2" />
+                            <dx:ListEditItem Text="Etiqueta 100 X 300 MP" Value="3" />
+                        </Items>
+
+<Border BorderStyle="None"></Border>
+                    </dx:ASPxRadioButtonList>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -128,7 +138,7 @@
         </div>
     </div>
     <br />
-   <%-- <script>
+       <%-- <script>
         function documentViewer_Print() {
             btnPrint.DoClick();
         } 

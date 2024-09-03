@@ -24,6 +24,15 @@ namespace CVT_MermasRecepcion.WMS
         protected global::DevExpress.Web.ASPxLabel lbl_recepcion;
 
         /// <summary>
+        /// Control cbo_etiqueta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxComboBox cbo_etiqueta;
+
+        /// <summary>
         /// Control cmdImprimir.
         /// </summary>
         /// <remarks>

@@ -56,7 +56,7 @@ namespace CVT_MermasRecepcion.Calidad.Inspecciones
             DateTime fmon = new DateTime(ano, mes, dia, 0, 0, 0);
 
             md.Producto = txtProducto.Text;
-            md.HoraMonitoreo = TimeSpan.Parse(txtHora.Text);
+            md.HoraMonitoreo = TimeSpan.Parse(DateTime.Now.Hour.ToString() + ":" + DateTime.Now.Minute.ToString());
             md.DetectaFE25mm = Convert.ToInt16(cboFE25mm.Value);
             md.NoFE30mm = Convert.ToInt16(cboNOFE30mm.Value);
             md.Acero25mm = Convert.ToInt16(cboAcero25mm.Value);

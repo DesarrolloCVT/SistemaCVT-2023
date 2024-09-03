@@ -131,37 +131,66 @@ namespace CVT_MermasRecepcion.WMS
         {
             WMSClass vWMS = new WMSClass();
             LogClass vLog = new LogClass();
+            if (Convert.ToInt32(cbo_etiqueta.Value) == 1)
+            {
+                EtiquetaQr1 report = new EtiquetaQr1();
 
-            EtiquetaQr1 report = new EtiquetaQr1();
+                int usuario = vWMS.ObtieneIdStaff(Session["CIDUsuario"].ToString());
 
-            int usuario = vWMS.ObtieneIdStaff(Session["CIDUsuario"].ToString());
-            //ReportDocument Info = new ReportDocument();
-            //Info.Load(Server.MapPath("~/EtiquetaPallet_Vertical.rpt"));
-            //Info.SetDatabaseLogon("sa", "cvt.vdp22$");
+                vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(Session["RecepcionId"].ToString()), 2);
 
-            //Info.SetParameterValue(0, "0");
-            //Info.SetParameterValue(1, Convert.ToInt32(Session["RecepcionId"].ToString()));
-            //Info.SetParameterValue(2, 1);
-            vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(Session["RecepcionId"].ToString()), 2);
-            //Response.Buffer = false;
-            //Response.Clear();
-
-            ////////////////////////////// Info.ExportToDisk(ExportFormatType.PortableDocFormat, @"C:\Users\mrivero\Desktop\report.pdf");
-
-            //Info.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "report.pdf");
-
-            PopEtiquetaNueva.ShowOnPageLoad = true;
+                PopEtiquetaNueva.ShowOnPageLoad = true;
 
 
-            report.Parameters["Num_Pallet"].Value = 0;
-            report.Parameters["Num_Recep"].Value = Convert.ToInt32(Convert.ToInt32(Session["RecepcionId"].ToString()));
-            report.Parameters["Num_Ubicacion"].Value = 1;
-            ASPxWebDocumentViewer1.OpenReport(new CachedReportSourceWeb(report));
+                report.Parameters["Num_Pallet"].Value = 0;
+                report.Parameters["Num_Recep"].Value = Convert.ToInt32(Convert.ToInt32(Session["RecepcionId"].ToString()));
+                report.Parameters["Num_Ubicacion"].Value = 1;
+                ASPxWebDocumentViewer1.OpenReport(new CachedReportSourceWeb(report));
 
-            report.Parameters["Num_Pallet"].Visible = false;
-            report.Parameters["Num_Recep"].Visible = false;
-            report.Parameters["Num_Ubicacion"].Visible = false;
+                report.Parameters["Num_Pallet"].Visible = false;
+                report.Parameters["Num_Recep"].Visible = false;
+                report.Parameters["Num_Ubicacion"].Visible = false;
+            }
+            if (Convert.ToInt32(cbo_etiqueta.Value) == 2)
+            {
+                EtiquetaQr100x300 report = new EtiquetaQr100x300();
 
+                int usuario = vWMS.ObtieneIdStaff(Session["CIDUsuario"].ToString());
+
+                vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(Session["RecepcionId"].ToString()), 2);
+
+                PopEtiquetaNueva.ShowOnPageLoad = true;
+
+
+                report.Parameters["Num_Pallet"].Value = 0;
+                report.Parameters["Num_Recep"].Value = Convert.ToInt32(Convert.ToInt32(Session["RecepcionId"].ToString()));
+                report.Parameters["Num_Ubicacion"].Value = 1;
+                ASPxWebDocumentViewer1.OpenReport(new CachedReportSourceWeb(report));
+
+                report.Parameters["Num_Pallet"].Visible = false;
+                report.Parameters["Num_Recep"].Visible = false;
+                report.Parameters["Num_Ubicacion"].Visible = false;
+            }
+            if (Convert.ToInt32(cbo_etiqueta.Value) == 3)
+            {
+                EtiquetaQr100x300MP report = new EtiquetaQr100x300MP();
+
+                int usuario = vWMS.ObtieneIdStaff(Session["CIDUsuario"].ToString());
+
+                vLog.InsertaRegistroImpresion(usuario, Convert.ToInt32(Session["RecepcionId"].ToString()), 2);
+
+                PopEtiquetaNueva.ShowOnPageLoad = true;
+
+
+                report.Parameters["Num_Pallet"].Value = 0;
+                report.Parameters["Num_Recep"].Value = Convert.ToInt32(Convert.ToInt32(Session["RecepcionId"].ToString()));
+                report.Parameters["Num_Ubicacion"].Value = 1;
+                ASPxWebDocumentViewer1.OpenReport(new CachedReportSourceWeb(report));
+
+                report.Parameters["Num_Pallet"].Visible = false;
+                report.Parameters["Num_Recep"].Visible = false;
+                report.Parameters["Num_Ubicacion"].Visible = false;
+            }
         }
 
         protected void GvDatos_ToolbarItemClick(object source, DevExpress.Web.Data.ASPxGridViewToolbarItemClickEventArgs e)
