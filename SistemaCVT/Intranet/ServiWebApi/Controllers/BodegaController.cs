@@ -1,6 +1,7 @@
 ﻿using DBMermasRecepcion;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -13,6 +14,22 @@ namespace ServiWebApi.Controllers
     {
         DBMLCVTDESAINTDataContext dbDsa = new DBMLCVTDESAINTDataContext();
         DBMLCVTWMSDataContext DBDatos = new DBMLCVTWMSDataContext();
+
+        [HttpGet]
+        public DataTable GetConsultaTransferencias(int transferId)
+        {
+            DataTable ret = new DataTable();
+            try
+            {
+                DBDatos.CommandTimeout = 60000;
+                ret = Utilidades.LINQToDataTable(DBDatos.SP_ConsultaTransferencia(transferId));
+            }
+            catch (Exception)
+            {
+
+            }
+            return ret;
+        }
 
         [HttpGet]
         public int ObtieneSiteLayout(int? layoutid)

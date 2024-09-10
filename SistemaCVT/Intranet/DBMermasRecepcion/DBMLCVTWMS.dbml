@@ -1888,6 +1888,19 @@
       <Column Name="Reception_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.SP_ConsultaTransferencia" Method="SP_ConsultaTransferencia">
+    <Parameter Name="transferId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_ConsultaTransferenciaResult">
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Package_SSCC" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_CodClient" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArticleProvider_Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Package_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Site_ShortDescription" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Package_ProductionDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Layout_ShortDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.CVT_SP_TRAZABILIDAD" Method="CVT_SP_TRAZABILIDAD">
     <Parameter Name="lote" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Tipo" Parameter="tipo" Type="System.Int32" DbType="Int" />
