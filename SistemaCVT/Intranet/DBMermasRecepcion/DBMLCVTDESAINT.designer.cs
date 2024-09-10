@@ -864,6 +864,12 @@ namespace DBMermasRecepcion
     partial void InsertCVT_ConfGrupoArticulos(CVT_ConfGrupoArticulos instance);
     partial void UpdateCVT_ConfGrupoArticulos(CVT_ConfGrupoArticulos instance);
     partial void DeleteCVT_ConfGrupoArticulos(CVT_ConfGrupoArticulos instance);
+    partial void InsertCVT_EntradaInsumos(CVT_EntradaInsumos instance);
+    partial void UpdateCVT_EntradaInsumos(CVT_EntradaInsumos instance);
+    partial void DeleteCVT_EntradaInsumos(CVT_EntradaInsumos instance);
+    partial void InsertCVT_EntradaInsumosDetalle(CVT_EntradaInsumosDetalle instance);
+    partial void UpdateCVT_EntradaInsumosDetalle(CVT_EntradaInsumosDetalle instance);
+    partial void DeleteCVT_EntradaInsumosDetalle(CVT_EntradaInsumosDetalle instance);
     #endregion
 		
 		public DBMLCVTDESAINTDataContext() : 
@@ -4261,6 +4267,22 @@ namespace DBMermasRecepcion
 			get
 			{
 				return this.GetTable<CVT_ConfGrupoArticulos>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CVT_EntradaInsumos> CVT_EntradaInsumos
+		{
+			get
+			{
+				return this.GetTable<CVT_EntradaInsumos>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CVT_EntradaInsumosDetalle> CVT_EntradaInsumosDetalle
+		{
+			get
+			{
+				return this.GetTable<CVT_EntradaInsumosDetalle>();
 			}
 		}
 		
@@ -94232,6 +94254,490 @@ namespace DBMermasRecepcion
 					this._ctaMuestra = value;
 					this.SendPropertyChanged("ctaMuestra");
 					this.OnctaMuestraChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CVT_EntradaInsumos")]
+	public partial class CVT_EntradaInsumos : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _EntradaInsumos_ID;
+		
+		private int _OC;
+		
+		private string _Usuario;
+		
+		private System.DateTime _FechaCreacion;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEntradaInsumos_IDChanging(int value);
+    partial void OnEntradaInsumos_IDChanged();
+    partial void OnOCChanging(int value);
+    partial void OnOCChanged();
+    partial void OnUsuarioChanging(string value);
+    partial void OnUsuarioChanged();
+    partial void OnFechaCreacionChanging(System.DateTime value);
+    partial void OnFechaCreacionChanged();
+    #endregion
+		
+		public CVT_EntradaInsumos()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntradaInsumos_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int EntradaInsumos_ID
+		{
+			get
+			{
+				return this._EntradaInsumos_ID;
+			}
+			set
+			{
+				if ((this._EntradaInsumos_ID != value))
+				{
+					this.OnEntradaInsumos_IDChanging(value);
+					this.SendPropertyChanging();
+					this._EntradaInsumos_ID = value;
+					this.SendPropertyChanged("EntradaInsumos_ID");
+					this.OnEntradaInsumos_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OC", DbType="Int NOT NULL")]
+		public int OC
+		{
+			get
+			{
+				return this._OC;
+			}
+			set
+			{
+				if ((this._OC != value))
+				{
+					this.OnOCChanging(value);
+					this.SendPropertyChanging();
+					this._OC = value;
+					this.SendPropertyChanged("OC");
+					this.OnOCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Usuario", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Usuario
+		{
+			get
+			{
+				return this._Usuario;
+			}
+			set
+			{
+				if ((this._Usuario != value))
+				{
+					this.OnUsuarioChanging(value);
+					this.SendPropertyChanging();
+					this._Usuario = value;
+					this.SendPropertyChanged("Usuario");
+					this.OnUsuarioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FechaCreacion", DbType="DateTime NOT NULL")]
+		public System.DateTime FechaCreacion
+		{
+			get
+			{
+				return this._FechaCreacion;
+			}
+			set
+			{
+				if ((this._FechaCreacion != value))
+				{
+					this.OnFechaCreacionChanging(value);
+					this.SendPropertyChanging();
+					this._FechaCreacion = value;
+					this.SendPropertyChanged("FechaCreacion");
+					this.OnFechaCreacionChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CVT_EntradaInsumosDetalle")]
+	public partial class CVT_EntradaInsumosDetalle : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _EntradaInsumos_ID;
+		
+		private int _EntradaInsumosDetalle_ID;
+		
+		private int _DocEntry;
+		
+		private string _CardCode;
+		
+		private string _CardName;
+		
+		private int _DocNum;
+		
+		private int _LineNum;
+		
+		private string _ItemCode;
+		
+		private string _Dscription;
+		
+		private decimal _Quantity;
+		
+		private decimal _OpenQty;
+		
+		private string _Bodega;
+		
+		private System.Nullable<decimal> _CantRecepcionar;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnEntradaInsumos_IDChanging(int value);
+    partial void OnEntradaInsumos_IDChanged();
+    partial void OnEntradaInsumosDetalle_IDChanging(int value);
+    partial void OnEntradaInsumosDetalle_IDChanged();
+    partial void OnDocEntryChanging(int value);
+    partial void OnDocEntryChanged();
+    partial void OnCardCodeChanging(string value);
+    partial void OnCardCodeChanged();
+    partial void OnCardNameChanging(string value);
+    partial void OnCardNameChanged();
+    partial void OnDocNumChanging(int value);
+    partial void OnDocNumChanged();
+    partial void OnLineNumChanging(int value);
+    partial void OnLineNumChanged();
+    partial void OnItemCodeChanging(string value);
+    partial void OnItemCodeChanged();
+    partial void OnDscriptionChanging(string value);
+    partial void OnDscriptionChanged();
+    partial void OnQuantityChanging(decimal value);
+    partial void OnQuantityChanged();
+    partial void OnOpenQtyChanging(decimal value);
+    partial void OnOpenQtyChanged();
+    partial void OnBodegaChanging(string value);
+    partial void OnBodegaChanged();
+    partial void OnCantRecepcionarChanging(System.Nullable<decimal> value);
+    partial void OnCantRecepcionarChanged();
+    #endregion
+		
+		public CVT_EntradaInsumosDetalle()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntradaInsumos_ID", DbType="Int NOT NULL")]
+		public int EntradaInsumos_ID
+		{
+			get
+			{
+				return this._EntradaInsumos_ID;
+			}
+			set
+			{
+				if ((this._EntradaInsumos_ID != value))
+				{
+					this.OnEntradaInsumos_IDChanging(value);
+					this.SendPropertyChanging();
+					this._EntradaInsumos_ID = value;
+					this.SendPropertyChanged("EntradaInsumos_ID");
+					this.OnEntradaInsumos_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EntradaInsumosDetalle_ID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int EntradaInsumosDetalle_ID
+		{
+			get
+			{
+				return this._EntradaInsumosDetalle_ID;
+			}
+			set
+			{
+				if ((this._EntradaInsumosDetalle_ID != value))
+				{
+					this.OnEntradaInsumosDetalle_IDChanging(value);
+					this.SendPropertyChanging();
+					this._EntradaInsumosDetalle_ID = value;
+					this.SendPropertyChanged("EntradaInsumosDetalle_ID");
+					this.OnEntradaInsumosDetalle_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocEntry", DbType="Int NOT NULL")]
+		public int DocEntry
+		{
+			get
+			{
+				return this._DocEntry;
+			}
+			set
+			{
+				if ((this._DocEntry != value))
+				{
+					this.OnDocEntryChanging(value);
+					this.SendPropertyChanging();
+					this._DocEntry = value;
+					this.SendPropertyChanged("DocEntry");
+					this.OnDocEntryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CardCode", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string CardCode
+		{
+			get
+			{
+				return this._CardCode;
+			}
+			set
+			{
+				if ((this._CardCode != value))
+				{
+					this.OnCardCodeChanging(value);
+					this.SendPropertyChanging();
+					this._CardCode = value;
+					this.SendPropertyChanged("CardCode");
+					this.OnCardCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CardName", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string CardName
+		{
+			get
+			{
+				return this._CardName;
+			}
+			set
+			{
+				if ((this._CardName != value))
+				{
+					this.OnCardNameChanging(value);
+					this.SendPropertyChanging();
+					this._CardName = value;
+					this.SendPropertyChanged("CardName");
+					this.OnCardNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DocNum", DbType="Int NOT NULL")]
+		public int DocNum
+		{
+			get
+			{
+				return this._DocNum;
+			}
+			set
+			{
+				if ((this._DocNum != value))
+				{
+					this.OnDocNumChanging(value);
+					this.SendPropertyChanging();
+					this._DocNum = value;
+					this.SendPropertyChanged("DocNum");
+					this.OnDocNumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LineNum", DbType="Int NOT NULL")]
+		public int LineNum
+		{
+			get
+			{
+				return this._LineNum;
+			}
+			set
+			{
+				if ((this._LineNum != value))
+				{
+					this.OnLineNumChanging(value);
+					this.SendPropertyChanging();
+					this._LineNum = value;
+					this.SendPropertyChanged("LineNum");
+					this.OnLineNumChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemCode", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string ItemCode
+		{
+			get
+			{
+				return this._ItemCode;
+			}
+			set
+			{
+				if ((this._ItemCode != value))
+				{
+					this.OnItemCodeChanging(value);
+					this.SendPropertyChanging();
+					this._ItemCode = value;
+					this.SendPropertyChanged("ItemCode");
+					this.OnItemCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dscription", DbType="NVarChar(500) NOT NULL", CanBeNull=false)]
+		public string Dscription
+		{
+			get
+			{
+				return this._Dscription;
+			}
+			set
+			{
+				if ((this._Dscription != value))
+				{
+					this.OnDscriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Dscription = value;
+					this.SendPropertyChanged("Dscription");
+					this.OnDscriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Quantity", DbType="Decimal(18,2) NOT NULL")]
+		public decimal Quantity
+		{
+			get
+			{
+				return this._Quantity;
+			}
+			set
+			{
+				if ((this._Quantity != value))
+				{
+					this.OnQuantityChanging(value);
+					this.SendPropertyChanging();
+					this._Quantity = value;
+					this.SendPropertyChanged("Quantity");
+					this.OnQuantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OpenQty", DbType="Decimal(18,2) NOT NULL")]
+		public decimal OpenQty
+		{
+			get
+			{
+				return this._OpenQty;
+			}
+			set
+			{
+				if ((this._OpenQty != value))
+				{
+					this.OnOpenQtyChanging(value);
+					this.SendPropertyChanging();
+					this._OpenQty = value;
+					this.SendPropertyChanged("OpenQty");
+					this.OnOpenQtyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Bodega", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Bodega
+		{
+			get
+			{
+				return this._Bodega;
+			}
+			set
+			{
+				if ((this._Bodega != value))
+				{
+					this.OnBodegaChanging(value);
+					this.SendPropertyChanging();
+					this._Bodega = value;
+					this.SendPropertyChanged("Bodega");
+					this.OnBodegaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantRecepcionar", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> CantRecepcionar
+		{
+			get
+			{
+				return this._CantRecepcionar;
+			}
+			set
+			{
+				if ((this._CantRecepcionar != value))
+				{
+					this.OnCantRecepcionarChanging(value);
+					this.SendPropertyChanging();
+					this._CantRecepcionar = value;
+					this.SendPropertyChanged("CantRecepcionar");
+					this.OnCantRecepcionarChanged();
 				}
 			}
 		}

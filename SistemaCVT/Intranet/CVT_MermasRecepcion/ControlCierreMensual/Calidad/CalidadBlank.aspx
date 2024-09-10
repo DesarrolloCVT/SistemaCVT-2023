@@ -2,8 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cntMaster" runat="server">
-    <asp:UpdatePanel ID="pnl1" runat="server">
-        <ContentTemplate>
+    
        
 
    
@@ -75,8 +74,7 @@
 
 
             </div>--%>
-        </ContentTemplate>
-    </asp:UpdatePanel>
+      
 </asp:Content>
 
 

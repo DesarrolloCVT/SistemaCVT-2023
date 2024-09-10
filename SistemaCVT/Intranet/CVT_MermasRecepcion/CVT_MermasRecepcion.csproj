@@ -660,6 +660,7 @@
     <Content Include="Informatica\RegAlarmasDetalle.aspx" />
     <Content Include="Informatica\RegistroIncidenciaMov.aspx" />
     <Content Include="Insumos\CalendarioInsumos.aspx" />
+    <Content Include="Insumos\EntradaInsumos.aspx" />
     <Content Include="Insumos\InformePlanillaInsumosGV.aspx" />
     <Content Include="Insumos\InformePlanillaInsumosPV.aspx" />
     <Content Include="Insumos\PlanillaInsumos.aspx" />
@@ -1963,6 +1964,13 @@
     </Compile>
     <Compile Include="Insumos\CalendarioInsumos.aspx.designer.cs">
       <DependentUpon>CalendarioInsumos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Insumos\EntradaInsumos.aspx.cs">
+      <DependentUpon>EntradaInsumos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Insumos\EntradaInsumos.aspx.designer.cs">
+      <DependentUpon>EntradaInsumos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Insumos\InformePlanillaInsumosGV.aspx.cs">
       <DependentUpon>InformePlanillaInsumosGV.aspx</DependentUpon>

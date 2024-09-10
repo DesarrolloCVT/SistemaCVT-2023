@@ -24,7 +24,7 @@ namespace CVT_MermasRecepcion.Inventario
                 string idpro = Cbo_Producto.Value.ToString();
 
 
-                SqlConnection con = new SqlConnection("Data Source=roble;Initial Catalog=SBO_CVTRADING;User ID=sa;Password=cvt");
+                SqlConnection con = new SqlConnection("Data Source=alerce;Initial Catalog=SBO_CVTRADING;User ID=sa;Password=cvt.vdp22$");
                 SqlCommand cmd = new SqlCommand();
                 SqlDataAdapter da = new SqlDataAdapter();
                 cmd.CommandTimeout = 60000;
@@ -68,7 +68,7 @@ namespace CVT_MermasRecepcion.Inventario
                 string idpro = Cbo_Producto.Value.ToString();
                 string lote = txtLote.Text;
 
-                SqlConnection con = new SqlConnection("Data Source=roble;Initial Catalog=SBO_CVTRADING;User ID=sa;Password=cvt");
+                SqlConnection con = new SqlConnection("Data Source=alerce;Initial Catalog=SBO_CVTRADING;User ID=sa;Password=cvt.vdp22$");
                 SqlCommand cmd = new SqlCommand();
                 SqlDataAdapter da = new SqlDataAdapter();
                 cmd.CommandTimeout = 60000;
@@ -115,7 +115,7 @@ namespace CVT_MermasRecepcion.Inventario
                 string lote = txtLote.Text;
                 string bod = Convert.ToString(cboBodega.Value);
 
-                SqlConnection con = new SqlConnection("Data Source=roble;Initial Catalog=SBO_CVTRADING;User ID=sa;Password=cvt");
+                SqlConnection con = new SqlConnection("Data Source=alerce;Initial Catalog=SBO_CVTRADING;User ID=sa;Password=cvt.vdp22$");
                 SqlCommand cmd = new SqlCommand();
                 SqlDataAdapter da = new SqlDataAdapter();
                 cmd.CommandTimeout = 60000;
@@ -170,7 +170,7 @@ namespace CVT_MermasRecepcion.Inventario
                 DateTime ini = Convert.ToDateTime(dteDesde.Value);
                 DateTime ter = Convert.ToDateTime(dteHasta.Value);
 
-                SqlConnection con = new SqlConnection("Data Source=roble;Initial Catalog=SBO_CVTRADING;User ID=sa;Password=cvt");
+                SqlConnection con = new SqlConnection("Data Source=alerce;Initial Catalog=SBO_CVTRADING;User ID=sa;Password=cvt.vdp22$");
                 SqlCommand cmd = new SqlCommand();
                 SqlDataAdapter da = new SqlDataAdapter();
                 cmd.CommandTimeout = 60000;

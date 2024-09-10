@@ -2722,5 +2722,62 @@ namespace DBMermasRecepcion
             return ret;
         }
 
+        public string CreaEntradaOCInsumos(int EntradaInsumosID, string usuario)
+        {
+            string ret = "-1";
+            SAPbobsCOM.Company oCmp;
+            string reterror = string.Empty;
+            oCmp = CnxSAP(ref reterror);
+            try
+            {
+                int iError = 0;
+
+                SAPbobsCOM.Documents doc;
+                doc = oCmp.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oPurchaseDeliveryNotes);
+                doc.DocType = SAPbobsCOM.BoDocumentTypes.dDocument_Items;
+                doc.DocDate = DateTime.Now;
+                doc.HandWritten = SAPbobsCOM.BoYesNoEnum.tNO;
+                doc.UserFields.Fields.Item("U_IdWms").Value = EntradaInsumosID;
+                doc.UserFields.Fields.Item("U_UsuarioWms").Value = usuario;
+                InventarioClass vInv = new InventarioClass();
+
+                List<CVT_EntradaInsumosDetalle> dt = new List<CVT_EntradaInsumosDetalle>();
+                dt = vInv.ObtieneEntradaInsumos(EntradaInsumosID);
+                foreach (var d in dt)
+                {
+
+                    doc.Comments = "Entrada Creada por Intranet";
+                    doc.CardCode = d.CardCode;
+                   
+                    doc.Lines.WarehouseCode = d.Bodega;
+                    doc.Lines.ItemCode = d.ItemCode;
+                    doc.Lines.BaseEntry = d.DocEntry;
+                    doc.Lines.BaseType = 22;
+                    doc.Lines.BaseLine = d.LineNum;         
+                    doc.Lines.ShipDate = DateTime.Now;
+                    doc.Lines.Quantity = (double)d.CantRecepcionar;
+                    
+                    doc.Lines.Add();
+                }
+
+                iError = doc.Add();
+                if (iError == 0)
+                {
+                    ret = "0";
+                }
+                else
+                {
+                    ret = oCmp.GetLastErrorDescription();
+                }
+                oCmp.Disconnect();
+            }
+            catch (Exception)
+            {
+                oCmp.Disconnect();
+
+            }
+            return ret;
+        }
+
     }
 }

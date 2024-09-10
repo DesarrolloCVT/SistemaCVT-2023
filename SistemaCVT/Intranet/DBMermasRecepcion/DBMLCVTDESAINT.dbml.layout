@@ -2528,5 +2528,17 @@
         <elementListCompartment Id="d29d8a87-6fde-49f8-b0c0-638b3be75f7a" absoluteBounds="19.64, 9.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="0192c5a8-e3e9-40b3-a2bc-65a640ab4d73" isExpanded="false" absoluteBounds="4.75, 27, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_EntradaInsumos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dcd2aec0-af17-44ca-be94-4a9671fd8ed6" absoluteBounds="4.7650000000000006, 27.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef9b4961-e018-4546-a1a2-b3716139a21b" isExpanded="false" absoluteBounds="4.75, 27.5, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_EntradaInsumosDetalle" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1e212dd7-9514-4d66-b09c-6f0bc285e5f0" absoluteBounds="4.7650000000000006, 27.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

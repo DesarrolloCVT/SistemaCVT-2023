@@ -10029,6 +10029,19 @@
       <Column Name="KilosRechazados" Type="System.Decimal" DbType="Decimal(38,3) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.CVT_VW_OCxRecepcionar" Member="CVT_VW_OCxRecepcionar">
+    <Type Name="CVT_VW_OCxRecepcionar">
+      <Column Name="DocEntry" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CardCode" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CardName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DocNum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LineNum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Dscription" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="OpenQty" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.CVT_RPT_ListaCobranza1" Method="CVT_RPT_ListaCobranza1">
     <Parameter Name="SlpCode" Parameter="slpCode" Type="System.Int32" DbType="Int" />
     <Parameter Name="CardCode" Parameter="cardCode" Type="System.String" DbType="NVarChar(20)" />
@@ -11778,5 +11791,11 @@
       <Column Name="[Yerba Mate Coliseo 250 grs. 1x20]" Member="Yerba_Mate_Coliseo_250_grs__1x20" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="[Yerba Mate Coliseo 500 grs. 1x20]" Member="Yerba_Mate_Coliseo_500_grs__1x20" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.SP_InsertaRegistroEntradaOC" Method="SP_InsertaRegistroEntradaOC">
+    <Parameter Name="OCDocnum" Parameter="oCDocnum" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WhsCode" Parameter="whsCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

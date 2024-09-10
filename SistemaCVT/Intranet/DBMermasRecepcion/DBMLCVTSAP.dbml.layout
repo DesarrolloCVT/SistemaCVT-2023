@@ -500,5 +500,11 @@
         <elementListCompartment Id="9e1fed1e-41b4-42d6-9997-040602794154" absoluteBounds="2.64, 11.585, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="08e54d35-6318-42ac-92fa-9b5a8061a883" isExpanded="false" absoluteBounds="4.875, 9.125, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTSAPDataContext/CVT_VW_OCxRecepcionar" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54a1703d-a622-4bd6-ba69-d1234dc6a078" absoluteBounds="4.89, 9.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

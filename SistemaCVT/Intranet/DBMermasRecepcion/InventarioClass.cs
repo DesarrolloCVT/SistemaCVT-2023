@@ -521,5 +521,36 @@ namespace DBMermasRecepcion
 
             return ret;
         }
+        public int CreaPreEntradaOC(int OCDocnum, string Bodega, string Usuario)
+        {
+            int ret = 0;
+            try
+            {
+                DBSap.SP_InsertaRegistroEntradaOC(OCDocnum, Bodega, Usuario);
+                var temp=(from p in DBDesaint.CVT_EntradaInsumos
+                          orderby p.EntradaInsumos_ID descending
+                          select new {p.EntradaInsumos_ID}).FirstOrDefault();
+                if (temp != null)
+                {
+                    ret=Convert.ToInt32(temp.EntradaInsumos_ID);
+                }
+            }
+            catch { }
+            return ret;
+        }
+        public List<CVT_EntradaInsumosDetalle> ObtieneEntradaInsumos (int Folio)
+        {
+            List<CVT_EntradaInsumosDetalle> ret=new List<CVT_EntradaInsumosDetalle> ();
+            try
+            {
+                ret = (from t in DBDesaint.CVT_EntradaInsumosDetalle
+                       where t.EntradaInsumos_ID.Equals(Folio) && t.CantRecepcionar>0
+                       select t).ToList();
+            }
+            catch
+            {
+            }
+            return ret;
+        }
     }
 }
