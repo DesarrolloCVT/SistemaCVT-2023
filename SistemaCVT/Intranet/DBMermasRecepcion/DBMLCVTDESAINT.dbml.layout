@@ -2465,7 +2465,7 @@
     <classShape Id="c72dc18d-3d85-4d4d-b8f8-96ad0d66a6ba" isExpanded="false" absoluteBounds="4.75, 24, 2, 0.45">
       <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_Gruas" />
       <nestedChildShapes>
-        <elementListCompartment Id="0256a9e3-053e-4be8-935d-f5e10e969a9e" absoluteBounds="4.765, 24.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="0256a9e3-053e-4be8-935d-f5e10e969a9e" absoluteBounds="4.765, 24.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="1f20e040-2937-47af-947d-e72a16bbea19" isExpanded="false" absoluteBounds="4.75, 24.5, 2, 0.45">

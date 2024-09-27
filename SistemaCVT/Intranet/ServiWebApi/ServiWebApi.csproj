@@ -161,6 +161,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\BodegaController.cs" />
     <Compile Include="Controllers\CapturaProductosController.cs" />
+    <Compile Include="Controllers\CheckListGruasController.cs" />
     <Compile Include="Controllers\ConfirmaPalletTransferenciaSMMController.cs" />
     <Compile Include="Controllers\ConsultaProductosSMMController.cs" />
     <Compile Include="Controllers\ControlHigieneController.cs" />
