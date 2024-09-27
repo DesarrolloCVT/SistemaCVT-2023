@@ -171,18 +171,23 @@
                     <dx:ASPxDateEdit ID="dteFechaIni" runat="server"></dx:ASPxDateEdit>
                 </td>
                 <td>
-                    <dx:ASPxButton ID="btnBuscar" runat="server" Text="Buscar" Height="54px" Width="91px"></dx:ASPxButton>
+                    <dx:ASPxButton ID="btnBuscar" runat="server" Text="Buscar" Height="54px" Width="91px" OnClick="btnBuscar_Click"></dx:ASPxButton>
                 </td>
             </tr>
         </table>
     </div>
     <div>
         <dx:ASPxLabel Font-Bold="True" runat="server" Text="Detalle Asistencia" Font-Size="Small"></dx:ASPxLabel>
-        <dx:ASPxGridView runat="server" ID="GvDatos" AutoGenerateColumns="False" DataSourceID="LqDsAsistencia" KeyFieldName="Asistencia_Id" OnRowUpdated="GvDatos_RowUpdated" OnRowDeleting="GvDatos_RowDeleting" OnRowUpdating="GvDatos_RowUpdating">
+        <dx:ASPxGridView runat="server" ID="GvAsistencia" AutoGenerateColumns="False" DataSourceID="LqDsAsistencia" KeyFieldName="Asistencia_Id" OnRowUpdated="GvDatos_RowUpdated" OnRowDeleting="GvDatos_RowDeleting" OnRowUpdating="GvDatos_RowUpdating">
             <SettingsEditing Mode="PopupEditForm">
             </SettingsEditing>
             <Settings ShowFilterRow="True" AutoFilterCondition="Contains" />
             <SettingsBehavior AllowFocusedRow="True" />
+            <SettingsCookies CookiesID="Asistencia" Enabled="True" Version="1" />
+
+<SettingsPopup>
+<FilterControl AutoUpdatePosition="False"></FilterControl>
+</SettingsPopup>
             <Columns>
                 <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" ShowInCustomizationForm="True" VisibleIndex="0">
                 </dx:GridViewCommandColumn>
@@ -261,7 +266,7 @@
         </dx:ASPxGridView>
         <asp:LinqDataSource ID="LqDsAsistencia" runat="server" ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EnableDelete="True" EnableUpdate="True" EntityTypeName="" TableName="CVT_Asistencia" OrderBy="Fecha desc, Asistencia_Id desc" Where="Fecha == @Fecha">
             <WhereParameters>
-                <asp:ControlParameter ControlID="dteFechaIni" DefaultValue="01-01-1990" Name="Fecha" PropertyName="Value" Type="DateTime" />
+                <asp:ControlParameter ControlID="dteFechaIni" DefaultValue="01-01-2000" Name="Fecha" PropertyName="Value" Type="DateTime" />
             </WhereParameters>
         </asp:LinqDataSource>
         <asp:LinqDataSource ID="LqDsResponsable" runat="server" ContextTypeName="DBMermasRecepcion.DBMLCVTDESAINTDataContext" EntityTypeName="" Select="new (IdUsuario, NombreUsuario)" TableName="CVT_Usuarios">

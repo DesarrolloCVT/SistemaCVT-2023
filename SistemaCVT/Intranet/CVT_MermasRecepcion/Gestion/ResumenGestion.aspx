@@ -35,6 +35,7 @@
                             <dx:ListEditItem Text="Detalle Cta." Value="1" />
                             <dx:ListEditItem Text="Detalle Cta. Padre" Value="2" />
                             <dx:ListEditItem Text="Detalle Linea Gestion" Value="3" />
+                            <dx:ListEditItem Text="Detalle Cta Mes Compara Año Anterior" Value="4" />
                         </Items>
                     </dx:ASPxComboBox>
                 </td>

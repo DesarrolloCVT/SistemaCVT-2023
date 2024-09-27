@@ -10042,6 +10042,27 @@
       <Column Name="OpenQty" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.OPRC" Member="OPRC">
+    <Type Name="OPRC">
+      <Column Name="PrcCode" Type="System.String" DbType="NVarChar(8) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PrcName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="GrpCode" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="Locked" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="DataSource" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="UserSign" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="DimCode" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="CCTypeCode" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="ValidFrom" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ValidTo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Active" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="LogInstanc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserSign2" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CCOwner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="U_Cod_CCPadre" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.CVT_RPT_ListaCobranza1" Method="CVT_RPT_ListaCobranza1">
     <Parameter Name="SlpCode" Parameter="slpCode" Type="System.Int32" DbType="Int" />
     <Parameter Name="CardCode" Parameter="cardCode" Type="System.String" DbType="NVarChar(20)" />
@@ -11403,30 +11424,6 @@
       <Column Name="TotalComision" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.SP_ResumenGestion" Method="SP_ResumenGestion">
-    <Parameter Name="desde" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="hasta" Type="System.DateTime" DbType="Date" />
-    <Parameter Name="tipo" Type="System.Int32" DbType="Int" />
-    <ElementType Name="SP_ResumenGestionResult">
-      <Column Name="FatherNum" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
-      <Column Name="FatherName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="AcctCode" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="AcctName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="U_Linea" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="U_Nivel" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="OcrCode2" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
-      <Column Name="OcrCode3" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
-      <Column Name="Dia" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Mes" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Año" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="credit" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
-      <Column Name="debit" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
-      <Column Name="Saldo" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
-      <Column Name="CreditFC" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
-      <Column Name="DebitFC" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
-      <Column Name="SaldoFC" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.CVT_CIERREMENSUAL_BPT_INFORME_RECEPCIONES" Method="CVT_CIERREMENSUAL_BPT_INFORME_RECEPCIONES">
     <Parameter Name="DESDE" Parameter="dESDE" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="HASTA" Parameter="hASTA" Type="System.DateTime" DbType="DateTime" />
@@ -11797,5 +11794,31 @@
     <Parameter Name="WhsCode" Parameter="whsCode" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ResumenGestion" Method="SP_ResumenGestion">
+    <Parameter Name="desde" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="hasta" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="tipo" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_ResumenGestionResult">
+      <Column Name="FatherNum" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AcctCode" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="AcctName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="U_Linea" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="U_Nivel" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="OcrCode2" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="OcrCode3" Type="System.String" DbType="NVarChar(8)" CanBeNull="true" />
+      <Column Name="Mes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Año" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="credit" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="debit" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="Saldo" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="CreditFC" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="DebitFC" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="SaldoFC" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="CreditAñoAnt" Type="System.Decimal" DbType="Decimal(38,6) NOT NULL" CanBeNull="false" />
+      <Column Name="DebitAñoAnt" Type="System.Decimal" DbType="Decimal(38,6) NOT NULL" CanBeNull="false" />
+      <Column Name="SaldoAñoAnt" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>
