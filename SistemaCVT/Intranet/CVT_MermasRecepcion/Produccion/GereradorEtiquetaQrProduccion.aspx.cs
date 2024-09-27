@@ -74,7 +74,7 @@ namespace CVT_MermasRecepcion.Produccion
                 WMSClass vWMS = new WMSClass();
                 Package vNEW = new Package();
                 SAPClass vsap = new SAPClass();
-                EtiquetaQr1 report = new EtiquetaQr1();
+                EtiquetaQr100x300 report = new EtiquetaQr100x300();
 
                 if (Convert.ToInt32(txt_cantidad.Text) == 0)
                 {

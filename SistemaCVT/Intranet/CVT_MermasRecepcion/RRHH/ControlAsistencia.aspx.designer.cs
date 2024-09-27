@@ -159,13 +159,13 @@ namespace CVT_MermasRecepcion.RRHH
         protected global::DevExpress.Web.ASPxButton btnBuscar;
 
         /// <summary>
-        /// Control GvDatos.
+        /// Control GvAsistencia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView GvDatos;
+        protected global::DevExpress.Web.ASPxGridView GvAsistencia;
 
         /// <summary>
         /// Control LqDsAsistencia.

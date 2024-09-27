@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.5, 11.875" name="DBMLCVTSAP">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.5, 12.25" name="DBMLCVTSAP">
   <DataContextMoniker Name="/DBMLCVTSAPDataContext" />
   <nestedChildShapes>
     <classShape Id="eede1376-a3d2-44aa-9af9-32e1c68e7e80" isExpanded="false" absoluteBounds="2.625, 0.5, 2, 0.45">
@@ -504,6 +504,12 @@
       <DataClassMoniker Name="/DBMLCVTSAPDataContext/CVT_VW_OCxRecepcionar" />
       <nestedChildShapes>
         <elementListCompartment Id="54a1703d-a622-4bd6-ba69-d1234dc6a078" absoluteBounds="4.89, 9.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="afccd7e0-833e-482f-af99-89e4d8f29516" isExpanded="false" absoluteBounds="0.5, 11.5, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTSAPDataContext/OPRC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="86e3e498-cfc1-49b7-a57a-92a866f77cad" absoluteBounds="0.51500000000000012, 11.96, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

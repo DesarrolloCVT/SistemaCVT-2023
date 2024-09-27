@@ -552,5 +552,21 @@ namespace DBMermasRecepcion
             }
             return ret;
         }
+        public int CreaEncSalidaInsumo(string Responsable, string Bodega, string Usuario)
+        {
+            int ret = 0;
+            try
+            {
+                CVT_SalidaInsumos vSalida=new CVT_SalidaInsumos();
+                vSalida.Responsable = Responsable;
+                vSalida.Bodega = Bodega;
+                vSalida.FechaCreacion=DateTime.Now;
+                vSalida.Usuario=Usuario;
+                DBDesaint.CVT_SalidaInsumos.InsertOnSubmit(vSalida);
+                ret=vSalida.SalidaInsumos_ID;
+            }
+            catch { }
+            return ret;
+        }
     }
 }

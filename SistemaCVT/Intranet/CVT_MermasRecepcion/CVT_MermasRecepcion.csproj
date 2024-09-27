@@ -210,8 +210,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Windows\System32\inetsrv\Microsoft.Web.Administration.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Linq" />
@@ -221,6 +221,11 @@
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData">
       <Private>True</Private>
@@ -665,6 +670,7 @@
     <Content Include="Insumos\InformePlanillaInsumosPV.aspx" />
     <Content Include="Insumos\PlanillaInsumos.aspx" />
     <Content Include="Insumos\PlanillaInsumosDetalle.aspx" />
+    <Content Include="Insumos\SalidaInsumos.aspx" />
     <Content Include="Inventario\AuditoriaLotesWMS.aspx" />
     <Content Include="Inventario\AuditoriaStock.aspx" />
     <Content Include="Inventario\ComparativoStockProdSinLote.aspx" />
@@ -1999,6 +2005,13 @@
     </Compile>
     <Compile Include="Insumos\PlanillaInsumosDetalle.aspx.designer.cs">
       <DependentUpon>PlanillaInsumosDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Insumos\SalidaInsumos.aspx.cs">
+      <DependentUpon>SalidaInsumos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Insumos\SalidaInsumos.aspx.designer.cs">
+      <DependentUpon>SalidaInsumos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inventario\DiferenciaInvCantidad.aspx.cs">
       <DependentUpon>DiferenciaInvCantidad.aspx</DependentUpon>

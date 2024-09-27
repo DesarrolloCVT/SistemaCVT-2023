@@ -9,9 +9,10 @@ namespace CVT_MermasRecepcion.RRHH
         {
             if (!IsPostBack)
             {
-                GvDatos.DataBind();
+
+                GvAsistencia.DataBind();
             }
-            GvDatos.DataBind();
+            GvAsistencia.DataBind();
         }
 
         protected void btn_agregar_Click(object sender, EventArgs e)
@@ -46,7 +47,7 @@ namespace CVT_MermasRecepcion.RRHH
                     }
                     vAsistencia.InsertaRegistroAsistencia(vNuevo);
 
-                    GvDatos.DataBind();
+                    GvAsistencia.DataBind();
                     LogClass vLog = new LogClass();
                     vLog.LOGUsabilidad(Convert.ToInt32(Session["IDCVTUsuario"]), 109, "Crea Registro");
 
@@ -73,7 +74,7 @@ namespace CVT_MermasRecepcion.RRHH
 
         protected void GvDatos_RowUpdated(object sender, DevExpress.Web.Data.ASPxDataUpdatedEventArgs e)
         {
-            GvDatos.DataBind();
+            GvAsistencia.DataBind();
         }
 
         protected void GvDatos_RowDeleting(object sender, DevExpress.Web.Data.ASPxDataDeletingEventArgs e)
@@ -86,6 +87,11 @@ namespace CVT_MermasRecepcion.RRHH
         {
             LogClass vLog = new LogClass();
             vLog.LOGUsabilidad(Convert.ToInt32(Session["IDCVTUsuario"]), 112, "Actualiza Registro");
+        }
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            GvAsistencia.DataBind();
         }
     }
 }

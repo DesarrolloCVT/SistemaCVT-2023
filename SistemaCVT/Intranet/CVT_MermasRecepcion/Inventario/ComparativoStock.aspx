@@ -80,6 +80,7 @@
                             <dx:ListEditItem Text="CV 111 KIT 2" Value="CV111" />
                              <dx:ListEditItem Text="CV 300	Producción" Value="CV300" />
                              <dx:ListEditItem Text="CV 201 Merma N" Value="CV201" />
+                            <dx:ListEditItem Text="CV 600 Revision" Value="CV600" />
                         </Items>
                     </dx:ASPxComboBox>
                 </td>
