@@ -10,7 +10,6 @@ using System.Web.Http;
 
 namespace ServiWebApi.Controllers
 {
-    //Nuevo controlador CheckListGruas
     [RoutePrefix("api/CheckListGruas")]
     public class CheckListGruasController : ApiController
     {
