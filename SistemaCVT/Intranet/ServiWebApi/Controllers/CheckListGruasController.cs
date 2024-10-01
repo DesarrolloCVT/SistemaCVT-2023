@@ -51,43 +51,48 @@ namespace ServiWebApi.Controllers
             return ret;
         }
         [HttpGet]
-        public bool InsertaRegistroRonda(Dictionary<string, string> CheckListDatos)
+        public bool InsertaCheckListGrua(string Numero_Grua, string Area_Trabajo, string Tipo_Maquina, string Turno, string Horometro, 
+            DateTime Fecha, string Estado_Luces, string Estado_Motor, string Fuga_Agua_Aceite, string Estado_Direccion, string Estado_Transmision, 
+            string Escalera_Acceso_Pasamanos, string Estado_Bocina, string Alarma_Retroceso, string Espejo_Retrovisor, string Estado_Tablero_Datos, 
+            string Estado_Extintor, string Estado_Bateria, string Estado_Asiento, string Cinturon_Seguridad, string Baliza_Pertiga, 
+            string Estado_Neumaticos, string Llantas_Tuercas, string Cadenas_Torre, string Unas_Horquilla, string Soporte_Cilindro, 
+            string Flexible_Polea_Rodamiento, string Seguro_Una_Horquilla, string Punto_Bloqueo, string Observaciones)
         {
             bool ret = false;
             try
             {
                 CVT_CheckList_Grua vNuevo = new CVT_CheckList_Grua
                 {
-                    Numero_Grua = CheckListDatos["NumeroGrua"],
-                    Area_Trabajo = CheckListDatos["AreaTrabajo"],
-                    Tipo_Maquina = CheckListDatos["TipoMaquinaria"],
-                    Turno = CheckListDatos["Turno"],
-                    Horometro = CheckListDatos["Horometro"],
-                    Fecha = DateTime.Parse(CheckListDatos["Fecha"]),
-                    Estado_Luces = CheckListDatos["Luces"],
-                    Estado_Motor = CheckListDatos["Motor"],
-                    Fuga_Agua_Aceite = CheckListDatos["Fugas"],
-                    Estado_Direccion = CheckListDatos["Direccion"],
-                    Estado_Transmision = CheckListDatos["Transmision"],
-                    Escalera_Acceso_Pasamanos = CheckListDatos["Escalera"],
-                    Estado_Bocina = CheckListDatos["Bocina"],
-                    Alarma_Retroceso = CheckListDatos["Alarma"],
-                    Espejo_Retrovisor = CheckListDatos["Espejos"],
-                    Estado_Tablero_Datos = CheckListDatos["Tablero"],
-                    Estado_Extintor = CheckListDatos["Extintor"],
-                    Estado_Bateria = CheckListDatos["Bateria"],
-                    Estado_Asiento = CheckListDatos["Asiento"],
-                    Cinturon_Seguridad = CheckListDatos["Cinturon"],
-                    Baliza_Pertiga = CheckListDatos["Baliza"],
-                    Estado_Neumaticos = CheckListDatos["Neumaticos"],
-                    Llantas_Tuercas = CheckListDatos["Llantas"],
-                    Cadenas_Torre = CheckListDatos["Cadenas"],
-                    Unas_Horquilla = CheckListDatos["Unashorquilla"],
-                    Soporte_Cilindro = CheckListDatos["Soportecilindro"],
-                    Flexible_Polea_Rodamiento = CheckListDatos["Flexible"],
-                    Seguro_Una_Horquilla = CheckListDatos["Segurohorquilla"],
-                    Punto_Bloqueo = CheckListDatos["puntodebloqueo"],
-                    Observaciones = CheckListDatos["Observaciones"]
+                    Numero_Grua = Numero_Grua,
+                    Area_Trabajo = Area_Trabajo,
+                    Tipo_Maquina = Tipo_Maquina,
+                    Turno = Turno,
+                    Horometro = Horometro,
+                    Fecha = Fecha,
+                    Estado_Luces = Estado_Luces,
+                    Estado_Motor = Estado_Motor,
+                    Fuga_Agua_Aceite = Fuga_Agua_Aceite,
+                    Estado_Direccion = Estado_Direccion,
+                    Estado_Transmision = Estado_Transmision,
+                    Escalera_Acceso_Pasamanos = Escalera_Acceso_Pasamanos,
+                    Estado_Bocina = Estado_Bocina,
+                    Alarma_Retroceso = Alarma_Retroceso,
+                    Espejo_Retrovisor = Espejo_Retrovisor,
+                    Estado_Tablero_Datos = Estado_Tablero_Datos,
+                    Estado_Extintor = Estado_Extintor,
+                    Estado_Bateria = Estado_Bateria,
+                    Estado_Asiento = Estado_Asiento,
+                    Cinturon_Seguridad = Cinturon_Seguridad,
+                    Baliza_Pertiga = Baliza_Pertiga,
+                    Estado_Neumaticos = Estado_Neumaticos,
+                    Llantas_Tuercas = Llantas_Tuercas,
+                    Cadenas_Torre = Cadenas_Torre,
+                    Unas_Horquilla = Unas_Horquilla,
+                    Soporte_Cilindro = Soporte_Cilindro,
+                    Flexible_Polea_Rodamiento = Flexible_Polea_Rodamiento,
+                    Seguro_Una_Horquilla = Seguro_Una_Horquilla,
+                    Punto_Bloqueo = Punto_Bloqueo,
+                    Observaciones = Observaciones
                 };
                 dbDsa.CVT_CheckList_Grua.InsertOnSubmit(vNuevo);
                 dbDsa.SubmitChanges();
