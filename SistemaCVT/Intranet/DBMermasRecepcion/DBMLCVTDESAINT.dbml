@@ -571,7 +571,7 @@
   </Table>
   <Table Name="dbo.CVT_CheckList_Grua" Member="CVT_CheckList_Grua">
 	<Type Name="CVT_CheckList_Grua">
-		<Column Name="RegistroChecklistGrua_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+		<Column Name="RegistroChecklistGrua_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
 		<Column Name="Numero_Grua" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
 		<Column Name="Area_Trabajo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
 		<Column Name="Tipo_Maquina" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
