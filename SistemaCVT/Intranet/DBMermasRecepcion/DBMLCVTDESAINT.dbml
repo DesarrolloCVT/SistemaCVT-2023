@@ -602,7 +602,7 @@
 		<Column Name="Flexible_Polea_Rodamiento" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
 		<Column Name="Seguro_Una_Horquilla" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
 		<Column Name="Punto_Bloqueo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-		<Column Name="Observaciones" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+		<Column Name="Observaciones" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
 	</Type>
   </Table>
   <Table Name="dbo.CVT_VW_CheckListArmadoPedido" Member="CVT_VW_CheckListArmadoPedido">
