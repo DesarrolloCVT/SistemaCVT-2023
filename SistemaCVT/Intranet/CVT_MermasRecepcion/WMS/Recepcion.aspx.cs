@@ -1,5 +1,7 @@
 ﻿using DBMermasRecepcion;
 using System;
+using System.IO;
+using System.Net;
 using System.Web.UI;
 
 namespace CVT_MermasRecepcion.WMS
@@ -168,6 +170,11 @@ namespace CVT_MermasRecepcion.WMS
                     ScriptManager.RegisterStartupScript(Page, Page.GetType(), "Aviso", "alert('Recepcion no contiene bultos');", true);
                 }
                 GvDatos.DataBind();
+                HttpWebRequest PrecioEntrega= WebRequest.Create("http://informesautomaticos.cvt.local/api/integracion/actprecioentrega") as HttpWebRequest;
+                PrecioEntrega.Method = "GET";
+                HttpWebResponse response = PrecioEntrega.GetResponse() as HttpWebResponse;
+                StreamReader reader = new StreamReader(response.GetResponseStream());
+                string resp = reader.ReadToEnd();
             }
         }
 

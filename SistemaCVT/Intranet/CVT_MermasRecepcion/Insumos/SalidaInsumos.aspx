@@ -127,6 +127,6 @@
     </asp:LinqDataSource>
 </div>
 <div>
-    <dx:ASPxButton ID="btn_Sincronizar" runat="server" Text="SINCRONIZAR CON SAP"></dx:ASPxButton>
+    <dx:ASPxButton ID="btn_Sincronizar" runat="server" Text="SINCRONIZAR CON SAP" OnClick="btn_Sincronizar_Click"></dx:ASPxButton>
 </div>
 </asp:Content>

@@ -25,7 +25,7 @@ namespace CVT_MermasRecepcion.Insumos
 
             //DateTime fechaPlanilla = new DateTime(anoPlanilla, mesPlanilla, diaactual);
 
-            DateTime fechaLimite = new DateTime(anoPlanilla, mesPlanilla, 6,23,59,59);
+            DateTime fechaLimite = new DateTime(anoPlanilla, mesPlanilla, 1,00,00,01);
 
             //DateTime fechaLimiteMesAnt = new DateTime(DateTime.Now.Year, DateTime.Now.Month-1, 6);
             //Fecha Corte establecida 6 de cada mes

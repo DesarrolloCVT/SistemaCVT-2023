@@ -43,7 +43,10 @@ namespace CVT_MermasRecepcion
             //SucursalClass vSucursal = new SucursalClass();
             if (!IsPostBack)
             {
-                CargaMenu();
+                if (Session["NombreUsuario"] != null)
+                {
+                    CargaMenu();
+                }
             }
             if (Session["NombreUsuario"] != null)
             {

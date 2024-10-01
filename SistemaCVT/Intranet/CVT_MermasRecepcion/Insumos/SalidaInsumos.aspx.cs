@@ -23,5 +23,10 @@ namespace CVT_MermasRecepcion.Insumos
         {
 
         }
+
+        protected void btn_Sincronizar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
