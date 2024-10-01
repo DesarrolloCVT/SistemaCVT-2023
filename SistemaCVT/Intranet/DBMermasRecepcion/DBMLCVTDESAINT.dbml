@@ -569,6 +569,41 @@
       <Column Name="SistemaOperativo" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.CVT_CheckList_Grua" Member="CVT_CheckList_Grua">
+	<Type Name="CVT_CheckList_Grua">
+		<Column Name="RegistroChecklistGrua_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+		<Column Name="Numero_Grua" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Area_Trabajo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Tipo_Maquina" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Turno" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Horometro" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Fecha" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+		<Column Name="Estado_Luces" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Estado_Motor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Fuga_Agua_Aceite" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Estado_Direccion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Estado_Transmision" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Escalera_Acceso_Pasamanos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Estado_Bocina" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Alarma_Retroceso" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Espejo_Retrovisor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Estado_Tablero_Datos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Estado_Extintor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Estado_Bateria" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Estado_Asiento" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Cinturon_Seguridad" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Baliza_Pertiga" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Estado_Neumaticos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Llantas_Tuercas" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Cadenas_Torre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Unas_Horquilla" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Soporte_Cilindro" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Flexible_Polea_Rodamiento" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Seguro_Una_Horquilla" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Punto_Bloqueo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+		<Column Name="Observaciones" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+	</Type>
+  </Table>
   <Table Name="dbo.CVT_VW_CheckListArmadoPedido" Member="CVT_VW_CheckListArmadoPedido">
     <Type Name="CVT_VW_CheckListArmadoPedido">
       <Column Name="[Pedido N]" Member="Pedido_N" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

@@ -132,6 +132,9 @@ namespace DBMermasRecepcion
     partial void InsertCVT_INF_SistemaOperativo(CVT_INF_SistemaOperativo instance);
     partial void UpdateCVT_INF_SistemaOperativo(CVT_INF_SistemaOperativo instance);
     partial void DeleteCVT_INF_SistemaOperativo(CVT_INF_SistemaOperativo instance);
+    partial void InsertCVT_CheckList_Grua(CVT_CheckList_Grua instance);
+    partial void UpdateCVT_CheckList_Grua(CVT_CheckList_Grua instance);
+    partial void DeleteCVT_CheckList_Grua(CVT_CheckList_Grua instance);
     partial void InsertCVT_CheckList_ArmadoPedido(CVT_CheckList_ArmadoPedido instance);
     partial void UpdateCVT_CheckList_ArmadoPedido(CVT_CheckList_ArmadoPedido instance);
     partial void DeleteCVT_CheckList_ArmadoPedido(CVT_CheckList_ArmadoPedido instance);
@@ -1321,6 +1324,14 @@ namespace DBMermasRecepcion
 			get
 			{
 				return this.GetTable<CVT_INF_SistemaOperativo>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CVT_CheckList_Grua> CVT_CheckList_Grua
+		{
+			get
+			{
+				return this.GetTable<CVT_CheckList_Grua>();
 			}
 		}
 		
@@ -13793,6 +13804,788 @@ namespace DBMermasRecepcion
 					this._SistemaOperativo = value;
 					this.SendPropertyChanged("SistemaOperativo");
 					this.OnSistemaOperativoChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CVT_CheckList_Grua")]
+	public partial class CVT_CheckList_Grua : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _RegistroChecklistGrua_Id;
+		
+		private string _Numero_Grua;
+		
+		private string _Area_Trabajo;
+		
+		private string _Tipo_Maquina;
+		
+		private string _Turno;
+		
+		private string _Horometro;
+		
+		private System.DateTime _Fecha;
+		
+		private string _Estado_Luces;
+		
+		private string _Estado_Motor;
+		
+		private string _Fuga_Agua_Aceite;
+		
+		private string _Estado_Direccion;
+		
+		private string _Estado_Transmision;
+		
+		private string _Escalera_Acceso_Pasamanos;
+		
+		private string _Estado_Bocina;
+		
+		private string _Alarma_Retroceso;
+		
+		private string _Espejo_Retrovisor;
+		
+		private string _Estado_Tablero_Datos;
+		
+		private string _Estado_Extintor;
+		
+		private string _Estado_Bateria;
+		
+		private string _Estado_Asiento;
+		
+		private string _Cinturon_Seguridad;
+		
+		private string _Baliza_Pertiga;
+		
+		private string _Estado_Neumaticos;
+		
+		private string _Llantas_Tuercas;
+		
+		private string _Cadenas_Torre;
+		
+		private string _Unas_Horquilla;
+		
+		private string _Soporte_Cilindro;
+		
+		private string _Flexible_Polea_Rodamiento;
+		
+		private string _Seguro_Una_Horquilla;
+		
+		private string _Punto_Bloqueo;
+		
+		private string _Observaciones;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnRegistroChecklistGrua_IdChanging(int value);
+    partial void OnRegistroChecklistGrua_IdChanged();
+    partial void OnNumero_GruaChanging(string value);
+    partial void OnNumero_GruaChanged();
+    partial void OnArea_TrabajoChanging(string value);
+    partial void OnArea_TrabajoChanged();
+    partial void OnTipo_MaquinaChanging(string value);
+    partial void OnTipo_MaquinaChanged();
+    partial void OnTurnoChanging(string value);
+    partial void OnTurnoChanged();
+    partial void OnHorometroChanging(string value);
+    partial void OnHorometroChanged();
+    partial void OnFechaChanging(System.DateTime value);
+    partial void OnFechaChanged();
+    partial void OnEstado_LucesChanging(string value);
+    partial void OnEstado_LucesChanged();
+    partial void OnEstado_MotorChanging(string value);
+    partial void OnEstado_MotorChanged();
+    partial void OnFuga_Agua_AceiteChanging(string value);
+    partial void OnFuga_Agua_AceiteChanged();
+    partial void OnEstado_DireccionChanging(string value);
+    partial void OnEstado_DireccionChanged();
+    partial void OnEstado_TransmisionChanging(string value);
+    partial void OnEstado_TransmisionChanged();
+    partial void OnEscalera_Acceso_PasamanosChanging(string value);
+    partial void OnEscalera_Acceso_PasamanosChanged();
+    partial void OnEstado_BocinaChanging(string value);
+    partial void OnEstado_BocinaChanged();
+    partial void OnAlarma_RetrocesoChanging(string value);
+    partial void OnAlarma_RetrocesoChanged();
+    partial void OnEspejo_RetrovisorChanging(string value);
+    partial void OnEspejo_RetrovisorChanged();
+    partial void OnEstado_Tablero_DatosChanging(string value);
+    partial void OnEstado_Tablero_DatosChanged();
+    partial void OnEstado_ExtintorChanging(string value);
+    partial void OnEstado_ExtintorChanged();
+    partial void OnEstado_BateriaChanging(string value);
+    partial void OnEstado_BateriaChanged();
+    partial void OnEstado_AsientoChanging(string value);
+    partial void OnEstado_AsientoChanged();
+    partial void OnCinturon_SeguridadChanging(string value);
+    partial void OnCinturon_SeguridadChanged();
+    partial void OnBaliza_PertigaChanging(string value);
+    partial void OnBaliza_PertigaChanged();
+    partial void OnEstado_NeumaticosChanging(string value);
+    partial void OnEstado_NeumaticosChanged();
+    partial void OnLlantas_TuercasChanging(string value);
+    partial void OnLlantas_TuercasChanged();
+    partial void OnCadenas_TorreChanging(string value);
+    partial void OnCadenas_TorreChanged();
+    partial void OnUnas_HorquillaChanging(string value);
+    partial void OnUnas_HorquillaChanged();
+    partial void OnSoporte_CilindroChanging(string value);
+    partial void OnSoporte_CilindroChanged();
+    partial void OnFlexible_Polea_RodamientoChanging(string value);
+    partial void OnFlexible_Polea_RodamientoChanged();
+    partial void OnSeguro_Una_HorquillaChanging(string value);
+    partial void OnSeguro_Una_HorquillaChanged();
+    partial void OnPunto_BloqueoChanging(string value);
+    partial void OnPunto_BloqueoChanged();
+    partial void OnObservacionesChanging(string value);
+    partial void OnObservacionesChanged();
+    #endregion
+		
+		public CVT_CheckList_Grua()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RegistroChecklistGrua_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int RegistroChecklistGrua_Id
+		{
+			get
+			{
+				return this._RegistroChecklistGrua_Id;
+			}
+			set
+			{
+				if ((this._RegistroChecklistGrua_Id != value))
+				{
+					this.OnRegistroChecklistGrua_IdChanging(value);
+					this.SendPropertyChanging();
+					this._RegistroChecklistGrua_Id = value;
+					this.SendPropertyChanged("RegistroChecklistGrua_Id");
+					this.OnRegistroChecklistGrua_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Numero_Grua", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Numero_Grua
+		{
+			get
+			{
+				return this._Numero_Grua;
+			}
+			set
+			{
+				if ((this._Numero_Grua != value))
+				{
+					this.OnNumero_GruaChanging(value);
+					this.SendPropertyChanging();
+					this._Numero_Grua = value;
+					this.SendPropertyChanged("Numero_Grua");
+					this.OnNumero_GruaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Area_Trabajo", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Area_Trabajo
+		{
+			get
+			{
+				return this._Area_Trabajo;
+			}
+			set
+			{
+				if ((this._Area_Trabajo != value))
+				{
+					this.OnArea_TrabajoChanging(value);
+					this.SendPropertyChanging();
+					this._Area_Trabajo = value;
+					this.SendPropertyChanged("Area_Trabajo");
+					this.OnArea_TrabajoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tipo_Maquina", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Tipo_Maquina
+		{
+			get
+			{
+				return this._Tipo_Maquina;
+			}
+			set
+			{
+				if ((this._Tipo_Maquina != value))
+				{
+					this.OnTipo_MaquinaChanging(value);
+					this.SendPropertyChanging();
+					this._Tipo_Maquina = value;
+					this.SendPropertyChanged("Tipo_Maquina");
+					this.OnTipo_MaquinaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Turno", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Turno
+		{
+			get
+			{
+				return this._Turno;
+			}
+			set
+			{
+				if ((this._Turno != value))
+				{
+					this.OnTurnoChanging(value);
+					this.SendPropertyChanging();
+					this._Turno = value;
+					this.SendPropertyChanged("Turno");
+					this.OnTurnoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Horometro", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Horometro
+		{
+			get
+			{
+				return this._Horometro;
+			}
+			set
+			{
+				if ((this._Horometro != value))
+				{
+					this.OnHorometroChanging(value);
+					this.SendPropertyChanging();
+					this._Horometro = value;
+					this.SendPropertyChanged("Horometro");
+					this.OnHorometroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime NOT NULL")]
+		public System.DateTime Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this.OnFechaChanging(value);
+					this.SendPropertyChanging();
+					this._Fecha = value;
+					this.SendPropertyChanged("Fecha");
+					this.OnFechaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado_Luces", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Estado_Luces
+		{
+			get
+			{
+				return this._Estado_Luces;
+			}
+			set
+			{
+				if ((this._Estado_Luces != value))
+				{
+					this.OnEstado_LucesChanging(value);
+					this.SendPropertyChanging();
+					this._Estado_Luces = value;
+					this.SendPropertyChanged("Estado_Luces");
+					this.OnEstado_LucesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado_Motor", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Estado_Motor
+		{
+			get
+			{
+				return this._Estado_Motor;
+			}
+			set
+			{
+				if ((this._Estado_Motor != value))
+				{
+					this.OnEstado_MotorChanging(value);
+					this.SendPropertyChanging();
+					this._Estado_Motor = value;
+					this.SendPropertyChanged("Estado_Motor");
+					this.OnEstado_MotorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fuga_Agua_Aceite", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Fuga_Agua_Aceite
+		{
+			get
+			{
+				return this._Fuga_Agua_Aceite;
+			}
+			set
+			{
+				if ((this._Fuga_Agua_Aceite != value))
+				{
+					this.OnFuga_Agua_AceiteChanging(value);
+					this.SendPropertyChanging();
+					this._Fuga_Agua_Aceite = value;
+					this.SendPropertyChanged("Fuga_Agua_Aceite");
+					this.OnFuga_Agua_AceiteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado_Direccion", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Estado_Direccion
+		{
+			get
+			{
+				return this._Estado_Direccion;
+			}
+			set
+			{
+				if ((this._Estado_Direccion != value))
+				{
+					this.OnEstado_DireccionChanging(value);
+					this.SendPropertyChanging();
+					this._Estado_Direccion = value;
+					this.SendPropertyChanged("Estado_Direccion");
+					this.OnEstado_DireccionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado_Transmision", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Estado_Transmision
+		{
+			get
+			{
+				return this._Estado_Transmision;
+			}
+			set
+			{
+				if ((this._Estado_Transmision != value))
+				{
+					this.OnEstado_TransmisionChanging(value);
+					this.SendPropertyChanging();
+					this._Estado_Transmision = value;
+					this.SendPropertyChanged("Estado_Transmision");
+					this.OnEstado_TransmisionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Escalera_Acceso_Pasamanos", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Escalera_Acceso_Pasamanos
+		{
+			get
+			{
+				return this._Escalera_Acceso_Pasamanos;
+			}
+			set
+			{
+				if ((this._Escalera_Acceso_Pasamanos != value))
+				{
+					this.OnEscalera_Acceso_PasamanosChanging(value);
+					this.SendPropertyChanging();
+					this._Escalera_Acceso_Pasamanos = value;
+					this.SendPropertyChanged("Escalera_Acceso_Pasamanos");
+					this.OnEscalera_Acceso_PasamanosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado_Bocina", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Estado_Bocina
+		{
+			get
+			{
+				return this._Estado_Bocina;
+			}
+			set
+			{
+				if ((this._Estado_Bocina != value))
+				{
+					this.OnEstado_BocinaChanging(value);
+					this.SendPropertyChanging();
+					this._Estado_Bocina = value;
+					this.SendPropertyChanged("Estado_Bocina");
+					this.OnEstado_BocinaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Alarma_Retroceso", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Alarma_Retroceso
+		{
+			get
+			{
+				return this._Alarma_Retroceso;
+			}
+			set
+			{
+				if ((this._Alarma_Retroceso != value))
+				{
+					this.OnAlarma_RetrocesoChanging(value);
+					this.SendPropertyChanging();
+					this._Alarma_Retroceso = value;
+					this.SendPropertyChanged("Alarma_Retroceso");
+					this.OnAlarma_RetrocesoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Espejo_Retrovisor", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Espejo_Retrovisor
+		{
+			get
+			{
+				return this._Espejo_Retrovisor;
+			}
+			set
+			{
+				if ((this._Espejo_Retrovisor != value))
+				{
+					this.OnEspejo_RetrovisorChanging(value);
+					this.SendPropertyChanging();
+					this._Espejo_Retrovisor = value;
+					this.SendPropertyChanged("Espejo_Retrovisor");
+					this.OnEspejo_RetrovisorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado_Tablero_Datos", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Estado_Tablero_Datos
+		{
+			get
+			{
+				return this._Estado_Tablero_Datos;
+			}
+			set
+			{
+				if ((this._Estado_Tablero_Datos != value))
+				{
+					this.OnEstado_Tablero_DatosChanging(value);
+					this.SendPropertyChanging();
+					this._Estado_Tablero_Datos = value;
+					this.SendPropertyChanged("Estado_Tablero_Datos");
+					this.OnEstado_Tablero_DatosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado_Extintor", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Estado_Extintor
+		{
+			get
+			{
+				return this._Estado_Extintor;
+			}
+			set
+			{
+				if ((this._Estado_Extintor != value))
+				{
+					this.OnEstado_ExtintorChanging(value);
+					this.SendPropertyChanging();
+					this._Estado_Extintor = value;
+					this.SendPropertyChanged("Estado_Extintor");
+					this.OnEstado_ExtintorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado_Bateria", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Estado_Bateria
+		{
+			get
+			{
+				return this._Estado_Bateria;
+			}
+			set
+			{
+				if ((this._Estado_Bateria != value))
+				{
+					this.OnEstado_BateriaChanging(value);
+					this.SendPropertyChanging();
+					this._Estado_Bateria = value;
+					this.SendPropertyChanged("Estado_Bateria");
+					this.OnEstado_BateriaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado_Asiento", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Estado_Asiento
+		{
+			get
+			{
+				return this._Estado_Asiento;
+			}
+			set
+			{
+				if ((this._Estado_Asiento != value))
+				{
+					this.OnEstado_AsientoChanging(value);
+					this.SendPropertyChanging();
+					this._Estado_Asiento = value;
+					this.SendPropertyChanged("Estado_Asiento");
+					this.OnEstado_AsientoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cinturon_Seguridad", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Cinturon_Seguridad
+		{
+			get
+			{
+				return this._Cinturon_Seguridad;
+			}
+			set
+			{
+				if ((this._Cinturon_Seguridad != value))
+				{
+					this.OnCinturon_SeguridadChanging(value);
+					this.SendPropertyChanging();
+					this._Cinturon_Seguridad = value;
+					this.SendPropertyChanged("Cinturon_Seguridad");
+					this.OnCinturon_SeguridadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Baliza_Pertiga", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Baliza_Pertiga
+		{
+			get
+			{
+				return this._Baliza_Pertiga;
+			}
+			set
+			{
+				if ((this._Baliza_Pertiga != value))
+				{
+					this.OnBaliza_PertigaChanging(value);
+					this.SendPropertyChanging();
+					this._Baliza_Pertiga = value;
+					this.SendPropertyChanged("Baliza_Pertiga");
+					this.OnBaliza_PertigaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado_Neumaticos", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Estado_Neumaticos
+		{
+			get
+			{
+				return this._Estado_Neumaticos;
+			}
+			set
+			{
+				if ((this._Estado_Neumaticos != value))
+				{
+					this.OnEstado_NeumaticosChanging(value);
+					this.SendPropertyChanging();
+					this._Estado_Neumaticos = value;
+					this.SendPropertyChanged("Estado_Neumaticos");
+					this.OnEstado_NeumaticosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Llantas_Tuercas", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Llantas_Tuercas
+		{
+			get
+			{
+				return this._Llantas_Tuercas;
+			}
+			set
+			{
+				if ((this._Llantas_Tuercas != value))
+				{
+					this.OnLlantas_TuercasChanging(value);
+					this.SendPropertyChanging();
+					this._Llantas_Tuercas = value;
+					this.SendPropertyChanged("Llantas_Tuercas");
+					this.OnLlantas_TuercasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cadenas_Torre", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Cadenas_Torre
+		{
+			get
+			{
+				return this._Cadenas_Torre;
+			}
+			set
+			{
+				if ((this._Cadenas_Torre != value))
+				{
+					this.OnCadenas_TorreChanging(value);
+					this.SendPropertyChanging();
+					this._Cadenas_Torre = value;
+					this.SendPropertyChanged("Cadenas_Torre");
+					this.OnCadenas_TorreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Unas_Horquilla", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Unas_Horquilla
+		{
+			get
+			{
+				return this._Unas_Horquilla;
+			}
+			set
+			{
+				if ((this._Unas_Horquilla != value))
+				{
+					this.OnUnas_HorquillaChanging(value);
+					this.SendPropertyChanging();
+					this._Unas_Horquilla = value;
+					this.SendPropertyChanged("Unas_Horquilla");
+					this.OnUnas_HorquillaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Soporte_Cilindro", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Soporte_Cilindro
+		{
+			get
+			{
+				return this._Soporte_Cilindro;
+			}
+			set
+			{
+				if ((this._Soporte_Cilindro != value))
+				{
+					this.OnSoporte_CilindroChanging(value);
+					this.SendPropertyChanging();
+					this._Soporte_Cilindro = value;
+					this.SendPropertyChanged("Soporte_Cilindro");
+					this.OnSoporte_CilindroChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Flexible_Polea_Rodamiento", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Flexible_Polea_Rodamiento
+		{
+			get
+			{
+				return this._Flexible_Polea_Rodamiento;
+			}
+			set
+			{
+				if ((this._Flexible_Polea_Rodamiento != value))
+				{
+					this.OnFlexible_Polea_RodamientoChanging(value);
+					this.SendPropertyChanging();
+					this._Flexible_Polea_Rodamiento = value;
+					this.SendPropertyChanged("Flexible_Polea_Rodamiento");
+					this.OnFlexible_Polea_RodamientoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Seguro_Una_Horquilla", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Seguro_Una_Horquilla
+		{
+			get
+			{
+				return this._Seguro_Una_Horquilla;
+			}
+			set
+			{
+				if ((this._Seguro_Una_Horquilla != value))
+				{
+					this.OnSeguro_Una_HorquillaChanging(value);
+					this.SendPropertyChanging();
+					this._Seguro_Una_Horquilla = value;
+					this.SendPropertyChanged("Seguro_Una_Horquilla");
+					this.OnSeguro_Una_HorquillaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Punto_Bloqueo", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Punto_Bloqueo
+		{
+			get
+			{
+				return this._Punto_Bloqueo;
+			}
+			set
+			{
+				if ((this._Punto_Bloqueo != value))
+				{
+					this.OnPunto_BloqueoChanging(value);
+					this.SendPropertyChanging();
+					this._Punto_Bloqueo = value;
+					this.SendPropertyChanged("Punto_Bloqueo");
+					this.OnPunto_BloqueoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Observaciones", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string Observaciones
+		{
+			get
+			{
+				return this._Observaciones;
+			}
+			set
+			{
+				if ((this._Observaciones != value))
+				{
+					this.OnObservacionesChanging(value);
+					this.SendPropertyChanging();
+					this._Observaciones = value;
+					this.SendPropertyChanged("Observaciones");
+					this.OnObservacionesChanged();
 				}
 			}
 		}
@@ -94825,7 +95618,7 @@ namespace DBMermasRecepcion
 		
 		private string _Responsable;
 		
-    #region Definiciones de métodos de extensibilidad
+    #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
@@ -94989,7 +95782,7 @@ namespace DBMermasRecepcion
 		
 		private decimal _Cantidad;
 		
-    #region Definiciones de métodos de extensibilidad
+    #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
