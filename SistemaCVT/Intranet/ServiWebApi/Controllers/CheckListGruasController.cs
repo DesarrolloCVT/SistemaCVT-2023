@@ -51,6 +51,7 @@ namespace ServiWebApi.Controllers
             return ret;
         }
         [HttpGet]
+        [Route("InsertaCheckListGrua")]
         public bool InsertaCheckListGrua(string Numero_Grua, string Area_Trabajo, string Tipo_Maquina, string Turno, string Horometro, 
             DateTime Fecha, string Estado_Luces, string Estado_Motor, string Fuga_Agua_Aceite, string Estado_Direccion, string Estado_Transmision, 
             string Escalera_Acceso_Pasamanos, string Estado_Bocina, string Alarma_Retroceso, string Espejo_Retrovisor, string Estado_Tablero_Datos, 
