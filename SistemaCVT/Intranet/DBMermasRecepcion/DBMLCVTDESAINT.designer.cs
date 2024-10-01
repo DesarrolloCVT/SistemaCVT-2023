@@ -13837,6 +13837,8 @@ namespace DBMermasRecepcion
 		
 		private int _RegistroChecklistGrua_Id;
 		
+		private string _Usuario_Responsable;
+		
 		private string _Numero_Grua;
 		
 		private string _Area_Trabajo;
@@ -13903,6 +13905,8 @@ namespace DBMermasRecepcion
     partial void OnCreated();
     partial void OnRegistroChecklistGrua_IdChanging(int value);
     partial void OnRegistroChecklistGrua_IdChanged();
+    partial void OnUsuario_ResponsableChanging(string value);
+    partial void OnUsuario_ResponsableChanged();
     partial void OnNumero_GruaChanging(string value);
     partial void OnNumero_GruaChanged();
     partial void OnArea_TrabajoChanging(string value);
@@ -13986,6 +13990,26 @@ namespace DBMermasRecepcion
 					this._RegistroChecklistGrua_Id = value;
 					this.SendPropertyChanged("RegistroChecklistGrua_Id");
 					this.OnRegistroChecklistGrua_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Usuario_Responsable", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Usuario_Responsable
+		{
+			get
+			{
+				return this._Usuario_Responsable;
+			}
+			set
+			{
+				if ((this._Usuario_Responsable != value))
+				{
+					this.OnUsuario_ResponsableChanging(value);
+					this.SendPropertyChanging();
+					this._Usuario_Responsable = value;
+					this.SendPropertyChanged("Usuario_Responsable");
+					this.OnUsuario_ResponsableChanged();
 				}
 			}
 		}
