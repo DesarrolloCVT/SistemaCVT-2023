@@ -33,13 +33,15 @@ namespace ServiWebApi.Controllers
             var ListaAreas = dbDsa.VW_AREA_TRABAJO.ToList();
 
             return ListaAreas;
-        } 
+        }
 
         [HttpGet]
         [Route("listaPersonal")]
         public IEnumerable<CVT_Personal> ListaPersonalFull()
         {
-            var ListaPersonal = dbDsa.CVT_Personal.ToList();
+            var ListaPersonal = (from p in dbDsa.CVT_Personal
+                                 orderby p.Nombre ascending
+                                 select p).ToList<CVT_Personal>();
 
             return ListaPersonal;
         }
