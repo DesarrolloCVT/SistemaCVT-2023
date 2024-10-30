@@ -2588,5 +2588,11 @@
         <elementListCompartment Id="9f3edcbc-01df-4aac-aedd-4e54e62748db" absoluteBounds="2.6400000000000006, 35.96, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="05878eb5-b3b1-46cd-8a6f-32961f5d5506" isExpanded="false" absoluteBounds="0.5, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_CheckList_Grua" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ddcac7d6-968a-4e42-aadd-608a1caccd9b" absoluteBounds="0.515, 0.96, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>
