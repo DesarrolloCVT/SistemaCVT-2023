@@ -207,6 +207,27 @@ namespace DBMermasRecepcion
             }
             return ret;
         }
+        public int SP_CargaProductoPresupuesto(int presupuesto, string cardcode, string cardname, int tipo)
+        {
+            int ret = 0;
+            try
+            {
+                
+                var temp = (from r in DBDesaint.CVT_PresupuestoDetalle
+                            where r.Presupuesto_ID.Equals(presupuesto) && r.CardCode.Equals(cardcode)
+                            select new { r.Presupuesto_ID }).FirstOrDefault();
+                if (temp != null)
+                {
+                    ret = Convert.ToInt32(temp.Presupuesto_ID);
+                }
+            }
+            catch { }
+            if (ret == 0)
+            {
+                DBDesaint.SP_CargaPresupuesto(presupuesto, cardcode, cardname, tipo);
+            }
+            return ret;
+        }
 
     }
 }

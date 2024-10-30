@@ -7,20 +7,10 @@ namespace CVT_MermasRecepcion.Sistema
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            GvDatos.DataBind();
+            GvUsuario.DataBind();
         }
 
-        //protected void cmdNew_Click(object sender, ImageClickEventArgs e)
-        //{
-        //    GvDatos.AddNewRow();
-        //}
-
-        //protected void cmdExcel_Click(object sender, ImageClickEventArgs e)
-        //{
-        //    DevExpress.XtraPrinting.XlsExportOptions Options = new DevExpress.XtraPrinting.XlsExportOptions();
-        //    this.ASPxGridViewExporter1.FileName = "Usuarios";
-        //    this.ASPxGridViewExporter1.WriteXlsToResponse(Options);
-        //}
+        
 
         protected void GvDatos_RowInserted(object sender, DevExpress.Web.Data.ASPxDataInsertedEventArgs e)
         {
@@ -63,7 +53,7 @@ namespace CVT_MermasRecepcion.Sistema
         {
             if (((DevExpress.Web.MenuItem)e.Item.Owner).Name.Equals("Export"))
             {
-                GvDatos.SettingsExport.FileName = "Usuarios";
+                GvUsuario.SettingsExport.FileName = "Usuarios";
             }
         }
 

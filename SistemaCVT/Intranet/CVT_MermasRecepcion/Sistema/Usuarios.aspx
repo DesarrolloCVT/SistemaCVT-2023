@@ -27,7 +27,7 @@
         </div>--%>
     </div>
     <div style="height: 292px; width: 990px">
-        <dx:ASPxGridView ID="GvDatos" runat="server" AutoGenerateColumns="False"
+        <dx:ASPxGridView ID="GvUsuario" runat="server" AutoGenerateColumns="False"
             DataSourceID="LqsUsuarios" KeyFieldName="IdUsuario" Width="981px"
             OnRowInserted="GvDatos_RowInserted" OnRowInserting="GvDatos_RowInserting" OnRowUpdating="GvDatos_RowUpdating" OnToolbarItemClick="GvDatos_ToolbarItemClick" OnRowDeleting="GvDatos_RowDeleting">
             <SettingsPager PageSize="25">
@@ -128,6 +128,13 @@
                 </dx:GridViewDataTextColumn>
                 <dx:GridViewDataCheckColumn FieldName="JefeArea" VisibleIndex="15">
                 </dx:GridViewDataCheckColumn>
+                <dx:GridViewDataHyperLinkColumn Caption="Credencial" VisibleIndex="18">
+                    <EditFormSettings Visible="False" />
+                    <DataItemTemplate>
+                        <asp:ImageButton ID="Credencial" CommandName="cmdCredencial" runat="server"
+                        ImageUrl="~/Images/user_avatar.gif" Width="30px" Height="30px"  />
+                    </DataItemTemplate>
+                </dx:GridViewDataHyperLinkColumn>
             </Columns>
             <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="Default" />
 

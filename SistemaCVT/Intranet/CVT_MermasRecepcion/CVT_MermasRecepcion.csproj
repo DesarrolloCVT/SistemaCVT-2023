@@ -417,6 +417,8 @@
     <Content Include="Comercial\IndicadoresComercialesCVT.aspx" />
     <Content Include="Comercial\InformeStock.aspx" />
     <Content Include="Comercial\InvValorizadoVsBalanceBodega.aspx" />
+    <Content Include="Comercial\PresupuestoDetalle.aspx" />
+    <Content Include="Comercial\PresupuestoVendedores.aspx" />
     <Content Include="Comercial\ResumenEstadisticasVentasRapel.aspx" />
     <Content Include="Comercial\RPTFefo.aspx" />
     <Content Include="Comercial\SMM_ComisionVendedor.aspx" />
@@ -497,6 +499,7 @@
     <Content Include="Gestion\ListadoProcedimientosPlanta.aspx" />
     <Content Include="Gestion\ResumenGestion.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Abajo.png" />
     <Content Include="Images\activo.png" />
     <Content Include="Images\add.png" />
     <Content Include="Images\ajax-loader.gif" />
@@ -585,6 +588,7 @@
     <Content Include="Images\InnvitaSP2.png" />
     <Content Include="Images\insurance.png" />
     <Content Include="Images\inventory.png" />
+    <Content Include="Images\Izquierda.png" />
     <Content Include="Images\kpi.png" />
     <Content Include="Images\KPIimage.jpg" />
     <Content Include="Images\Left-right.png" />
@@ -1692,6 +1696,20 @@
     </Compile>
     <Compile Include="Comercial\IndicadoresComercialesCVT.aspx.designer.cs">
       <DependentUpon>IndicadoresComercialesCVT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\PresupuestoDetalle.aspx.cs">
+      <DependentUpon>PresupuestoDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comercial\PresupuestoDetalle.aspx.designer.cs">
+      <DependentUpon>PresupuestoDetalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\PresupuestoVendedores.aspx.cs">
+      <DependentUpon>PresupuestoVendedores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comercial\PresupuestoVendedores.aspx.designer.cs">
+      <DependentUpon>PresupuestoVendedores.aspx</DependentUpon>
     </Compile>
     <Compile Include="Comercial\SMM_ComisionVendedor.aspx.cs">
       <DependentUpon>SMM_ComisionVendedor.aspx</DependentUpon>
@@ -5443,6 +5461,18 @@
     <Compile Include="UtilidadCVT\EtiquetaQr1.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UtilidadCVT\EtiquetaUbicacionPBC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UtilidadCVT\EtiquetaUbicacionPBC.Designer.cs">
+      <DependentUpon>EtiquetaUbicacionPBC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UtilidadCVT\EtiquetaUbicacion.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UtilidadCVT\EtiquetaUbicacion.Designer.cs">
+      <DependentUpon>EtiquetaUbicacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="UtilidadCVT\ImpEtiquetasQR.aspx.cs">
       <DependentUpon>ImpEtiquetasQR.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -6102,6 +6132,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UtilidadCVT\EtiquetaQr1.resx">
       <DependentUpon>EtiquetaQr1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UtilidadCVT\EtiquetaUbicacionPBC.resx">
+      <DependentUpon>EtiquetaUbicacionPBC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UtilidadCVT\EtiquetaUbicacion.resx">
+      <DependentUpon>EtiquetaUbicacion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

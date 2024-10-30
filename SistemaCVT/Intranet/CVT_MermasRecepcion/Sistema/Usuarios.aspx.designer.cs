@@ -7,20 +7,22 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace CVT_MermasRecepcion.Sistema {
-    
-    
-    public partial class Usuarios {
-        
+namespace CVT_MermasRecepcion.Sistema
+{
+
+
+    public partial class Usuarios
+    {
+
         /// <summary>
-        /// Control GvDatos.
+        /// Control GvUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView GvDatos;
-        
+        protected global::DevExpress.Web.ASPxGridView GvUsuario;
+
         /// <summary>
         /// Control LqsUsuarios.
         /// </summary>
@@ -29,7 +31,7 @@ namespace CVT_MermasRecepcion.Sistema {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinqDataSource LqsUsuarios;
-        
+
         /// <summary>
         /// Control LqsPerfil.
         /// </summary>
@@ -38,7 +40,7 @@ namespace CVT_MermasRecepcion.Sistema {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinqDataSource LqsPerfil;
-        
+
         /// <summary>
         /// Control LqsArea.
         /// </summary>
@@ -47,7 +49,7 @@ namespace CVT_MermasRecepcion.Sistema {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinqDataSource LqsArea;
-        
+
         /// <summary>
         /// Control LqsBodega.
         /// </summary>
@@ -56,7 +58,7 @@ namespace CVT_MermasRecepcion.Sistema {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinqDataSource LqsBodega;
-        
+
         /// <summary>
         /// Control ASPxGridViewExporter1.
         /// </summary>
@@ -65,7 +67,7 @@ namespace CVT_MermasRecepcion.Sistema {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGridViewExporter ASPxGridViewExporter1;
-        
+
         /// <summary>
         /// Control LqsPerfilesXamarin.
         /// </summary>

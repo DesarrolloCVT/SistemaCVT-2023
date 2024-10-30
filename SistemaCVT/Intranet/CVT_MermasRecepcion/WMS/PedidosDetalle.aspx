@@ -205,7 +205,12 @@ cbo_producto.SetSelectedIndex(-1);
                         EnableTheming="True" KeyFieldName="Package_Id" Theme="BlackGlass">
                         <SettingsPager AlwaysShowPager="True" PageSize="1000" Visible="False">
                         </SettingsPager>
-                        <Settings ShowGroupPanel="True" />
+                        <Settings ShowGroupPanel="True"  />
+                        <SettingsBehavior AutoExpandAllGroups="True" />
+                        <SettingsPopup>
+                            <FilterControl AutoUpdatePosition="False">
+                            </FilterControl>
+                        </SettingsPopup>
                         <Columns>
                             <dx:GridViewCommandColumn SelectAllCheckboxMode="Page"
                                 ShowInCustomizationForm="True" ShowSelectCheckbox="True" VisibleIndex="0">

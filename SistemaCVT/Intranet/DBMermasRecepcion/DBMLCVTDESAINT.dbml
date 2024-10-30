@@ -5280,6 +5280,73 @@
       <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.CVT_PresupuestoVendedor" Member="CVT_PresupuestoVendedor">
+    <Type Name="CVT_PresupuestoVendedor">
+      <Column Name="Presupuesto_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Año" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Vendedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_PresupuestoDetalle" Member="CVT_PresupuestoDetalle">
+    <Type Name="CVT_PresupuestoDetalle">
+      <Column Name="PresupuestoDetalle_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Presupuesto_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoPresupuesto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CardCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CardName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Itemcode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Enero" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EneroPA" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Febrero" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FebreroPA" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Marzo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MarzoPA" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Abril" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AbrilPA" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Mayo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MayoPA" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Junio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JunioPA" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Julio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JulioPA" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Agosto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AgostoPA" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Septiembre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SeptiembrePA" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Octubre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OctubrePA" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Noviembre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NoviembrePA" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Diciembre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiciembrePA" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_TransferAsignacion" Member="CVT_TransferAsignacion">
+    <Type Name="CVT_TransferAsignacion">
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ItemCode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_OrderAsignacion" Member="CVT_OrderAsignacion">
+    <Type Name="CVT_OrderAsignacion">
+      <Column Name="Order_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Itemcode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_FoliosPedidosAsignacion" Member="CVT_VW_FoliosPedidosAsignacion">
+    <Type Name="CVT_VW_FoliosPedidosAsignacion">
+      <Column Name="Order_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_VW_FoliosTransferenciasAsignacion" Member="CVT_VW_FoliosTransferenciasAsignacion">
+    <Type Name="CVT_VW_FoliosTransferenciasAsignacion">
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="dbo.CVT_AGENDAPROD_LeeStockReceta" Method="CVT_AGENDAPROD_LeeStockReceta">
     <Parameter Name="ItemCode" Parameter="itemCode" Type="System.String" DbType="NVarChar(40)" />
     <Parameter Name="CantPlan" Parameter="cantPlan" Type="System.Decimal" DbType="Decimal(19,6)" />
@@ -6060,6 +6127,23 @@
       <Column Name="DiasTotales" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DiasTranscurrido" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="VidaUtilRestante" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_CargaPresupuesto" Method="SP_CargaPresupuesto">
+    <Parameter Name="PresupuestoId" Parameter="presupuestoId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CardCode" Parameter="cardCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="CardName" Parameter="cardName" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="Tipo" Parameter="tipo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_LotesStockDiponiblesAsignacion" Method="SP_LotesStockDiponiblesAsignacion">
+    <Parameter Name="ItemCode" Parameter="itemCode" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Bodega" Parameter="bodega" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="CodCliente" Parameter="codCliente" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="SP_LotesStockDiponiblesAsignacionResult">
+      <Column Name="Package_Lot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PackageOrigin_Description" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

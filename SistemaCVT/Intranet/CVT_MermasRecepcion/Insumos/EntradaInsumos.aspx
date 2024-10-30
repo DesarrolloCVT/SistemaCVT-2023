@@ -71,6 +71,7 @@
                 <dx:ListEditItem Text="Bodega Agricola" Value="CVAGRI" />
                 <dx:ListEditItem Text="Bodega Aseo" Value="CVASEO" />
                 <dx:ListEditItem Text="Bodega Mantencion" Value="CVMANT" />
+                <dx:ListEditItem Text="Bodega Informatica" Value="CVINF" />
             </Items>
         </dx:ASPxComboBox>
         <dx:ASPxButton ID="btn_recepcionar" runat="server" Text="RECEPCIONAR" OnClick="btn_recepcionar_Click"></dx:ASPxButton>
