@@ -172,7 +172,7 @@ namespace ServiWebApi.Controllers
                 ret = (from p in DBDatos.Package
                             join ap in DBDatos.ArticleProvider on p.ArticleProvider_Id equals ap.ArticleProvider_Id
                             where p.Package_SSCC.Equals(packageSSCC)
-                            select new { p.Package_Lot, ap.ArticleProvider_CodClient }).ToArray();
+                            select new { p.Package_Lot, ap.ArticleProvider_CodClient, p.Package_Quantity }).ToArray();
             }
             catch (Exception)
             {
