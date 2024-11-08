@@ -105,8 +105,6 @@ namespace ServiWebApi.Controllers
             }
             catch (Exception)
             {
-
-
             }
             return ret;
         }
@@ -147,6 +145,91 @@ namespace ServiWebApi.Controllers
             return ret;
         }
 
+        [HttpGet]
+        [Route("ObtieneOrdenesActivas")]
+        public List<int> ObtieneOrdenesActivas()
+        {
+            List<int> ret = new List<int>();
+            try
+            {
+                ret = (from t in DBDatos.Order
+                                     where t.Order_Status.Equals(1)
+                                     select t.Order_Id).ToList();
+            }
+            catch (Exception)
+            {
+            }
+            return ret;
+        }
 
+        [HttpGet]
+        [Route("ObtieneDatos")]
+        public object[] ObtieneDatos(int packageSSCC)
+        {
+            object[] ret;
+            try
+            {
+                ret = (from p in DBDatos.Package
+                            join ap in DBDatos.ArticleProvider on p.ArticleProvider_Id equals ap.ArticleProvider_Id
+                            where p.Package_SSCC.Equals(packageSSCC)
+                            select new { p.Package_Lot, ap.ArticleProvider_CodClient }).ToArray();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            return ret.ToArray();
+        }
+
+        [HttpGet]
+        [Route("InsertaMP")]
+        public bool InsertarAsignacionMP(int transferID, string itemCode, string Lote)
+        {
+            bool ret = false;
+
+            try
+            {
+                CVT_TransferAsignacion vNuevo = new CVT_TransferAsignacion
+                {
+                    Transfer_Id = transferID,
+                    ItemCode = itemCode,
+                    Lote = Lote
+                };
+
+                dbDsa.CVT_TransferAsignacion.InsertOnSubmit(vNuevo);
+                dbDsa.SubmitChanges();
+                ret = true;
+            }
+            catch (Exception)
+            {
+            }
+            return ret;
+        }
+
+        [HttpGet]
+        [Route("InsertaPedido")]
+        public bool InsertarAsignacionPedidos(int orderID, string itemCode, string Lote, int cantidad)
+        {
+            bool ret = false;
+
+            try
+            {
+                CVT_OrderAsignacion vNuevo = new CVT_OrderAsignacion
+                {
+                    Order_ID = orderID,
+                    Itemcode = itemCode,
+                    Lote = Lote,
+                    Cantidad = cantidad
+                };
+
+                dbDsa.CVT_OrderAsignacion.InsertOnSubmit(vNuevo);
+                dbDsa.SubmitChanges();
+                ret = true;
+            }
+            catch (Exception)
+            {
+            }
+            return ret;
+        }
     }
 }
