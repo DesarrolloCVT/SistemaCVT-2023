@@ -72,6 +72,7 @@ namespace ServiWebApi.Controllers
                 vNuevo.Valor_Nuevo = Valor_Nuevo;
                 dbDsa.LOG_SistemaCVT.InsertOnSubmit(vNuevo);
                 dbDsa.SubmitChanges();
+                ret = true;
             }
             catch (Exception)
             {

@@ -1,5 +1,7 @@
 ﻿using DBMermasRecepcion;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -146,15 +148,14 @@ namespace ServiWebApi.Controllers
         }
 
         [HttpGet]
-        [Route("ObtieneOrdenesActivas")]
-        public List<int> ObtieneOrdenesActivas()
+        [Route("FoliosTransferenciasAsignadas")]
+        public List<CVT_VW_FoliosTransferenciasAsignacion> ObtieneOrdenesActivas()
         {
-            List<int> ret = new List<int>();
+            List<CVT_VW_FoliosTransferenciasAsignacion> ret = new List<CVT_VW_FoliosTransferenciasAsignacion>();
             try
             {
-                ret = (from t in DBDatos.Order
-                                     where t.Order_Status.Equals(1)
-                                     select t.Order_Id).ToList();
+                ret = (from ft in dbDsa.CVT_VW_FoliosTransferenciasAsignacion
+                        select ft).ToList<CVT_VW_FoliosTransferenciasAsignacion>();
             }
             catch (Exception)
             {
@@ -164,21 +165,36 @@ namespace ServiWebApi.Controllers
 
         [HttpGet]
         [Route("ObtieneDatos")]
-        public object[] ObtieneDatos(int packageSSCC)
+        public List<string> ObtieneDatos(int packageSSCC)
         {
-            object[] ret;
+            List<string> ret = new List<string>();
             try
             {
-                ret = (from p in DBDatos.Package
-                            join ap in DBDatos.ArticleProvider on p.ArticleProvider_Id equals ap.ArticleProvider_Id
-                            where p.Package_SSCC.Equals(packageSSCC)
-                            select new { p.Package_Lot, ap.ArticleProvider_CodClient, p.Package_Quantity }).ToArray();
+                var rest = 
+                    (
+                    from p in DBDatos.Package
+                    join ap in DBDatos.ArticleProvider 
+                    on p.ArticleProvider_Id equals ap.ArticleProvider_Id
+                    where p.Package_SSCC.Equals(packageSSCC)
+                    select new 
+                    {
+                        p.Package_Lot,
+                        ap.ArticleProvider_CodClient, 
+                        p.Package_Quantity 
+                    }).FirstOrDefault();
+
+                if (rest != null) 
+                {
+                    ret.Add(rest.Package_Lot);
+                    ret.Add(rest.ArticleProvider_CodClient);
+                    ret.Add(rest.Package_Quantity.ToString());
+                }
             }
             catch (Exception)
             {
-                return null;
+                return ret;
             }
-            return ret.ToArray();
+            return ret;
         }
 
         [HttpGet]
