@@ -244,6 +244,14 @@
                                 <CellStyle HorizontalAlign="Center" VerticalAlign="Middle">
                                 </CellStyle>
                             </dx:GridViewDataHyperLinkColumn>
+                            <dx:GridViewDataHyperLinkColumn Caption="Asignacion" VisibleIndex="18">
+                                <EditFormSettings Visible="False" />
+                                <DataItemTemplate>
+                                    <asp:ImageButton ID="Asignacion" CommandName="cmdAsignar" runat="server" ImageUrl="~/Images/checklist.png" />
+                                </DataItemTemplate>
+                                <CellStyle HorizontalAlign="Center" VerticalAlign="Middle">
+                                </CellStyle>
+                            </dx:GridViewDataHyperLinkColumn>
                             <dx:GridViewDataHyperLinkColumn Caption="Anula" VisibleIndex="19">
                                 <EditFormSettings Visible="False" />
                                 <DataItemTemplate>
@@ -336,9 +344,8 @@
                     </asp:LinqDataSource>
                     <asp:LinqDataSource ID="LqDsSite" runat="server"
                         ContextTypeName="DBMermasRecepcion.DBMLCVTWMSDataContext" EntityTypeName=""
-                        TableName="Site" Where="Site_ShortDescription != @Site_ShortDescription1 &amp;&amp; Site_ShortDescription != @Site_ShortDescription2">
+                        TableName="Site" Where="Site_ShortDescription != @Site_ShortDescription2">
                         <WhereParameters>
-                            <asp:Parameter DefaultValue="CV700" Name="Site_ShortDescription1" Type="String" />
                             <asp:Parameter DefaultValue="CV701" Name="Site_ShortDescription2" Type="String" />
                         </WhereParameters>
                     </asp:LinqDataSource>
