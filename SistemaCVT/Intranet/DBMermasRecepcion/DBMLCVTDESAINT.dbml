@@ -5383,6 +5383,42 @@
       <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.CVT_PresupuestoInformeVendedorAño" Member="CVT_PresupuestoInformeVendedorAño">
+    <Type Name="CVT_PresupuestoInformeVendedorAño">
+      <Column Name="Presupuesto_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Año" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Vendedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoPresupuesto" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CardCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CardName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Itemcode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Enero" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EneroPA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Febrero" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FebreroPA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Marzo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MarzoPA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Abril" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AbrilPA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Mayo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MayoPA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Junio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JunioPA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Julio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="JulioPA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Agosto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AgostoPA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Septiembre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SeptiembrePA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Octubre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OctubrePA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Noviembre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NoviembrePA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Diciembre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiciembrePA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.CVT_AGENDAPROD_LeeStockReceta" Method="CVT_AGENDAPROD_LeeStockReceta">
     <Parameter Name="ItemCode" Parameter="itemCode" Type="System.String" DbType="NVarChar(40)" />
     <Parameter Name="CantPlan" Parameter="cantPlan" Type="System.Decimal" DbType="Decimal(19,6)" />
