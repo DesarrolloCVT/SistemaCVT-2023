@@ -313,5 +313,25 @@ namespace ServiWebApi.Controllers
             return flag;
         }
 
+        [HttpGet]
+        [Route("ValidaPallet")]
+        public bool ValidaPallet(string SSCC)
+        {
+            bool ret = false;
+            try
+            {
+                var resp = (from p in DBDatos.Package
+                       where p.Package_SSCC.Equals(SSCC) && p.Package_Status.Equals(3)
+                       select p.Package_SSCC);
+                if (resp.Count() > 0) 
+                {
+                    ret = true;
+                }
+            }
+            catch
+            {
+            }
+            return ret;
+        }
     }
 }

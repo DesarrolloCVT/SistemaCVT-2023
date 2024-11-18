@@ -148,7 +148,7 @@ namespace ServiWebApi.Controllers
         }
 
         [HttpGet]
-        [Route("FoliosTransferenciasAsignadas")]
+        [Route("FoliosAsignaciones")]
         public List<CVT_VW_FoliosTransferenciasAsignacion> ObtieneOrdenesActivas()
         {
             List<CVT_VW_FoliosTransferenciasAsignacion> ret = new List<CVT_VW_FoliosTransferenciasAsignacion>();
@@ -246,6 +246,40 @@ namespace ServiWebApi.Controllers
             {
             }
             return ret;
+        }
+
+        [HttpGet]
+        [Route("TransfernciasAsignadas")]
+        public List<CVT_TransferAsignacion> TransferenciasAsignadas(string TransferID)
+        {
+            List<CVT_TransferAsignacion> lista = new List<CVT_TransferAsignacion> ();
+
+            try
+            {
+                lista = (from t in dbDsa.CVT_TransferAsignacion
+                       select t).ToList<CVT_TransferAsignacion>();
+            }
+            catch (Exception)
+            {
+            }
+            return lista;
+        }
+
+        [HttpGet]
+        [Route("PedidosAsignados")]
+        public List<CVT_OrderAsignacion> PedidosAsignados(string TransferID)
+        {
+            List<CVT_OrderAsignacion> lista = new List<CVT_OrderAsignacion>();
+
+            try
+            {
+                lista = (from t in dbDsa.CVT_OrderAsignacion
+                         select t).ToList<CVT_OrderAsignacion>();
+            }
+            catch (Exception)
+            {
+            }
+            return lista;
         }
     }
 }
