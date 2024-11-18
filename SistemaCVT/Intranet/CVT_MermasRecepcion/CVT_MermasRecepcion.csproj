@@ -415,6 +415,7 @@
     <Content Include="Comercial\EstadisticaVentasVendedoresBmas.aspx" />
     <Content Include="Comercial\IndicadorComercialEnCurso.aspx" />
     <Content Include="Comercial\IndicadoresComercialesCVT.aspx" />
+    <Content Include="Comercial\InformePresupuestoVentas.aspx" />
     <Content Include="Comercial\InformeStock.aspx" />
     <Content Include="Comercial\InvValorizadoVsBalanceBodega.aspx" />
     <Content Include="Comercial\PresupuestoDetalle.aspx" />
@@ -1165,6 +1166,7 @@
     <Content Include="WMS\LaboresTurno.aspx" />
     <Content Include="WMS\ListadoPartidasAbiertas.aspx" />
     <Content Include="WMS\PalletRecibidosSinPosicionar.aspx" />
+    <Content Include="WMS\PedidoAsignacion.aspx" />
     <Content Include="WMS\Pedidos.aspx" />
     <Content Include="WMS\PedidosDetalle.aspx" />
     <Content Include="WMS\Posicionamiento.aspx" />
@@ -1178,6 +1180,7 @@
     <Content Include="WMS\StockAsignacionProduccion.aspx" />
     <Content Include="WMS\StockBajadaPedidos.aspx" />
     <Content Include="WMS\StockBajadaPro.aspx" />
+    <Content Include="WMS\TransferenciaAsignacion.aspx" />
     <Content Include="WMS\TransferenciaProforma.aspx" />
     <Content Include="WMS\Transferencias.aspx" />
     <Content Include="WMS\AuditoriaRecepcion.aspx" />
@@ -1696,6 +1699,13 @@
     </Compile>
     <Compile Include="Comercial\IndicadoresComercialesCVT.aspx.designer.cs">
       <DependentUpon>IndicadoresComercialesCVT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Comercial\InformePresupuestoVentas.aspx.cs">
+      <DependentUpon>InformePresupuestoVentas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Comercial\InformePresupuestoVentas.aspx.designer.cs">
+      <DependentUpon>InformePresupuestoVentas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Comercial\PresupuestoDetalle.aspx.cs">
       <DependentUpon>PresupuestoDetalle.aspx</DependentUpon>
@@ -5627,6 +5637,13 @@
     <Compile Include="WMS\PalletRecibidosSinPosicionar.aspx.designer.cs">
       <DependentUpon>PalletRecibidosSinPosicionar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WMS\PedidoAsignacion.aspx.cs">
+      <DependentUpon>PedidoAsignacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WMS\PedidoAsignacion.aspx.designer.cs">
+      <DependentUpon>PedidoAsignacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WMS\Pedidos.aspx.cs">
       <DependentUpon>Pedidos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -5717,6 +5734,13 @@
     </Compile>
     <Compile Include="WMS\StockBajadaPro.aspx.designer.cs">
       <DependentUpon>StockBajadaPro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WMS\TransferenciaAsignacion.aspx.cs">
+      <DependentUpon>TransferenciaAsignacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WMS\TransferenciaAsignacion.aspx.designer.cs">
+      <DependentUpon>TransferenciaAsignacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="WMS\TransferenciaProforma.aspx.cs">
       <DependentUpon>TransferenciaProforma.aspx</DependentUpon>

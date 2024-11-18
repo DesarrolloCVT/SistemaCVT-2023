@@ -45,97 +45,97 @@
                 <FilterControl AutoUpdatePosition="False"></FilterControl>
             </SettingsPopup>
             <Columns>
-                <dx:GridViewDataTextColumn FieldName="PresupuestoDetalle_ID" VisibleIndex="0">
+                <dx:GridViewDataTextColumn FieldName="PresupuestoDetalle_ID" VisibleIndex="0" Visible="False">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Presupuesto_ID" VisibleIndex="1">
+                <dx:GridViewDataTextColumn FieldName="Presupuesto_ID" VisibleIndex="1" Visible="False">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="TipoPresupuesto" VisibleIndex="2">
+                <dx:GridViewDataTextColumn FieldName="TipoPresupuesto" VisibleIndex="2" Visible="False">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="CardCode" VisibleIndex="3">
+                <dx:GridViewDataTextColumn FieldName="CardCode" VisibleIndex="3" Visible="False">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="CardName" VisibleIndex="4">
+                <dx:GridViewDataTextColumn FieldName="CardName" VisibleIndex="4" Caption="Cliente / Canal">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Itemcode" VisibleIndex="5">
+                <dx:GridViewDataTextColumn FieldName="Itemcode" VisibleIndex="5" Caption="Codigo">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="ItemName" VisibleIndex="6">
+                <dx:GridViewDataTextColumn FieldName="ItemName" VisibleIndex="6" Caption="Producto">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Enero" VisibleIndex="7">
+                <dx:GridViewDataTextColumn FieldName="Enero" VisibleIndex="7" Caption="1">
                     <EditFormSettings Visible="True" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="EneroPA" VisibleIndex="8">
+                <dx:GridViewDataTextColumn FieldName="EneroPA" VisibleIndex="8" Caption="1 PA">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Febrero" VisibleIndex="9">
+                <dx:GridViewDataTextColumn FieldName="Febrero" VisibleIndex="9" Caption="2">
                     <EditFormSettings Visible="True" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="FebreroPA" VisibleIndex="10">
+                <dx:GridViewDataTextColumn FieldName="FebreroPA" VisibleIndex="10" Caption="2 PA">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Marzo" VisibleIndex="11">
+                <dx:GridViewDataTextColumn FieldName="Marzo" VisibleIndex="11" Caption="3">
                     <EditFormSettings Visible="True" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="MarzoPA" VisibleIndex="12">
+                <dx:GridViewDataTextColumn FieldName="MarzoPA" VisibleIndex="12" Caption="3 PA">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Abril" VisibleIndex="13">
+                <dx:GridViewDataTextColumn FieldName="Abril" VisibleIndex="13" Caption="4">
                     <EditFormSettings Visible="True" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="AbrilPA" VisibleIndex="14">
+                <dx:GridViewDataTextColumn FieldName="AbrilPA" VisibleIndex="14" Caption="4 PA">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Mayo" VisibleIndex="15">
+                <dx:GridViewDataTextColumn FieldName="Mayo" VisibleIndex="15" Caption="5">
                     <EditFormSettings Visible="True" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="MayoPA" VisibleIndex="16">
+                <dx:GridViewDataTextColumn FieldName="MayoPA" VisibleIndex="16" Caption="5 PA">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Junio" VisibleIndex="17">
+                <dx:GridViewDataTextColumn FieldName="Junio" VisibleIndex="17" Caption="6">
                     <EditFormSettings Visible="True" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="JunioPA" VisibleIndex="18">
+                <dx:GridViewDataTextColumn FieldName="JunioPA" VisibleIndex="18" Caption="6 PA">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Julio" VisibleIndex="19">
+                <dx:GridViewDataTextColumn FieldName="Julio" VisibleIndex="19" Caption="7">
                     <EditFormSettings Visible="True" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="JulioPA" VisibleIndex="20">
+                <dx:GridViewDataTextColumn FieldName="JulioPA" VisibleIndex="20" Caption="7 PA">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Agosto" VisibleIndex="21">
+                <dx:GridViewDataTextColumn FieldName="Agosto" VisibleIndex="21" Caption="8">
                     <EditFormSettings Visible="True" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="AgostoPA" VisibleIndex="22">
+                <dx:GridViewDataTextColumn FieldName="AgostoPA" VisibleIndex="22" Caption="8 PA">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Septiembre" VisibleIndex="23">
+                <dx:GridViewDataTextColumn FieldName="Septiembre" VisibleIndex="23" Caption="9">
                     <EditFormSettings Visible="True" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="SeptiembrePA" VisibleIndex="24">
+                <dx:GridViewDataTextColumn FieldName="SeptiembrePA" VisibleIndex="24" Caption="9 PA">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Octubre" VisibleIndex="25">
+                <dx:GridViewDataTextColumn FieldName="Octubre" VisibleIndex="25" Caption="10">
                     <EditFormSettings Visible="True" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="OctubrePA" VisibleIndex="26">
+                <dx:GridViewDataTextColumn FieldName="OctubrePA" VisibleIndex="26" Caption="10 PA">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Noviembre" VisibleIndex="27">
+                <dx:GridViewDataTextColumn FieldName="Noviembre" VisibleIndex="27" Caption="11">
                     <EditFormSettings Visible="True" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="NoviembrePA" VisibleIndex="28">
+                <dx:GridViewDataTextColumn FieldName="NoviembrePA" VisibleIndex="28" Caption="11 PA">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Diciembre" VisibleIndex="29">
+                <dx:GridViewDataTextColumn FieldName="Diciembre" VisibleIndex="29" Caption="12">
                     <EditFormSettings Visible="True" />
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="DiciembrePA" VisibleIndex="30">
+                <dx:GridViewDataTextColumn FieldName="DiciembrePA" VisibleIndex="30" Caption="12 PA">
                     <EditFormSettings Visible="False" />
                 </dx:GridViewDataTextColumn>
             </Columns>

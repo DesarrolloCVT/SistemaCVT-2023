@@ -4379,6 +4379,14 @@ namespace DBMermasRecepcion
 			}
 		}
 		
+		public System.Data.Linq.Table<CVT_PresupuestoInformeVendedorAño> CVT_PresupuestoInformeVendedorAño
+		{
+			get
+			{
+				return this.GetTable<CVT_PresupuestoInformeVendedorAño>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CVT_AGENDAPROD_LeeStockReceta")]
 		public ISingleResult<CVT_AGENDAPROD_LeeStockRecetaResult> CVT_AGENDAPROD_LeeStockReceta([global::System.Data.Linq.Mapping.ParameterAttribute(Name="ItemCode", DbType="NVarChar(40)")] string itemCode, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CantPlan", DbType="Decimal(19,6)")] System.Nullable<decimal> cantPlan)
 		{
@@ -97273,6 +97281,591 @@ namespace DBMermasRecepcion
 				if ((this._Transfer_Id != value))
 				{
 					this._Transfer_Id = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CVT_PresupuestoInformeVendedorAño")]
+	public partial class CVT_PresupuestoInformeVendedorAño
+	{
+		
+		private int _Presupuesto_ID;
+		
+		private int _Año;
+		
+		private int _Vendedor;
+		
+		private string _TipoPresupuesto;
+		
+		private string _CardCode;
+		
+		private string _CardName;
+		
+		private string _Itemcode;
+		
+		private string _ItemName;
+		
+		private System.Nullable<int> _Enero;
+		
+		private System.Nullable<decimal> _EneroPA;
+		
+		private System.Nullable<int> _Febrero;
+		
+		private System.Nullable<decimal> _FebreroPA;
+		
+		private System.Nullable<int> _Marzo;
+		
+		private System.Nullable<decimal> _MarzoPA;
+		
+		private System.Nullable<int> _Abril;
+		
+		private System.Nullable<decimal> _AbrilPA;
+		
+		private System.Nullable<int> _Mayo;
+		
+		private System.Nullable<decimal> _MayoPA;
+		
+		private System.Nullable<int> _Junio;
+		
+		private System.Nullable<decimal> _JunioPA;
+		
+		private System.Nullable<int> _Julio;
+		
+		private System.Nullable<decimal> _JulioPA;
+		
+		private System.Nullable<int> _Agosto;
+		
+		private System.Nullable<decimal> _AgostoPA;
+		
+		private System.Nullable<int> _Septiembre;
+		
+		private System.Nullable<decimal> _SeptiembrePA;
+		
+		private System.Nullable<int> _Octubre;
+		
+		private System.Nullable<decimal> _OctubrePA;
+		
+		private System.Nullable<int> _Noviembre;
+		
+		private System.Nullable<decimal> _NoviembrePA;
+		
+		private System.Nullable<int> _Diciembre;
+		
+		private System.Nullable<decimal> _DiciembrePA;
+		
+		public CVT_PresupuestoInformeVendedorAño()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Presupuesto_ID", DbType="Int NOT NULL")]
+		public int Presupuesto_ID
+		{
+			get
+			{
+				return this._Presupuesto_ID;
+			}
+			set
+			{
+				if ((this._Presupuesto_ID != value))
+				{
+					this._Presupuesto_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Año", DbType="Int NOT NULL")]
+		public int Año
+		{
+			get
+			{
+				return this._Año;
+			}
+			set
+			{
+				if ((this._Año != value))
+				{
+					this._Año = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vendedor", DbType="Int NOT NULL")]
+		public int Vendedor
+		{
+			get
+			{
+				return this._Vendedor;
+			}
+			set
+			{
+				if ((this._Vendedor != value))
+				{
+					this._Vendedor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TipoPresupuesto", DbType="VarChar(17)")]
+		public string TipoPresupuesto
+		{
+			get
+			{
+				return this._TipoPresupuesto;
+			}
+			set
+			{
+				if ((this._TipoPresupuesto != value))
+				{
+					this._TipoPresupuesto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CardCode", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string CardCode
+		{
+			get
+			{
+				return this._CardCode;
+			}
+			set
+			{
+				if ((this._CardCode != value))
+				{
+					this._CardCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CardName", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string CardName
+		{
+			get
+			{
+				return this._CardName;
+			}
+			set
+			{
+				if ((this._CardName != value))
+				{
+					this._CardName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Itemcode", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Itemcode
+		{
+			get
+			{
+				return this._Itemcode;
+			}
+			set
+			{
+				if ((this._Itemcode != value))
+				{
+					this._Itemcode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemName", DbType="VarChar(250) NOT NULL", CanBeNull=false)]
+		public string ItemName
+		{
+			get
+			{
+				return this._ItemName;
+			}
+			set
+			{
+				if ((this._ItemName != value))
+				{
+					this._ItemName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Enero", DbType="Int")]
+		public System.Nullable<int> Enero
+		{
+			get
+			{
+				return this._Enero;
+			}
+			set
+			{
+				if ((this._Enero != value))
+				{
+					this._Enero = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EneroPA", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> EneroPA
+		{
+			get
+			{
+				return this._EneroPA;
+			}
+			set
+			{
+				if ((this._EneroPA != value))
+				{
+					this._EneroPA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Febrero", DbType="Int")]
+		public System.Nullable<int> Febrero
+		{
+			get
+			{
+				return this._Febrero;
+			}
+			set
+			{
+				if ((this._Febrero != value))
+				{
+					this._Febrero = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FebreroPA", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> FebreroPA
+		{
+			get
+			{
+				return this._FebreroPA;
+			}
+			set
+			{
+				if ((this._FebreroPA != value))
+				{
+					this._FebreroPA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Marzo", DbType="Int")]
+		public System.Nullable<int> Marzo
+		{
+			get
+			{
+				return this._Marzo;
+			}
+			set
+			{
+				if ((this._Marzo != value))
+				{
+					this._Marzo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MarzoPA", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> MarzoPA
+		{
+			get
+			{
+				return this._MarzoPA;
+			}
+			set
+			{
+				if ((this._MarzoPA != value))
+				{
+					this._MarzoPA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Abril", DbType="Int")]
+		public System.Nullable<int> Abril
+		{
+			get
+			{
+				return this._Abril;
+			}
+			set
+			{
+				if ((this._Abril != value))
+				{
+					this._Abril = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AbrilPA", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> AbrilPA
+		{
+			get
+			{
+				return this._AbrilPA;
+			}
+			set
+			{
+				if ((this._AbrilPA != value))
+				{
+					this._AbrilPA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mayo", DbType="Int")]
+		public System.Nullable<int> Mayo
+		{
+			get
+			{
+				return this._Mayo;
+			}
+			set
+			{
+				if ((this._Mayo != value))
+				{
+					this._Mayo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MayoPA", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> MayoPA
+		{
+			get
+			{
+				return this._MayoPA;
+			}
+			set
+			{
+				if ((this._MayoPA != value))
+				{
+					this._MayoPA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Junio", DbType="Int")]
+		public System.Nullable<int> Junio
+		{
+			get
+			{
+				return this._Junio;
+			}
+			set
+			{
+				if ((this._Junio != value))
+				{
+					this._Junio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JunioPA", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> JunioPA
+		{
+			get
+			{
+				return this._JunioPA;
+			}
+			set
+			{
+				if ((this._JunioPA != value))
+				{
+					this._JunioPA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Julio", DbType="Int")]
+		public System.Nullable<int> Julio
+		{
+			get
+			{
+				return this._Julio;
+			}
+			set
+			{
+				if ((this._Julio != value))
+				{
+					this._Julio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_JulioPA", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> JulioPA
+		{
+			get
+			{
+				return this._JulioPA;
+			}
+			set
+			{
+				if ((this._JulioPA != value))
+				{
+					this._JulioPA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Agosto", DbType="Int")]
+		public System.Nullable<int> Agosto
+		{
+			get
+			{
+				return this._Agosto;
+			}
+			set
+			{
+				if ((this._Agosto != value))
+				{
+					this._Agosto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgostoPA", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> AgostoPA
+		{
+			get
+			{
+				return this._AgostoPA;
+			}
+			set
+			{
+				if ((this._AgostoPA != value))
+				{
+					this._AgostoPA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Septiembre", DbType="Int")]
+		public System.Nullable<int> Septiembre
+		{
+			get
+			{
+				return this._Septiembre;
+			}
+			set
+			{
+				if ((this._Septiembre != value))
+				{
+					this._Septiembre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SeptiembrePA", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> SeptiembrePA
+		{
+			get
+			{
+				return this._SeptiembrePA;
+			}
+			set
+			{
+				if ((this._SeptiembrePA != value))
+				{
+					this._SeptiembrePA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Octubre", DbType="Int")]
+		public System.Nullable<int> Octubre
+		{
+			get
+			{
+				return this._Octubre;
+			}
+			set
+			{
+				if ((this._Octubre != value))
+				{
+					this._Octubre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OctubrePA", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> OctubrePA
+		{
+			get
+			{
+				return this._OctubrePA;
+			}
+			set
+			{
+				if ((this._OctubrePA != value))
+				{
+					this._OctubrePA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Noviembre", DbType="Int")]
+		public System.Nullable<int> Noviembre
+		{
+			get
+			{
+				return this._Noviembre;
+			}
+			set
+			{
+				if ((this._Noviembre != value))
+				{
+					this._Noviembre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NoviembrePA", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> NoviembrePA
+		{
+			get
+			{
+				return this._NoviembrePA;
+			}
+			set
+			{
+				if ((this._NoviembrePA != value))
+				{
+					this._NoviembrePA = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diciembre", DbType="Int")]
+		public System.Nullable<int> Diciembre
+		{
+			get
+			{
+				return this._Diciembre;
+			}
+			set
+			{
+				if ((this._Diciembre != value))
+				{
+					this._Diciembre = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiciembrePA", DbType="Decimal(18,2)")]
+		public System.Nullable<decimal> DiciembrePA
+		{
+			get
+			{
+				return this._DiciembrePA;
+			}
+			set
+			{
+				if ((this._DiciembrePA != value))
+				{
+					this._DiciembrePA = value;
 				}
 			}
 		}

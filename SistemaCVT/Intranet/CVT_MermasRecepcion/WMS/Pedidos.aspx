@@ -144,13 +144,19 @@
                                     <asp:ImageButton ID="detalle" CommandName="cmdDetalle" runat="server" ImageUrl="~/Images/boxadd.png" />
                                 </DataItemTemplate>
                             </dx:GridViewDataHyperLinkColumn>
-                            <dx:GridViewDataHyperLinkColumn Caption="Anula" VisibleIndex="17">
+                            <dx:GridViewDataHyperLinkColumn Caption="Asignacion" VisibleIndex="17">
+                                <EditFormSettings Visible="False" />
+                                <DataItemTemplate>
+                                    <asp:ImageButton ID="Asignacion" CommandName="cmdAsigna" runat="server" ImageUrl="~/Images/checklist.png" />
+                                </DataItemTemplate>
+                            </dx:GridViewDataHyperLinkColumn>
+                            <dx:GridViewDataHyperLinkColumn Caption="Anula" VisibleIndex="18">
                                 <EditFormSettings Visible="False" />
                                 <DataItemTemplate>
                                     <asp:ImageButton ID="Anula" CommandName="cmdAnula" runat="server" ImageUrl="~/Images/node_delete.png" />
                                 </DataItemTemplate>
                             </dx:GridViewDataHyperLinkColumn>
-                            <dx:GridViewDataHyperLinkColumn Caption="Confirma" VisibleIndex="18">
+                            <dx:GridViewDataHyperLinkColumn Caption="Confirma" VisibleIndex="19">
                                 <EditFormSettings Visible="False" />
                                 <DataItemTemplate>
                                     <asp:ImageButton ID="Confirma" CommandName="cmdConfirma" runat="server"

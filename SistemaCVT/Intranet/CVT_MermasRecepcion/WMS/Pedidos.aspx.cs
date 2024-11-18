@@ -42,6 +42,12 @@ namespace CVT_MermasRecepcion.WMS
                 Session["OrderId"] = e.KeyValue;
                 Response.Redirect("~/WMS/PedidosDetalle.aspx");
             }
+            if (e.CommandArgs.CommandName == "cmdAsigna")
+            {
+                Session["OrderId"] = e.KeyValue;
+                Response.Redirect("~/WMS/PedidoAsignacion.aspx");
+            }
+            
             if (e.CommandArgs.CommandName == "cmdAgregaHora")
             {
                 Session["Orden"] = e.KeyValue;

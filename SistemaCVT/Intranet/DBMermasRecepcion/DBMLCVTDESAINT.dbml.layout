@@ -2594,5 +2594,11 @@
         <elementListCompartment Id="ddcac7d6-968a-4e42-aadd-608a1caccd9b" absoluteBounds="0.515, 0.96, 1.9700000000000002, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="2f6f707a-a28c-4ee0-98e4-c3f95f8d6861" isExpanded="false" absoluteBounds="2.625, 36, 2.125, 0.45">
+      <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_PresupuestoInformeVendedorAño" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7efaf617-28d0-465f-bb0c-f79c0f23cc1a" absoluteBounds="2.64, 36.46, 2.0949999999999998, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

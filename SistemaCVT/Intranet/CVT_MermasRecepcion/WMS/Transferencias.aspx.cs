@@ -48,6 +48,12 @@ namespace CVT_MermasRecepcion.Transferencias
                 Session["TransferId"] = e.KeyValue;
                 Response.Redirect("~/WMS/TransferenciasDetalle.aspx");
             }
+            if (e.CommandArgs.CommandName == "cmdAsignar")
+            {
+                Session["TransferId"] = e.KeyValue;
+                Response.Redirect("~/WMS/TransferenciaAsignacion.aspx");
+            }
+            
             if (e.CommandArgs.CommandName == "cmdAnula")
             {
                 WMSClass vWMS = new WMSClass();
