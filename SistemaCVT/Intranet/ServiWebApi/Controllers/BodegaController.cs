@@ -281,5 +281,20 @@ namespace ServiWebApi.Controllers
             }
             return lista;
         }
+        [HttpGet]
+        public DataTable DetalleTransferenciasAsignadas(int transferId)
+        {
+            DataTable ret = new DataTable();
+            try
+            {
+                DBDatos.CommandTimeout = 60000;
+                ret = Utilidades.LINQToDataTable(DBDatos.SP_ConsultaTransferencia(transferId));
+            }
+            catch (Exception)
+            {
+
+            }
+            return ret;
+        }
     }
 }
