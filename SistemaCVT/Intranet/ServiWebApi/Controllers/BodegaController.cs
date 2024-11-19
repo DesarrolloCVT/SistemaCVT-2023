@@ -288,11 +288,24 @@ namespace ServiWebApi.Controllers
             try
             {
                 DBDatos.CommandTimeout = 60000;
-                ret = Utilidades.LINQToDataTable(DBDatos.SP_ConsultaTransferencia(transferId));
+                ret = Utilidades.LINQToDataTable(dbDsa.SP_DETALLE_TRANSFERENCIAS_ASIGNADAS(transferId));
             }
             catch (Exception)
             {
-
+            }
+            return ret;
+        }
+        [HttpGet]
+        public DataTable DetallePedidosAsignados(int orderID)
+        {
+            DataTable ret = new DataTable();
+            try
+            {
+                DBDatos.CommandTimeout = 60000;
+                ret = Utilidades.LINQToDataTable(dbDsa.SP_DETALLE_PEDIDOS_ASIGNADOS(orderID));
+            }
+            catch (Exception)
+            {
             }
             return ret;
         }
