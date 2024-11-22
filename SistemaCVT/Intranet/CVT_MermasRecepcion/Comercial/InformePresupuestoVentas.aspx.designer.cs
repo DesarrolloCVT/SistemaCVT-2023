@@ -33,6 +33,15 @@ namespace CVT_MermasRecepcion.Comercial
         protected global::DevExpress.Web.ASPxComboBox cbo_vendedor;
 
         /// <summary>
+        /// Control LqDsVendedor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource LqDsVendedor;
+
+        /// <summary>
         /// Control ASPxLabel2.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace CVT_MermasRecepcion.Comercial
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox cbo_año;
+
+        /// <summary>
+        /// Control Btn_Refrescar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxButton Btn_Refrescar;
 
         /// <summary>
         /// Control GvInfPresupuesto.

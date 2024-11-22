@@ -2779,5 +2779,65 @@ namespace DBMermasRecepcion
             return ret;
         }
 
+        public string CreaSalidaInsumos(int SalidaInsumosID, string usuario)
+        {
+            string ret = "-1";
+            SAPbobsCOM.Company oCmp;
+            string reterror = string.Empty;
+            oCmp = CnxSAP(ref reterror);
+            try
+            {
+                int iError = 0;
+
+                SAPbobsCOM.Documents doc;
+                doc = oCmp.GetBusinessObject(SAPbobsCOM.BoObjectTypes.oInventoryGenExit);
+                doc.DocDate = DateTime.Now;
+                doc.UserFields.Fields.Item("U_IdWms").Value = SalidaInsumosID;
+                doc.UserFields.Fields.Item("U_UsuarioWms").Value = usuario;
+                InventarioClass vInv = new InventarioClass();
+
+                List<CVT_SalidaInsumosDetalle> dt = new List<CVT_SalidaInsumosDetalle>();
+                dt = vInv.ObtieneDetalleSalidaInsumos(SalidaInsumosID);
+                List<CVT_SalidaInsumos> dtEnc = new List<CVT_SalidaInsumos>();
+                dtEnc = vInv.ObtieneSalidaInsumos(SalidaInsumosID);
+                foreach (var d in dtEnc)
+                {
+                    doc.Comments = "Salida Creada por Intranet";
+                    doc.UserFields.Fields.Item("U_No_Contenedor").Value = d.Responsable;
+                    foreach (var c in dt)
+                    {
+                        
+
+                        doc.Lines.WarehouseCode = d.Bodega;
+                        doc.Lines.ItemCode = c.ItemCode;
+                        doc.Lines.Quantity = (double)c.Cantidad;
+                        doc.Lines.CostingCode = c.Division;
+                        doc.Lines.CostingCode2 = c.UAdm;
+                        doc.Lines.CostingCode3 = c.CCosto;
+                        doc.Lines.CostingCode4 = c.Item;
+
+                        doc.Lines.Add();
+                    }
+                }
+
+                iError = doc.Add();
+                if (iError == 0)
+                {
+                    ret = "0";
+                }
+                else
+                {
+                    ret = oCmp.GetLastErrorDescription();
+                }
+                oCmp.Disconnect();
+            }
+            catch (Exception)
+            {
+                oCmp.Disconnect();
+
+            }
+            return ret;
+        }
+
     }
 }

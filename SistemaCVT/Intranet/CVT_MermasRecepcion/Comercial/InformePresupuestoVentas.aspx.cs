@@ -13,5 +13,10 @@ namespace CVT_MermasRecepcion.Comercial
         {
 
         }
+
+        protected void Btn_Refrescar_Click(object sender, EventArgs e)
+        {
+            GvInfPresupuesto.DataBind();
+        }
     }
 }

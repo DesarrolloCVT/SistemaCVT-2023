@@ -5304,18 +5304,6 @@
       <Column Name="Responsable" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.CVT_SalidaInsumosDetalle" Member="CVT_SalidaInsumosDetalle">
-    <Type Name="CVT_SalidaInsumosDetalle">
-      <Column Name="SalidaInsumos_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SalidaInsumosDetalle_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ItemCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Division" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="UAdm" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="CCosto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Item" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.CVT_PresupuestoVendedor" Member="CVT_PresupuestoVendedor">
     <Type Name="CVT_PresupuestoVendedor">
       <Column Name="Presupuesto_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -5417,6 +5405,18 @@
       <Column Name="NoviembrePA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Column Name="Diciembre" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DiciembrePA" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_SalidaInsumosDetalle" Member="CVT_SalidaInsumosDetalle">
+    <Type Name="CVT_SalidaInsumosDetalle">
+      <Column Name="SalidaInsumos_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SalidaInsumosDetalle_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemCode" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Division" Type="System.String" DbType="VarChar(50)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="UAdm" Type="System.String" DbType="VarChar(50)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CCosto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Item" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.CVT_AGENDAPROD_LeeStockReceta" Method="CVT_AGENDAPROD_LeeStockReceta">

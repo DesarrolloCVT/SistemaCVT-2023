@@ -538,6 +538,41 @@ namespace DBMermasRecepcion
             catch { }
             return ret;
         }
+        public int CreaPreSalidaInsumo(string responsable, string Bodega, string Usuario)
+        {
+            int ret = 0;
+            try
+            {
+                CVT_SalidaInsumos vNuevo=new CVT_SalidaInsumos();
+                vNuevo.Bodega=Bodega;
+                vNuevo.FechaCreacion=DateTime.Now;
+                vNuevo.Usuario=Usuario;
+                vNuevo.Responsable=responsable;
+                DBDesaint.CVT_SalidaInsumos.InsertOnSubmit(vNuevo);
+                DBDesaint.SubmitChanges();
+                ret = vNuevo.SalidaInsumos_ID;
+            }
+            catch { }
+            return ret;
+        }
+        public int AgregaDetalleSalidaInsumo(int folio, string articulo, string cc, string item, decimal cantidad)
+        {
+            int ret = 0;
+            try
+            {
+                CVT_SalidaInsumosDetalle vNuevo = new CVT_SalidaInsumosDetalle();
+                vNuevo.SalidaInsumos_ID = folio;
+                vNuevo.ItemCode = articulo;
+                vNuevo.CCosto = cc;
+                vNuevo.Item = item;
+                vNuevo.Cantidad = cantidad;
+                DBDesaint.CVT_SalidaInsumosDetalle.InsertOnSubmit(vNuevo);
+                DBDesaint.SubmitChanges();
+                
+            }
+            catch { }
+            return ret;
+        }
         public List<CVT_EntradaInsumosDetalle> ObtieneEntradaInsumos (int Folio)
         {
             List<CVT_EntradaInsumosDetalle> ret=new List<CVT_EntradaInsumosDetalle> ();
@@ -545,6 +580,34 @@ namespace DBMermasRecepcion
             {
                 ret = (from t in DBDesaint.CVT_EntradaInsumosDetalle
                        where t.EntradaInsumos_ID.Equals(Folio) && t.CantRecepcionar>0
+                       select t).ToList();
+            }
+            catch
+            {
+            }
+            return ret;
+        }
+        public List<CVT_SalidaInsumosDetalle> ObtieneDetalleSalidaInsumos(int Folio)
+        {
+            List<CVT_SalidaInsumosDetalle> ret = new List<CVT_SalidaInsumosDetalle>();
+            try
+            {
+                ret = (from t in DBDesaint.CVT_SalidaInsumosDetalle
+                       where t.SalidaInsumos_ID.Equals(Folio)
+                       select t).ToList();
+            }
+            catch
+            {
+            }
+            return ret;
+        }
+        public List<CVT_SalidaInsumos> ObtieneSalidaInsumos(int Folio)
+        {
+            List<CVT_SalidaInsumos> ret = new List<CVT_SalidaInsumos>();
+            try
+            {
+                ret = (from t in DBDesaint.CVT_SalidaInsumos
+                       where t.SalidaInsumos_ID.Equals(Folio)
                        select t).ToList();
             }
             catch

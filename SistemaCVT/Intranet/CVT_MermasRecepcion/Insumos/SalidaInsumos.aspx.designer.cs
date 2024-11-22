@@ -33,6 +33,15 @@ namespace CVT_MermasRecepcion.Insumos
         protected global::DevExpress.Web.ASPxComboBox cbo_responsable;
 
         /// <summary>
+        /// Control LqDsResponsable.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource LqDsResponsable;
+
+        /// <summary>
         /// Control ASPxLabel7.
         /// </summary>
         /// <remarks>
@@ -96,6 +105,15 @@ namespace CVT_MermasRecepcion.Insumos
         protected global::DevExpress.Web.ASPxComboBox cbo_familia;
 
         /// <summary>
+        /// Control LqDsFamilia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource LqDsFamilia;
+
+        /// <summary>
         /// Control ASPxLabel5.
         /// </summary>
         /// <remarks>
@@ -112,6 +130,15 @@ namespace CVT_MermasRecepcion.Insumos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox cbo_articulo;
+
+        /// <summary>
+        /// Control LqDsProducto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource LqDsProducto;
 
         /// <summary>
         /// Control ASPxLabel2.
@@ -132,6 +159,15 @@ namespace CVT_MermasRecepcion.Insumos
         protected global::DevExpress.Web.ASPxComboBox cbo_ccosto;
 
         /// <summary>
+        /// Control LqDsCCosto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource LqDsCCosto;
+
+        /// <summary>
         /// Control ASPxLabel3.
         /// </summary>
         /// <remarks>
@@ -148,6 +184,15 @@ namespace CVT_MermasRecepcion.Insumos
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox cbo_item;
+
+        /// <summary>
+        /// Control LqDsItem.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinqDataSource LqDsItem;
 
         /// <summary>
         /// Control ASPxLabel6.
