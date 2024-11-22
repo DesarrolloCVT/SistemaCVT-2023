@@ -281,5 +281,33 @@ namespace ServiWebApi.Controllers
             }
             return lista;
         }
+        [HttpGet]
+        public DataTable DetalleTransferenciasAsignadas(int transferId)
+        {
+            DataTable ret = new DataTable();
+            try
+            {
+                DBDatos.CommandTimeout = 60000;
+                ret = Utilidades.LINQToDataTable(dbDsa.SP_DETALLE_TRANSFERENCIAS_ASIGNADAS(transferId));
+            }
+            catch (Exception)
+            {
+            }
+            return ret;
+        }
+        [HttpGet]
+        public DataTable DetallePedidosAsignados(int orderID)
+        {
+            DataTable ret = new DataTable();
+            try
+            {
+                DBDatos.CommandTimeout = 60000;
+                ret = Utilidades.LINQToDataTable(dbDsa.SP_DETALLE_PEDIDOS_ASIGNADOS(orderID));
+            }
+            catch (Exception)
+            {
+            }
+            return ret;
+        }
     }
 }

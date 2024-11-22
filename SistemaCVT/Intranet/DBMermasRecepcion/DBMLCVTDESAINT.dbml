@@ -6218,4 +6218,21 @@
       <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
+	<Function Name="dbo.SP_DETALLE_TRANSFERENCIAS_ASIGNADAS" Method="SP_DETALLE_TRANSFERENCIAS_ASIGNADAS">
+		<Parameter Name="idTransferencia" Parameter="idTransferencia" Type="System.Int32" DbType="Int" />
+		<ElementType Name="SP_DETALLE_TRANSFERENCIAS_ASIGNADASResult">
+			<Column Name="Transfer_Id" Type="System.Int32" DbType="Int" CanBeNull="false" />
+			<Column Name="ItemCode" Type="System.String" DbType="VarChar(50)" CanBeNull="false" />
+			<Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="false" />
+		</ElementType>
+	</Function>
+	<Function Name="dbo.SP_DETALLE_PEDIDOS_ASIGNADOS" Method="SP_DETALLE_PEDIDOS_ASIGNADOS">
+		<Parameter Name="idOrder" Parameter="idOrder" Type="System.Int32" DbType="Int" />
+		<ElementType Name="SP_DETALLE_PEDIDOS_ASIGNADOSResult">
+			<Column Name="Order_ID" Type="System.Int32" DbType="Int" CanBeNull="false" />
+			<Column Name="ItemCode" Type="System.String" DbType="VarChar(50)" CanBeNull="false" />
+			<Column Name="Lote" Type="System.String" DbType="VarChar(50)" CanBeNull="false" />
+			<Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="false" />
+		</ElementType>
+	</Function>
 </Database>
