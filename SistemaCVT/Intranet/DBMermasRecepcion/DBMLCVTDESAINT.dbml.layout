@@ -2594,10 +2594,10 @@
         <elementListCompartment Id="7efaf617-28d0-465f-bb0c-f79c0f23cc1a" absoluteBounds="2.64, 36.46, 2.0949999999999998, 6.403035481770833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cb94053b-2ffd-468d-8942-17286c616d1a" isExpanded="false" absoluteBounds="4.75, 28, 2, 0.45">
+    <classShape Id="2a3ddbbd-786f-406b-8224-184e288e7d2b" isExpanded="false" absoluteBounds="4.75, 28, 2, 0.45">
       <DataClassMoniker Name="/DBMLCVTDESAINTDataContext/CVT_SalidaInsumosDetalle" />
       <nestedChildShapes>
-        <elementListCompartment Id="436ad25e-c799-4fc8-8539-9f82c300e6b3" absoluteBounds="4.765, 28.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="54606ae2-5934-4acb-88ff-11db1b270845" absoluteBounds="4.765, 28.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
