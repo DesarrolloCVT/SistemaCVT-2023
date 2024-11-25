@@ -148,14 +148,30 @@ namespace ServiWebApi.Controllers
         }
 
         [HttpGet]
-        [Route("FoliosAsignaciones")]
-        public List<CVT_VW_FoliosTransferenciasAsignacion> ObtieneOrdenesActivas()
+        [Route("FoliosTransferenciasAsignacion")]
+        public List<CVT_VW_FoliosTransferenciasAsignacion> FoliosTransferenciasAsignacion()
         {
             List<CVT_VW_FoliosTransferenciasAsignacion> ret = new List<CVT_VW_FoliosTransferenciasAsignacion>();
             try
             {
                 ret = (from ft in dbDsa.CVT_VW_FoliosTransferenciasAsignacion
                         select ft).ToList<CVT_VW_FoliosTransferenciasAsignacion>();
+            }
+            catch (Exception)
+            {
+            }
+            return ret;
+        }
+
+        [HttpGet]
+        [Route("FoliosPedidosAsignacion")]
+        public List<CVT_VW_FoliosPedidosAsignacion> FoliosPedidosAsignacion()
+        {
+            List<CVT_VW_FoliosPedidosAsignacion> ret = new List<CVT_VW_FoliosPedidosAsignacion>();
+            try
+            {
+                ret = (from ft in dbDsa.CVT_VW_FoliosPedidosAsignacion
+                       select ft).ToList<CVT_VW_FoliosPedidosAsignacion>();
             }
             catch (Exception)
             {
@@ -296,6 +312,7 @@ namespace ServiWebApi.Controllers
             return ret;
         }
         [HttpGet]
+        [Route("DetallePedidosAsignados")]
         public DataTable DetallePedidosAsignados(int orderID)
         {
             DataTable ret = new DataTable();
@@ -306,6 +323,38 @@ namespace ServiWebApi.Controllers
             }
             catch (Exception)
             {
+            }
+            return ret;
+        }
+        [HttpGet]
+        [Route("UbicacionMPAsignacion")]
+        public DataTable UbicacionMPAsignacion(string itemCode, string lote)
+        {
+            DataTable ret = new DataTable();
+            try
+            {
+                DBDatos.CommandTimeout = 60000;
+                ret = Utilidades.LINQToDataTable(DBDatos.SP_UbicacionMPAsignacion(itemCode, lote));
+            }
+            catch (Exception)
+            {
+
+            }
+            return ret;
+        }
+        [HttpGet]
+        [Route("UbicacionPedidoAsignacion")]
+        public DataTable UbicacionPedidoAsignacion(string itemCode, string lote)
+        {
+            DataTable ret = new DataTable();
+            try
+            {
+                DBDatos.CommandTimeout = 60000;
+                ret = Utilidades.LINQToDataTable(DBDatos.SP_UbicacionPedidoAsignacion(itemCode, lote));
+            }
+            catch (Exception)
+            {
+
             }
             return ret;
         }
