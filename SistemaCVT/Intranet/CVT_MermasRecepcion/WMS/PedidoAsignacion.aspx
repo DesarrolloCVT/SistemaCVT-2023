@@ -60,7 +60,7 @@
                 <dx:GridViewDataTextColumn FieldName="Cantidad" VisibleIndex="4">
                 </dx:GridViewDataTextColumn>
                 <dx:GridViewDataComboBoxColumn Caption="Producto" FieldName="Itemcode" VisibleIndex="2">
-                    <PropertiesComboBox DataSourceID="LqDsProducto">
+                    <PropertiesComboBox DataSourceID="LqDsProducto" ValueField="ItemCode">
                         <Columns>
                             <dx:ListBoxColumn Caption="Codigo" FieldName="ItemCode">
                             </dx:ListBoxColumn>
