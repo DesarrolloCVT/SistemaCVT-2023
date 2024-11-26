@@ -83,37 +83,47 @@
                 <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="Default" />
             <SettingsBehavior AllowFocusedRow="True" />
             <Columns>               
-                <dx:GridViewDataTextColumn FieldName="Mes" VisibleIndex="1">
+                <dx:GridViewDataTextColumn FieldName="Mes" VisibleIndex="0">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Fecha_Contab" VisibleIndex="2">
+                <dx:GridViewDataTextColumn FieldName="Fecha_Contab" VisibleIndex="1">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Fec_Vencto" VisibleIndex="3">
+                <dx:GridViewDataTextColumn FieldName="Fec_Vencto" VisibleIndex="2">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Folio" VisibleIndex="4">
+                <dx:GridViewDataTextColumn FieldName="Folio" VisibleIndex="3">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Num_Interno" VisibleIndex="5" Visible="False">
+                <dx:GridViewDataTextColumn FieldName="Num_Interno" VisibleIndex="4" Visible="False">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Cod_Cliente" VisibleIndex="6">
+                <dx:GridViewDataTextColumn FieldName="Cod_Cliente" VisibleIndex="5">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Razon_Social" VisibleIndex="7">
+                <dx:GridViewDataTextColumn FieldName="Razon_Social" VisibleIndex="6">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn Caption="Cod.Familia" FieldName="CodFamilia" VisibleIndex="8">
+                <dx:GridViewDataTextColumn Caption="Cod.Familia" FieldName="CodFamilia" VisibleIndex="7">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn Caption="Familia" FieldName="Familia" VisibleIndex="9">
+                <dx:GridViewDataTextColumn Caption="Familia" FieldName="Familia" VisibleIndex="8">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Producto" VisibleIndex="10">
+                <dx:GridViewDataTextColumn FieldName="Producto" VisibleIndex="9">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="Descripcion" VisibleIndex="11">
+                <dx:GridViewDataTextColumn FieldName="Descripcion" VisibleIndex="10">
                 </dx:GridViewDataTextColumn>       
-                <dx:GridViewDataTextColumn FieldName="Total_Linea" VisibleIndex="14">
+                <dx:GridViewDataTextColumn FieldName="Total_Linea" VisibleIndex="11">
                 </dx:GridViewDataTextColumn>             
-                <dx:GridViewDataTextColumn FieldName="Vendedor" VisibleIndex="19">
+                <dx:GridViewDataTextColumn FieldName="Vendedor" VisibleIndex="14">
                 </dx:GridViewDataTextColumn>                
-                <dx:GridViewDataTextColumn FieldName="TipoComision" VisibleIndex="22">
+                <dx:GridViewDataTextColumn FieldName="TipoComision" VisibleIndex="17">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="PrcComision" VisibleIndex="23">
+                <dx:GridViewDataTextColumn FieldName="PrcComision" VisibleIndex="18">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataTextColumn FieldName="TotalComision" VisibleIndex="24">
+                <dx:GridViewDataTextColumn FieldName="TotalComision" VisibleIndex="19">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="CostoTotal" VisibleIndex="20">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Costo" VisibleIndex="21">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Utilidad" VisibleIndex="22">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="Rentabilidad" VisibleIndex="23">
+                </dx:GridViewDataTextColumn>
+                <dx:GridViewDataTextColumn FieldName="ComisionTelemarketing" VisibleIndex="24">
                 </dx:GridViewDataTextColumn>
             </Columns>
         </dx:ASPxGridView>

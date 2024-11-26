@@ -44,6 +44,36 @@
             <SettingsPopup>
                 <FilterControl AutoUpdatePosition="False"></FilterControl>
             </SettingsPopup>
+            <Settings ShowFilterRow="True" AutoFilterCondition="Contains" />
+<SettingsBehavior AllowFocusedRow="True" />
+<Toolbars>
+    <dx:GridViewToolbar>
+        <Items>
+            
+            <dx:GridViewToolbarItem Text="Exportar" Name="Export" Image-IconID="actions_download_16x16office2013" Alignment="Left" DropDownMode="False" BeginGroup="True" GroupName="a1" Target="_parent">
+                <Items>
+                    <dx:GridViewToolbarItem Command="ExportToXls" />
+                    <dx:GridViewToolbarItem Command="ExportToXlsx" />
+                    <dx:GridViewToolbarItem Command="ExportToDocx" />
+                    <dx:GridViewToolbarItem Command="ExportToRtf" />
+                    <dx:GridViewToolbarItem Command="ExportToCsv" />
+                    <dx:GridViewToolbarItem Command="ExportToPdf" />
+                </Items>
+
+                <Image IconID="actions_download_16x16office2013"></Image>
+            </dx:GridViewToolbarItem>
+            <dx:GridViewToolbarItem Alignment="Left">
+                <Template>
+                    <dx:ASPxButtonEdit ID="tbToolbarSearch" runat="server" NullText="Search..." Height="100%">
+                        <Buttons>
+                            <dx:SpinButtonExtended Image-IconID="find_find_16x16gray" />
+                        </Buttons>
+                    </dx:ASPxButtonEdit>
+                </Template>
+            </dx:GridViewToolbarItem>
+        </Items>
+    </dx:GridViewToolbar>
+</Toolbars>
             <Columns>
                 <dx:GridViewDataTextColumn FieldName="PresupuestoDetalle_ID" VisibleIndex="0" Visible="False">
                     <EditFormSettings Visible="False" />

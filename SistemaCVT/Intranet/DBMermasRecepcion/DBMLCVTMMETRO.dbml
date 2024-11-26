@@ -6889,6 +6889,11 @@
       <Column Name="TipoComision" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="PrcComision" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
       <Column Name="TotalComision" Type="System.Decimal" DbType="Decimal(38,8)" CanBeNull="true" />
+      <Column Name="CostoTotal" Type="System.Decimal" DbType="Decimal(38,11)" CanBeNull="true" />
+      <Column Name="Costo" Type="System.Decimal" DbType="Decimal(19,6)" CanBeNull="true" />
+      <Column Name="Utilidad" Type="System.Decimal" DbType="Decimal(38,11)" CanBeNull="true" />
+      <Column Name="Rentabilidad" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="ComisionTelemarketing" Type="System.Decimal" DbType="Decimal(23,9)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

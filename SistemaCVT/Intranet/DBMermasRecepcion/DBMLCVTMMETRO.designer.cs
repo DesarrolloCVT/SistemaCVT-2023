@@ -153024,6 +153024,16 @@ namespace DBMermasRecepcion
 		
 		private System.Nullable<decimal> _TotalComision;
 		
+		private System.Nullable<decimal> _CostoTotal;
+		
+		private System.Nullable<decimal> _Costo;
+		
+		private System.Nullable<decimal> _Utilidad;
+		
+		private System.Nullable<decimal> _Rentabilidad;
+		
+		private System.Nullable<decimal> _ComisionTelemarketing;
+		
 		public SMM_EstadisticasVentas_RapelResult()
 		{
 		}
@@ -153328,6 +153338,86 @@ namespace DBMermasRecepcion
 				if ((this._TotalComision != value))
 				{
 					this._TotalComision = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CostoTotal", DbType="Decimal(38,11)")]
+		public System.Nullable<decimal> CostoTotal
+		{
+			get
+			{
+				return this._CostoTotal;
+			}
+			set
+			{
+				if ((this._CostoTotal != value))
+				{
+					this._CostoTotal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Costo", DbType="Decimal(19,6)")]
+		public System.Nullable<decimal> Costo
+		{
+			get
+			{
+				return this._Costo;
+			}
+			set
+			{
+				if ((this._Costo != value))
+				{
+					this._Costo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Utilidad", DbType="Decimal(38,11)")]
+		public System.Nullable<decimal> Utilidad
+		{
+			get
+			{
+				return this._Utilidad;
+			}
+			set
+			{
+				if ((this._Utilidad != value))
+				{
+					this._Utilidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Rentabilidad", DbType="Decimal(38,6)")]
+		public System.Nullable<decimal> Rentabilidad
+		{
+			get
+			{
+				return this._Rentabilidad;
+			}
+			set
+			{
+				if ((this._Rentabilidad != value))
+				{
+					this._Rentabilidad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ComisionTelemarketing", DbType="Decimal(23,9)")]
+		public System.Nullable<decimal> ComisionTelemarketing
+		{
+			get
+			{
+				return this._ComisionTelemarketing;
+			}
+			set
+			{
+				if ((this._ComisionTelemarketing != value))
+				{
+					this._ComisionTelemarketing = value;
 				}
 			}
 		}
