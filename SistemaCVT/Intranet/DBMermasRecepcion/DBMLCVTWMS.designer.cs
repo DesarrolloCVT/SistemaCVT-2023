@@ -1226,6 +1226,20 @@ namespace DBMermasRecepcion
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idPosicion);
 			return ((ISingleResult<SP_CONSULTAPOSICION_XAMARINResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_UbicacionMPAsignacion")]
+		public ISingleResult<SP_UbicacionMPAsignacionResult> SP_UbicacionMPAsignacion([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CodProducto", DbType="VarChar(50)")] string codProducto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Lote", DbType="VarChar(50)")] string lote)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codProducto, lote);
+			return ((ISingleResult<SP_UbicacionMPAsignacionResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SP_UbicacionPedidoAsignacion")]
+		public ISingleResult<SP_UbicacionPedidoAsignacionResult> SP_UbicacionPedidoAsignacion([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CodProducto", DbType="VarChar(50)")] string codProducto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Lote", DbType="VarChar(50)")] string lote)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codProducto, lote);
+			return ((ISingleResult<SP_UbicacionPedidoAsignacionResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Movement")]
@@ -32592,6 +32606,130 @@ namespace DBMermasRecepcion
 				if ((this._Package_ProductionDate != value))
 				{
 					this._Package_ProductionDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_UbicacionMPAsignacionResult
+	{
+		
+		private string _Layout_Description;
+		
+		private System.Nullable<int> _CantPallets;
+		
+		private System.Nullable<int> _Cantidad;
+		
+		public SP_UbicacionMPAsignacionResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Layout_Description", DbType="VarChar(50)")]
+		public string Layout_Description
+		{
+			get
+			{
+				return this._Layout_Description;
+			}
+			set
+			{
+				if ((this._Layout_Description != value))
+				{
+					this._Layout_Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantPallets", DbType="Int")]
+		public System.Nullable<int> CantPallets
+		{
+			get
+			{
+				return this._CantPallets;
+			}
+			set
+			{
+				if ((this._CantPallets != value))
+				{
+					this._CantPallets = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int")]
+		public System.Nullable<int> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SP_UbicacionPedidoAsignacionResult
+	{
+		
+		private string _Layout_Description;
+		
+		private System.Nullable<int> _CantPallets;
+		
+		private System.Nullable<int> _Cantidad;
+		
+		public SP_UbicacionPedidoAsignacionResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Layout_Description", DbType="VarChar(50)")]
+		public string Layout_Description
+		{
+			get
+			{
+				return this._Layout_Description;
+			}
+			set
+			{
+				if ((this._Layout_Description != value))
+				{
+					this._Layout_Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CantPallets", DbType="Int")]
+		public System.Nullable<int> CantPallets
+		{
+			get
+			{
+				return this._CantPallets;
+			}
+			set
+			{
+				if ((this._CantPallets != value))
+				{
+					this._CantPallets = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cantidad", DbType="Int")]
+		public System.Nullable<int> Cantidad
+		{
+			get
+			{
+				return this._Cantidad;
+			}
+			set
+			{
+				if ((this._Cantidad != value))
+				{
+					this._Cantidad = value;
 				}
 			}
 		}
