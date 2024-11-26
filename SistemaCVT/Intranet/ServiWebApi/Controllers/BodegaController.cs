@@ -18,6 +18,7 @@ namespace ServiWebApi.Controllers
         DBMLCVTWMSDataContext DBDatos = new DBMLCVTWMSDataContext();
 
         [HttpGet]
+        [Route("GetConsultaTransferencias")]
         public DataTable GetConsultaTransferencias(int transferId)
         {
             DataTable ret = new DataTable();
