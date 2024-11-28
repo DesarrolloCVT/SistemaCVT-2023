@@ -882,15 +882,15 @@ namespace DBMermasRecepcion
     partial void InsertCVT_PresupuestoDetalle(CVT_PresupuestoDetalle instance);
     partial void UpdateCVT_PresupuestoDetalle(CVT_PresupuestoDetalle instance);
     partial void DeleteCVT_PresupuestoDetalle(CVT_PresupuestoDetalle instance);
-    partial void InsertCVT_TransferAsignacion(CVT_TransferAsignacion instance);
-    partial void UpdateCVT_TransferAsignacion(CVT_TransferAsignacion instance);
-    partial void DeleteCVT_TransferAsignacion(CVT_TransferAsignacion instance);
     partial void InsertCVT_OrderAsignacion(CVT_OrderAsignacion instance);
     partial void UpdateCVT_OrderAsignacion(CVT_OrderAsignacion instance);
     partial void DeleteCVT_OrderAsignacion(CVT_OrderAsignacion instance);
     partial void InsertCVT_SalidaInsumosDetalle(CVT_SalidaInsumosDetalle instance);
     partial void UpdateCVT_SalidaInsumosDetalle(CVT_SalidaInsumosDetalle instance);
     partial void DeleteCVT_SalidaInsumosDetalle(CVT_SalidaInsumosDetalle instance);
+    partial void InsertCVT_TransferAsignacion(CVT_TransferAsignacion instance);
+    partial void UpdateCVT_TransferAsignacion(CVT_TransferAsignacion instance);
+    partial void DeleteCVT_TransferAsignacion(CVT_TransferAsignacion instance);
     #endregion
 		
 		public DBMLCVTDESAINTDataContext() : 
@@ -4339,14 +4339,6 @@ namespace DBMermasRecepcion
 			}
 		}
 		
-		public System.Data.Linq.Table<CVT_TransferAsignacion> CVT_TransferAsignacion
-		{
-			get
-			{
-				return this.GetTable<CVT_TransferAsignacion>();
-			}
-		}
-		
 		public System.Data.Linq.Table<CVT_OrderAsignacion> CVT_OrderAsignacion
 		{
 			get
@@ -4384,6 +4376,14 @@ namespace DBMermasRecepcion
 			get
 			{
 				return this.GetTable<CVT_SalidaInsumosDetalle>();
+			}
+		}
+		
+		public System.Data.Linq.Table<CVT_TransferAsignacion> CVT_TransferAsignacion
+		{
+			get
+			{
+				return this.GetTable<CVT_TransferAsignacion>();
 			}
 		}
 		
@@ -96772,116 +96772,6 @@ namespace DBMermasRecepcion
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CVT_TransferAsignacion")]
-	public partial class CVT_TransferAsignacion : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Transfer_Id;
-		
-		private string _ItemCode;
-		
-		private string _Lote;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnTransfer_IdChanging(int value);
-    partial void OnTransfer_IdChanged();
-    partial void OnItemCodeChanging(string value);
-    partial void OnItemCodeChanged();
-    partial void OnLoteChanging(string value);
-    partial void OnLoteChanged();
-    #endregion
-		
-		public CVT_TransferAsignacion()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Transfer_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int Transfer_Id
-		{
-			get
-			{
-				return this._Transfer_Id;
-			}
-			set
-			{
-				if ((this._Transfer_Id != value))
-				{
-					this.OnTransfer_IdChanging(value);
-					this.SendPropertyChanging();
-					this._Transfer_Id = value;
-					this.SendPropertyChanged("Transfer_Id");
-					this.OnTransfer_IdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemCode", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string ItemCode
-		{
-			get
-			{
-				return this._ItemCode;
-			}
-			set
-			{
-				if ((this._ItemCode != value))
-				{
-					this.OnItemCodeChanging(value);
-					this.SendPropertyChanging();
-					this._ItemCode = value;
-					this.SendPropertyChanged("ItemCode");
-					this.OnItemCodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lote", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Lote
-		{
-			get
-			{
-				return this._Lote;
-			}
-			set
-			{
-				if ((this._Lote != value))
-				{
-					this.OnLoteChanging(value);
-					this.SendPropertyChanging();
-					this._Lote = value;
-					this.SendPropertyChanged("Lote");
-					this.OnLoteChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CVT_OrderAsignacion")]
 	public partial class CVT_OrderAsignacion : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -97860,6 +97750,140 @@ namespace DBMermasRecepcion
 					this._Cantidad = value;
 					this.SendPropertyChanged("Cantidad");
 					this.OnCantidadChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CVT_TransferAsignacion")]
+	public partial class CVT_TransferAsignacion : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Transfer_Id;
+		
+		private string _ItemCode;
+		
+		private string _Lote;
+		
+		private System.Nullable<int> _Recepcion;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTransfer_IdChanging(int value);
+    partial void OnTransfer_IdChanged();
+    partial void OnItemCodeChanging(string value);
+    partial void OnItemCodeChanged();
+    partial void OnLoteChanging(string value);
+    partial void OnLoteChanged();
+    partial void OnRecepcionChanging(System.Nullable<int> value);
+    partial void OnRecepcionChanged();
+    #endregion
+		
+		public CVT_TransferAsignacion()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Transfer_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Transfer_Id
+		{
+			get
+			{
+				return this._Transfer_Id;
+			}
+			set
+			{
+				if ((this._Transfer_Id != value))
+				{
+					this.OnTransfer_IdChanging(value);
+					this.SendPropertyChanging();
+					this._Transfer_Id = value;
+					this.SendPropertyChanged("Transfer_Id");
+					this.OnTransfer_IdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ItemCode", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string ItemCode
+		{
+			get
+			{
+				return this._ItemCode;
+			}
+			set
+			{
+				if ((this._ItemCode != value))
+				{
+					this.OnItemCodeChanging(value);
+					this.SendPropertyChanging();
+					this._ItemCode = value;
+					this.SendPropertyChanged("ItemCode");
+					this.OnItemCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Lote", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Lote
+		{
+			get
+			{
+				return this._Lote;
+			}
+			set
+			{
+				if ((this._Lote != value))
+				{
+					this.OnLoteChanging(value);
+					this.SendPropertyChanging();
+					this._Lote = value;
+					this.SendPropertyChanged("Lote");
+					this.OnLoteChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Recepcion", DbType="Int")]
+		public System.Nullable<int> Recepcion
+		{
+			get
+			{
+				return this._Recepcion;
+			}
+			set
+			{
+				if ((this._Recepcion != value))
+				{
+					this.OnRecepcionChanging(value);
+					this.SendPropertyChanging();
+					this._Recepcion = value;
+					this.SendPropertyChanged("Recepcion");
+					this.OnRecepcionChanged();
 				}
 			}
 		}

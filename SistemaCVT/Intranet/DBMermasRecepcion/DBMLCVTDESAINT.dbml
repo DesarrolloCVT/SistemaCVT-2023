@@ -5346,13 +5346,6 @@
       <Column Name="DiciembrePA" Type="System.Decimal" DbType="Decimal(18,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
     </Type>
   </Table>
-  <Table Name="dbo.CVT_TransferAsignacion" Member="CVT_TransferAsignacion">
-    <Type Name="CVT_TransferAsignacion">
-      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="ItemCode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Lote" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.CVT_OrderAsignacion" Member="CVT_OrderAsignacion">
     <Type Name="CVT_OrderAsignacion">
       <Column Name="Order_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -5417,6 +5410,14 @@
       <Column Name="CCosto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Item" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_TransferAsignacion" Member="CVT_TransferAsignacion">
+    <Type Name="CVT_TransferAsignacion">
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ItemCode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Lote" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Recepcion" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.CVT_AGENDAPROD_LeeStockReceta" Method="CVT_AGENDAPROD_LeeStockReceta">

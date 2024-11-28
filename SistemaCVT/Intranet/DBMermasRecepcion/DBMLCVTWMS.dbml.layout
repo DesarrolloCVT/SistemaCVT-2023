@@ -122,10 +122,10 @@
         <elementListCompartment Id="a47d2c43-2c7a-44ad-ae27-1c848ba387af" absoluteBounds="2.515, 12.085, 2.2199999999999998, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2625c88a-e49a-492a-9ec4-e6a7ff4c5407" isExpanded="false" absoluteBounds="4.5, 6.125, 2, 0.45">
+    <classShape Id="2625c88a-e49a-492a-9ec4-e6a7ff4c5407" isExpanded="false" absoluteBounds="4.625, 10.625, 2, 0.45">
       <DataClassMoniker Name="/DBMLCVTWMSDataContext/CVT_Transfer" />
       <nestedChildShapes>
-        <elementListCompartment Id="700fa754-baca-44e3-8006-a6e2ecea2a7c" absoluteBounds="4.515, 6.585, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="700fa754-baca-44e3-8006-a6e2ecea2a7c" absoluteBounds="4.64, 11.085, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="857c3f6c-3fec-4acb-8d7b-efc3c19a3656" isExpanded="false" absoluteBounds="0.5, 6.125, 2, 0.45">
@@ -596,12 +596,6 @@
         <elementListCompartment Id="0bf4e2e2-8193-4bef-9b37-147ce54a85ca" absoluteBounds="6.89, 10.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="5f318ea8-7f02-4dbb-be10-29c8540ad128" isExpanded="false" absoluteBounds="4.75, 1.5, 2, 0.45">
-      <DataClassMoniker Name="/DBMLCVTWMSDataContext/Order" />
-      <nestedChildShapes>
-        <elementListCompartment Id="d47272ae-b916-49b2-b8e4-3a856398bffa" absoluteBounds="4.765, 1.96, 1.9700000000000002, 7.941446940104167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="da3baa1d-40b5-4623-8f02-984dd1877245" isExpanded="false" absoluteBounds="6.875, 10.625, 2, 0.45">
       <DataClassMoniker Name="/DBMLCVTWMSDataContext/CVT_VW_BodegaUbicacion" />
       <nestedChildShapes>
@@ -632,12 +626,6 @@
         <elementListCompartment Id="532dae10-0ac8-4352-80aa-37835a3dd7a1" absoluteBounds="10.515, 11.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="6a32b670-4a1f-44aa-acad-f2baa52014d1" isExpanded="false" absoluteBounds="0.5, 0.5, 2, 0.45">
-      <DataClassMoniker Name="/DBMLCVTWMSDataContext/Transfer" />
-      <nestedChildShapes>
-        <elementListCompartment Id="c8ad6ea7-adbb-4608-b3f9-cfb326f731f0" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="ead05f25-2364-420d-84cb-015ad79757b5" isExpanded="false" absoluteBounds="4.75, 5, 2, 0.45">
       <DataClassMoniker Name="/DBMLCVTWMSDataContext/Reception" />
       <nestedChildShapes>
@@ -666,6 +654,18 @@
       <DataClassMoniker Name="/DBMLCVTWMSDataContext/CVT_VW_PartidasAbiertas_Inicio" />
       <nestedChildShapes>
         <elementListCompartment Id="8884234a-b76e-4317-aecd-a173c65e8264" absoluteBounds="0.51500000000000012, 14.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="444899ac-4c69-4f0d-9a0a-229b6424ab84" isExpanded="false" absoluteBounds="4.75, 1.5, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSDataContext/Order" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a756c5f3-1322-4f03-9fd2-b4011b0aab59" absoluteBounds="4.765, 1.96, 1.9700000000000002, 8.1337483723958321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="74ada9cc-8f37-45ae-88ea-8595a9805cb5" isExpanded="false" absoluteBounds="0.5, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/DBMLCVTWMSDataContext/Transfer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="caa12e8f-6da0-4a66-b308-bfe126657fac" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

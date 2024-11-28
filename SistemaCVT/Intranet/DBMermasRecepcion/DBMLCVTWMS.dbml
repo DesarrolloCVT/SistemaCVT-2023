@@ -1446,50 +1446,6 @@
       <Column Name="Country_Name" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.[Order]" Member="Order">
-    <Type Name="Order">
-      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Order_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Business_Partner_Id" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
-      <Column Name="Contact_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ClientDestiny_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Staff_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Order_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Order_SoliciteDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Order_Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Order_Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Order_Note" Type="System.String" DbType="VarChar(2550)" CanBeNull="true" />
-      <Column Name="Order_BusinessPartnerDestiny" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
-      <Column Name="Scheduler_StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Scheduler_EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Worktype_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PackageState_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_SendStat" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_Consolidate" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_OtherOwner" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="OrderProForm_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Sector_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_U_TipoDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_U_NumDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_U_iniTunel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Order_U_terTunel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Order_U_GrueroAsig" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_U_GrueroExterno" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Order_U_HoraInicio_Armado" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_U_MinInicio_Armado" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_U_HoraTermino_Armado" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_U_MinTermino_Armado" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_U_HoraInicio_Carga" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_U_MinInicio_Carga" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_U_HoraTermino_Carga" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_U_MinTermini_Carga" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_U_CantPalletBlanco" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_U_CantPalletChep" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_U_CantBlancoTipChep" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Order_U_OrigenArmadoPedido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.CVT_VW_BodegaUbicacion" Member="CVT_VW_BodegaUbicacion">
     <Type Name="CVT_VW_BodegaUbicacion">
       <Column Name="Layout_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -1548,28 +1504,6 @@
       <Column Name="CodProductoUnit" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
       <Column Name="ProductoUnit" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="Transformacion" Type="System.Decimal" DbType="Decimal(30,6)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Transfer" Member="Transfer">
-    <Type Name="Transfer">
-      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Type_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Site_Id_Destiny" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Staff_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="INV_0010_SyncStat" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
-      <Column Name="INV_0010_UpdFrom" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
-      <Column Name="Transfer_U_NXTipoMovTrans" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Transfer_U_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Transfer_U_Folio_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Transfer_U_Comentario" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Transfer_U_UsuarioCierre" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Transfer_U_FechaCierre" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Transfer_U_TransferOrigin" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Transfer_U_ProcesoOrigen" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Reception" Member="Reception">
@@ -1670,6 +1604,74 @@
     <Type Name="CVT_VW_PartidasAbiertas_Inicio">
       <Column Name="Tipo" Type="System.String" DbType="VarChar(26) NOT NULL" CanBeNull="false" />
       <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Order]" Member="Order">
+    <Type Name="Order">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Order_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Business_Partner_Id" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="Contact_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClientDestiny_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Order_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Order_SoliciteDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Order_Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Order_Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Order_Note" Type="System.String" DbType="VarChar(2550)" CanBeNull="true" />
+      <Column Name="Order_BusinessPartnerDestiny" Type="System.String" DbType="VarChar(14)" CanBeNull="true" />
+      <Column Name="Scheduler_StartDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Scheduler_EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Worktype_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PackageState_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_SendStat" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_Consolidate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_OtherOwner" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OrderProForm_Type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sector_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_TipoDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_NumDocSAP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_iniTunel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Order_U_terTunel" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Order_U_GrueroAsig" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_GrueroExterno" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Order_U_HoraInicio_Armado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_MinInicio_Armado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_HoraTermino_Armado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_MinTermino_Armado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_HoraInicio_Carga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_MinInicio_Carga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_HoraTermino_Carga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_MinTermini_Carga" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_CantPalletBlanco" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_CantPalletChep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_CantBlancoTipChep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Order_U_OrigenArmadoPedido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UbicacionAsiganada" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Transfer" Member="Transfer">
+    <Type Name="Transfer">
+      <Column Name="Company_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Site_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Transfer_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Site_Id_Destiny" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Staff_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="INV_0010_SyncStat" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="INV_0010_UpdFrom" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Transfer_U_NXTipoMovTrans" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Transfer_U_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transfer_U_Folio_Entidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transfer_U_Comentario" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Transfer_U_UsuarioCierre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transfer_U_FechaCierre" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Transfer_U_TransferOrigin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transfer_U_ProcesoOrigen" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UbicacionAsiganada" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.CVT_ACTUALIZA_CLAVE_ENCRIPTADASTAFF" Method="CVT_ACTUALIZA_CLAVE_ENCRIPTADASTAFF">
