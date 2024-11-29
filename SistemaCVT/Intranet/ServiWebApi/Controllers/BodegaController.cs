@@ -215,90 +215,40 @@ namespace ServiWebApi.Controllers
         }
 
         [HttpGet]
-        [Route("InsertaMP")]
-        public bool InsertarAsignacionMP(int transferID, string itemCode, string Lote)
-        {
-            bool ret = false;
-
-            try
-            {
-                CVT_TransferAsignacion vNuevo = new CVT_TransferAsignacion
-                {
-                    Transfer_Id = transferID,
-                    ItemCode = itemCode,
-                    Lote = Lote
-                };
-
-                dbDsa.CVT_TransferAsignacion.InsertOnSubmit(vNuevo);
-                dbDsa.SubmitChanges();
-                ret = true;
-            }
-            catch (Exception)
-            {
-            }
-            return ret;
-        }
-
-        [HttpGet]
-        [Route("InsertaPedido")]
-        public bool InsertarAsignacionPedidos(int orderID, string itemCode, string Lote, int cantidad)
-        {
-            bool ret = false;
-
-            try
-            {
-                CVT_OrderAsignacion vNuevo = new CVT_OrderAsignacion
-                {
-                    Order_ID = orderID,
-                    Itemcode = itemCode,
-                    Lote = Lote,
-                    Cantidad = cantidad
-                };
-
-                dbDsa.CVT_OrderAsignacion.InsertOnSubmit(vNuevo);
-                dbDsa.SubmitChanges();
-                ret = true;
-            }
-            catch (Exception)
-            {
-            }
-            return ret;
-        }
-
-        [HttpGet]
         [Route("TransfernciasAsignadas")]
         public List<CVT_TransferAsignacion> TransferenciasAsignadas(string TransferID)
         {
-            List<CVT_TransferAsignacion> lista = new List<CVT_TransferAsignacion> ();
-
+            List<CVT_TransferAsignacion> ret = new List<CVT_TransferAsignacion>();
             try
             {
-                lista = (from t in dbDsa.CVT_TransferAsignacion
+                ret = (from t in dbDsa.CVT_TransferAsignacion
+                       where t.Transfer_Id.Equals(TransferID)
                        select t).ToList<CVT_TransferAsignacion>();
             }
-            catch (Exception)
+            catch
             {
             }
-            return lista;
+            return ret;
         }
 
         [HttpGet]
         [Route("PedidosAsignados")]
-        public List<CVT_OrderAsignacion> PedidosAsignados(string TransferID)
+        public List<CVT_OrderAsignacion> PedidosAsignados(string OrderID)
         {
-            List<CVT_OrderAsignacion> lista = new List<CVT_OrderAsignacion>();
-
+            List<CVT_OrderAsignacion> ret = new List<CVT_OrderAsignacion>();
             try
             {
-                lista = (from t in dbDsa.CVT_OrderAsignacion
-                         select t).ToList<CVT_OrderAsignacion>();
+                ret = (from o in dbDsa.CVT_OrderAsignacion
+                       where o.Order_ID.Equals(OrderID)
+                       select o).ToList<CVT_OrderAsignacion>();
             }
-            catch (Exception)
+            catch
             {
             }
-            return lista;
+            return ret;
         }
         [HttpGet]
+        [Route("DetalleTransferenciasAsignadas")]
         public DataTable DetalleTransferenciasAsignadas(int transferId)
         {
             DataTable ret = new DataTable();
@@ -327,6 +277,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
         [Route("UbicacionMPAsignacion")]
         public DataTable UbicacionMPAsignacion(string itemCode, string lote)
