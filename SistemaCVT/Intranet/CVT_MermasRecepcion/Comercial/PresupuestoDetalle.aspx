@@ -36,7 +36,7 @@
         </dx:ASPxComboBox>
     </div>
     <div>
-        <dx:ASPxGridView ID="gv_presupuestoDet" runat="server" AutoGenerateColumns="False" KeyFieldName="PresupuestoDetalle_ID">
+        <dx:ASPxGridView ID="gv_presupuestoDet" runat="server" AutoGenerateColumns="False" KeyFieldName="PresupuestoDetalle_ID" >
             <SettingsPager AlwaysShowPager="True" PageSize="1000">
             </SettingsPager>
             <SettingsEditing Mode="Batch">
@@ -46,6 +46,7 @@
             </SettingsPopup>
             <Settings ShowFilterRow="True" AutoFilterCondition="Contains" />
 <SettingsBehavior AllowFocusedRow="True" />
+             <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="Default" />
 <Toolbars>
     <dx:GridViewToolbar>
         <Items>

@@ -12,6 +12,7 @@
                         </SettingsEditing>
                         <Settings ShowFilterRow="True" AutoFilterCondition="Contains" />
                         <SettingsBehavior AllowFocusedRow="True" />
+                        <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="Default" />
                         <Toolbars>
                             <dx:GridViewToolbar >
                                 <Items>
