@@ -333,5 +333,23 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+        [HttpGet]
+        [Route("ObtieneOrderDetail")]
+        public int ObtieneOrderDetail(int orderID, string lote)
+        {
+            int ret = 0;
+            try
+            {
+                ret = (int)(from od in DBDatos.OrderDetail
+                       join p in DBDatos.Package
+                       on od.Package_Id equals p.Package_Id
+                       where od.Order_Id.Equals(orderID) && p.Package_Lot.Equals(lote)
+                       select od.OrderDetail_Quantity).Sum();
+            }
+            catch (Exception)
+            {
+            }
+            return ret;
+        }
     }
 }

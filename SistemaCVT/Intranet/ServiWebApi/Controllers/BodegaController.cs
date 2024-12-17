@@ -197,7 +197,8 @@ namespace ServiWebApi.Controllers
                     {
                         p.Package_Lot,
                         ap.ArticleProvider_CodClient, 
-                        p.Package_Quantity 
+                        p.Package_Quantity,
+                        p.Reception_Id
                     }).FirstOrDefault();
 
                 if (rest != null) 
@@ -205,6 +206,7 @@ namespace ServiWebApi.Controllers
                     ret.Add(rest.Package_Lot);
                     ret.Add(rest.ArticleProvider_CodClient);
                     ret.Add(rest.Package_Quantity.ToString());
+                    ret.Add(rest.Reception_Id.ToString());
                 }
             }
             catch (Exception)
