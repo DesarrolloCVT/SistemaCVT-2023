@@ -35,6 +35,43 @@
                       ImageUrl="~/Images/nuevo.png" OnClick="cmdNew_Click" Style="width: 16px" />Nuevo</a>
         </div>--%>
     </div>
+     <br />
+    <div>
+        <header> Impresion Masiva Categoria - Subcategoria</header>
+        <table>
+            <tr>
+                <td>
+                    <dx:ASPxLabel ID="Catgoria" runat="server" Text="Catgoria"></dx:ASPxLabel>
+                </td>
+                <td>
+                    <dx:ASPxComboBox ID="cbo_Catgoria" runat="server" AutoPostBack="True" DataSourceID="LqDsCategoria" TextField="Min_U_Categoria" ValueField="U_CodCategoria">
+                        <ValidationSettings ValidationGroup="Masivo">
+                            <RequiredField IsRequired="True" />
+                        </ValidationSettings>
+                    </dx:ASPxComboBox>
+                    <asp:LinqDataSource ID="LqDsCategoria" runat="server" ContextTypeName="DBMermasRecepcion.DBMLCVTMMETRODataContext" EntityTypeName="" GroupBy="U_CodCategoria" Select="new (key as U_CodCategoria, it as _SCATEGORIA_PRODUCTO, Min(Name) as Min_Name, Min(U_Categoria) as Min_U_Categoria)" TableName="_SCATEGORIA_PRODUCTO"></asp:LinqDataSource>
+                </td>
+                <td>
+                    <dx:ASPxLabel ID="SubCategoria" runat="server" Text="SubCategoria"></dx:ASPxLabel>
+                </td>
+                <td>
+                    <dx:ASPxComboBox ID="cbo_Subcategoria" runat="server" DataSourceID="LqDsSubcategoria" TextField="U_SubCategoria" ValueField="U_CodSubCategoria">
+                        <ValidationSettings ValidationGroup="Masivo">
+                            <RequiredField IsRequired="True" />
+                        </ValidationSettings>
+                    </dx:ASPxComboBox>
+                    <asp:LinqDataSource ID="LqDsSubcategoria" runat="server" ContextTypeName="DBMermasRecepcion.DBMLCVTMMETRODataContext" EntityTypeName="" TableName="_SCATEGORIA_PRODUCTO" Where="U_CodCategoria == @U_CodCategoria">
+                        <WhereParameters>
+                            <asp:ControlParameter ControlID="cbo_Catgoria" DefaultValue="0" Name="U_CodCategoria" PropertyName="Value" Type="String" />
+                        </WhereParameters>
+                    </asp:LinqDataSource>
+                </td>
+                <td>
+                    <dx:ASPxButton ID="btn_Imprimir" runat="server" Text="Imprimir" OnClick="btn_Imprimir_Click" ValidationGroup="Masivo"></dx:ASPxButton>
+                </td>
+             </tr>
+        </table>
+    </div>
     <br />
     <div>
         <dx:ASPxGridView ID="Gvdat" runat="server" AutoGenerateColumns="False" DataSourceID="LqsPreciosMayorista" OnRowCommand="Gvdat_RowCommand" KeyFieldName="ItemCode">
@@ -47,7 +84,7 @@
                 </dx:GridViewDataTextColumn>
                 <dx:GridViewDataTextColumn Caption="Descripcion" FieldName="ItemName" ReadOnly="True" VisibleIndex="2">
                 </dx:GridViewDataTextColumn>
-                <dx:GridViewDataHyperLinkColumn VisibleIndex="3" Caption="Etiqueta">
+                <dx:GridViewDataHyperLinkColumn VisibleIndex="3" Caption="Etiqueta Flejera">
                     <Settings AllowAutoFilter="False" />
                     <EditFormSettings Visible="False" />
                     <DataItemTemplate>
@@ -55,30 +92,7 @@
                             ImageUrl="~/Images/menu.png" />
                     </DataItemTemplate>
                 </dx:GridViewDataHyperLinkColumn>
-                <dx:GridViewDataHyperLinkColumn VisibleIndex="4" Caption="Etiqueta 10x3">
-                    <Settings AllowAutoFilter="False" />
-                    <EditFormSettings Visible="False" />
-                    <DataItemTemplate>
-                        <asp:ImageButton ID="EtiquetaGrande" CommandName="cmdEtiquetaGrande" runat="server"
-                            ImageUrl="~/Images/reportes.png" />
-                    </DataItemTemplate>
-                </dx:GridViewDataHyperLinkColumn>
-                <dx:GridViewDataHyperLinkColumn VisibleIndex="5" Caption="Etiqueta 7x4">
-                    <Settings AllowAutoFilter="False" />
-                    <EditFormSettings Visible="False" />
-                    <DataItemTemplate>
-                        <asp:ImageButton ID="EtiquetaPeque" CommandName="cmdEtiquetaPeque" runat="server"
-                            ImageUrl="~/Images/boxok.png" />
-                    </DataItemTemplate>
-                </dx:GridViewDataHyperLinkColumn>
-                <dx:GridViewDataHyperLinkColumn VisibleIndex="6" Caption="Oferta">
-                    <Settings AllowAutoFilter="False" />
-                    <EditFormSettings Visible="False" />
-                    <DataItemTemplate>
-                        <asp:ImageButton ID="EtiquetaOferta" CommandName="cmdOferta" runat="server"
-                            ImageUrl="~/Images/descuento.png" />
-                    </DataItemTemplate>
-                </dx:GridViewDataHyperLinkColumn>
+               
             </Columns>
             <Styles>
                 <FocusedRow BackColor="#FF9933">
@@ -92,4 +106,5 @@
         </asp:LinqDataSource>
          <iframe id="FrameToPrint" name="PrintingFrame" style="position: absolute; left: -10000px; top: -10000px;"></iframe>
     </div>
+    
 </asp:Content>

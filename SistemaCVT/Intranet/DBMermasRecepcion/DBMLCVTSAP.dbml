@@ -11821,4 +11821,9 @@
       <Column Name="SaldoAñoAnt" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.SP_InformeVentasDiario" Method="SP_InformeVentasDiario">
+    <ElementType Name="SP_InformeVentasDiarioResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="NVarChar(560)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>
