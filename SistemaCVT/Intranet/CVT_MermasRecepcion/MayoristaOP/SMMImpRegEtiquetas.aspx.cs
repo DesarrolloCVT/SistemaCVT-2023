@@ -1,6 +1,8 @@
 ﻿using CVT_MermasRecepcion.MayoristaReportes;
 using DBMermasRecepcion;
 using System;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,40 +23,40 @@ namespace CVT_MermasRecepcion.MayoristaOP
         {
             if (e.CommandArgs.CommandName == "cmdImpEtiqueta")
             {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    EtiquetaPrecios r = new EtiquetaPrecios();
-                    r.Parameters["v_CodProd"].Value = (string)GvDatos.GetRowValuesByKeyValue(e.KeyValue, "CodProd");
+                //using (MemoryStream ms = new MemoryStream())
+                //{
+                //    EtiquetaPrecios r = new EtiquetaPrecios();
+                //    r.Parameters["v_CodProd"].Value = (string)GvDatos.GetRowValuesByKeyValue(e.KeyValue, "CodProd");
 
 
-                    r.CreateDocument();
-                    DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
-                    opts.ShowPrintDialogOnOpen = true;
+                //    r.CreateDocument();
+                //    DevExpress.XtraPrinting.PdfExportOptions opts = new DevExpress.XtraPrinting.PdfExportOptions();
+                //    opts.ShowPrintDialogOnOpen = true;
 
-                    r.ExportToPdf(ms, opts);
-                    ms.Seek(0, SeekOrigin.Begin);
-                    byte[] report = ms.ToArray();
-                    Page.Response.ContentType = "application/pdf";
-                    Page.Response.Clear();
-                    Page.Response.OutputStream.Write(report, 0, report.Length);
+                //    r.ExportToPdf(ms, opts);
+                //    ms.Seek(0, SeekOrigin.Begin);
+                //    byte[] report = ms.ToArray();
+                //    Page.Response.ContentType = "application/pdf";
+                //    Page.Response.Clear();
+                //    Page.Response.OutputStream.Write(report, 0, report.Length);
 
-                    //Page.Response.End();
-                }
+                //    //Page.Response.End();
+                //}
                int codreg = (int)GvDatos.GetRowValuesByKeyValue(e.KeyValue, "IdRegImpEtiq");
 
                 CVTWMSMetroClass rs = new CVTWMSMetroClass();
 
                 rs.ActualizaEstadoRegimp(codreg);
 
-                //ReportDocument Info2 = new ReportDocument();
-                //Info2.Load(Server.MapPath("~/EtiquetaPreciosMayorista6x4.rpt"));
-                //Info2.SetDatabaseLogon("sa", "cvt");
-                //Info2.SetParameterValue(0, cod);
-                //ExportOptions op = new ExportOptions();
-                //Response.Buffer = false;
-                //Response.Clear();
-                //// Info.ExportToDisk(ExportFormatType.PortableDocFormat, @"C:\Users\mrivero\Desktop\report.pdf");
-                //Info2.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "report.pdf");
+                ReportDocument Info2 = new ReportDocument();
+                Info2.Load(Server.MapPath("~/Fleje6x4_CodProd.rpt"));
+                Info2.SetDatabaseLogon("sa", "cvt.vdp22$");
+                Info2.SetParameterValue(0, (string)GvDatos.GetRowValuesByKeyValue(e.KeyValue, "CodProd"));
+                ExportOptions op = new ExportOptions();
+                Response.Buffer = false;
+                Response.Clear();
+                // Info.ExportToDisk(ExportFormatType.PortableDocFormat, @"C:\Users\mrivero\Desktop\report.pdf");
+                Info2.ExportToHttpResponse(ExportFormatType.PortableDocFormat, Response, false, "report.pdf");
             }
         }
 

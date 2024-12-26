@@ -2050,42 +2050,6 @@
       <Column Name="Observacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.CVT_MonitoreoDetectorMetalesUno" Member="CVT_MonitoreoDetectorMetalesUno">
-    <Type Name="CVT_MonitoreoDetectorMetalesUno">
-      <Column Name="Id_MonitoreoMetales" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Producto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="HoraMonitoreo" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
-      <Column Name="FE15mm" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="NoFE25mm" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="AceroInox25mm" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="EnciendeBaliza" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="SuenaBaliza" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="[Brazo de rechazo]" Member="Brazo_de_rechazo" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="FechaMonitoreo" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="Fecha_ingresoRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Observacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Id_EncargadaCalidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CVT_MonitoreoDetectorMetalesDos" Member="CVT_MonitoreoDetectorMetalesDos">
-    <Type Name="CVT_MonitoreoDetectorMetalesDos">
-      <Column Name="Id_monitoreoMetalesDos" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Producto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="DetectaFE25mm" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="NoFE30mm" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="Acero25mm" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="EnciendeBaliza" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="SuenaBaliza" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="BrazoRechazo" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="HoraMonitoreo" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
-      <Column Name="Fecha_ingresoRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Observacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Id_EncargadaCalidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.CVT_InspeccionPT_PorotoNegroDetalle" Member="CVT_InspeccionPT_PorotoNegroDetalle">
     <Type Name="CVT_InspeccionPT_PorotoNegroDetalle">
       <Column Name="Id_InspeccionPorotoNegroDetalle" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -5418,6 +5382,42 @@
       <Column Name="ItemCode" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Lote" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Recepcion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_MonitoreoDetectorMetalesDos" Member="CVT_MonitoreoDetectorMetalesDos">
+    <Type Name="CVT_MonitoreoDetectorMetalesDos">
+      <Column Name="Id_monitoreoMetalesDos" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DetectaFE25mm" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="NoFE30mm" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Acero25mm" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="EnciendeBaliza" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SuenaBaliza" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="BrazoRechazo" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="HoraMonitoreo" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha_ingresoRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Id_EncargadaCalidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CVT_MonitoreoDetectorMetalesUno" Member="CVT_MonitoreoDetectorMetalesUno">
+    <Type Name="CVT_MonitoreoDetectorMetalesUno">
+      <Column Name="Id_MonitoreoMetales" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Producto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HoraMonitoreo" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="FE15mm" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="NoFE25mm" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AceroInox25mm" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="EnciendeBaliza" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SuenaBaliza" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="[Brazo de rechazo]" Member="Brazo_de_rechazo" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaMonitoreo" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha_ingresoRegistro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Id_EncargadaCalidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.CVT_AGENDAPROD_LeeStockReceta" Method="CVT_AGENDAPROD_LeeStockReceta">

@@ -19,6 +19,53 @@ namespace TestApiEnvioAuto.Controllers
     public class EnvioCorreoController : ApiController
     {
         [HttpGet]
+        [Route("EnviaVentasNuevo")]
+        public void EnviaCorreoReporteDiarioVentasNuevo()
+        {
+            try
+            {
+
+                SAPClass sp = new SAPClass();
+                DataTable dt = new DataTable();
+                dt = sp.ObtieneInformeVentasDiario();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    MailMessage vMail = new MailMessage();
+                    MailingClass vMailing = new MailingClass();
+                    List<CVT_MailingInformes> ls = vMailing.ObtieneMailInforme("InformeVentas");
+
+                    foreach (var d in ls)
+                    {
+                        vMail.To.Add(d.Mail);
+                    }
+
+
+
+                    string mailfrom = Convert.ToString(System.Configuration.ConfigurationManager.AppSettings["MailLog"]);
+                    string mailpass = Convert.ToString(System.Configuration.ConfigurationManager.AppSettings["PassMailLog"]);
+
+                    SmtpClient vSmtp = new SmtpClient();//new SmtpClient("cvtrading-cl.mail.protection.outlook.com");
+                    vSmtp.UseDefaultCredentials = false;
+                    vSmtp.Credentials = new NetworkCredential(mailfrom, mailpass, "cvtrading.cl");
+                    vSmtp.Port = 587;
+                    vSmtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    vSmtp.EnableSsl = true;
+                    vSmtp.Host = "smtp-mail.outlook.com";
+
+
+                    vMail.From = new MailAddress(mailfrom);
+                    vMail.Subject = "Informe Ventas: " + DateTime.Now.ToShortDateString();
+                    vMail.Body = dr.ItemArray[0].ToString();
+
+                    System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                    vSmtp.Send(vMail);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+            [HttpGet]
         [Route("EnviaC")]
         public void EnviaCorreoReporteDiarioVentas()
         {

@@ -2513,6 +2513,20 @@ namespace DBMermasRecepcion
             }
             return ret;
         }
+        public DataTable ObtieneInformeVentasDiario()
+        {
+            DataTable ret = new DataTable();
+            try
+            {
+                DBWMS.CommandTimeout = 120000;
+                ret = Utilidades.LINQToDataTable(DBSap.SP_InformeVentasDiario());
+            }
+            catch (Exception ex)
+            {
+                string A = ex.Message;
+            }
+            return ret;
+        }
 
         public List<VW_ComicionProductos_CVT> ObtieneDatosProdComiCVT(string CodPro)
         {
