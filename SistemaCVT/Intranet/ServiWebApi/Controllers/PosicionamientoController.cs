@@ -62,5 +62,27 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+        [HttpGet]
+        [Route("ValidaLayout")]
+        public bool ValidarLayoutExistente(int LayoutID)
+        {
+            bool ret = false;
+            try
+            {
+                var temp = (from l in DBDatos.Location
+                            where l.Layout_Id.Equals(LayoutID)
+                            select l.Layout_Id ).FirstOrDefault();
+
+                if(temp != 0)
+                {
+                    ret = true;
+                }
+            }
+            catch (Exception) 
+            {
+
+            }
+            return ret;
+        }
     }
 }
