@@ -29,6 +29,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
         public DataTable GetResumenConsultaPosision(int NumPosicion)
         {
@@ -44,6 +45,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
         public List<VW_XAMARIN_PACKAGE> ListaInfoPallet(string NumeroDePallet)
         {
@@ -59,6 +61,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
         public List<Package> ObtieneInfoPallet(string SSCC)
         {
@@ -74,6 +77,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
         public List<ArticleProvider> ObtieneInfoProducto(int ID)
         {
@@ -100,6 +104,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
         public int VerificaReservaPallet(string numPallet)
         {
@@ -120,6 +125,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
         public bool RepaletizaConDestino(string Origen, string Destino, int Cantidad, string username)
         {
@@ -182,6 +188,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }  
+
         [HttpGet]
         public string RepaletizaNuevo(string BOrigen, int Cantidad, string NusuarioSis)
         {
@@ -245,6 +252,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
         public bool ActualizaLayoutPackage(int PackageId, int layoutid)
         {
@@ -268,6 +276,7 @@ namespace ServiWebApi.Controllers
             }
             return flag;
         }
+
         [HttpGet]
         public bool AddLocation(int PackageId, int LayoutDestinoId, int StaffId)
         {
@@ -333,6 +342,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
         [Route("ObtieneOrderDetail")]
         public int ObtieneOrderDetail(int orderID, string lote)

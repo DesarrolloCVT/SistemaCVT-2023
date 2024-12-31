@@ -28,6 +28,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
         public List<VW_XAMARIN_PACKAGE> ObtieneInfoPalletPos(string SSCCPack)
         {
@@ -43,6 +44,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
         public int ObtienePackageIdPosicionamiento(string NumPallet)
         {
@@ -62,6 +64,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
         [Route("ValidaLayout")]
         public bool ValidarLayoutExistente(int LayoutID)

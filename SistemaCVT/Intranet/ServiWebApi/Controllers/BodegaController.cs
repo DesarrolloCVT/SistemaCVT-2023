@@ -97,7 +97,6 @@ namespace ServiWebApi.Controllers
         }
 
         [HttpGet]
-
         public List<VW_BODEGAS_XAMARIN> ObtieneBodegas()
         {
             List<VW_BODEGAS_XAMARIN> ret = new List<VW_BODEGAS_XAMARIN>();
@@ -249,6 +248,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
         [Route("DetalleTransferenciasAsignadas")]
         public DataTable DetalleTransferenciasAsignadas(int transferId)
@@ -264,6 +264,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
         [Route("DetallePedidosAsignados")]
         public DataTable DetallePedidosAsignados(int orderID)
@@ -296,6 +297,7 @@ namespace ServiWebApi.Controllers
             }
             return ret;
         }
+
         [HttpGet]
         [Route("UbicacionPedidoAsignacion")]
         public DataTable UbicacionPedidoAsignacion(string itemCode, string lote)
