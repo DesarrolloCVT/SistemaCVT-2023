@@ -166,7 +166,7 @@
                             </dx:GridViewDataTextColumn>
                             <dx:GridViewDataTextColumn Caption="Folio Ent"
                                 FieldName="Transfer_U_Folio_Entidad" ShowInCustomizationForm="True"
-                                VisibleIndex="15">
+                                VisibleIndex="16">
                                 <EditFormSettings Visible="True" />
                             </dx:GridViewDataTextColumn>
                             <dx:GridViewDataComboBoxColumn Caption="Bod Origen" FieldName="Site_Id"
@@ -236,7 +236,7 @@
                                 </PropertiesComboBox>
                                 <EditFormSettings Visible="False" />
                             </dx:GridViewDataComboBoxColumn>
-                            <dx:GridViewDataHyperLinkColumn Caption="Detalle" VisibleIndex="18">
+                            <dx:GridViewDataHyperLinkColumn Caption="Detalle" VisibleIndex="19">
                                 <EditFormSettings Visible="False" />
                                 <DataItemTemplate>
                                     <asp:ImageButton ID="detalle" CommandName="cmdDetalle" runat="server" ImageUrl="~/Images/boxadd.png" />
@@ -244,7 +244,7 @@
                                 <CellStyle HorizontalAlign="Center" VerticalAlign="Middle">
                                 </CellStyle>
                             </dx:GridViewDataHyperLinkColumn>
-                            <dx:GridViewDataHyperLinkColumn Caption="Asignacion" VisibleIndex="18">
+                            <dx:GridViewDataHyperLinkColumn Caption="Asignacion" VisibleIndex="20">
                                 <EditFormSettings Visible="False" />
                                 <DataItemTemplate>
                                     <asp:ImageButton ID="Asignacion" CommandName="cmdAsignar" runat="server" ImageUrl="~/Images/checklist.png" />
@@ -252,7 +252,7 @@
                                 <CellStyle HorizontalAlign="Center" VerticalAlign="Middle">
                                 </CellStyle>
                             </dx:GridViewDataHyperLinkColumn>
-                            <dx:GridViewDataHyperLinkColumn Caption="Anula" VisibleIndex="19">
+                            <dx:GridViewDataHyperLinkColumn Caption="Anula" VisibleIndex="21">
                                 <EditFormSettings Visible="False" />
                                 <DataItemTemplate>
                                     <asp:ImageButton ID="Anula" CommandName="cmdAnula" runat="server" ImageUrl="~/Images/node_delete.png" />
@@ -260,7 +260,7 @@
                                 <CellStyle HorizontalAlign="Center" VerticalAlign="Middle">
                                 </CellStyle>
                             </dx:GridViewDataHyperLinkColumn>
-                            <dx:GridViewDataHyperLinkColumn Caption="Enviar" VisibleIndex="20">
+                            <dx:GridViewDataHyperLinkColumn Caption="Enviar" VisibleIndex="22">
                                 <EditFormSettings Visible="False" />
                                 <DataItemTemplate>
                                     <asp:ImageButton ID="PreConfirma" CommandName="cmdPreConfirma" runat="server"
@@ -269,7 +269,7 @@
                                 <CellStyle HorizontalAlign="Center" VerticalAlign="Middle">
                                 </CellStyle>
                             </dx:GridViewDataHyperLinkColumn>
-                            <dx:GridViewDataHyperLinkColumn Caption="Recepcionar" VisibleIndex="21">
+                            <dx:GridViewDataHyperLinkColumn Caption="Recepcionar" VisibleIndex="23">
                                 <EditFormSettings Visible="False" />
                                 <DataItemTemplate>
                                     <asp:ImageButton ID="Confirma" CommandName="cmdConfirma" runat="server"
@@ -278,7 +278,7 @@
                                 <CellStyle HorizontalAlign="Center" VerticalAlign="Middle">
                                 </CellStyle>
                             </dx:GridViewDataHyperLinkColumn>
-                            <dx:GridViewDataHyperLinkColumn Caption="Rechazar" VisibleIndex="22" Visible="false">
+                            <dx:GridViewDataHyperLinkColumn Caption="Rechazar" VisibleIndex="24" Visible="false">
                                 <EditFormSettings Visible="False" />
                                 <DataItemTemplate>
                                     <asp:ImageButton ID="Rechaza" CommandName="cmdRechaza" runat="server"
@@ -295,12 +295,12 @@
                                 <Settings AllowAutoFilter="False" AllowFilterBySearchPanel="False" />
                                 <EditFormSettings Visible="False" />
                             </dx:GridViewDataComboBoxColumn>
-                            <dx:GridViewDataComboBoxColumn Caption="Usuario Recepcion" FieldName="Transfer_U_UsuarioCierre" ShowInCustomizationForm="True" VisibleIndex="16">
+                            <dx:GridViewDataComboBoxColumn Caption="Usuario Recepcion" FieldName="Transfer_U_UsuarioCierre" ShowInCustomizationForm="True" VisibleIndex="17">
                                 <PropertiesComboBox DataSourceID="LqDsStaff" TextField="Staff_Name" ValueField="Staff_Id">
                                 </PropertiesComboBox>
                                 <EditFormSettings Visible="False" />
                             </dx:GridViewDataComboBoxColumn>
-                            <dx:GridViewDataDateColumn Caption="Fecha Recepcion" FieldName="Transfer_U_FechaCierre" ShowInCustomizationForm="True" VisibleIndex="17">
+                            <dx:GridViewDataDateColumn Caption="Fecha Recepcion" FieldName="Transfer_U_FechaCierre" ShowInCustomizationForm="True" VisibleIndex="18">
                                 <PropertiesDateEdit DisplayFormatString="">
                                 </PropertiesDateEdit>
                                 <EditFormSettings Visible="False" />
@@ -318,6 +318,13 @@
                                     </Items>
                                 </PropertiesComboBox>
                             </dx:GridViewDataComboBoxColumn>
+                            <dx:GridViewDataTextColumn Caption="Comentario" FieldName="Transfer_U_Comentario" ShowInCustomizationForm="True" VisibleIndex="15">
+                                <PropertiesTextEdit MaxLength="150">
+                                    <ValidationSettings>
+                                        <RequiredField IsRequired="True" />
+                                    </ValidationSettings>
+                                </PropertiesTextEdit>
+                            </dx:GridViewDataTextColumn>
                         </Columns>
                         <Styles>
                             <FocusedRow BackColor="#FF9933">
